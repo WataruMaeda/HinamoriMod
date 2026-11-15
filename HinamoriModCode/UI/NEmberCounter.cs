@@ -1,7 +1,6 @@
 ﻿
-using System.Linq;
 using Godot;
-using HinamoriMod.HinamoriModCode.Cards;
+using HinamoriMod.HinamoriModCode.Commands;
 using MegaCrit.Sts2.Core.Entities.Players;
 
 namespace HinamoriMod.HinamoriModCode.UI;
@@ -60,14 +59,8 @@ public partial class NEmberCounter : Control
         if (_player == null || _label == null)
             return;
 
-        // 現在の飛梅から火種を取得
-        decimal amount = _player.PlayerCombatState
-            .AllCards
-            .OfType<TobiumeMomo>()
-            .Where(card => !card.IsDupe)
-            .Select(card => card.CurrentEmber)
-            .DefaultIfEmpty(0m)
-            .Max();
+        // プレイヤーの火種を直接取得
+        decimal amount = EmberState.GetAmount(_player);
 
         if (amount == _lastAmount)
             return;

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿
 using System.Linq;
 using System.Threading.Tasks;
 using HinamoriMod.HinamoriModCode.Cards;
@@ -18,36 +18,33 @@ public static class EmberCmd
         if (CombatManager.Instance.IsOverOrEnding)
             return;
 
-        // 廃棄されていない飛梅を探す
-        List<TobiumeMomo> cards = player.PlayerCombatState
+        if (amount <= 0m)
+            return;
+
+        // 火種を更新。既存カードも自動同期される。
+        EmberState.AddAmount(player, amount);
+
+        // 廃棄されていない飛梅を探す。
+        bool hasTobiume = player.PlayerCombatState
             .AllCards
             .OfType<TobiumeMomo>()
-            .Where(card =>
+            .Any(card =>
                 !card.IsDupe &&
-                card.Pile?.Type != PileType.Exhaust)
-            .ToList();
+                card.Pile?.Type != PileType.Exhaust);
 
-        // 飛梅が存在しなければ手札に生成
-        if (cards.Count == 0)
+        if (!hasTobiume)
         {
             TobiumeMomo tobiume =
                 player.Creature.CombatState
-                    .CreateCard<TobiumeMomo>(player);
+                .CreateCard<TobiumeMomo>(player);
+
+            // 手札に追加する前に数値を確定する
+            tobiume.SyncEmber();
 
             await CardPileCmd.AddGeneratedCardToCombat(
                 tobiume,
                 PileType.Hand,
-                player
-            );
-        }
-
-        // すべての飛梅を強化
-        foreach (TobiumeMomo card in player.PlayerCombatState
-                     .AllCards
-                     .OfType<TobiumeMomo>()
-                     .Where(card => !card.IsDupe))
-        {
-            card.AdjustEmber(amount);
+                player);
         }
     }
 }

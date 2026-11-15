@@ -49,6 +49,12 @@ internal static class CardDebugHelper
             card.FinalizeUpgradeInternal();
         }
 
+        // ”ò”~‚Ìê‡AèD‚É’Ç‰Á‚·‚é‘O‚ÉŒ»İ‚Ì‰Îí‚ğ”½‰f
+        if (card is TobiumeMomo tobiume)
+        {
+            tobiume.SyncEmber();
+        }
+
         await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, player);
     }
 }

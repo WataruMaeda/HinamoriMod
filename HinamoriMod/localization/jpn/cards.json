@@ -32,7 +32,7 @@
   "HINAMORIMOD-TWIN_LOTUS_BLUE_FIREFALL_MOMO.title": "双蓮蒼火墜",
   "HINAMORIMOD-TWIN_LOTUS_BLUE_FIREFALL_MOMO.description": "敵全体に{Damage:diff()}ダメージを{Hits}回与える。\n敵全体に[gold]火傷[/gold]を{Burn:diff()}付与する。",
   "HINAMORIMOD-BLACK_COFFIN_MOMO.title": "黒棺",
-  "HINAMORIMOD-BLACK_COFFIN_MOMO.description": "現在の[gold]詠唱[/gold]をすべて消費する。\n消費した詠唱1につき{Damage:diff()}ダメージを与える。",
+  "HINAMORIMOD-BLACK_COFFIN_MOMO.description": "所持している[gold]詠唱[/gold]をすべて消費する。\n消費した詠唱1につき{Damage:diff()}ダメージを与える。",
   "HINAMORIMOD-FLYING_DRAGON_STRIKING_HEAVEN_SHAKING_THUNDER_CANNON_MOMO.title": "飛竜撃賊震天雷炮",
   "HINAMORIMOD-FLYING_DRAGON_STRIKING_HEAVEN_SHAKING_THUNDER_CANNON_MOMO.description": "基本ダメージ5。\nこの戦闘でプレイした[gold]破道[/gold]1枚につき、{Damage:diff()}ダメージを追加で与える。\n（破道の使用回数は{CalculatedHits:diff()}回）"
 }

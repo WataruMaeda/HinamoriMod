@@ -16,6 +16,9 @@ namespace HinamoriMod.HinamoriModCode.Cards;
 /// </summary>
 public class BoundLightningMomo : HinamoriModCard
 {
+    public override HinamoriCardTag HinamoriTags =>
+    HinamoriCardTag.Hado | HinamoriCardTag.Kido;
+
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(5m, ValueProp.Move),
