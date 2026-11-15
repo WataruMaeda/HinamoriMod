@@ -1,0 +1,71 @@
+﻿
+using HinamoriMod.HinamoriModCode.Powers;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.Entities.Relics;
+using MegaCrit.Sts2.Core.Factories;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Rewards;
+using MegaCrit.Sts2.Core.Rooms;
+using MegaCrit.Sts2.Core.Saves.Runs;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace HinamoriMod.HinamoriModCode.Relics;
+
+public class KidoFundamentals : HinamoriModRelic
+{
+    public override RelicRarity Rarity => RelicRarity.Starter;
+
+    [SavedProperty(SerializationCondition.SaveIfNotTypeDefault)]
+    public bool HasReceivedNeowRelic { get; set; }
+
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    [
+        new DynamicVar("Chant", 3m)
+    ];
+
+    /// <summary>
+    /// 戦闘開始時の処理
+    /// </summary>
+    /// <param name="room"></param>
+    /// <returns></returns>
+    public override async Task AfterRoomEntered(AbstractRoom room)
+    {
+        if (room is CombatRoom)
+        {
+            await PowerCmd.Apply<ChantPower>(
+                null,
+                Owner.Creature,
+                DynamicVars["Chant"].IntValue,
+                Owner.Creature,
+                null
+            );
+        }
+    }
+
+    /// <summary>
+    /// ボス戦の報酬にランダムレリックを1個追加する
+    /// </summary>
+    public override bool TryModifyRewards(
+        Player player,
+        List<Reward> rewards,
+        AbstractRoom? room)
+    {
+        if (player != Owner)
+        {
+            return false;
+        }
+
+        if (room == null || room.RoomType != RoomType.Boss)
+        {
+            return false;
+        }
+
+        // 通常の報酬にランダムレリックを1個追加
+        rewards.Add(new RelicReward(player));
+
+        return true;
+    }
+}

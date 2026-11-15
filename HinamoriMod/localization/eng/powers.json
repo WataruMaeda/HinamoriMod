@@ -1,0 +1,11 @@
+{
+  "HINAMORIMOD-CHANT_POWER.title": "Chant",
+  "HINAMORIMOD-CHANT_POWER.description": "Consumed when playing Hado or Bakudo cards.",
+  "HINAMORIMOD-CHANT_POWER.smartDescription": "Consumed when playing Hado or Bakudo cards.",
+  "HINAMORIMOD-BURN_POWER.title": "Burn",
+  "HINAMORIMOD-BURN_POWER.description": "Burned creatures deal 25% less Attack damage. At the end of their turn, they lose HP and Burn decreases by 1.",
+  "HINAMORIMOD-BURN_POWER.smartDescription": "At the end of {OnPlayer:your|the enemy's} turn, lose [blue]{Amount}[/blue] HP and reduce [gold]Burn[/gold] by [blue]1[/blue]. Deal [blue]25%[/blue] less Attack damage.",
+  "HINAMORIMOD-HADO_CHANT_DISCOUNT_POWER.title": "Hado Chant Discount",
+  "HINAMORIMOD-HADO_CHANT_DISCOUNT_POWER.description": "Reduce the Chant cost of the next Hado card you play by {Amount}.",
+  "HINAMORIMOD-HADO_CHANT_DISCOUNT_POWER.smartDescription": "Reduce the Chant cost of the next Hado card you play by {Amount}."
+}

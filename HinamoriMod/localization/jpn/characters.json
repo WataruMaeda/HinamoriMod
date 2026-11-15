@@ -1,0 +1,16 @@
+{
+  "HINAMORIMOD-HINAMORI_MOD.title": "雛森桃",
+  "HINAMORIMOD-HINAMORI_MOD.titleObject": "雛森桃",
+  "HINAMORIMOD-HINAMORI_MOD.description": "護廷十三隊五番隊副隊長。鬼道を得意とする死神。",
+  "HINAMORIMOD-HINAMORI_MOD.pronounObject": "her",
+  "HINAMORIMOD-HINAMORI_MOD.possessiveAdjective": "her",
+  "HINAMORIMOD-HINAMORI_MOD.pronounPossessive": "hers",
+  "HINAMORIMOD-HINAMORI_MOD.pronounSubject": "she",
+  "HINAMORIMOD-HINAMORI_MOD.goldMonologue": "これだけあれば、何かの役に立つかもしれない。",
+  "HINAMORIMOD-HINAMORI_MOD.eventDeathPrevention": "まだ、倒れるわけにはいかない……！",
+  "HINAMORIMOD-HINAMORI_MOD.aromaPrinciple": "仲間を守るために、私は戦う。",
+  "HINAMORIMOD-HINAMORI_MOD.cardsModifierTitle": "雛森桃のカード",
+  "HINAMORIMOD-HINAMORI_MOD.cardsModifierDescription": "雛森桃専用のカードを使用します。",
+  "HINAMORIMOD-HINAMORI_MOD.banter.alive.endTurnPing": "次の一手を考えないと……。",
+  "HINAMORIMOD-HINAMORI_MOD.banter.dead.endTurnPing": "みんな……ごめんなさい……。"
+}

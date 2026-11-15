@@ -1,0 +1,96 @@
+using System;
+using System.Threading.Tasks;
+using BaseLib.Abstracts;
+using BaseLib.Extensions;
+using BaseLib.Utils;
+using HinamoriMod.HinamoriModCode.Character;
+using HinamoriMod.HinamoriModCode.Extensions;
+using HinamoriMod.HinamoriModCode.Powers;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+
+namespace HinamoriMod.HinamoriModCode.Cards;
+
+[Pool(typeof(HinamoriModCardPool))]
+public abstract class HinamoriModCard(int cost, CardType type, CardRarity rarity, TargetType target)
+    : CustomCardModel(cost, type, rarity, target)
+{
+    public virtual int ChantCost => -1;
+    public virtual bool IsHado => false;
+
+    public virtual HinamoriCardTag HinamoriTags =>
+    HinamoriCardTag.None;
+
+    public bool HasHinamoriTag(HinamoriCardTag tag) =>
+        (HinamoriTags & tag) == tag;
+
+    public int EffectiveChantCost
+    {
+        get
+        {
+            if (ChantCost < 0) return -1;
+            int discount = 0;
+            if (HasHinamoriTag(HinamoriCardTag.Hado) && IsMutable && CombatState != null)
+                discount = Owner.Creature.GetPower<HadoChantDiscountPower>()?.Amount ?? 0;
+            return Math.Max(0, ChantCost - discount);
+        }
+    }
+
+    protected override bool IsPlayable =>
+        base.IsPlayable && (!IsMutable || CombatState == null ||
+        EffectiveChantCost < 0 ||
+        (Owner.Creature.GetPower<ChantPower>()?.Amount ?? 0) >= EffectiveChantCost);
+
+    /// <summary>
+    /// 詠唱コストを消費する。
+    /// リプレイ時は詠唱を消費しない。
+    /// </summary>
+    protected async Task<bool> SpendChant(
+        PlayerChoiceContext context,
+        CardPlay cardPlay)
+    {
+        // 詠唱コストがないカード
+        if (ChantCost < 0)
+            return true;
+
+        // リプレイ時は詠唱を再消費しない
+        if (!cardPlay.IsFirstInSeries)
+            return true;
+
+        int cost = EffectiveChantCost;
+        var chant = Owner.Creature.GetPower<ChantPower>();
+
+        if ((chant?.Amount ?? 0) < cost)
+            return false;
+
+        if (cost > 0 && chant != null)
+        {
+            await PowerCmd.ModifyAmount(
+                context,
+                chant,
+                -cost,
+                Owner.Creature,
+                this);
+        }
+
+        // 破道の詠唱コスト軽減を消費
+        if (HasHinamoriTag(HinamoriCardTag.Hado))
+        {
+            var discount =
+                Owner.Creature.GetPower<HadoChantDiscountPower>();
+
+            if (discount != null)
+                await PowerCmd.Remove(discount);
+        }
+
+        return true;
+    }
+
+    public override string CustomPortraitPath =>
+        $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigCardImagePath();
+    public override string PortraitPath =>
+        $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+    public override string BetaPortraitPath =>
+        $"beta/{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+}

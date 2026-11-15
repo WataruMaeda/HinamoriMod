@@ -1,0 +1,16 @@
+{
+  "HINAMORIMOD-HINAMORI_MOD.title": "Momo Hinamori",
+  "HINAMORIMOD-HINAMORI_MOD.titleObject": "Momo Hinamori",
+  "HINAMORIMOD-HINAMORI_MOD.description": "Lieutenant of Squad Five of the Gotei 13. A Soul Reaper who specializes in Kido.",
+  "HINAMORIMOD-HINAMORI_MOD.pronounObject": "her",
+  "HINAMORIMOD-HINAMORI_MOD.possessiveAdjective": "her",
+  "HINAMORIMOD-HINAMORI_MOD.pronounPossessive": "hers",
+  "HINAMORIMOD-HINAMORI_MOD.pronounSubject": "she",
+  "HINAMORIMOD-HINAMORI_MOD.goldMonologue": "This might come in handy someday.",
+  "HINAMORIMOD-HINAMORI_MOD.eventDeathPrevention": "I can't fall here... Not yet!",
+  "HINAMORIMOD-HINAMORI_MOD.aromaPrinciple": "I'll fight to protect my friends.",
+  "HINAMORIMOD-HINAMORI_MOD.cardsModifierTitle": "Momo Hinamori's Cards",
+  "HINAMORIMOD-HINAMORI_MOD.cardsModifierDescription": "Use cards exclusive to Momo Hinamori.",
+  "HINAMORIMOD-HINAMORI_MOD.banter.alive.endTurnPing": "I need to think carefully about my next move...",
+  "HINAMORIMOD-HINAMORI_MOD.banter.dead.endTurnPing": "Everyone... I'm sorry..."
+}
