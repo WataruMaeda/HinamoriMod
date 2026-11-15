@@ -41,6 +41,8 @@
   "HINAMORIMOD-CRAWLING_ROPE_MOMO.title": "這縄",
   "HINAMORIMOD-CRAWLING_ROPE_MOMO.description": "{Block:diff()}[gold]ブロック[/gold]を得る。\n詠唱を{Chant:diff()}獲得する。",
   "HINAMORIMOD-REPULSE_MOMO.title": "斥",
-  "HINAMORIMOD-REPULSE_MOMO.description": "{Block:diff()}[gold]ブロック[/gold]を得る。\nこのターン、[gold]ブロック[/gold]で防いだ攻撃ダメージを攻撃者に反射する。"
+  "HINAMORIMOD-REPULSE_MOMO.description": "{Block:diff()}[gold]ブロック[/gold]を得る。\nこのターン、[gold]ブロック[/gold]で防いだ攻撃ダメージを攻撃者に反射する。",
+  "HINAMORIMOD-DISINTEGRATING_CIRCLE_MOMO.title": "崩輪",
+  "HINAMORIMOD-DISINTEGRATING_CIRCLE_MOMO.description": "敵1体に[gold]脱力[/gold]{WeakPower:diff()}を付与する。\n次に使用する[gold]スキル[/gold]のEN・詠唱コストを0にする。"
 
 }

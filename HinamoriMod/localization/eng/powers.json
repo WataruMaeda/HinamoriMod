@@ -7,5 +7,8 @@
   "HINAMORIMOD-BURN_POWER.smartDescription": "At the end of {OnPlayer:your|the enemy's} turn, lose [blue]{Amount}[/blue] HP and reduce [gold]Burn[/gold] by [blue]1[/blue]. Deal [blue]25%[/blue] less Attack damage.",
   "HINAMORIMOD-HADO_CHANT_DISCOUNT_POWER.title": "Hado Chant Discount",
   "HINAMORIMOD-HADO_CHANT_DISCOUNT_POWER.description": "Reduce the Chant cost of the next Hado card you play by {Amount}.",
-  "HINAMORIMOD-HADO_CHANT_DISCOUNT_POWER.smartDescription": "Reduce the Chant cost of the next Hado card you play by {Amount}."
+  "HINAMORIMOD-HADO_CHANT_DISCOUNT_POWER.smartDescription": "Reduce the Chant cost of the next Hado card you play by {Amount}.",
+  "HINAMORIMOD-FREE_CHANT_SKILL_POWER.title": "Hōrin",
+  "HINAMORIMOD-FREE_CHANT_SKILL_POWER.description": "The next [gold]Skill[/gold] you play costs 0 Energy and 0 Chant.",
+  "HINAMORIMOD-FREE_CHANT_SKILL_POWER.smartDescription": "The next [gold]Skill[/gold] you play costs 0 Energy and 0 Chant."
 }

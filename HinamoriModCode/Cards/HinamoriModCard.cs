@@ -30,9 +30,20 @@ public abstract class HinamoriModCard(int cost, CardType type, CardRarity rarity
         get
         {
             if (ChantCost < 0) return -1;
+
+            // 次のスキルの詠唱コストを無料にする
+            if (Type == CardType.Skill &&
+                IsMutable &&
+                CombatState != null &&
+                Owner.Creature.GetPower<FreeChantSkillPower>() != null)
+            {
+                return 0;
+            }
+
             int discount = 0;
             if (HasHinamoriTag(HinamoriCardTag.Hado) && IsMutable && CombatState != null)
                 discount = Owner.Creature.GetPower<HadoChantDiscountPower>()?.Amount ?? 0;
+
             return Math.Max(0, ChantCost - discount);
         }
     }
@@ -56,6 +67,13 @@ public abstract class HinamoriModCard(int cost, CardType type, CardRarity rarity
 
         // リプレイ時は詠唱を再消費しない
         if (!cardPlay.IsFirstInSeries)
+            return true;
+
+        // 詠唱コストを無料にする
+        if (Type == CardType.Skill &&
+            IsMutable &&
+            CombatState != null &&
+            Owner.Creature.GetPower<FreeChantSkillPower>() != null)
             return true;
 
         int cost = EffectiveChantCost;

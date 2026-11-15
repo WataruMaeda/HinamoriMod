@@ -38,6 +38,9 @@
   "HINAMORIMOD-CRAWLING_ROPE_MOMO.title": "Hainawa",
   "HINAMORIMOD-CRAWLING_ROPE_MOMO.description": "Gain {Block:diff()} Block.\nGain {Chant:diff()} Chant.",
   "HINAMORIMOD-REPULSE_MOMO.title": "Seki",
-  "HINAMORIMOD-REPULSE_MOMO.description": "Gain {Block:diff()} Block.\nThis turn, reflect attack damage blocked back to the attacker."
+  "HINAMORIMOD-REPULSE_MOMO.description": "Gain {Block:diff()} Block.\nThis turn, reflect attack damage blocked back to the attacker.",
+  "HINAMORIMOD-DISINTEGRATING_CIRCLE_MOMO.title": "Hōrin",
+  "HINAMORIMOD-DISINTEGRATING_CIRCLE_MOMO.description": "Apply {Weak:diff()} [gold]Weak[/gold] to an enemy.\nThe next [gold]Skill[/gold] you play costs 0 Energy and 0 Chant."
+
 
 }
