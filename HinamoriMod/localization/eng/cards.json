@@ -30,5 +30,7 @@
   "HINAMORIMOD-TWIN_LOTUS_BLUE_FIREFALL_MOMO.title": "Twin Lotus Blue Firefall",
   "HINAMORIMOD-TWIN_LOTUS_BLUE_FIREFALL_MOMO.description": "Deal {Damage:diff()} damage to ALL enemies {Hits} times.\nApply {Burn:diff()} [gold]Burn[/gold] to ALL enemies.",
   "HINAMORIMOD-BLACK_COFFIN_MOMO.title": "Black Coffin",
-  "HINAMORIMOD-BLACK_COFFIN_MOMO.description": "Consume all [gold]Chant[/gold].\nDeal {Damage:diff()} damage for each Chant consumed."
+  "HINAMORIMOD-BLACK_COFFIN_MOMO.description": "Consume all [gold]Chant[/gold].\nDeal {Damage:diff()} damage for each Chant consumed.",
+  "HINAMORIMOD-FLYING_DRAGON_STRIKING_HEAVEN_SHAKING_THUNDER_CANNON_MOMO.title": "Flying Dragon-Striking Heaven-Shaking Thunder Cannon",
+  "HINAMORIMOD-FLYING_DRAGON_STRIKING_HEAVEN_SHAKING_THUNDER_CANNON_MOMO.description": "Deal 5 plus {Damage:diff()} damage for each [gold]Hado[/gold] played this combat."
 }

@@ -35,7 +35,7 @@
 | 雷吼炮 | Uncommon | ThunderRoarCannonMomo | 2EN＋詠3 | 40ダメージ | 45ダメージ | 殴打 | 実装済 |
 | 双蓮蒼火墜 | Rare | TwinLotusBlueFirefallMomo | 2EN＋詠3 | 敵全体に10ダメージ×2、火傷5 | 全体12ダメージ×2、火傷5 | 旋風刃、アストラルパルス | 実装済 |
 | 黒棺 | Rare | BlackCoffinMomo | 0EN＋全詠唱（詠唱1以上で使用可能） | 現在の全詠唱を消費し、消費量×6ダメージ（詠唱コスト軽減対象外） | 消費量×8ダメージ（詠唱コスト軽減対象外） | スターダスト | 実装済 |
-| 飛竜撃賊震天雷炮 | Uncommon | FlyingDragonStrikingHeavenShakingThunderCannonMomo | 1EN＋詠2 | 5＋戦闘中の破道使用回数×2ダメージ（自身も計上） | 5＋戦闘中の破道使用回数×3ダメージ（自身も計上） | フィニッシャー、パーフェクトストライク、メメント・モリ | 未確認 |
+| 飛竜撃賊震天雷炮 | Uncommon | FlyingDragonStrikingHeavenShakingThunderCannonMomo | 1EN＋詠2 | 5＋戦闘中の破道使用回数×2ダメージ（自身は計上しない） | 5＋戦闘中の破道使用回数×3ダメージ（自身は計上しない） | フィニッシャー、パーフェクトストライク、メメント・モリ | 実装済 |
 
 </details>
 
