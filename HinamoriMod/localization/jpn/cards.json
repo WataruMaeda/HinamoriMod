@@ -34,5 +34,13 @@
   "HINAMORIMOD-BLACK_COFFIN_MOMO.title": "黒棺",
   "HINAMORIMOD-BLACK_COFFIN_MOMO.description": "所持している[gold]詠唱[/gold]をすべて消費する。\n消費した詠唱1につき{Damage:diff()}ダメージを与える。",
   "HINAMORIMOD-FLYING_DRAGON_STRIKING_HEAVEN_SHAKING_THUNDER_CANNON_MOMO.title": "飛竜撃賊震天雷炮",
-  "HINAMORIMOD-FLYING_DRAGON_STRIKING_HEAVEN_SHAKING_THUNDER_CANNON_MOMO.description": "基本ダメージ5。\nこの戦闘でプレイした[gold]破道[/gold]1枚につき、{Damage:diff()}ダメージを追加で与える。\n（破道の使用回数は{CalculatedHits:diff()}回）"
+  "HINAMORIMOD-FLYING_DRAGON_STRIKING_HEAVEN_SHAKING_THUNDER_CANNON_MOMO.description": "基本ダメージ5。\nこの戦闘でプレイした[gold]破道[/gold]1枚につき、{Damage:diff()}ダメージを追加で与える。\n（破道の使用回数は{CalculatedHits:diff()}回）",
+
+  "HINAMORIMOD-RESTRAIN_MOMO.title": "塞",
+  "HINAMORIMOD-RESTRAIN_MOMO.description": "{Block:diff()}[gold]ブロック[/gold]を得る。\n敵1体に[gold]脱力[/gold]を{WeakPower:diff()}付与する。",
+  "HINAMORIMOD-CRAWLING_ROPE_MOMO.title": "這縄",
+  "HINAMORIMOD-CRAWLING_ROPE_MOMO.description": "{Block:diff()}[gold]ブロック[/gold]を得る。\n詠唱を{Chant:diff()}獲得する。",
+  "HINAMORIMOD-REPULSE_MOMO.title": "斥",
+  "HINAMORIMOD-REPULSE_MOMO.description": "{Block:diff()}[gold]ブロック[/gold]を得る。\nこのターン、[gold]ブロック[/gold]で防いだ攻撃ダメージを攻撃者に反射する。"
+
 }

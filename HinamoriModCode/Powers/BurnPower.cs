@@ -16,7 +16,7 @@ namespace HinamoriMod.HinamoriModCode.Powers;
 /// <summary>
 /// 火傷
 /// ・攻撃ダメージを25%減少
-/// ・ターン終了時に火傷の数値と同じダメージ
+/// ・ターン開始時に火傷の数値と同じダメージ
 /// ・ダメージ後に火傷を1減少
 /// </summary>
 public class BurnPower : HinamoriModPower

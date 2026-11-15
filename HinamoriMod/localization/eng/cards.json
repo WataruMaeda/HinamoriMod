@@ -32,5 +32,12 @@
   "HINAMORIMOD-BLACK_COFFIN_MOMO.title": "Black Coffin",
   "HINAMORIMOD-BLACK_COFFIN_MOMO.description": "Consume all [gold]Chant[/gold].\nDeal {Damage:diff()} damage for each Chant consumed.",
   "HINAMORIMOD-FLYING_DRAGON_STRIKING_HEAVEN_SHAKING_THUNDER_CANNON_MOMO.title": "Flying Dragon-Striking Heaven-Shaking Thunder Cannon",
-  "HINAMORIMOD-FLYING_DRAGON_STRIKING_HEAVEN_SHAKING_THUNDER_CANNON_MOMO.description": "Deal 5 plus {Damage:diff()} damage for each [gold]Hado[/gold] played this combat."
+  "HINAMORIMOD-FLYING_DRAGON_STRIKING_HEAVEN_SHAKING_THUNDER_CANNON_MOMO.description": "Deal 5 plus {Damage:diff()} damage for each [gold]Hado[/gold] played this combat.",
+  "HINAMORIMOD-RESTRAIN_MOMO.title": "Sai",
+  "HINAMORIMOD-RESTRAIN_MOMO.description": "Gain {Block:diff()} Block.\nApply {Weak:diff()} Weak to an enemy.",
+  "HINAMORIMOD-CRAWLING_ROPE_MOMO.title": "Hainawa",
+  "HINAMORIMOD-CRAWLING_ROPE_MOMO.description": "Gain {Block:diff()} Block.\nGain {Chant:diff()} Chant.",
+  "HINAMORIMOD-REPULSE_MOMO.title": "Seki",
+  "HINAMORIMOD-REPULSE_MOMO.description": "Gain {Block:diff()} Block.\nThis turn, reflect attack damage blocked back to the attacker."
+
 }
