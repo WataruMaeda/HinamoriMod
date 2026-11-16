@@ -49,5 +49,10 @@
   "HINAMORIMOD-BENDING_LIGHT_MOMO.title": "曲光",
   "HINAMORIMOD-BENDING_LIGHT_MOMO.description": "{Block:diff()}[gold]ブロック[/gold]を得る。",
   "HINAMORIMOD-ROUND_LOCK_FAN_MOMO.title": "円閘扇",
-  "HINAMORIMOD-ROUND_LOCK_FAN_MOMO.description": "{Block:diff()}[gold]ブロック[/gold]を得る。"
+  "HINAMORIMOD-ROUND_LOCK_FAN_MOMO.description": "{Block:diff()}[gold]ブロック[/gold]を得る。",
+  "HINAMORIMOD-HANGING_STAR_MOMO.title": "吊星",
+  "HINAMORIMOD-HANGING_STAR_MOMO.description": "{Block:diff()}[gold]ブロック[/gold]を得る。\n使用後、手札に戻る。",
+  "HINAMORIMOD-TRACING_SPARROW_MOMO.title": "掴趾追雀",
+  "HINAMORIMOD-TRACING_SPARROW_MOMO.description": "雛森桃のカード3枚から1枚を選び、手札に加える。\nそのカードはこのターン、EN・詠唱コストが0になり、[gold]リプレイ[/gold]{Replay:diff()}を得る。"
+
 }

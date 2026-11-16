@@ -46,5 +46,11 @@
   "HINAMORIMOD-BENDING_LIGHT_MOMO.title": "Kyokko",
   "HINAMORIMOD-BENDING_LIGHT_MOMO.description": "Gain {Block:diff()} Block.",
   "HINAMORIMOD-ROUND_LOCK_FAN_MOMO.title": "Enkosen",
-  "HINAMORIMOD-ROUND_LOCK_FAN_MOMO.description": "Gain {Block:diff()} Block."
+  "HINAMORIMOD-ROUND_LOCK_FAN_MOMO.description": "Gain {Block:diff()} Block.",
+  "HINAMORIMOD-HANGING_STAR_MOMO.title": "Tsuriboshi",
+  "HINAMORIMOD-HANGING_STAR_MOMO.description": "Gain {Block:diff()} Block.\n[gold]Retain[/gold].\nReturn this card to your hand after playing it.",
+  "HINAMORIMOD-TRACING_SPARROW_MOMO.title": "Tracing Sparrow",
+  "HINAMORIMOD-TRACING_SPARROW_MOMO.description": "Choose 1 of 3 random Hinamori cards and add it to your hand.\nIt costs 0 Energy and 0 Chant this turn and gains {Replay:diff()} [gold]Replay[/gold]."
+
+
 }
