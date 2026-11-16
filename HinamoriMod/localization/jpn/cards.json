@@ -43,6 +43,11 @@
   "HINAMORIMOD-REPULSE_MOMO.title": "斥",
   "HINAMORIMOD-REPULSE_MOMO.description": "{Block:diff()}[gold]ブロック[/gold]を得る。\nこのターン、[gold]ブロック[/gold]で防いだ攻撃ダメージを攻撃者に反射する。",
   "HINAMORIMOD-DISINTEGRATING_CIRCLE_MOMO.title": "崩輪",
-  "HINAMORIMOD-DISINTEGRATING_CIRCLE_MOMO.description": "敵1体に[gold]脱力[/gold]{WeakPower:diff()}を付与する。\n次に使用する[gold]スキル[/gold]のEN・詠唱コストを0にする。"
-
+  "HINAMORIMOD-DISINTEGRATING_CIRCLE_MOMO.description": "敵1体に[gold]脱力[/gold]{WeakPower:diff()}を付与する。\n次に使用する[gold]スキル[/gold]のEN・詠唱コストを0にする。",
+  "HINAMORIMOD-RED_SMOKE_ESCAPE_MOMO.title": "赤煙遁",
+  "HINAMORIMOD-RED_SMOKE_ESCAPE_MOMO.description": "{Block:diff()}[gold]ブロック[/gold]を得る。\nカードを{Cards:diff()}枚引く。",
+  "HINAMORIMOD-BENDING_LIGHT_MOMO.title": "曲光",
+  "HINAMORIMOD-BENDING_LIGHT_MOMO.description": "{Block:diff()}[gold]ブロック[/gold]を得る。",
+  "HINAMORIMOD-ROUND_LOCK_FAN_MOMO.title": "円閘扇",
+  "HINAMORIMOD-ROUND_LOCK_FAN_MOMO.description": "{Block:diff()}[gold]ブロック[/gold]を得る。"
 }

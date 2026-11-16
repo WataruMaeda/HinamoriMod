@@ -40,7 +40,11 @@
   "HINAMORIMOD-REPULSE_MOMO.title": "Seki",
   "HINAMORIMOD-REPULSE_MOMO.description": "Gain {Block:diff()} Block.\nThis turn, reflect attack damage blocked back to the attacker.",
   "HINAMORIMOD-DISINTEGRATING_CIRCLE_MOMO.title": "Hōrin",
-  "HINAMORIMOD-DISINTEGRATING_CIRCLE_MOMO.description": "Apply {Weak:diff()} [gold]Weak[/gold] to an enemy.\nThe next [gold]Skill[/gold] you play costs 0 Energy and 0 Chant."
-
-
+  "HINAMORIMOD-DISINTEGRATING_CIRCLE_MOMO.description": "Apply {Weak:diff()} [gold]Weak[/gold] to an enemy.\nThe next [gold]Skill[/gold] you play costs 0 Energy and 0 Chant.",
+  "HINAMORIMOD-RED_SMOKE_ESCAPE_MOMO.title": "Sekienton",
+  "HINAMORIMOD-RED_SMOKE_ESCAPE_MOMO.description": "Gain {Block:diff()} Block.\nDraw {Cards:diff()} card.",
+  "HINAMORIMOD-BENDING_LIGHT_MOMO.title": "Kyokko",
+  "HINAMORIMOD-BENDING_LIGHT_MOMO.description": "Gain {Block:diff()} Block.",
+  "HINAMORIMOD-ROUND_LOCK_FAN_MOMO.title": "Enkosen",
+  "HINAMORIMOD-ROUND_LOCK_FAN_MOMO.description": "Gain {Block:diff()} Block."
 }

@@ -48,11 +48,11 @@
 | 這縄 | Common | CrawlingRopeMomo | 1EN | 8ブロック、詠唱＋1 | 10ブロック、詠唱＋2 | 受け流し | 実装済 |
 | 斥 | Common | RepulseMomo | 1EN | 5ブロック、このターンにブロックで防いだ攻撃ダメージを攻撃者へ反射（既存ブロックも対象、重複なし） | 8ブロック、同じ反射効果 | リフレクト | 実装済 |
 | 崩輪 | Uncommon | DisintegratingCircleMomo | 1EN＋詠1 | 敵1体に脱力1、次のスキルのEN・詠唱コストを0（使用までターンをまたいで持続） | 敵1体に脱力2、次のスキルのEN・詠唱コストを0（使用までターンをまたいで持続） | パウンス | 実装済 |
-| 赤煙遁 | Common | RedSmokeEscapeMomo | 1EN | 8ブロック、1ドロー | 11ブロック、1ドロー | 受け流し | 未確認 |
-| 曲光 | 未設定 | BentLightMomo | 0EN＋詠1 | 8ブロック | 11ブロック | ディフレクト | 未確認 |
+| 赤煙遁 | Common | RedSmokeEscapeMomo | 1EN | 8ブロック、1ドロー | 11ブロック、1ドロー | 受け流し | 実装済 |
+| 曲光 | Common | BentLightMomo | 0EN＋詠1 | 8ブロック | 11ブロック | ディフレクト | 未確認 |
 | 嘴突三閃 | 未設定 | TripleBeakStrikeMomo | 2EN | 敵1体に脱力2、2ドロー | 脱力3、2ドロー | 足払い、アクロバット | 未確認 |
 | 吊星 | 未設定 | SuspendedStarMomo | 0EN＋詠2 | 12ブロック、保留 | 未設定 | 未設定 | 未確認 |
-| 円閘扇 | 未設定 | RoundLockFanMomo | 2EN＋詠1 | 18ブロック | 未設定 | 未設定 | 未確認 |
+| 円閘扇 | Uncommon | RoundLockFanMomo | 2EN＋詠1 | 18ブロック | 24ブロック | 未設定 | 実装済 |
 | 掴趾追雀 | 未設定 | TracingSparrowMomo | 0EN＋詠1 | 全キャラのカードからランダム3枚を提示、1枚を全コストなしで即時使用 | 未設定 | 未設定 | 未確認 |
 | 六杖光牢 | 未設定 | SixRodLightPrisonMomo | 1EN＋詠2 | 敵全体に脱力2、次のパワーのENコスト0 | 未設定 | 未設定 | 未確認 |
 | 百歩欄干 | 未設定 | HundredStepRailingsMomo | 1EN＋詠2 | 敵全体に弱体2、次のアタックのENコスト0 | 未設定 | 未設定 | 未確認 |
