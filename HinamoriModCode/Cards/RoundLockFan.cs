@@ -36,7 +36,7 @@ public class RoundLockFanMomo : HinamoriModCard
         : base(
             2,
             CardType.Skill,
-            CardRarity.Uncommon,
+            CardRarity.Common,
             TargetType.Self)
     {
     }

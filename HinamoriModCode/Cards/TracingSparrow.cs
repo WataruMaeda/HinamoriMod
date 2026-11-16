@@ -35,7 +35,7 @@ public class TracingSparrowMomo : HinamoriModCard
         : base(
             1,
             CardType.Skill,
-            CardRarity.Uncommon,
+            CardRarity.Rare,
             TargetType.Self)
     {
     }
