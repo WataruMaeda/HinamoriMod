@@ -54,11 +54,11 @@
 | 吊星 | Uncommon | HangingStarMomo | 0EN＋詠2 | 10ブロック、保留、使うと手札に戻る | 13ブロック | 未設定 | 実装済 |
 | 円閘扇 | Common | RoundLockFanMomo | 2EN＋詠1 | 18ブロック | 24ブロック | 未設定 | 実装済 |
 | 掴趾追雀 | Rare | TracingSparrowMomo | 2EN＋詠2 | 雛森専用カードからランダム3枚を提示し、1枚を手札に加える。生成カードはこのターンEN・詠唱コスト0になり、リプレイ2を永続付与（戦闘中） | リプレイ3を永続付与（戦闘中） | 発見、クエーサー、隠された宝石 | 実装済 |
-| 六杖光牢 | Uncommon | SixRodLightPrisonMomo | 1EN＋詠2 | 敵全体に脱力2、次のパワーのENコスト0 | 未設定 | 未設定 | 未確認 |
-| 百歩欄干 | Uncommon | HundredStepRailingsMomo | 1EN＋詠2 | 敵全体に弱体2、次のアタックのENコスト0 | 未設定 | 未設定 | 未確認 |
-| 鎖条鎖縛 | Rare | ChainBindingMomo | 1EN＋詠3 | 廃棄札1枚を手札に戻し、そのカードの廃棄を戦闘中除去、保留を付与 | 未設定 | 未設定 | 未確認 |
-| 倒山晶 | Common | InvertedMountainCrystalMomo | 0EN＋詠4 | 25ブロック | 30ブロック | 未設定 | 未確認 |
-| 断空 | Uncommon | SplittingVoidMomo | 1EN＋詠3 | 次の攻撃1ヒットを無効化。発動まで持続 | 未設定 | 未設定 | 未確認 |
+| 六杖光牢 | Uncommon | SixRodLightPrisonMomo | 2EN＋詠1 | 敵1体に脱力2、12ブロック、次のパワーのEN・詠唱コスト0 | 16ブロック | 未設定 | 未確認 |
+| 百歩欄干 | Uncommon | HundredStepRailingsMomo | 1EN＋詠2 | 敵1体に弱体2・活力2、次のアタックのEN・詠唱コスト0、次のアタックのENコスト0 | 弱体3・活力3 | 未設定 | 未確認 |
+| 鎖条鎖縛 | Rare | ChainBindingMomo | 1EN＋詠3 | 廃棄札1枚を手札に戻し、そのカードの廃棄を戦闘中除去、保留を付与 | EN0 | 未設定 | 未確認 |
+| 倒山晶 | Common | InvertedMountainCrystalMomo | 0EN＋詠4 | 25ブロック。現在のブロックを次のターンまで維持する | 30ブロック | 未設定 | 未確認 |
+| 断空 | Uncommon | SplittingVoidMomo | 1EN＋詠3 | 次の攻撃1ヒットを無効化。発動まで持続 | 詠2 | 未設定 | 未確認 |
 
 </details>
 
