@@ -68,13 +68,13 @@
 | カード名 | レアリティ | クラス名 | コスト | 通常効果 | 強化後 | 参考カード | 実装状況 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 精神統一 | - | MeditationMomo | 1EN | 詠唱＋2 | 詠唱＋3 | 畏敬 | 実装済 |
-| 詠唱準備 | Common | ChantPreparationMomo | 0EN | 詠唱＋2、廃棄 | 詠唱＋2、廃棄なし | 未設定 | 未確認 |
-| 霊圧集中 | Common | SpiritualPressureFocusMomo | 1EN | 詠唱＋1、1ドロー | 詠唱＋1、2ドロー | 未設定 | 未確認 |
-| 鬼道の修練 | Common | KidoTrainingMomo | 1EN | 詠唱＋1、次ターン詠唱＋3 | 詠唱＋1・次ターン詠唱＋4 | 未設定 | 未確認 |
+| 詠唱準備 | Common | ChantPreparationMomo | 0EN | 詠唱＋2、廃棄 | 詠唱＋2、廃棄なし | 墓場の爆発 | 実装済 |
+| 霊圧集中 | Common | SpiritualPressureFocusMomo | 1EN | 詠唱＋1、1ドロー | 詠唱＋1、2ドロー | 未設定 | 実装済 |
+| 鬼道の修練 | Common | KidoTrainingMomo | 1EN | 詠唱＋1、次ターン詠唱＋3 | 詠唱＋1・次ターン詠唱＋4 | 隠し財産 | 実装済 |
 | 完全詠唱 | Rare | FullIncantationMomo | 2EN | 詠唱＋2、次の破道・縛道のダメージ／ブロック×1.5 | 倍率×2 | 未設定 | 未確認 |
 | 霊圧解放 | Uncommon | SpiritualPressureReleaseMomo | 2EN | 手札のほかのカード1枚をランダム廃棄、詠唱＋5 | 廃棄カードを選択可能 | 未設定 | 未確認 |
 | 詠唱破棄 | Uncommon | IncantationAbandonmentMomo | 2EN | 次の破道・縛道の詠唱コスト0 | 1EN | 未設定 | 未確認 |
-| 鬼道の才 | Common | KidoProdigyMomo | 1EN | 詠唱＋1、手札1枚を戦闘中アップグレード | 手札すべてをアップグレード | 未設定 | 未確認 |
+| 鬼道の才 | Common | KidoProdigyMomo | 1EN | 詠唱＋1、手札1枚を戦闘中アップグレード | 手札すべてをアップグレード | 武装 | 未確認 |
 
 </details>
 

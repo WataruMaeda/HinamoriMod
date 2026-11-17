@@ -53,6 +53,15 @@
   "HINAMORIMOD-HANGING_STAR_MOMO.title": "吊星",
   "HINAMORIMOD-HANGING_STAR_MOMO.description": "{Block:diff()}[gold]ブロック[/gold]を得る。\n使用後、手札に戻る。",
   "HINAMORIMOD-TRACING_SPARROW_MOMO.title": "掴趾追雀",
-  "HINAMORIMOD-TRACING_SPARROW_MOMO.description": "雛森桃のカード3枚から1枚を選び、手札に加える。\nそのカードはこのターン、EN・詠唱コストが0になり、[gold]リプレイ[/gold]{Replay:diff()}を得る。"
+  "HINAMORIMOD-TRACING_SPARROW_MOMO.description": "雛森桃のカード3枚から1枚を選び、手札に加える。\nそのカードはこのターン、EN・詠唱コストが0になり、[gold]リプレイ[/gold]{Replay:diff()}を得る。",
+
+  "HINAMORIMOD-CHANT_PREPARATION_MOMO.title": "詠唱準備",
+  "HINAMORIMOD-CHANT_PREPARATION_MOMO.description": "詠唱を{Chant:diff()}獲得する。",
+  "HINAMORIMOD-SPIRITUAL_PRESSURE_FOCUS_MOMO.title": "霊圧集中",
+  "HINAMORIMOD-SPIRITUAL_PRESSURE_FOCUS_MOMO.description": "詠唱を{Chant:diff()}獲得する。\nカードを{Cards:diff()}枚引く。",
+  "HINAMORIMOD-KIDO_TRAINING_MOMO.title": "鬼道の修練",
+  "HINAMORIMOD-KIDO_TRAINING_MOMO.description": "詠唱を{Chant:diff()}獲得する。\n次のターン、詠唱を{NextTurnChantPower:diff()}獲得する。"
+
+
 
 }

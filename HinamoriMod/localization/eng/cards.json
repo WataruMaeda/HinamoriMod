@@ -50,7 +50,14 @@
   "HINAMORIMOD-HANGING_STAR_MOMO.title": "Tsuriboshi",
   "HINAMORIMOD-HANGING_STAR_MOMO.description": "Gain {Block:diff()} Block.\n[gold]Retain[/gold].\nReturn this card to your hand after playing it.",
   "HINAMORIMOD-TRACING_SPARROW_MOMO.title": "Tracing Sparrow",
-  "HINAMORIMOD-TRACING_SPARROW_MOMO.description": "Choose 1 of 3 random Hinamori cards and add it to your hand.\nIt costs 0 Energy and 0 Chant this turn and gains {Replay:diff()} [gold]Replay[/gold]."
+  "HINAMORIMOD-TRACING_SPARROW_MOMO.description": "Choose 1 of 3 random Hinamori cards and add it to your hand.\nIt costs 0 Energy and 0 Chant this turn and gains {Replay:diff()} [gold]Replay[/gold].",
+  "HINAMORIMOD-CHANT_PREPARATION_MOMO.title": "Chant Preparation",
+  "HINAMORIMOD-CHANT_PREPARATION_MOMO.description": "Gain {Chant:diff()} Chant.",
+  "HINAMORIMOD-SPIRITUAL_PRESSURE_FOCUS_MOMO.title": "Spiritual Pressure Focus",
+  "HINAMORIMOD-SPIRITUAL_PRESSURE_FOCUS_MOMO.description": "Gain {Chant:diff()} Chant.\nDraw {Cards:diff()} card(s).",
+  "HINAMORIMOD-KIDO_TRAINING_MOMO.title": "Kido Training",
+  "HINAMORIMOD-KIDO_TRAINING_MOMO.description": "Gain {Chant:diff()} Chant.\nNext turn, gain {NextTurnChantPower:diff()} Chant."
+
 
 
 }
