@@ -68,13 +68,13 @@
 | カード名 | レアリティ | クラス名 | コスト | 通常効果 | 強化後 | 参考カード | 実装状況 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 精神統一 | - | MeditationMomo | 1EN | 詠唱＋2 | 詠唱＋3 | 畏敬 | 実装済 |
-| 詠唱準備 | 未設定 | ChantPreparationMomo | 0EN | 詠唱＋2、廃棄 | 詠唱＋2、廃棄なし | 未設定 | 未確認 |
-| 霊圧集中 | 未設定 | SpiritualPressureFocusMomo | 1EN | 詠唱＋1、1ドロー（仮） | 未設定 | 未設定 | 未確認 |
-| 鬼道の修練 | 未設定 | KidoTrainingMomo | 1EN | 詠唱＋1、次ターン詠唱＋3 | 未設定 | 未設定 | 未確認 |
-| 完全詠唱 | 未設定 | FullIncantationMomo | 2EN | 詠唱＋2、次の破道・縛道のダメージ／ブロック×1.5 | 倍率×2 | 未設定 | 未確認 |
-| 霊圧解放 | 未設定 | SpiritualPressureReleaseMomo | 2EN | 手札のほかのカード1枚をランダム廃棄、詠唱＋5 | 廃棄カードを選択可能 | 未設定 | 未確認 |
-| 詠唱破棄 | 未設定 | IncantationAbandonmentMomo | 2EN | 次の破道・縛道の詠唱コスト0 | 未設定 | 未設定 | 未確認 |
-| 鬼道の才 | 未設定 | KidoProdigyMomo | 1EN | 詠唱＋1、手札1枚を戦闘中アップグレード | 手札すべてをアップグレード | 未設定 | 未確認 |
+| 詠唱準備 | Common | ChantPreparationMomo | 0EN | 詠唱＋2、廃棄 | 詠唱＋2、廃棄なし | 未設定 | 未確認 |
+| 霊圧集中 | Common | SpiritualPressureFocusMomo | 1EN | 詠唱＋1、1ドロー | 詠唱＋1、2ドロー | 未設定 | 未確認 |
+| 鬼道の修練 | Common | KidoTrainingMomo | 1EN | 詠唱＋1、次ターン詠唱＋3 | 詠唱＋1・次ターン詠唱＋4 | 未設定 | 未確認 |
+| 完全詠唱 | Rare | FullIncantationMomo | 2EN | 詠唱＋2、次の破道・縛道のダメージ／ブロック×1.5 | 倍率×2 | 未設定 | 未確認 |
+| 霊圧解放 | Uncommon | SpiritualPressureReleaseMomo | 2EN | 手札のほかのカード1枚をランダム廃棄、詠唱＋5 | 廃棄カードを選択可能 | 未設定 | 未確認 |
+| 詠唱破棄 | Uncommon | IncantationAbandonmentMomo | 2EN | 次の破道・縛道の詠唱コスト0 | 1EN | 未設定 | 未確認 |
+| 鬼道の才 | Common | KidoProdigyMomo | 1EN | 詠唱＋1、手札1枚を戦闘中アップグレード | 手札すべてをアップグレード | 未設定 | 未確認 |
 
 </details>
 
@@ -84,10 +84,10 @@
 | カード名 | レアリティ | クラス名 | コスト | 通常効果 | 強化後 | 参考カード | 実装状況 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 弾け、飛梅！ | - | TobiumeMomo | 2EN | 保留。5＋火種ダメージ、火傷1＋⌊火種÷10⌋ | 1EN、同効果 | ソヴリン・ブレード | 実装 |
-| 飛梅との対話 | 未設定 | CommunionWithTobiumeMomo | 2EN | 詠唱＋2、火種＋10、次ターンEN＋1 | 次ターンEN＋2 | 未設定 | 未確認 |
-| 炎の気配 | 未設定 | FlamesPresenceMomo | 0EN | 火種＋5、廃棄 | 未設定 | 未設定 | 未確認 |
-| 飛梅の一閃 | 未設定 | TobiumesSlashMomo | 1EN | 7ダメージ、火種＋7 | 未設定 | 未設定 | 未確認 |
-| 炎の守り | 未設定 | FlameGuardMomo | 1EN | 8ブロック、火種＋5 | 未設定 | 未設定 | 未確認 |
+| 飛梅との対話 | Uncommon | CommunionWithTobiumeMomo | 2EN | 詠唱＋2、火種＋10、次ターンEN＋1 | 次ターンEN＋2 | 未設定 | 未確認 |
+| 炎の気配 | Common | FlamesPresenceMomo | 0EN | 火種＋5、廃棄 | 廃棄なし | 未設定 | 未確認 |
+| 飛梅の一閃 | Common | TobiumesSlashMomo | 1EN | 7ダメージ、火種＋7 | 火種＋10 | 未設定 | 未確認 |
+| 炎の守り | Common | FlameGuardMomo | 1EN | 8ブロック、火種＋5 | 火種＋8 | 未設定 | 未確認 |
 
 </details>
 
@@ -96,7 +96,7 @@
 
 | カード名 | レアリティ | クラス名 | コスト | 通常効果 | 強化後 | 参考カード | 実装状況 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 藍染隊長の仇 | 未設定 | AvengeCaptainAizenMomo | 1EN | 5ダメージ、対象に火傷があれば火傷5を付与 | 10ダメージ、条件と火傷5は同じ | 未設定 | 未確認 |
+| 藍染隊長の仇 | Uncommon | AvengeCaptainAizenMomo | 3EN | 1ダメージ、1ブロック、火傷+1、使うたびに1ダメージ、1ブロック、火傷+1（階層をまたぐ） | 2EN | 未設定 | 未確認 |
 | 飛梅の炎撃 | 未設定 | TobiumesFlameStrikeMomo | 2EN | 12ダメージ、火傷3 | 未設定 | 未設定 | 未確認 |
 | 炎の拘束 | 未設定 | FlameBindMomo | 1EN | 火傷2、5ブロック | 未設定 | 未設定 | 未確認 |
 | 燃焼促進 | 未設定 | AcceleratedCombustionMomo | 2EN | 対象の火傷スタックを2倍、廃棄 | 未設定 | 未設定 | 未確認 |
