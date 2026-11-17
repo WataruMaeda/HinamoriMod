@@ -1,4 +1,5 @@
 ﻿
+using Godot;
 using HinamoriMod.HinamoriModCode.Powers;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -53,6 +54,14 @@ public class KidoFundamentals : HinamoriModRelic
         List<Reward> rewards,
         AbstractRoom? room)
     {
+        GD.Print(
+            $"[KidoFundamentals] TryModifyRewards: " +
+            $"RoomType={room?.RoomType}, " +
+            $"OwnerMatch={player == Owner}, " +
+            $"RewardCount={rewards.Count}"
+            );
+
+
         if (player != Owner)
         {
             return false;

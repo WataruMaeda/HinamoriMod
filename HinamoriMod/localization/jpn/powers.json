@@ -13,5 +13,9 @@
   "HINAMORIMOD-FREE_CHANT_SKILL_POWER.smartDescription": "次に使用する[gold]スキル[/gold]のEN・詠唱コストが0になる。",
   "HINAMORIMOD-NEXT_TURN_CHANT_POWER.title": "鬼道の修練",
   "HINAMORIMOD-NEXT_TURN_CHANT_POWER.description": "次のターン開始時、詠唱を{Amount}獲得する。",
-  "HINAMORIMOD-NEXT_TURN_CHANT_POWER.smartDescription": "次のターン開始時、詠唱を{Amount}獲得する。"
+  "HINAMORIMOD-NEXT_TURN_CHANT_POWER.smartDescription": "次のターン開始時、詠唱を{Amount}獲得する。",
+  "HINAMORIMOD-KIDO_MASTER_POWER.title": "鬼道の達人",
+  "HINAMORIMOD-KIDO_MASTER_POWER.description": "毎ターン開始時、詠唱を{Amount}獲得する。",
+  "HINAMORIMOD-KIDO_MASTER_POWER.smartDescription": "毎ターン開始時、詠唱を{Amount}獲得する。"
+
 }

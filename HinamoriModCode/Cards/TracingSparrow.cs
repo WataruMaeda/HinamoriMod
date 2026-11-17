@@ -13,7 +13,7 @@ namespace HinamoriMod.HinamoriModCode.Cards;
 
 /// <summary>
 /// 縛道「掴趾追雀」
-/// 1EN＋詠唱2
+/// 2EN＋詠唱2
 /// 雛森専用カード3枚から1枚を選び、手札に加える。
 /// 生成カードはこのターンのみEN・詠唱コスト0。
 /// 生成カードに戦闘中持続するリプレイ2を付与する。
@@ -33,7 +33,7 @@ public class TracingSparrowMomo : HinamoriModCard
 
     public TracingSparrowMomo()
         : base(
-            1,
+            2,
             CardType.Skill,
             CardRarity.Rare,
             TargetType.Self)

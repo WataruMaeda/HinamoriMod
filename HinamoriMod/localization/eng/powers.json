@@ -13,5 +13,9 @@
   "HINAMORIMOD-FREE_CHANT_SKILL_POWER.smartDescription": "The next [gold]Skill[/gold] you play costs 0 Energy and 0 Chant.",
   "HINAMORIMOD-NEXT_TURN_CHANT_POWER.title": "Kido Training",
   "HINAMORIMOD-NEXT_TURN_CHANT_POWER.description": "At the start of your next turn, gain {Amount} Chant.",
-  "HINAMORIMOD-NEXT_TURN_CHANT_POWER.smartDescription": "At the start of your next turn, gain {Amount} Chant."
+  "HINAMORIMOD-NEXT_TURN_CHANT_POWER.smartDescription": "At the start of your next turn, gain {Amount} Chant.",
+  "HINAMORIMOD-KIDO_MASTER_POWER.title": "Kido Master",
+  "HINAMORIMOD-KIDO_MASTER_POWER.description": "At the start of each turn, gain {Amount} Chant.",
+  "HINAMORIMOD-KIDO_MASTER_POWER.smartDescription": "At the start of each turn, gain {Amount} Chant."
+
 }

@@ -56,8 +56,11 @@
   "HINAMORIMOD-SPIRITUAL_PRESSURE_FOCUS_MOMO.title": "Spiritual Pressure Focus",
   "HINAMORIMOD-SPIRITUAL_PRESSURE_FOCUS_MOMO.description": "Gain {Chant:diff()} Chant.\nDraw {Cards:diff()} card(s).",
   "HINAMORIMOD-KIDO_TRAINING_MOMO.title": "Kido Training",
-  "HINAMORIMOD-KIDO_TRAINING_MOMO.description": "Gain {Chant:diff()} Chant.\nNext turn, gain {NextTurnChantPower:diff()} Chant."
-
+  "HINAMORIMOD-KIDO_TRAINING_MOMO.description": "Gain {Chant:diff()} Chant.\nNext turn, gain {NextTurnChantPower:diff()} Chant.",
+  "HINAMORIMOD-KIDO_MASTER_MOMO.title": "Kido Master",
+  "HINAMORIMOD-KIDO_MASTER_MOMO.description": "At the start of each turn, gain {KidoMasterPower:diff()} Chant.",
+  "HINAMORIMOD-AVENGE_CAPTAIN_AIZEN_MOMO.title": "Avenge Captain Aizen",
+  "HINAMORIMOD-AVENGE_CAPTAIN_AIZEN_MOMO.description": "Deal {Damage:diff()} damage to an enemy.\nGain {Block:diff()} Block.\nApply {Burn:diff()} Burn.\nEach time this card is played, increase its damage, Block, and Burn by 1 for the rest of the run."
 
 
 }

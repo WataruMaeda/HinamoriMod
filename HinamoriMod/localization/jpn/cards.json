@@ -60,8 +60,11 @@
   "HINAMORIMOD-SPIRITUAL_PRESSURE_FOCUS_MOMO.title": "霊圧集中",
   "HINAMORIMOD-SPIRITUAL_PRESSURE_FOCUS_MOMO.description": "詠唱を{Chant:diff()}獲得する。\nカードを{Cards:diff()}枚引く。",
   "HINAMORIMOD-KIDO_TRAINING_MOMO.title": "鬼道の修練",
-  "HINAMORIMOD-KIDO_TRAINING_MOMO.description": "詠唱を{Chant:diff()}獲得する。\n次のターン、詠唱を{NextTurnChantPower:diff()}獲得する。"
+  "HINAMORIMOD-KIDO_TRAINING_MOMO.description": "詠唱を{Chant:diff()}獲得する。\n次のターン、詠唱を{NextTurnChantPower:diff()}獲得する。",
 
+  "HINAMORIMOD-AVENGE_CAPTAIN_AIZEN_MOMO.title": "藍染隊長の仇",
+  "HINAMORIMOD-AVENGE_CAPTAIN_AIZEN_MOMO.description": "敵1体に{Damage:diff()}ダメージを与える。\n{Block:diff()}ブロックを得る。\n[gold]火傷[/gold]を{Burn:diff()}付与する。\n使用するたび、このカードのダメージ、ブロック、火傷が1増加する。（戦闘をまたいで継続）",
 
-
+  "HINAMORIMOD-KIDO_MASTER_MOMO.title": "鬼道の達人",
+  "HINAMORIMOD-KIDO_MASTER_MOMO.description": "毎ターン開始時、詠唱を{KidoMasterPower:diff()}獲得する。"
 }

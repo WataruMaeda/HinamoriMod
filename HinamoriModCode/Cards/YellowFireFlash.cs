@@ -10,6 +10,9 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace HinamoriMod.HinamoriModCode.Cards;
 
+/// <summary>
+/// ‰©‰Î‘M
+/// </summary>
 public class YellowFireFlashMomo : HinamoriModCard
 {
     public override int ChantCost => 1;
