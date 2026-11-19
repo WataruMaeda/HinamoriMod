@@ -252,3 +252,19 @@ await CardPileCmd.Draw(
 | `DynamicVars["Burn"].UpgradeValueBy(2m)` | 強化後の火傷を3から5へ変更する |
 
 **参照元**：`AbolishingFlames.cs`・`CrawlingFlame.cs` の攻撃後火傷付与処理。コモン、2EN、詠唱コストなし。ソース実装済み、ビルド・ゲーム内動作未確認。
+
+
+## 炎の拘束（`FlameBind.cs`）
+
+| メソッド・変数 | 用途 |
+|---|---|
+| `GainsBlock => true` | ブロック獲得カードとしてゲーム本体に通知 |
+| `new BlockVar(5m, ValueProp.Move)` | 5ブロックの表示・補正・獲得量 |
+| `new IntVar("Burn", 2)` | 火傷2の表示と付与数 |
+| `ArgumentNullException.ThrowIfNull(cardPlay.Target)` | 火傷付与対象の敵1体を確認 |
+| `cardPlay.Target.IsAlive` | 対象が生存している場合のみ火傷付与 |
+| `PowerCmd.Apply<BurnPower>(...)` | 敵1体へ火傷を付与 |
+| `CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay)` | 自分へブロックを獲得 |
+| `DynamicVars["Burn"].UpgradeValueBy(1m)` | 強化後に火傷2→3、ブロック5維持 |
+
+**参考実装**：`Restrain.cs`（敵を対象に取る防御スキル）、`CrawlingFlame.cs`（火傷付与）、`FlameGuard.cs`（ブロック獲得）。ソース実装済み、ビルド・ゲーム内動作未確認。
