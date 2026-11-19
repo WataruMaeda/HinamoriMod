@@ -364,3 +364,15 @@ await CardPileCmd.Draw(
 | `EnergyCost.UpgradeBy(-1)` | 強化後のカードコストを0ENにする |
 
 **参照元**：`FreeKidoChantPower.cs`（カード使用フック）、`WhiteLightning.cs`（ドロー）、`FlameAbsorption.cs`（コスト強化）。ビルド・ゲーム内動作未確認。
+
+
+## 霊圧制御（`SpiritualPressureControl.cs`）
+
+| メソッド・変数 | 効果・用途 |
+| --- | --- |
+| `PowerCmd.Apply<SpiritualPressureControlPower>` | 使用時にブロック獲得量3のパワーを付与 |
+| `AfterCardPlayed` | 自分の鬼道タグ付きカード使用を検知。リプレイもカウントする想定 |
+| `CreatureCmd.GainBlock(Owner, Amount, cardPlay)` | 鬼道1回につきパワーのスタック量のブロックを得る。**オーバーロードのビルド確認が必要** |
+| `AddKeyword(CardKeyword.Innate)` | 強化後に天賦を付与 |
+
+**参照元**：`FreeKidoChantPower.cs`、`FlameGuard.cs`、`KidoDiscipline.cs`。ビルド・ゲーム内動作未確認。
