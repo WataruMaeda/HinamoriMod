@@ -115,5 +115,7 @@
   "HINAMORIMOD-KIDO_DISCIPLINE_MOMO.title": "鬼道の鍛錬",
   "HINAMORIMOD-KIDO_DISCIPLINE_MOMO.description": "すべての[gold]鬼道[/gold]の詠唱コストを1減らす（最低0）。",
   "HINAMORIMOD-ESSENCE_OF_KIDO_MOMO.title": "鬼道の真髄",
-  "HINAMORIMOD-ESSENCE_OF_KIDO_MOMO.description": "[gold]鬼道[/gold]を3回使用するたび、カードを1枚引く。"
+  "HINAMORIMOD-ESSENCE_OF_KIDO_MOMO.description": "[gold]鬼道[/gold]を3回使用するたび、カードを1枚引く。",
+  "HINAMORIMOD-SPIRITUAL_PRESSURE_CONTROL_MOMO.title": "霊圧制御",
+  "HINAMORIMOD-SPIRITUAL_PRESSURE_CONTROL_MOMO.description": "[gold]鬼道[/gold]を使用するたび、3[gold]ブロック[/gold]を得る。"
 }
