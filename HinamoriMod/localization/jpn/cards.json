@@ -95,5 +95,7 @@
   "HINAMORIMOD-ADVERSITY_FLAME_MOMO.description": "手札の状態異常をすべて[gold]廃棄[/gold]する。\n廃棄したカード1枚につき[gold]火種[/gold]を{Ember:diff()}獲得する。",
   "HINAMORIMOD-ADVERSITY_FLAME_MOMO.upgradeDescription": "手札の状態異常と呪いをすべて[gold]廃棄[/gold]する。\n廃棄したカード1枚につき[gold]火種[/gold]を{Ember:diff()}獲得する。",
   "HINAMORIMOD-TOBIUMES_SLASH_MOMO.title": "飛梅の一閃",
-  "HINAMORIMOD-TOBIUMES_SLASH_MOMO.description": "敵1体に{Damage:diff()}ダメージを与える。\\n[gold]火種[/gold]を{Forge:diff()}獲得する。"
+  "HINAMORIMOD-TOBIUMES_SLASH_MOMO.description": "敵1体に{Damage:diff()}ダメージを与える。\n[gold]火種[/gold]を{Forge:diff()}獲得する。",
+  "HINAMORIMOD-FLAME_GUARD_MOMO.title": "炎の守り",
+  "HINAMORIMOD-FLAME_GUARD_MOMO.description": "{Block:diff()}[gold]ブロック[/gold]を得る。\\n[gold]火種[/gold]を{Forge:diff()}獲得する。"
 }
