@@ -1,3 +1,13 @@
+## 2026-11-20：炎の爆発の仕様確定・実装
+
+- **確定仕様**：アンコモンのアタック、1EN、敵1体に6ダメージを与え、対象の火傷ダメージを即座に1回発動し火傷を1減らす。強化後は即時発動2回、各回火傷を1減らす。
+- **追加**：`HinamoriModCode/Cards/FlameExplosion.cs`。`DamageCmd.Attack` に続き、各回の `BurnPower.Amount` を参照して `CreatureCmd.Damage`（防御不能・非攻撃）で火傷ダメージを即時発動し、対象生存中なら `PowerCmd.Decrement` で火傷を1減らす。火傷0または対象死亡で残りの発動を停止。日本語コメントを記載。
+- **更新**：`HinamoriMod/localization/jpn/cards.json`、`HinamoriMod/localization/eng/cards.json` に名称と即時発動回数が強化で変化する説明文を追加。
+- **更新**：`docs/CardList.md` の実装状況を `実装済・未確認` に変更。
+- **更新**：`docs/ImplementedMethodReference.md` に使用メソッドと参照元を追記。
+- **理由**：既存の火傷のターン開始時ダメージと同じ計算方式で、カード使用時の即時発動を再現するため。
+- **検証**：GitHubコミットと日本語・英語JSONの解析を確認。**ビルド・ゲーム内動作は未確認**。
+
 ## 2026-11-20：飛梅の火花の仕様変更・実装
 
 - **確定仕様**：B案。コモンのスキル、1EN、敵全体に火傷2を付与。強化後は敵全体に火傷3を付与。旧案の単体火傷3（強化後5）は不採用。
