@@ -1,3 +1,13 @@
+## 2026-11-20：燃焼促進の仕様確定・実装
+
+- **確定仕様**：アンコモンのスキル、2EN、敵1体の火傷スタックを2倍にして廃棄。強化後は1EN、火傷2倍・廃棄は維持。
+- **追加**：`HinamoriModCode/Cards/AcceleratedCombustion.cs`。対象の既存 `BurnPower` を `GetPower<BurnPower>()` で取得し、現在のスタックと同じ量を `PowerCmd.Apply<BurnPower>` で追加して2倍にする。火傷がない場合は何もしない。`CanonicalKeywords` に廃棄を指定し、`EnergyCost.UpgradeBy(-1)` で強化コストを下げる。処理意図を日本語コメントで記載。
+- **更新**：`HinamoriMod/localization/jpn/cards.json`、`HinamoriMod/localization/eng/cards.json` にカード名と説明文を追加。
+- **更新**：`docs/CardList.md` のレアリティ・強化仕様・実装状況を `実装済・未確認` に更新。
+- **更新**：`docs/ImplementedMethodReference.md` に既存メソッドの参照元と用途を追記。
+- **理由**：合意した火傷倍化コンボカードを既存の火傷パワー処理と整合させて実装するため。
+- **検証**：GitHubへの反映と日本語・英語JSONの解析を確認。**ビルド・ゲーム内動作は未確認**。
+
 ## 2026-11-20：炎の拘束の仕様確定・実装
 
 - **確定仕様**：コモンのスキル、1EN、敵1体へ火傷2、自分に5ブロック。強化後は火傷3、5ブロック。
