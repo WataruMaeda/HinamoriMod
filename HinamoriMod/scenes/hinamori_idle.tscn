@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=10 format=3]
 
 [ext_resource type="Texture2D" path="res://HinamoriMod/images/character/idle_00.png" id="1"]
 [ext_resource type="Texture2D" path="res://HinamoriMod/images/character/idle_01.png" id="2"]
