@@ -1,3 +1,12 @@
+## 2026-11-20：飛梅の一閃を新規実装
+
+- **追加**：`HinamoriModCode/Cards/TobiumesSlash.cs`。コモン、1EN、敵1体に7ダメージを与え、攻撃後に火種を7獲得。強化後はダメージ7のまま火種10獲得。日本語コメントで通常・強化後の効果、対象確認、攻撃と火種の処理順序を説明。
+- **更新**：`HinamoriMod/localization/jpn/cards.json`、`HinamoriMod/localization/eng/cards.json` にカード名と効果説明を追加。
+- **更新**：`docs/CardList.md` の「飛梅の一閃」を `実装済・未確認` に変更。
+- **更新**：`docs/ImplementedMethodReference.md` に使用した `DamageCmd.Attack`、`EmberCmd.GainEmber`、`DynamicVars.Forge.UpgradeValueBy` 等と参照元を追記。
+- **変更理由**：設計表の未実装カードを、既存の単体攻撃と火種獲得コマンドを再利用して追加するため。
+- **確認状況**：GitHubへのコード・ローカライズ・ドキュメントの反映を確認。**ビルド・ゲーム内動作未確認**。
+
 ## 2026-11-20：全88ソース調査・メソッド索引・日本語コメント追加
 
 - **追加資料**：`docs/SourceAuditPart1.md` ～ `SourceAuditPart6.md`、`docs/AllSourceMethodIndex.md`。
