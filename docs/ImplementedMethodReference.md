@@ -326,3 +326,16 @@ await CardPileCmd.Draw(
 | `DynamicVars["Triggers"].UpgradeValueBy(1m)` | 強化時の発動回数1→2 |
 
 **参照元**：`BurnPower.cs`（火傷ダメージ・スタック減少）、`TobiumesFlameDance.cs`（攻撃・火傷参照）、`BlackCoffin.cs`（`GetPower<T>()`）。攻撃後に火傷ダメージを処理し、対象死亡または火傷0で停止。ビルド・ゲーム内動作未確認。
+
+
+## 炎の吸収（`FlameAbsorption.cs`）
+
+| メソッド・変数 | 用途 |
+|---|---|
+| `cardPlay.Target.GetPower<BurnPower>()`・`burn.Amount` | 対象の火傷数を取得 |
+| `consumedBurn / 3` | 火傷3につき1HP、端数切り捨て |
+| `PowerCmd.Remove(burn)` | 対象の火傷を全スタック消費 |
+| `CreatureCmd.Heal(Owner.Creature, healAmount)` | 火傷消費量に応じてHP回復。**既存MOD内に使用例が見つからず、シグネチャ・ビルド未検証** |
+| `EnergyCost.UpgradeBy(-1)` | 強化で2EN→1EN |
+
+**参照元**：`AcceleratedCombustion.cs`（火傷参照）、`HinamoriModCard.cs`・`DebugResourceHelper.cs`（`PowerCmd.Remove`）、`AcceleratedCombustion.cs`（コスト強化）。`CreatureCmd.Heal`の実際のAPI適合はゲーム側アセンブリで要確認。ビルド・ゲーム内動作未確認。
