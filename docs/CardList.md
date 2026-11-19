@@ -102,7 +102,7 @@
 | 飛梅の炎撃 | Common | TobiumesFlameStrikeMomo | 2EN | 12ダメージ、火傷3 | 火傷5（ダメージ12のまま） | 未設定 | 実装済・未確認 |
 | 炎の拘束 | Common | FlameBindMomo | 1EN | 火傷2、5ブロック | 火傷3、5ブロック | 未設定 | 実装済・未確認 |
 | 燃焼促進 | Uncommon | AcceleratedCombustionMomo | 2EN | 対象の火傷スタックを2倍、廃棄 | 1EN、火傷2倍・廃棄は維持 | 未設定 | 実装済・未確認 |
-| 飛梅の炎舞 | 未設定 | TobiumesFlameDanceMomo | 1EN | 6ダメージ、対象の火傷数と同量の火種を獲得 | 未設定 | 未設定 | 未確認 |
+| 飛梅の炎舞 | Uncommon | TobiumesFlameDanceMomo | 1EN | 6ダメージ、対象の火傷数と同量の火種を獲得 | 9ダメージ、火種獲得量は同じ | 未設定 | 実装済・未確認 |
 | 飛梅の火花 | 未設定 | TobiumesSparkMomo | 1EN | 火傷3を付与 | 火傷5（仮） | 未設定 | 未確認 |
 | 炎の爆発 | Uncommon | FlameExplosionMomo | 1EN | 敵1体に6ダメージ。対象の火傷ダメージを即座に1回発動し、火傷を1減らす | 火傷ダメージを即座に2回発動。発動ごとに火傷を1減らす | 未設定 | 未実装 |
 | 炎の吸収 | Uncommon | FlameAbsorptionMomo | 3EN | 敵1体の火傷をすべて消費し、消費した火傷3につきHPを1回復。廃棄なし | 2EN、同じ効果 | 未設定 | 未実装 |
