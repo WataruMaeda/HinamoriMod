@@ -28,5 +28,8 @@
   "HINAMORIMOD-FREE_CHANT_POWER_CARD_POWER.smartDescription": "The next [gold]Power[/gold] you play costs 0 Energy and 0 Chant.",
   "HINAMORIMOD-FULL_INCANTATION_POWER.title": "Full Incantation",
   "HINAMORIMOD-FULL_INCANTATION_POWER.description": "Increases the damage and Block of your next Hado or Bakudo card.",
-  "HINAMORIMOD-FULL_INCANTATION_POWER.smartDescription": "Increases the damage and Block of your next Hado or Bakudo card."
+  "HINAMORIMOD-FULL_INCANTATION_POWER.smartDescription": "Increases the damage and Block of your next Hado or Bakudo card.",
+  "HINAMORIMOD-KIDO_DISCIPLINE_POWER.title": "Kido Discipline",
+  "HINAMORIMOD-KIDO_DISCIPLINE_POWER.description": "Reduce the Chant cost of all Kido cards by {Amount} (minimum 0).",
+  "HINAMORIMOD-KIDO_DISCIPLINE_POWER.smartDescription": "Reduce the Chant cost of all Kido cards by {Amount} (minimum 0)."
 }
