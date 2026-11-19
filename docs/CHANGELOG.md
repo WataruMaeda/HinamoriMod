@@ -1,3 +1,13 @@
+## 2026-11-20：鬼道の鍛錬を実装（動作未確認）
+
+- **確定仕様**：アンコモン・2EN。すべての鬼道の詠唱コスト−1（最低0）。強化後は天賦。
+- **追加**：`Cards/KidoDiscipline.cs`、`Powers/KidoDisciplinePower.cs`。
+- **変更**：`Cards/HinamoriModCard.cs` の `EffectiveChantCost` に鬼道の鍛錬の軽減を追加。破道専用の軽減と加算し、最低0を維持。
+- **ローカライズ**：日本語・英語の `cards.json` と `powers.json` に名称・効果を追加。
+- **ドキュメント**：`docs/CardList.md` と `docs/ImplementedMethodReference.md` を更新。
+- **理由**：既存の詠唱消費処理と矛盾せず、複数回使用した際にも軽減を累積させるため。
+- **検証**：GitHubへの反映のみ確認。**ビルド・ゲーム内動作は未確認**。特に `AddKeyword(CardKeyword.Innate)` のAPI互換性とカード表示の更新を要確認。
+
 ## 2026-11-20：炎の吸収をレア・B案で確定し実装
 
 - **確定仕様**：レアのスキル、通常2EN・強化後1EN。敵1体の火傷をすべて消費し、火傷3につきHPを1回復（端数切り捨て）。最大HPを超えて回復しない。廃棄なし。C案の火傷2につき1HP回復は不採用。
