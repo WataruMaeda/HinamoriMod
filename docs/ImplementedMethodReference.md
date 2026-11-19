@@ -311,3 +311,18 @@ await CardPileCmd.Draw(
 | `DynamicVars["Burn"].UpgradeValueBy(1m)` | 強化後の火傷2→3 |
 
 **参照元**：`TwinLotusBlueFirefall.cs`（敵全体への火傷付与と列挙）、`FlameBind.cs`（火傷変数と強化処理）。既存の`BurnPower`のターン開始ダメージ・ターン終了時減少は変更しない。ビルド・ゲーム内動作未確認。
+
+
+## 炎の爆発（`FlameExplosion.cs`）
+
+| メソッド・変数 | 用途 |
+|---|---|
+| `DamageVar(6m, ValueProp.Move)` | 通常攻撃のダメージ6を表示・処理で共有 |
+| `IntVar("Triggers", 1)` | 火傷ダメージ即時発動回数。強化後2回 |
+| `DamageCmd.Attack(...).FromCard(...).Targeting(...).Execute(...)` | 敵1体への通常攻撃 |
+| `GetPower<BurnPower>()`・`burn.Amount` | 各回の現在の火傷スタックを参照 |
+| `CreatureCmd.Damage(..., ValueProp.Unblockable \| ValueProp.Unpowered, null, null)` | `BurnPower`のターン開始時と同じ防御不能・非攻撃ダメージを即時発動 |
+| `PowerCmd.Decrement(burn)` | 生存中の対象に即時発動1回につき火傷を1減らす |
+| `DynamicVars["Triggers"].UpgradeValueBy(1m)` | 強化時の発動回数1→2 |
+
+**参照元**：`BurnPower.cs`（火傷ダメージ・スタック減少）、`TobiumesFlameDance.cs`（攻撃・火傷参照）、`BlackCoffin.cs`（`GetPower<T>()`）。攻撃後に火傷ダメージを処理し、対象死亡または火傷0で停止。ビルド・ゲーム内動作未確認。
