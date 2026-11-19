@@ -108,5 +108,7 @@
   "HINAMORIMOD-TOBIUMES_FLAME_DANCE_MOMO.title": "Tobiume's Flame Dance",
   "HINAMORIMOD-TOBIUMES_FLAME_DANCE_MOMO.description": "Deal {Damage:diff()} damage.\nGain [gold]Ember[/gold] equal to the target's [gold]Burn[/gold].",
   "HINAMORIMOD-TOBIUMES_SPARK_MOMO.title": "Tobiume's Spark",
-  "HINAMORIMOD-TOBIUMES_SPARK_MOMO.description": "Apply {Burn:diff()} [gold]Burn[/gold] to ALL enemies."
+  "HINAMORIMOD-TOBIUMES_SPARK_MOMO.description": "Apply {Burn:diff()} [gold]Burn[/gold] to ALL enemies.",
+  "HINAMORIMOD-FLAME_EXPLOSION_MOMO.title": "Flame Explosion",
+  "HINAMORIMOD-FLAME_EXPLOSION_MOMO.description": "Deal {Damage:diff()} damage.\nTrigger the target's [gold]Burn[/gold] damage {Triggers:diff()} time(s), reducing [gold]Burn[/gold] by 1 after each trigger."
 }
