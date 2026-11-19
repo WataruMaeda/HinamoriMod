@@ -96,5 +96,7 @@
   "HINAMORIMOD-ADVERSITY_FLAME_MOMO.description": "Exhaust all Status cards in your hand.\nGain {Ember:diff()} [gold]Ember[/gold] for each card exhausted.",
   "HINAMORIMOD-ADVERSITY_FLAME_MOMO.upgradeDescription": "Exhaust all Status and Curse cards in your hand.\nGain {Ember:diff()} [gold]Ember[/gold] for each card exhausted.",
   "HINAMORIMOD-TOBIUMES_SLASH_MOMO.title": "Tobiume's Slash",
-  "HINAMORIMOD-TOBIUMES_SLASH_MOMO.description": "Deal {Damage:diff()} damage to an enemy.\\nGain {Forge:diff()} [gold]Ember[/gold]."
+  "HINAMORIMOD-TOBIUMES_SLASH_MOMO.description": "Deal {Damage:diff()} damage to an enemy.\nGain {Forge:diff()} [gold]Ember[/gold].",
+  "HINAMORIMOD-FLAME_GUARD_MOMO.title": "Flame Guard",
+  "HINAMORIMOD-FLAME_GUARD_MOMO.description": "Gain {Block:diff()} Block.\\nGain {Forge:diff()} [gold]Ember[/gold]."
 }
