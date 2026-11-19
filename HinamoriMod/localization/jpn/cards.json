@@ -93,6 +93,8 @@
 
   "HINAMORIMOD-AVENGE_CAPTAIN_AIZEN_MOMO.title": "藍染隊長の仇",
   "HINAMORIMOD-AVENGE_CAPTAIN_AIZEN_MOMO.description": "{Damage:diff()}ダメージを与える。\n{Block:diff()}ブロックを得る。\n[gold]火傷[/gold]を{Burn:diff()}付与する。\n使用するたび、ダメージ・ブロックが{Growth:diff()}増加。\n火傷が1増加する。",
+  "HINAMORIMOD-SPIRITUAL_ENERGY_CONVERSION_MOMO.title": "霊力変換",
+  "HINAMORIMOD-SPIRITUAL_ENERGY_CONVERSION_MOMO.description": "詠唱を3消費する。\nエナジーを{Energy:diff()}獲得する。",
 
   "HINAMORIMOD-KIDO_MASTER_MOMO.title": "鬼道の達人",
   "HINAMORIMOD-KIDO_MASTER_MOMO.description": "毎ターン開始時、詠唱を{KidoMasterPower:diff()}獲得する。"

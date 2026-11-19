@@ -89,7 +89,7 @@
   "HINAMORIMOD-FLAMES_PRESENCE_MOMO.description": "Gain 5 Ember.\n[gold]Exhaust[/gold].",
   "HINAMORIMOD-FLAMES_PRESENCE_MOMO.upgradeDescription": "Gain 5 Ember.",
   "HINAMORIMOD-SIX_ROD_LIGHT_PRISON_MOMO.title": "Rikujokoro",
-  "HINAMORIMOD-SIX_ROD_LIGHT_PRISON_MOMO.description": "Apply {Weak:diff()} [gold]Weak[/gold] to an enemy.\nGain {Block:diff()} Block.\nThe next [gold]Power[/gold] you play costs 0 Energy and 0 Chant."
-
-
+  "HINAMORIMOD-SIX_ROD_LIGHT_PRISON_MOMO.description": "Apply {Weak:diff()} [gold]Weak[/gold] to an enemy.\nGain {Block:diff()} Block.\nThe next [gold]Power[/gold] you play costs 0 Energy and 0 Chant.",
+  "HINAMORIMOD-SPIRITUAL_ENERGY_CONVERSION_MOMO.title": "Spiritual Energy Conversion",
+  "HINAMORIMOD-SPIRITUAL_ENERGY_CONVERSION_MOMO.description": "Spend 3 Chant.\nGain {Energy:diff()} Energy."
 }
