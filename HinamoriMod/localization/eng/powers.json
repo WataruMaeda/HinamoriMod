@@ -34,5 +34,8 @@
   "HINAMORIMOD-KIDO_DISCIPLINE_POWER.smartDescription": "Reduce the Chant cost of all Kido cards by {Amount} (minimum 0).",
   "HINAMORIMOD-ESSENCE_OF_KIDO_POWER.title": "Essence of Kido",
   "HINAMORIMOD-ESSENCE_OF_KIDO_POWER.description": "Whenever you play 3 Kido cards, draw {Amount} cards.",
-  "HINAMORIMOD-ESSENCE_OF_KIDO_POWER.smartDescription": "Whenever you play 3 Kido cards, draw {Amount} cards."
+  "HINAMORIMOD-ESSENCE_OF_KIDO_POWER.smartDescription": "Whenever you play 3 Kido cards, draw {Amount} cards.",
+  "HINAMORIMOD-SPIRITUAL_PRESSURE_CONTROL_POWER.title": "Spiritual Pressure Control",
+  "HINAMORIMOD-SPIRITUAL_PRESSURE_CONTROL_POWER.description": "Whenever you play a Kido card, gain {Amount} Block.",
+  "HINAMORIMOD-SPIRITUAL_PRESSURE_CONTROL_POWER.smartDescription": "Whenever you play a Kido card, gain {Amount} Block."
 }
