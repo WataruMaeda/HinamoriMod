@@ -1,4 +1,3 @@
-﻿
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -14,8 +13,9 @@ namespace HinamoriMod.HinamoriModCode.Cards;
 
 /// <summary>
 /// 藍染隊長の仇
-/// 使用するたびにダメージ・ブロック・火傷が1ずつ成長する。
-/// 成長値は戦闘・階層をまたいで保持する。
+/// 3EN：敵1体にダメージ、自分にブロック、対象に火傷を与える。
+/// 使用するたびに、ダメージとブロックは (1 + 強化回数)、火傷は1ずつ成長する。
+/// 成長値はデッキ側にも反映し、戦闘・階層をまたいで保持する。
 /// </summary>
 public class AvengeCaptainAizenMomo : HinamoriModCard
 {
@@ -23,8 +23,10 @@ public class AvengeCaptainAizenMomo : HinamoriModCard
 
     private int _currentAmount = BaseAmount;
     private int _increasedAmount;
+    private int _currentBlockAmount = BaseAmount;
+    private int _currentBurnAmount = BaseAmount;
 
-    // 現在の効果量
+    // ダメージの現在値（旧セーブとの互換性のため既存名を維持）
     [SavedProperty]
     public int CurrentAmount
     {
@@ -37,7 +39,7 @@ public class AvengeCaptainAizenMomo : HinamoriModCard
         }
     }
 
-    // 使用による累積成長値
+    // 使用によるダメージの累積成長値（既存名を維持）
     [SavedProperty]
     public int IncreasedAmount
     {
@@ -49,19 +51,44 @@ public class AvengeCaptainAizenMomo : HinamoriModCard
         }
     }
 
+    // ブロックの現在値
+    [SavedProperty]
+    public int CurrentBlockAmount
+    {
+        get => _currentBlockAmount;
+        set
+        {
+            AssertMutable();
+            _currentBlockAmount = value;
+            UpdateVars();
+        }
+    }
+
+    // 火傷の現在値
+    [SavedProperty]
+    public int CurrentBurnAmount
+    {
+        get => _currentBurnAmount;
+        set
+        {
+            AssertMutable();
+            _currentBurnAmount = value;
+            UpdateVars();
+        }
+    }
+
+    public override int MaxUpgradeLevel => 999999999;
+
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(CurrentAmount, ValueProp.Move),
-        new BlockVar(CurrentAmount, ValueProp.Move),
-        new IntVar("Burn", CurrentAmount)
+        new BlockVar(CurrentBlockAmount, ValueProp.Move),
+        new IntVar("Burn", CurrentBurnAmount),
+        new IntVar("Growth", CurrentUpgradeLevel + 1)
     ];
 
     public AvengeCaptainAizenMomo()
-        : base(
-            3,
-            CardType.Attack,
-            CardRarity.Uncommon,
-            TargetType.AnyEnemy)
+        : base(3, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
     }
 
@@ -71,14 +98,13 @@ public class AvengeCaptainAizenMomo : HinamoriModCard
     {
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
 
-        // 1. 敵1体にダメージ
+        // 使用前の数値で効果を発動
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this, cardPlay)
             .Targeting(cardPlay.Target)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
 
-        // 2. 自分にブロック
         await CreatureCmd.GainBlock(
             Owner.Creature,
             DynamicVars.Block.BaseValue,
@@ -86,7 +112,6 @@ public class AvengeCaptainAizenMomo : HinamoriModCard
             cardPlay,
             false);
 
-        // 3. 対象に火傷
         if (cardPlay.Target.IsAlive)
         {
             await PowerCmd.Apply<BurnPower>(
@@ -97,30 +122,39 @@ public class AvengeCaptainAizenMomo : HinamoriModCard
                 this);
         }
 
-        // 4. 使用後に成長
+        // 強化回数に応じて、使用後に成長する
         IncreaseFromPlay();
 
-        // 5. デッキ側のカードにも反映
-        (DeckVersion as AvengeCaptainAizenMomo)?
-            .IncreaseFromPlay();
+        // 戦闘中のコピーだけでなく、デッキの原本にも成長を記録
+        if (DeckVersion is AvengeCaptainAizenMomo deckCard &&
+            !ReferenceEquals(deckCard, this))
+        {
+            deckCard.IncreaseFromPlay();
+        }
     }
 
     protected override void OnUpgrade()
     {
-        // 3EN → 2EN
-        EnergyCost.UpgradeBy(-1);
+        DynamicVars["Growth"].BaseValue =
+            CurrentUpgradeLevel + 1;
     }
 
     private void IncreaseFromPlay()
     {
-        IncreasedAmount += 1;
-        CurrentAmount = BaseAmount + IncreasedAmount;
+        int growth = DynamicVars["Growth"].IntValue;
+
+        // ダメージ・ブロックの成長量
+        // 火傷の成長量は常に1
+        IncreasedAmount += growth;
+        CurrentAmount += growth;
+        CurrentBlockAmount += growth;
+        CurrentBurnAmount += 1;
     }
 
     private void UpdateVars()
     {
         DynamicVars.Damage.BaseValue = CurrentAmount;
-        DynamicVars.Block.BaseValue = CurrentAmount;
-        DynamicVars["Burn"].BaseValue = CurrentAmount;
+        DynamicVars.Block.BaseValue = CurrentBlockAmount;
+        DynamicVars["Burn"].BaseValue = CurrentBurnAmount;
     }
 }

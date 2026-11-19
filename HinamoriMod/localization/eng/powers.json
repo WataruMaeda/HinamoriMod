@@ -16,6 +16,17 @@
   "HINAMORIMOD-NEXT_TURN_CHANT_POWER.smartDescription": "At the start of your next turn, gain {Amount} Chant.",
   "HINAMORIMOD-KIDO_MASTER_POWER.title": "Kido Master",
   "HINAMORIMOD-KIDO_MASTER_POWER.description": "At the start of each turn, gain {Amount} Chant.",
-  "HINAMORIMOD-KIDO_MASTER_POWER.smartDescription": "At the start of each turn, gain {Amount} Chant."
-
+  "HINAMORIMOD-KIDO_MASTER_POWER.smartDescription": "At the start of each turn, gain {Amount} Chant.",
+  "HINAMORIMOD-FREE_CHANT_ATTACK_POWER.title": "Hyapporankan",
+  "HINAMORIMOD-FREE_CHANT_ATTACK_POWER.description": "The next Attack card you play costs 0 Energy and 0 Chant.",
+  "HINAMORIMOD-FREE_CHANT_ATTACK_POWER.smartDescription": "The next Attack card you play costs 0 Energy and 0 Chant.",
+  "HINAMORIMOD-FREE_KIDO_CHANT_POWER.title": "Incantation Abandonment",
+  "HINAMORIMOD-FREE_KIDO_CHANT_POWER.description": "The next Hado or Bakudo card you play costs 0 Chant.",
+  "HINAMORIMOD-FREE_KIDO_CHANT_POWER.smartDescription": "The next Hado or Bakudo card you play costs 0 Chant.",
+  "HINAMORIMOD-FREE_CHANT_POWER_CARD_POWER.title": "Rikujokoro",
+  "HINAMORIMOD-FREE_CHANT_POWER_CARD_POWER.description": "The next [gold]Power[/gold] you play costs 0 Energy and 0 Chant.",
+  "HINAMORIMOD-FREE_CHANT_POWER_CARD_POWER.smartDescription": "The next [gold]Power[/gold] you play costs 0 Energy and 0 Chant.",
+  "HINAMORIMOD-FULL_INCANTATION_POWER.title": "Full Incantation",
+  "HINAMORIMOD-FULL_INCANTATION_POWER.description": "Increases the damage and Block of your next Hado or Bakudo card.",
+  "HINAMORIMOD-FULL_INCANTATION_POWER.smartDescription": "Increases the damage and Block of your next Hado or Bakudo card."
 }

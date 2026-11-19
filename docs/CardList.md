@@ -50,15 +50,15 @@
 | 崩輪 | Uncommon | DisintegratingCircleMomo | 1EN＋詠1 | 敵1体に脱力1、次のスキルのEN・詠唱コストを0（使用までターンをまたいで持続） | 敵1体に脱力2、次のスキルのEN・詠唱コストを0（使用までターンをまたいで持続） | パウンス | 実装済 |
 | 赤煙遁 | Common | RedSmokeEscapeMomo | 1EN | 8ブロック、1ドロー | 11ブロック、1ドロー | 受け流し | 実装済 |
 | 曲光 | Common | BendingLightMomo | 0EN＋詠1 | 8ブロック | 11ブロック | ディフレクト | 実装済 |
-| 嘴突三閃 | Common | TripleBeakStrikeMomo | 2EN | 敵1体に脱力2、2ドロー | 脱力3、2ドロー | 足払い、アクロバット | 未確認 |
+| 嘴突三閃 | Common | TripleBeakStrikeMomo | 2EN | 敵1体に脱力2、2ドロー | 脱力3、2ドロー | 足払い、アクロバット | 実装済 |
 | 吊星 | Uncommon | HangingStarMomo | 0EN＋詠2 | 10ブロック、保留、使うと手札に戻る | 13ブロック | 未設定 | 実装済 |
 | 円閘扇 | Common | RoundLockFanMomo | 2EN＋詠1 | 18ブロック | 24ブロック | 未設定 | 実装済 |
 | 掴趾追雀 | Rare | TracingSparrowMomo | 2EN＋詠2 | 雛森専用カードからランダム3枚を提示し、1枚を手札に加える。生成カードはこのターンEN・詠唱コスト0になり、リプレイ2を永続付与（戦闘中） | リプレイ3を永続付与（戦闘中） | 発見、クエーサー、隠された宝石 | 実装済 |
-| 六杖光牢 | Uncommon | SixRodLightPrisonMomo | 2EN＋詠1 | 敵1体に脱力2、12ブロック、次のパワーのEN・詠唱コスト0 | 16ブロック | 未設定 | 未確認 |
-| 百歩欄干 | Uncommon | HundredStepRailingsMomo | 1EN＋詠2 | 敵1体に弱体2・活力2、次のアタックのEN・詠唱コスト0、次のアタックのENコスト0 | 弱体3・活力3 | 未設定 | 未確認 |
-| 鎖条鎖縛 | Rare | ChainBindingMomo | 1EN＋詠3 | 廃棄札1枚を手札に戻し、そのカードの廃棄を戦闘中除去、保留を付与 | EN0 | 未設定 | 未確認 |
-| 倒山晶 | Common | InvertedMountainCrystalMomo | 0EN＋詠4 | 25ブロック。現在のブロックを次のターンまで維持する | 30ブロック | 未設定 | 未確認 |
-| 断空 | Uncommon | SplittingVoidMomo | 1EN＋詠3 | 次の攻撃1ヒットを無効化。発動まで持続 | 詠2 | 未設定 | 未確認 |
+| 六杖光牢 | Uncommon | SixRodLightPrisonMomo | 2EN＋詠1 | 敵1体に脱力2、12ブロック、次のパワーのEN・詠唱コスト0 | 16ブロック | 未設定 | 実装済 |
+| 百歩欄干 | Uncommon | HundredStepRailingsMomo | 1EN＋詠2 | 敵1体に弱体2・活力2、次のアタックのEN・詠唱コスト0 | 弱体3・活力3 | 未設定 | 実装済 |
+| 鎖条鎖縛 | Rare | ChainBindingMomo | 1EN＋詠3 | 廃棄札1枚を手札に戻し、そのカードの廃棄を戦闘中除去、保留を付与 | EN0 | 未設定 | 実装済 |
+| 倒山晶 | Rare | InvertedMountainCrystalMomo | 0EN＋詠4 | 25ブロック。現在のブロックを次のターンまで維持する | 33ブロック | 未設定 | 実装済 |
+| 断空 | Uncommon | SplittingVoidMomo | 1EN＋詠3 | 次の攻撃1ヒットを無効化。発動まで持続 | 詠2 | 未設定 | 実装済 |
 
 </details>
 
@@ -85,7 +85,7 @@
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 弾け、飛梅！ | - | TobiumeMomo | 2EN | 保留。5＋火種ダメージ、火傷1＋⌊火種÷10⌋ | 1EN、同効果 | ソヴリン・ブレード | 実装済 |
 | 飛梅との対話 | Uncommon | CommunionWithTobiumeMomo | 2EN | 詠唱＋2、火種＋10、次ターンEN＋1 | 次ターンEN＋2 | 未設定 | 未確認 |
-| 炎の気配 | Common | FlamesPresenceMomo | 0EN | 火種＋5、廃棄 | 廃棄なし | 未設定 | 未確認 |
+| 炎の気配 | Common | FlamesPresenceMomo | 0EN | 火種＋5、廃棄 | 廃棄なし | 未設定 | 実装済 |
 | 飛梅の一閃 | Common | TobiumesSlashMomo | 1EN | 7ダメージ、火種＋7 | 火種＋10 | 未設定 | 未確認 |
 | 炎の守り | Common | FlameGuardMomo | 1EN | 8ブロック、火種＋5 | 火種＋8 | 未設定 | 未確認 |
 
@@ -96,7 +96,7 @@
 
 | カード名 | レアリティ | クラス名 | コスト | 通常効果 | 強化後 | 参考カード | 実装状況 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 藍染隊長の仇 | Uncommon | AvengeCaptainAizenMomo | 3EN | 1ダメージ、1ブロック、火傷+1、使うたびに1ダメージ、1ブロック、火傷+1（階層をまたぐ） | 2EN | 大鎌 | 実装済 |
+| 藍染隊長の仇 | Uncommon | AvengeCaptainAizenMomo | 3EN | 1ダメージ、1ブロック、火傷+1、使うたびに1ダメージ、1ブロック、火傷+1（階層をまたぐ）、何度でも強化可能 | 使うたびに上がる上昇量が、+1ダメージ、+1ブロック | 大鎌 | 実装済 |
 | 飛梅の炎撃 | 未設定 | TobiumesFlameStrikeMomo | 2EN | 12ダメージ、火傷3 | 未設定 | 未設定 | 未確認 |
 | 炎の拘束 | 未設定 | FlameBindMomo | 1EN | 火傷2、5ブロック | 未設定 | 未設定 | 未確認 |
 | 燃焼促進 | 未設定 | AcceleratedCombustionMomo | 2EN | 対象の火傷スタックを2倍、廃棄 | 未設定 | 未設定 | 未確認 |

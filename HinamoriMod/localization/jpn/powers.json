@@ -16,6 +16,17 @@
   "HINAMORIMOD-NEXT_TURN_CHANT_POWER.smartDescription": "次のターン開始時、詠唱を{Amount}獲得する。",
   "HINAMORIMOD-KIDO_MASTER_POWER.title": "鬼道の達人",
   "HINAMORIMOD-KIDO_MASTER_POWER.description": "毎ターン開始時、詠唱を{Amount}獲得する。",
-  "HINAMORIMOD-KIDO_MASTER_POWER.smartDescription": "毎ターン開始時、詠唱を{Amount}獲得する。"
-
+  "HINAMORIMOD-KIDO_MASTER_POWER.smartDescription": "毎ターン開始時、詠唱を{Amount}獲得する。",
+  "HINAMORIMOD-FREE_CHANT_ATTACK_POWER.title": "百歩欄干",
+  "HINAMORIMOD-FREE_CHANT_ATTACK_POWER.description": "次に使用する[gold]アタック[/gold]のEN・詠唱コストが0になる。",
+  "HINAMORIMOD-FREE_CHANT_ATTACK_POWER.smartDescription": "次に使用する[gold]アタック[/gold]のEN・詠唱コストが0になる。",
+  "HINAMORIMOD-FREE_KIDO_CHANT_POWER.title": "詠唱破棄",
+  "HINAMORIMOD-FREE_KIDO_CHANT_POWER.description": "次に使用する[gold]破道[/gold]・[gold]縛道[/gold]の詠唱コストが0になる。",
+  "HINAMORIMOD-FREE_KIDO_CHANT_POWER.smartDescription": "次に使用する[gold]破道[/gold]・[gold]縛道[/gold]の詠唱コストが0になる。",
+  "HINAMORIMOD-FREE_CHANT_POWER_CARD_POWER.title": "六杖光牢",
+  "HINAMORIMOD-FREE_CHANT_POWER_CARD_POWER.description": "次に使用する[gold]パワー[/gold]のEN・詠唱コストが0になる。",
+  "HINAMORIMOD-FREE_CHANT_POWER_CARD_POWER.smartDescription": "次に使用する[gold]パワー[/gold]のEN・詠唱コストが0になる。",
+  "HINAMORIMOD-FULL_INCANTATION_POWER.title": "完全詠唱",
+  "HINAMORIMOD-FULL_INCANTATION_POWER.description": "次に使用する破道・縛道のダメージとブロックが強化される。",
+  "HINAMORIMOD-FULL_INCANTATION_POWER.smartDescription": "次に使用する破道・縛道のダメージとブロックが強化される。"
 }

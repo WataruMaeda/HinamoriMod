@@ -81,11 +81,38 @@ public abstract class HinamoriModCard(
             if (FreeChantThisTurn)
                 return 0;
 
+            // ‰r¥”jŠü‚É‚æ‚é‹S“¹‚Ì‰r¥–³—¿‰»
+            if (HasHinamoriTag(HinamoriCardTag.Kido) &&
+                IsMutable &&
+                CombatState != null &&
+                Owner.Creature.GetPower<FreeKidoChantPower>() != null)
+            {
+                return 0;
+            }
+
             // •ö—Ö‚É‚æ‚éƒXƒLƒ‹–³—¿‰»
             if (Type == CardType.Skill &&
                 IsMutable &&
                 CombatState != null &&
                 Owner.Creature.GetPower<FreeChantSkillPower>() != null)
+            {
+                return 0;
+            }
+
+            // •S•à—“Š±‚É‚æ‚éƒAƒ^ƒbƒN–³—¿‰»
+            if (Type == CardType.Attack &&
+                IsMutable &&
+                CombatState != null &&
+                Owner.Creature.GetPower<FreeChantAttackPower>() != null)
+            {
+                return 0;
+            }
+
+            // ˜ZñŒõ˜S‚É‚æ‚éƒpƒ[ƒJ[ƒh‚Ì‰r¥–³—¿‰»
+            if (Type == CardType.Power &&
+                IsMutable &&
+                CombatState != null &&
+                Owner.Creature.GetPower<FreeChantPowerCardPower>() != null)
             {
                 return 0;
             }
@@ -133,11 +160,38 @@ public abstract class HinamoriModCard(
         if (FreeChantThisTurn)
             return true;
 
+        // ‰r¥”jŠü‚É‚æ‚é–³—¿‰»
+        if (HasHinamoriTag(HinamoriCardTag.Kido) &&
+            IsMutable &&
+            CombatState != null &&
+            Owner.Creature.GetPower<FreeKidoChantPower>() != null)
+        {
+            return true;
+        }
+
         // •ö—Ö‚É‚æ‚é–³—¿‰»
         if (Type == CardType.Skill &&
             IsMutable &&
             CombatState != null &&
             Owner.Creature.GetPower<FreeChantSkillPower>() != null)
+        {
+            return true;
+        }
+
+        // •S•à—“Š±‚É‚æ‚éƒAƒ^ƒbƒN‰r¥–³—¿‰»
+        if (Type == CardType.Attack &&
+            IsMutable &&
+            CombatState != null &&
+            Owner.Creature.GetPower<FreeChantAttackPower>() != null)
+        {
+            return true;
+        }
+
+        // ˜ZñŒõ˜S‚É‚æ‚éƒpƒ[ƒJ[ƒh‚Ì‰r¥–³—¿‰»
+        if (Type == CardType.Power &&
+            IsMutable &&
+            CombatState != null &&
+            Owner.Creature.GetPower<FreeChantPowerCardPower>() != null)
         {
             return true;
         }
