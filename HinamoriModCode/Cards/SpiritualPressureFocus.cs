@@ -23,6 +23,7 @@ public class SpiritualPressureFocusMomo : HinamoriModCard
         new CardsVar(1)
     ];
 
+    // 自分を対象にした1ENのスキルとして登録する。
     public SpiritualPressureFocusMomo()
         : base(
             1,
@@ -36,7 +37,8 @@ public class SpiritualPressureFocusMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
-        // 詠唱＋1
+        // 先に詠唱パワーを付与する。Owner.Creature は効果を受ける雛森本人。
+        // DynamicVars を使うことでカード表示の値と実際の獲得量を一致させる。
         await PowerCmd.Apply<ChantPower>(
             choiceContext,
             Owner.Creature,
@@ -44,7 +46,7 @@ public class SpiritualPressureFocusMomo : HinamoriModCard
             Owner.Creature,
             this);
 
-        // カードを1枚引く（強化後は2枚）
+        // 詠唱獲得後にドローする。強化後は CardsVar が2になる。
         await CardPileCmd.Draw(
             choiceContext,
             DynamicVars.Cards.BaseValue,
