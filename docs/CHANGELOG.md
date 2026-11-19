@@ -1,3 +1,13 @@
+## 2026-11-20：炎の吸収をレア・B案で確定し実装
+
+- **確定仕様**：レアのスキル、通常2EN・強化後1EN。敵1体の火傷をすべて消費し、火傷3につきHPを1回復（端数切り捨て）。最大HPを超えて回復しない。廃棄なし。C案の火傷2につき1HP回復は不採用。
+- **追加**：`HinamoriModCode/Cards/FlameAbsorption.cs`。`GetPower<BurnPower>()`で火傷数を取得し、`PowerCmd.Remove`で全スタック消費、消費数÷3を`CreatureCmd.Heal`へ渡す。`EnergyCost.UpgradeBy(-1)`で強化時にコストを下げる。日本語コメントを記載。
+- **更新**：`HinamoriMod/localization/jpn/cards.json`、`HinamoriMod/localization/eng/cards.json`にカード名・説明文を追加。
+- **更新**：`docs/CardList.md`にレアリティ・コスト・強化仕様・実装状況`実装済・未確認`を反映。
+- **更新**：`docs/ImplementedMethodReference.md`にメソッドの用途と未検証の回復APIを記録。
+- **理由**：火傷をすべて失う対価とHP回復のバランスを考慮し、ユーザー確定のB案とレアリティに合わせるため。
+- **検証**：GitHubコミットと日本語・英語JSONの形式解析を確認。**ビルド・ゲーム内動作は未確認**。`CreatureCmd.Heal(Owner.Creature, healAmount)`はMOD既存ソースで呼び出し例を確認できておらず、シグネチャ確認・ビルドが必要。
+
 ## 2026-11-20：炎の爆発の仕様確定・実装
 
 - **確定仕様**：アンコモンのアタック、1EN、敵1体に6ダメージを与え、対象の火傷ダメージを即座に1回発動し火傷を1減らす。強化後は即時発動2回、各回火傷を1減らす。
