@@ -130,3 +130,79 @@ await CardPileCmd.Draw(
 - 状態異常・呪いの分類や廃棄不可カードの正確な動作。
 - `CardCmd.Exhaust` の特殊カードに対する動作、廃棄後の効果発動順序。
 - `EmberCmd.GainEmber` の1回の呼び出しと複数回の呼び出しで、関連パワーがどう発火するか。
+
+## 7. カード一覧との突合（設計上の全カード）
+
+以下は `docs/CardList.md` に掲載されているカードの重複を除いた一覧。**「C#確認済」以外はC#ファイル未調査であり、未実装という意味ではない。** 一覧の「実装状況」は設計表の記載をそのまま転記したもので、ソースの存在を保証しない。
+
+| カード | クラス名（設計表） | 設計表の実装状況 | C#ソースの確認 |
+|---|---|---|---|
+| 斬撃 | `SlashMomo` | 実装済 | 未調査 |
+| 瞬歩 | `ShunpoMomo` | 実装済 | 未調査 |
+| 精神統一 | `MeditationMomo` | 実装済 | 未調査 |
+| 赤火砲 | `RedFrameCannonMomo` | 実装済 | 未調査 |
+| 衝 | `ThrustMomo` | 実装済 | 未調査 |
+| 白雷 | `WhiteLightingMomo` | 実装済 | 未調査 |
+| 綴雷電 | `BoundLightningMomo` | 実装済 | 未調査 |
+| 伏火 | `CrawlingFlameMomo` | 実装済 | 未調査 |
+| 黄火閃 | `YellowFireFlashMomo` | 実装済 | 未調査 |
+| 蒼火墜 | `BlueFirefallMomo` | 実装済 | 確認済（本書に記載） |
+| 廃炎 | `AbolishingFlamesMomo` | 実装済 | 未調査 |
+| 闐嵐 | `RagingStormMomo` | 実装済 | 未調査 |
+| 雷吼炮 | `ThunderRoarCannonMomo` | 実装済 | 未調査 |
+| 双蓮蒼火墜 | `TwinLotusBlueFirefallMomo` | 実装済 | 未調査 |
+| 黒棺 | `BlackCoffinMomo` | 実装済 | 確認済（本書に記載） |
+| 飛竜撃賊震天雷炮 | `FlyingDragonStrikingHeavenShakingThunderCannonMomo` | 実装済 | 未調査 |
+| 塞 | `RestrainMomo` | 実装済 | 未調査 |
+| 這縄 | `CrawlingRopeMomo` | 実装済 | 未調査 |
+| 斥 | `RepulseMomo` | 実装済 | 未調査 |
+| 崩輪 | `DisintegratingCircleMomo` | 実装済 | 未調査 |
+| 赤煙遁 | `RedSmokeEscapeMomo` | 実装済 | 確認済（本書に記載） |
+| 曲光 | `BendingLightMomo` | 実装済 | 未調査 |
+| 嘴突三閃 | `TripleBeakStrikeMomo` | 実装済 | 未調査 |
+| 吊星 | `HangingStarMomo` | 実装済 | 未調査 |
+| 円閘扇 | `RoundLockFanMomo` | 実装済 | 未調査 |
+| 掴趾追雀 | `TracingSparrowMomo` | 実装済 | 確認済（本書に記載） |
+| 六杖光牢 | `SixRodLightPrisonMomo` | 実装済 | 未調査 |
+| 百歩欄干 | `HundredStepRailingsMomo` | 実装済 | 未調査 |
+| 鎖条鎖縛 | `ChainBindingMomo` | 実装済 | 確認済（本書に記載） |
+| 倒山晶 | `InvertedMountainCrystalMomo` | 実装済 | 未調査 |
+| 断空 | `SplittingVoidMomo` | 実装済 | 未調査 |
+| 詠唱準備 | `ChantPreparationMomo` | 実装済 | 未調査 |
+| 霊圧集中 | `SpiritualPressureFocusMomo` | 実装済 | 確認済（本書に記載） |
+| 鬼道の修練 | `KidoTrainingMomo` | 実装済 | 未調査 |
+| 完全詠唱 | `FullIncantationMomo` | 未確認 | 未調査 |
+| 霊圧解放 | `SpiritualPressureReleaseMomo` | 未確認 | 確認済（本書に記載） |
+| 詠唱破棄 | `IncantationAbandonmentMomo` | 未確認 | 未調査 |
+| 鬼道の才 | `KidoProdigyMomo` | 未確認 | 確認済（本書に記載） |
+| 霊力変換 | `SpiritualEnergyConversionMomo` | 未実装 | 確認済（本書に記載） |
+| 弾け、飛梅！ | `TobiumeMomo` | 実装済 | 未調査 |
+| 飛梅との対話 | `CommunionWithTobiumeMomo` | 未確認 | 未調査 |
+| 炎の気配 | `FlamesPresenceMomo` | 実装済 | 確認済（本書に記載） |
+| 飛梅の一閃 | `TobiumesSlashMomo` | 未確認 | 未調査 |
+| 炎の守り | `FlameGuardMomo` | 未確認 | 未調査 |
+| 逆境の炎 | `AdversityFlameMomo` | 実装済・未確認 | 確認済（本書に記載） |
+| 藍染隊長の仇 | `AvengeCaptainAizenMomo` | 仕様変更・実装要確認 | 未調査 |
+| 飛梅の炎撃 | `TobiumesFlameStrikeMomo` | 未確認 | 未調査 |
+| 炎の拘束 | `FlameBindMomo` | 未確認 | 未調査 |
+| 燃焼促進 | `AcceleratedCombustionMomo` | 未確認 | 未調査 |
+| 飛梅の炎舞 | `TobiumesFlameDanceMomo` | 未確認 | 未調査 |
+| 飛梅の火花 | `TobiumesSparkMomo` | 未確認 | 未調査 |
+| 炎の爆発 | `FlameExplosionMomo` | 未実装 | 未調査 |
+| 炎の吸収 | `FlameAbsorptionMomo` | 未実装 | 未調査 |
+| 鬼道の達人 | `KidoMasterMomo` | 実装済 | 未調査 |
+| 鬼道の鍛錬 | `KidoDisciplineMomo` | 未確認 | 未調査 |
+| 鬼道の真髄 | `EssenceOfKidoMomo` | 未確認 | 未調査 |
+| 霊圧制御 | `SpiritualPressureControlMomo` | 未確認 | 未調査 |
+| 飛梅と共に | `TogetherWithTobiumeMomo` | 未確認 | 未調査 |
+| 炎の循環 | `FlameCycleMomo` | 未確認 | 未調査 |
+| 鬼道の探究 | `KidoResearchMomo` | 効果変更・未確認 | 未調査 |
+| 霊圧の解放 | `SpiritualPressureUnleashedMomo` | 未確認 | 未調査 |
+| 瞬歩の鍛錬 | `ShunpoTrainingMomo` | 未確認 | 未調査 |
+| 斬術の鍛錬 | `ZanjutsuTrainingMomo` | 未確認 | 未調査 |
+| 白打の鍛錬 | `HakudaTrainingMomo` | 未確認 | 未調査 |
+| 受け継ぐ想い | `InheritedResolveMomo` | 未確認 | 未調査 |
+| 破道の極致（仮称） | `PinnacleOfHadoMomo` | 未確認 | 未調査 |
+| 燃え盛る炎 | `BlazingTobiumeMomo` | 未実装 | 未調査 |
+| お前か！！ | `ItsYouMomo` | 未確認 | 未調査 |
+| 鬼道の反復 | `KidoRecitationMomo` | 未確認 | 未調査 |
