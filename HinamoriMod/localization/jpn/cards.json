@@ -117,5 +117,7 @@
   "HINAMORIMOD-ESSENCE_OF_KIDO_MOMO.title": "鬼道の真髄",
   "HINAMORIMOD-ESSENCE_OF_KIDO_MOMO.description": "[gold]鬼道[/gold]を3回使用するたび、カードを1枚引く。",
   "HINAMORIMOD-SPIRITUAL_PRESSURE_CONTROL_MOMO.title": "霊圧制御",
-  "HINAMORIMOD-SPIRITUAL_PRESSURE_CONTROL_MOMO.description": "[gold]鬼道[/gold]を使用するたび、3[gold]ブロック[/gold]を得る。"
+  "HINAMORIMOD-SPIRITUAL_PRESSURE_CONTROL_MOMO.description": "[gold]鬼道[/gold]を使用するたび、3[gold]ブロック[/gold]を得る。",
+  "HINAMORIMOD-TOGETHER_WITH_TOBIUME_MOMO.title": "飛梅と共に",
+  "HINAMORIMOD-TOGETHER_WITH_TOBIUME_MOMO.description": "毎ターン開始時、[gold]火種[/gold]を{TogetherWithTobiumePower:diff()}得る。"
 }
