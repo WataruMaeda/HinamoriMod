@@ -10,6 +10,13 @@
 - 動作未確認のものを「動作確認済み」と記載しない。
 - `Ver.1.0.0` には直接変更を加えず、作業ブランチで開発する。
 
+## 2026-11-20：カード一覧の実装状況表記を統一
+
+- **変更対象**：`docs/CardList.md`
+- **変更内容**：「逆境の炎」の実装状況を「実装済・未確認」に変更。
+- **今後のルール**：カードのコードを実装した時点では、ゲーム内動作確認が済むまでカード一覧に必ず「実装済・未確認」と記載する。
+- **確認状況**：表記変更のみ。ゲーム内動作は未確認。
+
 ## 2026-11-20：逆境の炎を実装（ゲーム内動作未確認）
 
 - **変更対象**：`HinamoriModCode/Cards/AdversityFlame.cs`、`HinamoriMod/localization/jpn/cards.json`、`HinamoriMod/localization/eng/cards.json`、`docs/CardList.md`
