@@ -104,7 +104,7 @@
 | 燃焼促進 | Uncommon | AcceleratedCombustionMomo | 2EN | 対象の火傷スタックを2倍、廃棄 | 1EN、火傷2倍・廃棄は維持 | 未設定 | 実装済・未確認 |
 | 飛梅の炎舞 | Uncommon | TobiumesFlameDanceMomo | 1EN | 6ダメージ、対象の火傷数と同量の火種を獲得 | 9ダメージ、火種獲得量は同じ | 未設定 | 実装済・未確認 |
 | 飛梅の火花 | Common | TobiumesSparkMomo | 1EN | 敵全体に火傷2を付与 | 敵全体に火傷3を付与 | 未設定 | 実装済・未確認 |
-| 炎の爆発 | Uncommon | FlameExplosionMomo | 1EN | 敵1体に6ダメージ。対象の火傷ダメージを即座に1回発動し、火傷を1減らす | 火傷ダメージを即座に2回発動。発動ごとに火傷を1減らす | 未設定 | 未実装 |
+| 炎の爆発 | Uncommon | FlameExplosionMomo | 1EN | 敵1体に6ダメージ。対象の火傷ダメージを即座に1回発動し、火傷を1減らす | 火傷ダメージを即座に2回発動。発動ごとに火傷を1減らす | 未設定 | 実装済・未確認 |
 | 炎の吸収 | Uncommon | FlameAbsorptionMomo | 3EN | 敵1体の火傷をすべて消費し、消費した火傷3につきHPを1回復。廃棄なし | 2EN、同じ効果 | 未設定 | 未実装 |
 
 ## パワー（14件）
