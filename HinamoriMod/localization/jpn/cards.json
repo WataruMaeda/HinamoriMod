@@ -99,5 +99,7 @@
   "HINAMORIMOD-FLAME_GUARD_MOMO.title": "炎の守り",
   "HINAMORIMOD-FLAME_GUARD_MOMO.description": "{Block:diff()}[gold]ブロック[/gold]を得る。\n[gold]火種[/gold]{Forge:diff()}を得る。",
   "HINAMORIMOD-TOBIUMES_FLAME_STRIKE_MOMO.title": "飛梅の炎撃",
-  "HINAMORIMOD-TOBIUMES_FLAME_STRIKE_MOMO.description": "{Damage:diff()}ダメージを与える。\\n[gold]火傷[/gold]{Burn:diff()}を付与する。"
+  "HINAMORIMOD-TOBIUMES_FLAME_STRIKE_MOMO.description": "{Damage:diff()}ダメージを与える。\n[gold]火傷[/gold]{Burn:diff()}を付与する。",
+  "HINAMORIMOD-FLAME_BIND_MOMO.title": "炎の拘束",
+  "HINAMORIMOD-FLAME_BIND_MOMO.description": "[gold]火傷[/gold]{Burn:diff()}を付与する。\n{Block:diff()}[gold]ブロック[/gold]を得る。"
 }
