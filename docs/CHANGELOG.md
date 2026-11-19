@@ -1,3 +1,13 @@
+## 2026-11-20：飛梅の炎撃の仕様確定・実装
+
+- **確定仕様**：コモン、2EN、敵1体に12ダメージ＋火傷3。強化後は12ダメージ＋火傷5。
+- **追加**：`HinamoriModCode/Cards/TobiumesFlameStrike.cs`。既存の単体攻撃と `PowerCmd.Apply<BurnPower>` を利用し、攻撃後に対象が生存している場合のみ火傷を付与。強化では火傷数のみ増加。日本語コメントで処理意図を記載。
+- **更新**：`HinamoriMod/localization/jpn/cards.json`、`HinamoriMod/localization/eng/cards.json` に名称・説明を追加。英語版の「炎の守り」に残っていた改行の二重エスケープも修正。
+- **更新**：`docs/CardList.md` のレアリティ・強化効果を確定し、実装状況を `実装済・未確認` に変更。
+- **更新**：`docs/ImplementedMethodReference.md` に既存の火傷付与メソッドの利用例を追記。
+- **理由**：合意したカード性能を既存の火傷システムに合わせて実装するため。
+- **確認状況**：GitHubへの反映とJSON形式の生成を確認。**ビルド・ゲーム内動作未確認**。
+
 ## 2026-11-20：日本語カード説明文を本体表記に統一
 
 - **更新**：`HinamoriMod/localization/jpn/cards.json` の通常説明文・強化後説明文を見直し。単体攻撃の冗長な対象表現を省略し、状態異常は `[gold]効果名[/gold]{数値}を付与する`、詠唱・火種は `[gold]名称[/gold]{数値}を得る` へ統一。ブロック表記も本体の色付けに合わせた。
