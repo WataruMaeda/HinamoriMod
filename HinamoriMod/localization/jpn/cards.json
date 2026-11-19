@@ -109,5 +109,7 @@
   "HINAMORIMOD-TOBIUMES_SPARK_MOMO.title": "飛梅の火花",
   "HINAMORIMOD-TOBIUMES_SPARK_MOMO.description": "敵全体に[gold]火傷[/gold]{Burn:diff()}を付与する。",
   "HINAMORIMOD-FLAME_EXPLOSION_MOMO.title": "炎の爆発",
-  "HINAMORIMOD-FLAME_EXPLOSION_MOMO.description": "{Damage:diff()}ダメージを与える。\n対象の[gold]火傷[/gold]ダメージを{Triggers:diff()}回即座に発動する。発動ごとに[gold]火傷[/gold]を1減らす。"
+  "HINAMORIMOD-FLAME_EXPLOSION_MOMO.description": "{Damage:diff()}ダメージを与える。\n対象の[gold]火傷[/gold]ダメージを{Triggers:diff()}回即座に発動する。発動ごとに[gold]火傷[/gold]を1減らす。",
+  "HINAMORIMOD-FLAME_ABSORPTION_MOMO.title": "炎の吸収",
+  "HINAMORIMOD-FLAME_ABSORPTION_MOMO.description": "対象の[gold]火傷[/gold]をすべて取り除く。\n取り除いた[gold]火傷[/gold]3につきHPを1回復する。"
 }
