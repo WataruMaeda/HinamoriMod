@@ -38,8 +38,10 @@ public class SlashMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        // 敵1体への攻撃なので、対象未指定のまま攻撃しない。
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
 
+        // FromCardでカード由来のダメージ補正を適用し、選択した敵を攻撃する。
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this, cardPlay)
             .Targeting(cardPlay.Target)
