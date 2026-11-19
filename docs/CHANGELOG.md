@@ -1,3 +1,13 @@
+## 2026-11-20：炎の拘束の仕様確定・実装
+
+- **確定仕様**：コモンのスキル、1EN、敵1体へ火傷2、自分に5ブロック。強化後は火傷3、5ブロック。
+- **追加**：`HinamoriModCode/Cards/FlameBind.cs`。既存の `PowerCmd.Apply<BurnPower>` と `CreatureCmd.GainBlock` を組み合わせ、対象への火傷付与→自分のブロック獲得の順で処理。`GainsBlock` を有効化し、火傷数だけ強化。処理意図を日本語コメントで記載。
+- **更新**：`HinamoriMod/localization/jpn/cards.json`、`HinamoriMod/localization/eng/cards.json` に名称と説明を追加。前回実装の「飛梅の炎撃」の説明文にあった二重エスケープ改行も両言語で修正。
+- **更新**：`docs/CardList.md` のレアリティ・強化効果・実装状況を `実装済・未確認` に変更。
+- **更新**：`docs/ImplementedMethodReference.md` に使用メソッドと既存実装の参照元を追記。
+- **理由**：確定した火傷＋ブロックの複合スキルを既存のカード処理で再現するため。
+- **検証**：JSONをプログラムで解析して形式を確認。GitHubコミット完了。**ビルド・ゲーム内動作は未確認**。
+
 ## 2026-11-20：飛梅の炎撃の仕様確定・実装
 
 - **確定仕様**：コモン、2EN、敵1体に12ダメージ＋火傷3。強化後は12ダメージ＋火傷5。
