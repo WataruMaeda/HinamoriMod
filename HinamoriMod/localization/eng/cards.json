@@ -118,5 +118,7 @@
   "HINAMORIMOD-ESSENCE_OF_KIDO_MOMO.title": "Essence of Kido",
   "HINAMORIMOD-ESSENCE_OF_KIDO_MOMO.description": "Whenever you play 3 Kido cards, draw 1 card.",
   "HINAMORIMOD-SPIRITUAL_PRESSURE_CONTROL_MOMO.title": "Spiritual Pressure Control",
-  "HINAMORIMOD-SPIRITUAL_PRESSURE_CONTROL_MOMO.description": "Whenever you play a Kido card, gain 3 Block."
+  "HINAMORIMOD-SPIRITUAL_PRESSURE_CONTROL_MOMO.description": "Whenever you play a Kido card, gain 3 Block.",
+  "HINAMORIMOD-TOGETHER_WITH_TOBIUME_MOMO.title": "Together with Tobiume",
+  "HINAMORIMOD-TOGETHER_WITH_TOBIUME_MOMO.description": "At the start of each turn, gain {TogetherWithTobiumePower:diff()} Ember."
 }
