@@ -114,5 +114,7 @@
   "HINAMORIMOD-FLAME_ABSORPTION_MOMO.title": "Flame Absorption",
   "HINAMORIMOD-FLAME_ABSORPTION_MOMO.description": "Remove all [gold]Burn[/gold] from the target.\nHeal 1 HP for every 3 [gold]Burn[/gold] removed.",
   "HINAMORIMOD-KIDO_DISCIPLINE_MOMO.title": "Kido Discipline",
-  "HINAMORIMOD-KIDO_DISCIPLINE_MOMO.description": "Reduce the Chant cost of all Kido cards by 1 (minimum 0)."
+  "HINAMORIMOD-KIDO_DISCIPLINE_MOMO.description": "Reduce the Chant cost of all Kido cards by 1 (minimum 0).",
+  "HINAMORIMOD-ESSENCE_OF_KIDO_MOMO.title": "Essence of Kido",
+  "HINAMORIMOD-ESSENCE_OF_KIDO_MOMO.description": "Whenever you play 3 Kido cards, draw 1 card."
 }
