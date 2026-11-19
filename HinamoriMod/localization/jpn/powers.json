@@ -31,5 +31,8 @@
   "HINAMORIMOD-FULL_INCANTATION_POWER.smartDescription": "次に使用する破道・縛道のダメージとブロックが強化される。",
   "HINAMORIMOD-KIDO_DISCIPLINE_POWER.title": "鬼道の鍛錬",
   "HINAMORIMOD-KIDO_DISCIPLINE_POWER.description": "すべての鬼道の詠唱コストを{Amount}減らす（最低0）。",
-  "HINAMORIMOD-KIDO_DISCIPLINE_POWER.smartDescription": "すべての鬼道の詠唱コストを{Amount}減らす（最低0）。"
+  "HINAMORIMOD-KIDO_DISCIPLINE_POWER.smartDescription": "すべての鬼道の詠唱コストを{Amount}減らす（最低0）。",
+  "HINAMORIMOD-ESSENCE_OF_KIDO_POWER.title": "鬼道の真髄",
+  "HINAMORIMOD-ESSENCE_OF_KIDO_POWER.description": "[gold]鬼道[/gold]を3回使用するたび、カードを{Amount}枚引く。",
+  "HINAMORIMOD-ESSENCE_OF_KIDO_POWER.smartDescription": "[gold]鬼道[/gold]を3回使用するたび、カードを{Amount}枚引く。"
 }
