@@ -28,5 +28,8 @@
   "HINAMORIMOD-FREE_CHANT_POWER_CARD_POWER.smartDescription": "次に使用する[gold]パワー[/gold]のEN・詠唱コストが0になる。",
   "HINAMORIMOD-FULL_INCANTATION_POWER.title": "完全詠唱",
   "HINAMORIMOD-FULL_INCANTATION_POWER.description": "次に使用する破道・縛道のダメージとブロックが強化される。",
-  "HINAMORIMOD-FULL_INCANTATION_POWER.smartDescription": "次に使用する破道・縛道のダメージとブロックが強化される。"
+  "HINAMORIMOD-FULL_INCANTATION_POWER.smartDescription": "次に使用する破道・縛道のダメージとブロックが強化される。",
+  "HINAMORIMOD-KIDO_DISCIPLINE_POWER.title": "鬼道の鍛錬",
+  "HINAMORIMOD-KIDO_DISCIPLINE_POWER.description": "すべての鬼道の詠唱コストを{Amount}減らす（最低0）。",
+  "HINAMORIMOD-KIDO_DISCIPLINE_POWER.smartDescription": "すべての鬼道の詠唱コストを{Amount}減らす（最低0）。"
 }
