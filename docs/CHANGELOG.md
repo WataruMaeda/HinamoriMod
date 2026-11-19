@@ -1,3 +1,12 @@
+## 2026-11-20：全88ソース調査・メソッド索引・日本語コメント追加
+
+- **追加資料**：`docs/SourceAuditPart1.md` ～ `SourceAuditPart6.md`、`docs/AllSourceMethodIndex.md`。
+- **調査内容**：`HinamoriModCode` 配下のC# **88ファイル**をすべて取得。ドット付きメソッド呼び出し **229種類**を抽出し、呼び出し元・使用例の逆引き索引を作成。抽出は簡易解析であり、すべてのメソッド定義や動作を保証しない。
+- **日本語コメント追加**：`Cards/Meditation.cs`、`Thrust.cs`、`BoundLightning.cs`、`Slash.cs`、`Shunpo.cs`、`ChantPreparation.cs`、`CrawlingRope.cs`、`FlamesPresence.cs`、`Commands/EmberCmd.cs`、`Powers/BurnPower.cs`。
+- **コメント内容**：カード効果と強化差分、処理順序、対象判定、火種と飛梅の生成条件、火傷のダメージタイミング・減少タイミング。
+- **動作変更**：なし（コメントとドキュメントのみ）。
+- **確認状況**：GitHubソース本文の確認とコミットは完了。**ビルド・ゲーム内動作は未確認**。既存全88ファイルへのコメント追加が完了したという意味ではない。
+
 # 雛森桃MOD 変更履歴
 
 このファイルは、作業ブランチで実施した変更を利用者が確認するための記録です。
