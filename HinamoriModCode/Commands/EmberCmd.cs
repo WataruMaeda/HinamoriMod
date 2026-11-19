@@ -9,22 +9,32 @@ using MegaCrit.Sts2.Core.Entities.Players;
 
 namespace HinamoriMod.HinamoriModCode.Commands;
 
+/// <summary>
+/// 火種の獲得を一元管理するコマンド。
+/// 火種を増やすだけでなく、戦闘中に飛梅が存在しない場合の生成も担当する。
+/// </summary>
 public static class EmberCmd
 {
+    /// <summary>
+    /// 指定プレイヤーの火種を増やす。戦闘終了中や獲得量0以下では何もしない。
+    /// </summary>
     public static async Task GainEmber(
         decimal amount,
         Player player)
     {
+        // 戦闘終了中の状態変更やカード生成を防ぐ。
         if (CombatManager.Instance.IsOverOrEnding)
             return;
 
+        // マイナス値や0は火種獲得として扱わない。
         if (amount <= 0m)
             return;
 
         // 火種を更新。既存カードも自動同期される。
         EmberState.AddAmount(player, amount);
 
-        // 廃棄されていない飛梅を探す。
+        // 戦闘中のカードから、複製でなく廃棄札にもない飛梅を探す。
+        // 存在すれば追加生成せず、飛梅の重複を防ぐ。
         bool hasTobiume = player.PlayerCombatState
             .AllCards
             .OfType<TobiumeMomo>()
@@ -32,6 +42,7 @@ public static class EmberCmd
                 !card.IsDupe &&
                 card.Pile?.Type != PileType.Exhaust);
 
+        // 飛梅が存在しない場合だけ、新しい飛梅を手札に生成する。
         if (!hasTobiume)
         {
             TobiumeMomo tobiume =
