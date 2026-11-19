@@ -268,3 +268,17 @@ await CardPileCmd.Draw(
 | `DynamicVars["Burn"].UpgradeValueBy(1m)` | 強化後に火傷2→3、ブロック5維持 |
 
 **参考実装**：`Restrain.cs`（敵を対象に取る防御スキル）、`CrawlingFlame.cs`（火傷付与）、`FlameGuard.cs`（ブロック獲得）。ソース実装済み、ビルド・ゲーム内動作未確認。
+
+
+## 燃焼促進（`AcceleratedCombustion.cs`）
+
+| メソッド・変数 | 用途 |
+|---|---|
+| `CanonicalKeywords => [CardKeyword.Exhaust]` | 使用後に廃棄。強化後も維持 |
+| `ArgumentNullException.ThrowIfNull(cardPlay.Target)` | 敵1体を対象にする |
+| `cardPlay.Target.GetPower<BurnPower>()` | 対象の現在の火傷パワーを取得 |
+| `burn.Amount` | 既存火傷スタックを参照。0以下なら何もしない |
+| `PowerCmd.Apply<BurnPower>(...)` | 現在値と同じ火傷を追加してスタックを2倍にする |
+| `EnergyCost.UpgradeBy(-1)` | 強化後のエナジーコストを2→1に変更 |
+
+**参照元**：`BlackCoffin.cs`（`GetPower<T>()` と `Amount`）、`FlameBind.cs`（`PowerCmd.Apply<BurnPower>`）、`FlamesPresence.cs`・`Tobiume.cs`（廃棄キーワード・エナジーコスト強化）。ソース実装済み、ビルド・ゲーム内動作未確認。
