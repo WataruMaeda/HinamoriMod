@@ -1,3 +1,13 @@
+## 2026-11-20：飛梅の炎舞の仕様確定・実装
+
+- **確定仕様**：アンコモンのアタック、1EN、敵1体に6ダメージを与え、対象の火傷数と同量の火種を獲得。強化後は9ダメージ、火種獲得量は同じ。
+- **追加**：`HinamoriModCode/Cards/TobiumesFlameDance.cs`。`GetPower<BurnPower>()?.Amount` で攻撃前の火傷スタック数を取得し、`DamageCmd.Attack` で攻撃後、`EmberCmd.GainEmber` で同量の火種を獲得。火傷がない敵は0扱い。攻撃で敵が倒れた場合も攻撃前の火傷数を使う。日本語コメントを記載。
+- **更新**：`HinamoriMod/localization/jpn/cards.json` と `HinamoriMod/localization/eng/cards.json` にカード名・説明文を追加。
+- **更新**：`docs/CardList.md` にレアリティ・強化効果・実装状況 `実装済・未確認` を反映。
+- **更新**：`docs/ImplementedMethodReference.md` に使用メソッドと既存ソースの参照元を追記。
+- **理由**：火傷を蓄積した敵から火種へつなぐコンボを、既存の攻撃・火種管理処理で実装するため。
+- **確認状況**：GitHubコミットおよび日本語・英語JSONの解析を確認。**ビルド・ゲーム内動作は未確認**。
+
 ## 2026-11-20：燃焼促進の仕様確定・実装
 
 - **確定仕様**：アンコモンのスキル、2EN、敵1体の火傷スタックを2倍にして廃棄。強化後は1EN、火傷2倍・廃棄は維持。
