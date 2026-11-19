@@ -90,7 +90,7 @@
 | 弾け、飛梅！ | - | TobiumeMomo | 2EN | 保留。5＋火種ダメージ、火傷1＋⌊火種÷10⌋ | 1EN、同効果 | ソヴリン・ブレード | 実装済 |
 | 飛梅との対話 | Uncommon | CommunionWithTobiumeMomo | 2EN | 詠唱＋2、火種＋10、次ターンEN＋1 | 次ターンEN＋2 | 未設定 | 未確認 |
 | 炎の気配 | Common | FlamesPresenceMomo | 0EN | 火種＋5、廃棄 | 廃棄なし | 未設定 | 実装済 |
-| 飛梅の一閃 | Common | TobiumesSlashMomo | 1EN | 7ダメージ、火種＋7 | 火種＋10 | 未設定 | 未確認 |
+| 飛梅の一閃 | Common | TobiumesSlashMomo | 1EN | 7ダメージ、火種＋7 | 火種＋10 | 未設定 | 実装済・未確認 |
 | 炎の守り | Common | FlameGuardMomo | 1EN | 8ブロック、火種＋5 | 火種＋8 | 未設定 | 未確認 |
 | 逆境の炎 | Uncommon | AdversityFlameMomo | 1EN | 手札の状態異常カードをすべて廃棄。実際に廃棄したカード1枚につき火種＋2 | 状態異常と呪いをすべて廃棄。獲得量は同じ | 未設定 | 実装済・未確認 |
 
