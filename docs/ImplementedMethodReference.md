@@ -339,3 +339,15 @@ await CardPileCmd.Draw(
 | `EnergyCost.UpgradeBy(-1)` | 強化で2EN→1EN |
 
 **参照元**：`AcceleratedCombustion.cs`（火傷参照）、`HinamoriModCard.cs`・`DebugResourceHelper.cs`（`PowerCmd.Remove`）、`AcceleratedCombustion.cs`（コスト強化）。`CreatureCmd.Heal`の実際のAPI適合はゲーム側アセンブリで要確認。ビルド・ゲーム内動作未確認。
+
+
+## 鬼道の鍛錬（`KidoDiscipline.cs`）
+
+| メソッド・変数 | 効果・用途 |
+| --- | --- |
+| `PowerCmd.Apply<KidoDisciplinePower>` | 使用時に継続的な詠唱軽減を1スタック付与する |
+| `AddKeyword(CardKeyword.Innate)` | 強化時に天賦を付与する（APIのビルド確認は未実施） |
+| `HinamoriModCard.EffectiveChantCost` | 鬼道タグのあるカードの詠唱コストから軽減スタックを差し引く（最低0） |
+| `SpendChant` | 既存の実効詠唱コストを使用するため、新規の消費処理は不要 |
+
+**参照元**：`KidoMaster.cs`、`KidoMasterPower.cs`、`HadoChantDiscountPower.cs`、`HinamoriModCard.cs`。ビルド・ゲーム内動作未確認。
