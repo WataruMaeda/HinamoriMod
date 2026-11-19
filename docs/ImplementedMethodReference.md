@@ -351,3 +351,16 @@ await CardPileCmd.Draw(
 | `SpendChant` | 既存の実効詠唱コストを使用するため、新規の消費処理は不要 |
 
 **参照元**：`KidoMaster.cs`、`KidoMasterPower.cs`、`HadoChantDiscountPower.cs`、`HinamoriModCard.cs`。ビルド・ゲーム内動作未確認。
+
+
+## 鬼道の真髄（`EssenceOfKido.cs`）
+
+| メソッド・変数 | 効果・用途 |
+| --- | --- |
+| `PowerCmd.Apply<EssenceOfKidoPower>` | 1スタックのパワーを設置。複数枚でドロー枚数を増やす |
+| `AfterCardPlayed` | 自分が使用した鬼道タグ付きカードをカウントする。リプレイも含む |
+| `_kidoUseCount` | ターンを跨ぐ使用回数。3回で0に戻す。戦闘終了後はパワーとともに破棄 |
+| `CardPileCmd.Draw` | 3回ごとにパワーのAmount枚ドローする |
+| `EnergyCost.UpgradeBy(-1)` | 強化後のカードコストを0ENにする |
+
+**参照元**：`FreeKidoChantPower.cs`（カード使用フック）、`WhiteLightning.cs`（ドロー）、`FlameAbsorption.cs`（コスト強化）。ビルド・ゲーム内動作未確認。
