@@ -1,3 +1,13 @@
+## 2026-11-20：飛梅の火花の仕様変更・実装
+
+- **確定仕様**：B案。コモンのスキル、1EN、敵全体に火傷2を付与。強化後は敵全体に火傷3を付与。旧案の単体火傷3（強化後5）は不採用。
+- **追加**：`HinamoriModCode/Cards/TobiumesSpark.cs`。`TargetType.AllEnemies` と `CombatState.GetOpponentsOf` で生存中の敵全体を対象にし、`PowerCmd.Apply<BurnPower>` を敵ごとに呼んで火傷を付与。`IntVar("Burn", 2)` を強化時に+1。処理意図を日本語コメントで記載。
+- **更新**：`HinamoriMod/localization/jpn/cards.json`、`HinamoriMod/localization/eng/cards.json` にカード名と敵全体への火傷付与説明を追加。
+- **更新**：`docs/CardList.md` に確定仕様・レアリティ・実装状況 `実装済・未確認` を反映。
+- **更新**：`docs/ImplementedMethodReference.md` に使用メソッドと既存実装の参照元を追記。
+- **理由**：単体火傷3のみでは既存の「炎の拘束」等との差別化が弱いため、全体火傷付与へ変更する。
+- **検証**：GitHubコミットと日本語・英語JSONの形式解析を確認。**ビルド・ゲーム内動作は未確認**。
+
 ## 2026-11-20：飛梅の炎舞の仕様確定・実装
 
 - **確定仕様**：アンコモンのアタック、1EN、敵1体に6ダメージを与え、対象の火傷数と同量の火種を獲得。強化後は9ダメージ、火種獲得量は同じ。
