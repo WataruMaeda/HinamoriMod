@@ -100,5 +100,7 @@
   "HINAMORIMOD-FLAME_GUARD_MOMO.title": "Flame Guard",
   "HINAMORIMOD-FLAME_GUARD_MOMO.description": "Gain {Block:diff()} Block.\nGain {Forge:diff()} [gold]Ember[/gold].",
   "HINAMORIMOD-TOBIUMES_FLAME_STRIKE_MOMO.title": "Tobiume's Flame Strike",
-  "HINAMORIMOD-TOBIUMES_FLAME_STRIKE_MOMO.description": "Deal {Damage:diff()} damage.\\nApply {Burn:diff()} [gold]Burn[/gold]."
+  "HINAMORIMOD-TOBIUMES_FLAME_STRIKE_MOMO.description": "Deal {Damage:diff()} damage.\nApply {Burn:diff()} [gold]Burn[/gold].",
+  "HINAMORIMOD-FLAME_BIND_MOMO.title": "Flame Bind",
+  "HINAMORIMOD-FLAME_BIND_MOMO.description": "Apply {Burn:diff()} [gold]Burn[/gold].\nGain {Block:diff()} Block."
 }
