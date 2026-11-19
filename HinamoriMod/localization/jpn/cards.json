@@ -86,7 +86,7 @@
   "HINAMORIMOD-FLAMES_PRESENCE_MOMO.title": "炎の気配",
   "HINAMORIMOD-FLAMES_PRESENCE_MOMO.description": "[gold]火種[/gold]5を得る。",
   "HINAMORIMOD-AVENGE_CAPTAIN_AIZEN_MOMO.title": "藍染隊長の仇",
-  "HINAMORIMOD-AVENGE_CAPTAIN_AIZEN_MOMO.description": "{Damage:diff()}ダメージを与える。\n{Block:diff()}[gold]ブロック[/gold]を得る。\n[gold]火傷[/gold]{Burn:diff()}を付与する。\n使用するたび、ダメージ・ブロックが{Growth:diff()}増加。\n[gold]火傷[/gold]の成長量が1増加する。",
+  "HINAMORIMOD-AVENGE_CAPTAIN_AIZEN_MOMO.description": "{Damage:diff()}ダメージを与える。\n{Block:diff()}[gold]ブロック[/gold]を得る。\n[gold]火傷[/gold]{Burn:diff()}を付与する。\n使用するたび、ダメージ・ブロックが{Growth:diff()}増加。\n[gold]火傷[/gold]が1増加する。",
   "HINAMORIMOD-SPIRITUAL_ENERGY_CONVERSION_MOMO.title": "霊力変換",
   "HINAMORIMOD-SPIRITUAL_ENERGY_CONVERSION_MOMO.description": "[gold]詠唱[/gold]3を消費する。\nエナジー{Energy:diff()}を得る。",
   "HINAMORIMOD-KIDO_MASTER_MOMO.title": "鬼道の達人",
