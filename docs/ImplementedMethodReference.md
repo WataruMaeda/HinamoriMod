@@ -297,3 +297,17 @@ await CardPileCmd.Draw(
 | `DynamicVars.Damage.UpgradeValueBy(3m)` | 強化時のダメージ6→9 |
 
 **参照元**：`TobiumesSlash.cs`（単体攻撃＋火種獲得）、`BlackCoffin.cs`（`GetPower<T>()` と `Amount`）、`EmberCmd.cs`（火種獲得・飛梅生成）。攻撃で対象が倒れても攻撃前の火傷数を火種獲得に使う。ソース実装済み、ビルド・ゲーム内動作未確認。
+
+
+## 飛梅の火花（`TobiumesSpark.cs`）
+
+| メソッド・変数 | 用途 |
+|---|---|
+| `new IntVar("Burn", 2)` | 敵全体へ付与する火傷数を表示・処理で共有 |
+| `TargetType.AllEnemies` | カード対象を敵全体に設定 |
+| `CombatState.GetOpponentsOf(Owner.Creature)` | 敵全体を取得 |
+| `Where(enemy => enemy.IsAlive).ToList()` | 生存している敵のみを固定リストにする |
+| `PowerCmd.Apply<BurnPower>(...)` | 各敵に火傷2（強化後3）を付与 |
+| `DynamicVars["Burn"].UpgradeValueBy(1m)` | 強化後の火傷2→3 |
+
+**参照元**：`TwinLotusBlueFirefall.cs`（敵全体への火傷付与と列挙）、`FlameBind.cs`（火傷変数と強化処理）。既存の`BurnPower`のターン開始ダメージ・ターン終了時減少は変更しない。ビルド・ゲーム内動作未確認。
