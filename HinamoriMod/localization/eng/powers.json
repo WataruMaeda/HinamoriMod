@@ -31,5 +31,8 @@
   "HINAMORIMOD-FULL_INCANTATION_POWER.smartDescription": "Increases the damage and Block of your next Hado or Bakudo card.",
   "HINAMORIMOD-KIDO_DISCIPLINE_POWER.title": "Kido Discipline",
   "HINAMORIMOD-KIDO_DISCIPLINE_POWER.description": "Reduce the Chant cost of all Kido cards by {Amount} (minimum 0).",
-  "HINAMORIMOD-KIDO_DISCIPLINE_POWER.smartDescription": "Reduce the Chant cost of all Kido cards by {Amount} (minimum 0)."
+  "HINAMORIMOD-KIDO_DISCIPLINE_POWER.smartDescription": "Reduce the Chant cost of all Kido cards by {Amount} (minimum 0).",
+  "HINAMORIMOD-ESSENCE_OF_KIDO_POWER.title": "Essence of Kido",
+  "HINAMORIMOD-ESSENCE_OF_KIDO_POWER.description": "Whenever you play 3 Kido cards, draw {Amount} cards.",
+  "HINAMORIMOD-ESSENCE_OF_KIDO_POWER.smartDescription": "Whenever you play 3 Kido cards, draw {Amount} cards."
 }
