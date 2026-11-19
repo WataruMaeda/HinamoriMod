@@ -223,3 +223,17 @@ await CardPileCmd.Draw(
 | `DynamicVars.Forge.UpgradeValueBy(3)` | 強化後の火種獲得量を7から10に増やす |
 
 **実装の参照元**：`Slash.cs` の単体攻撃、`BlueFirefall.cs` の火種獲得と強化処理。詠唱消費なし、1ENのコモンアタック。ソース実装のみ、ビルド・ゲーム内動作未確認。
+
+
+## 10. 炎の守り（`FlameGuard.cs`）
+
+| メソッド・変数 | 効果・用途 |
+|---|---|
+| `GainsBlock => true` | ブロック獲得カードとして扱う |
+| `new BlockVar(8m, ValueProp.Move)` | ブロック8を表示・処理で共有する |
+| `CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay)` | 使用者に8ブロックを付与する |
+| `new ForgeVar(5)` | 火種獲得量を表示・処理で共有する |
+| `EmberCmd.GainEmber(DynamicVars.Forge.IntValue, Owner)` | ブロック獲得後に火種5を獲得する。飛梅の生成判定も共通処理に任せる |
+| `DynamicVars.Forge.UpgradeValueBy(3)` | 強化後の火種獲得量を5から8に増やす。ブロック8は据え置き |
+
+**参照元**：`RedSmokeEscape.cs` のブロック獲得処理、`BlueFirefall.cs`・`TobiumesSlash.cs` の火種獲得と強化処理。詠唱コストなし、1ENのコモンスキル。ビルド・ゲーム内動作未確認。
