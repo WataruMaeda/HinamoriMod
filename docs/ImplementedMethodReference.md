@@ -211,3 +211,15 @@ await CardPileCmd.Draw(
 ## 8. 全88ソースのメソッド逆引き
 
 全88件のC#ソース本文を調査し、ドット付きメソッド呼び出し **229種類**を抽出した [全ソースメソッド索引](AllSourceMethodIndex.md) を作成した。カードだけでなく、Commands / Powers / Patches / Debug / Character / UI なども含む。抽出は簡易解析であり、単独メソッド呼び出しや定義一覧を網羅するものではない。
+
+
+## 9. 飛梅の一閃（`TobiumesSlash.cs`）
+
+| メソッド・変数 | 効果・用途 |
+|---|---|
+| `ArgumentNullException.ThrowIfNull(cardPlay.Target)` | 単体攻撃の対象が指定されていることを確認する |
+| `DamageCmd.Attack(...).FromCard(...).Targeting(...).WithHitFx(...).Execute(...)` | カードの攻撃として敵1体に7ダメージを与える |
+| `EmberCmd.GainEmber(DynamicVars.Forge.IntValue, Owner)` | 攻撃後に火種を獲得し、飛梅の生成判定も共通処理に任せる |
+| `DynamicVars.Forge.UpgradeValueBy(3)` | 強化後の火種獲得量を7から10に増やす |
+
+**実装の参照元**：`Slash.cs` の単体攻撃、`BlueFirefall.cs` の火種獲得と強化処理。詠唱消費なし、1ENのコモンアタック。ソース実装のみ、ビルド・ゲーム内動作未確認。
