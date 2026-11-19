@@ -237,3 +237,18 @@ await CardPileCmd.Draw(
 | `DynamicVars.Forge.UpgradeValueBy(3)` | 強化後の火種獲得量を5から8に増やす。ブロック8は据え置き |
 
 **参照元**：`RedSmokeEscape.cs` のブロック獲得処理、`BlueFirefall.cs`・`TobiumesSlash.cs` の火種獲得と強化処理。詠唱コストなし、1ENのコモンスキル。ビルド・ゲーム内動作未確認。
+
+
+## 11. 飛梅の炎撃（`TobiumesFlameStrike.cs`）
+
+| メソッド・変数 | 用途 |
+|---|---|
+| `new DamageVar(12m, ValueProp.Move)` | 攻撃ダメージ12の表示・計算 |
+| `new IntVar("Burn", 3)` | 火傷付与数3の表示・処理 |
+| `ArgumentNullException.ThrowIfNull(cardPlay.Target)` | 単体攻撃の対象確認 |
+| `DamageCmd.Attack(...).FromCard(...).Targeting(...).Execute(...)` | 対象に12ダメージを与える |
+| `cardPlay.Target.IsAlive` | 攻撃後に対象が生存している場合のみ火傷を付与する |
+| `PowerCmd.Apply<BurnPower>(...)` | 対象へ火傷3を付与する |
+| `DynamicVars["Burn"].UpgradeValueBy(2m)` | 強化後の火傷を3から5へ変更する |
+
+**参照元**：`AbolishingFlames.cs`・`CrawlingFlame.cs` の攻撃後火傷付与処理。コモン、2EN、詠唱コストなし。ソース実装済み、ビルド・ゲーム内動作未確認。
