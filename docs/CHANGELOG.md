@@ -1,3 +1,12 @@
+## 2026-11-20：炎の守りを新規実装
+
+- **追加**：`HinamoriModCode/Cards/FlameGuard.cs`。コモン、1EN、自分に8ブロックを付与して火種を5獲得。強化後は8ブロックのまま火種8獲得。日本語コメントで通常・強化後の効果、処理順、共通コマンドの利用目的を記載。
+- **更新**：`HinamoriMod/localization/jpn/cards.json`、`HinamoriMod/localization/eng/cards.json` に炎の守りのカード名・効果を追加。前回追加した飛梅の一閃の説明文について、文字列内の改行が二重エスケープされていたため修正。
+- **更新**：`docs/CardList.md` の炎の守りを `実装済・未確認` に変更。
+- **更新**：`docs/ImplementedMethodReference.md` に `GainsBlock`、`BlockVar`、`CreatureCmd.GainBlock`、`ForgeVar`、`EmberCmd.GainEmber`、`UpgradeValueBy` と参照元を追加。
+- **変更理由**：既存のブロック獲得・火種獲得処理を再利用し、設計表の飛梅・火種カードを実装するため。飛梅の一閃の改行表示を正しくするため。
+- **確認状況**：GitHubへの反映完了。ローカライズJSONは解析可能な形式で生成。**ビルド・ゲーム内動作未確認**。
+
 ## 2026-11-20：飛梅の一閃を新規実装
 
 - **追加**：`HinamoriModCode/Cards/TobiumesSlash.cs`。コモン、1EN、敵1体に7ダメージを与え、攻撃後に火種を7獲得。強化後はダメージ7のまま火種10獲得。日本語コメントで通常・強化後の効果、対象確認、攻撃と火種の処理順序を説明。
