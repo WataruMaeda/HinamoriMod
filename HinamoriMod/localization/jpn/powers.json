@@ -34,5 +34,8 @@
   "HINAMORIMOD-KIDO_DISCIPLINE_POWER.smartDescription": "すべての鬼道の詠唱コストを{Amount}減らす（最低0）。",
   "HINAMORIMOD-ESSENCE_OF_KIDO_POWER.title": "鬼道の真髄",
   "HINAMORIMOD-ESSENCE_OF_KIDO_POWER.description": "[gold]鬼道[/gold]を3回使用するたび、カードを{Amount}枚引く。",
-  "HINAMORIMOD-ESSENCE_OF_KIDO_POWER.smartDescription": "[gold]鬼道[/gold]を3回使用するたび、カードを{Amount}枚引く。"
+  "HINAMORIMOD-ESSENCE_OF_KIDO_POWER.smartDescription": "[gold]鬼道[/gold]を3回使用するたび、カードを{Amount}枚引く。",
+  "HINAMORIMOD-SPIRITUAL_PRESSURE_CONTROL_POWER.title": "霊圧制御",
+  "HINAMORIMOD-SPIRITUAL_PRESSURE_CONTROL_POWER.description": "[gold]鬼道[/gold]を使用するたび、{Amount}[gold]ブロック[/gold]を得る。",
+  "HINAMORIMOD-SPIRITUAL_PRESSURE_CONTROL_POWER.smartDescription": "[gold]鬼道[/gold]を使用するたび、{Amount}[gold]ブロック[/gold]を得る。"
 }
