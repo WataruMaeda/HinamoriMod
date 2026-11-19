@@ -7,10 +7,8 @@
   "HINAMORIMOD-MEDITATION_MOMO.description": "詠唱を{Chant:diff()}獲得する。",
   "HINAMORIMOD-RED_FRAME_CANNON_MOMO.title": "赤火砲",
   "HINAMORIMOD-RED_FRAME_CANNON_MOMO.description": "{Damage:diff()}ダメージを与える。\n[gold]火傷[/gold]を{Burn:diff()}付与する。\n[gold]火種[/gold]を{Forge:diff()}獲得する。",
-
   "HINAMORIMOD-TOBIUME_MOMO.title": "弾け、飛梅！",
   "HINAMORIMOD-TOBIUME_MOMO.description": "{Damage:diff()}ダメージを与える。\n[gold]火傷[/gold]を{Burn:diff()}付与する。",
-
   "HINAMORIMOD-THRUST_MOMO.title": "衝",
   "HINAMORIMOD-THRUST_MOMO.description": "敵1体に{Damage:diff()}ダメージを与える。",
   "HINAMORIMOD-WHITE_LIGHTNING_MOMO.title": "白雷",
@@ -35,7 +33,6 @@
   "HINAMORIMOD-BLACK_COFFIN_MOMO.description": "所持している[gold]詠唱[/gold]をすべて消費する。\n消費した詠唱1につき{Damage:diff()}ダメージを与える。",
   "HINAMORIMOD-FLYING_DRAGON_STRIKING_HEAVEN_SHAKING_THUNDER_CANNON_MOMO.title": "飛竜撃賊震天雷炮",
   "HINAMORIMOD-FLYING_DRAGON_STRIKING_HEAVEN_SHAKING_THUNDER_CANNON_MOMO.description": "基本ダメージ5。\nこの戦闘でプレイした[gold]破道[/gold]1枚につき、{Damage:diff()}ダメージを追加で与える。\n（破道の使用回数は{CalculatedHits:diff()}回）",
-
   "HINAMORIMOD-RESTRAIN_MOMO.title": "塞",
   "HINAMORIMOD-RESTRAIN_MOMO.description": "{Block:diff()}[gold]ブロック[/gold]を得る。\n敵1体に[gold]脱力[/gold]を{WeakPower:diff()}付与する。",
   "HINAMORIMOD-CRAWLING_ROPE_MOMO.title": "這縄",
@@ -69,7 +66,6 @@
   "HINAMORIMOD-FULL_INCANTATION_MOMO.title": "完全詠唱",
   "HINAMORIMOD-FULL_INCANTATION_MOMO.description": "詠唱を2得る。\n次に使用する破道・縛道のダメージとブロックが1.5倍になる。",
   "HINAMORIMOD-FULL_INCANTATION_MOMO.upgradeDescription": "詠唱を2得る。\n次に使用する破道・縛道のダメージとブロックが2倍になる。",
-
   "HINAMORIMOD-CHANT_PREPARATION_MOMO.title": "詠唱準備",
   "HINAMORIMOD-CHANT_PREPARATION_MOMO.description": "詠唱を{Chant:diff()}獲得する。",
   "HINAMORIMOD-SPIRITUAL_PRESSURE_FOCUS_MOMO.title": "霊圧集中",
@@ -84,18 +80,18 @@
   "HINAMORIMOD-KIDO_PRODIGY_MOMO.title": "鬼道の才",
   "HINAMORIMOD-KIDO_PRODIGY_MOMO.description": "詠唱を1得る。\n手札のカード1枚を戦闘中[gold]アップグレード[/gold]する。",
   "HINAMORIMOD-KIDO_PRODIGY_MOMO.upgradeDescription": "詠唱を1得る。\n手札のカードすべてを戦闘中[gold]アップグレード[/gold]する。",
-
   "HINAMORIMOD-COMMUNION_WITH_TOBIUME_MOMO.title": "飛梅との対話",
   "HINAMORIMOD-COMMUNION_WITH_TOBIUME_MOMO.description": "詠唱を2得る。\n火種を10得る。\n次のターン、エナジーを1得る。",
   "HINAMORIMOD-COMMUNION_WITH_TOBIUME_MOMO.upgradeDescription": "詠唱を2得る。\n火種を10得る。\n次のターン、エナジーを2得る。",
   "HINAMORIMOD-FLAMES_PRESENCE_MOMO.title": "炎の気配",
   "HINAMORIMOD-FLAMES_PRESENCE_MOMO.description": "火種を5得る。",
-
   "HINAMORIMOD-AVENGE_CAPTAIN_AIZEN_MOMO.title": "藍染隊長の仇",
   "HINAMORIMOD-AVENGE_CAPTAIN_AIZEN_MOMO.description": "{Damage:diff()}ダメージを与える。\n{Block:diff()}ブロックを得る。\n[gold]火傷[/gold]を{Burn:diff()}付与する。\n使用するたび、ダメージ・ブロックが{Growth:diff()}増加。\n火傷が1増加する。",
   "HINAMORIMOD-SPIRITUAL_ENERGY_CONVERSION_MOMO.title": "霊力変換",
   "HINAMORIMOD-SPIRITUAL_ENERGY_CONVERSION_MOMO.description": "詠唱を3消費する。\nエナジーを{Energy:diff()}獲得する。",
-
   "HINAMORIMOD-KIDO_MASTER_MOMO.title": "鬼道の達人",
-  "HINAMORIMOD-KIDO_MASTER_MOMO.description": "毎ターン開始時、詠唱を{KidoMasterPower:diff()}獲得する。"
+  "HINAMORIMOD-KIDO_MASTER_MOMO.description": "毎ターン開始時、詠唱を{KidoMasterPower:diff()}獲得する。",
+  "HINAMORIMOD-ADVERSITY_FLAME_MOMO.title": "逆境の炎",
+  "HINAMORIMOD-ADVERSITY_FLAME_MOMO.description": "手札の状態異常をすべて[gold]廃棄[/gold]する。\n廃棄したカード1枚につき[gold]火種[/gold]を{Ember:diff()}獲得する。",
+  "HINAMORIMOD-ADVERSITY_FLAME_MOMO.upgradeDescription": "手札の状態異常と呪いをすべて[gold]廃棄[/gold]する。\n廃棄したカード1枚につき[gold]火種[/gold]を{Ember:diff()}獲得する。"
 }
