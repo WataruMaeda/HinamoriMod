@@ -110,5 +110,7 @@
   "HINAMORIMOD-TOBIUMES_SPARK_MOMO.title": "Tobiume's Spark",
   "HINAMORIMOD-TOBIUMES_SPARK_MOMO.description": "Apply {Burn:diff()} [gold]Burn[/gold] to ALL enemies.",
   "HINAMORIMOD-FLAME_EXPLOSION_MOMO.title": "Flame Explosion",
-  "HINAMORIMOD-FLAME_EXPLOSION_MOMO.description": "Deal {Damage:diff()} damage.\nTrigger the target's [gold]Burn[/gold] damage {Triggers:diff()} time(s), reducing [gold]Burn[/gold] by 1 after each trigger."
+  "HINAMORIMOD-FLAME_EXPLOSION_MOMO.description": "Deal {Damage:diff()} damage.\nTrigger the target's [gold]Burn[/gold] damage {Triggers:diff()} time(s), reducing [gold]Burn[/gold] by 1 after each trigger.",
+  "HINAMORIMOD-FLAME_ABSORPTION_MOMO.title": "Flame Absorption",
+  "HINAMORIMOD-FLAME_ABSORPTION_MOMO.description": "Remove all [gold]Burn[/gold] from the target.\nHeal 1 HP for every 3 [gold]Burn[/gold] removed."
 }
