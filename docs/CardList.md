@@ -114,7 +114,7 @@
 | 鬼道の達人 | Uncommon | KidoMasterMomo | 2EN | 毎ターン開始時、詠唱＋2 | 毎ターン詠唱＋3 | 未設定 | 実装済 |
 | 鬼道の鍛錬 | Uncommon | KidoDisciplineMomo | 2EN | すべての鬼道の詠唱コスト−1（最低0） | 天賦を付与、効果は同じ | 未設定 | 実装済・未確認 |
 | 鬼道の真髄 | Common | EssenceOfKidoMomo | 1EN | 鬼道を3回使用するたび1ドロー（回数はターンを跨いで蓄積） | 0EN | 未設定 | 実装済・未確認 |
-| 霊圧制御 | Uncommon | SpiritualPressureControlMomo | 1EN | 鬼道を使うたび3ブロック | 天賦を付与、効果は同じ | 未設定 | 未実装・要確認 |
+| 霊圧制御 | Uncommon | SpiritualPressureControlMomo | 1EN | 鬼道を使うたび3ブロック | 天賦を付与、効果は同じ | 未設定 | 実装済・未確認 |
 | 飛梅と共に | Uncommon | TogetherWithTobiumeMomo | 1EN | 毎ターン開始時、火種＋5 | 火種＋8 | 未設定 | 未実装・要確認 |
 | 炎の循環 | Uncommon | FlameCycleMomo | 1EN | 火種を獲得するたびランダムな敵1体に火傷1（獲得処理1回につき1回発動） | 火種を獲得するたび敵全体に火傷1 | 未設定 | 未実装・要確認 |
 | 鬼道の探究 | Rare | KidoResearchMomo | 3EN | 毎ターン開始時、火種1を消費して筋力＋1・敏捷性＋1（火種がない場合不発） | 2EN | 未設定 | 未実装・要確認 |
