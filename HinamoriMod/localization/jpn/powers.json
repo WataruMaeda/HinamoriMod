@@ -37,5 +37,8 @@
   "HINAMORIMOD-ESSENCE_OF_KIDO_POWER.smartDescription": "[gold]鬼道[/gold]を3回使用するたび、カードを{Amount}枚引く。",
   "HINAMORIMOD-SPIRITUAL_PRESSURE_CONTROL_POWER.title": "霊圧制御",
   "HINAMORIMOD-SPIRITUAL_PRESSURE_CONTROL_POWER.description": "[gold]鬼道[/gold]を使用するたび、{Amount}[gold]ブロック[/gold]を得る。",
-  "HINAMORIMOD-SPIRITUAL_PRESSURE_CONTROL_POWER.smartDescription": "[gold]鬼道[/gold]を使用するたび、{Amount}[gold]ブロック[/gold]を得る。"
+  "HINAMORIMOD-SPIRITUAL_PRESSURE_CONTROL_POWER.smartDescription": "[gold]鬼道[/gold]を使用するたび、{Amount}[gold]ブロック[/gold]を得る。",
+  "HINAMORIMOD-TOGETHER_WITH_TOBIUME_POWER.title": "飛梅と共に",
+  "HINAMORIMOD-TOGETHER_WITH_TOBIUME_POWER.description": "毎ターン開始時、火種を{Amount}獲得する。",
+  "HINAMORIMOD-TOGETHER_WITH_TOBIUME_POWER.smartDescription": "毎ターン開始時、火種を{Amount}獲得する。"
 }
