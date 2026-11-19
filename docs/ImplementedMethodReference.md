@@ -206,3 +206,8 @@ await CardPileCmd.Draw(
 | 燃え盛る炎 | `BlazingTobiumeMomo` | 未実装 | 未調査 |
 | お前か！！ | `ItsYouMomo` | 未確認 | 未調査 |
 | 鬼道の反復 | `KidoRecitationMomo` | 未確認 | 未調査 |
+
+
+## 8. 全88ソースのメソッド逆引き
+
+全88件のC#ソース本文を調査し、ドット付きメソッド呼び出し **229種類**を抽出した [全ソースメソッド索引](AllSourceMethodIndex.md) を作成した。カードだけでなく、Commands / Powers / Patches / Debug / Character / UI なども含む。抽出は簡易解析であり、単独メソッド呼び出しや定義一覧を網羅するものではない。
