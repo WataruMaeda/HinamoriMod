@@ -282,3 +282,18 @@ await CardPileCmd.Draw(
 | `EnergyCost.UpgradeBy(-1)` | 強化後のエナジーコストを2→1に変更 |
 
 **参照元**：`BlackCoffin.cs`（`GetPower<T>()` と `Amount`）、`FlameBind.cs`（`PowerCmd.Apply<BurnPower>`）、`FlamesPresence.cs`・`Tobiume.cs`（廃棄キーワード・エナジーコスト強化）。ソース実装済み、ビルド・ゲーム内動作未確認。
+
+
+## 飛梅の炎舞（`TobiumesFlameDance.cs`）
+
+| メソッド・変数 | 用途 |
+|---|---|
+| `new DamageVar(6m, ValueProp.Move)` | 攻撃ダメージを表示・計算 |
+| `ArgumentNullException.ThrowIfNull(cardPlay.Target)` | 敵1体の対象指定を確認 |
+| `cardPlay.Target.GetPower<BurnPower>()?.Amount` | 攻撃前の対象火傷スタック数を取得。火傷なしは0 |
+| `Math.Max(0, ...)` | 負の火傷量を火種獲得に使用しない |
+| `DamageCmd.Attack(...).FromCard(...).Targeting(...).Execute(...)` | 対象へ6（強化後9）ダメージ |
+| `EmberCmd.GainEmber(burnAmount, Owner)` | 攻撃前に保持した火傷と同量の火種を獲得 |
+| `DynamicVars.Damage.UpgradeValueBy(3m)` | 強化時のダメージ6→9 |
+
+**参照元**：`TobiumesSlash.cs`（単体攻撃＋火種獲得）、`BlackCoffin.cs`（`GetPower<T>()` と `Amount`）、`EmberCmd.cs`（火種獲得・飛梅生成）。攻撃で対象が倒れても攻撃前の火傷数を火種獲得に使う。ソース実装済み、ビルド・ゲーム内動作未確認。
