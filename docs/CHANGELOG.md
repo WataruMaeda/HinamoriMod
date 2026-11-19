@@ -10,6 +10,15 @@
 - 動作未確認のものを「動作確認済み」と記載しない。
 - `Ver.1.0.0` には直接変更を加えず、作業ブランチで開発する。
 
+## 2026-11-20：既存カードのメソッド一覧を作成しコメントを補強
+
+- **追加**：`docs/ImplementedMethodReference.md`
+- **内容**：直接確認した12カードと共通基底クラスの使用メソッド、処理の意味、実装例、注意点を一覧化。既存コードにないAPIを推測していない。全カードの網羅調査は未完了と明記。
+- **コメント追加対象**：`HinamoriModCode/Cards/WhiteLightning.cs`、`SpiritualEnergyConversion.cs`、`BlueFirefall.cs`、`RedSmokeEscape.cs`、`SpiritualPressureFocus.cs`、`SpiritualPressureRelease.cs`、`ChainBinding.cs`。
+- **変更理由**：新規カード実装時に既存処理を探し直す負担を減らし、既存ソースの処理意図を分かりやすくするため。
+- **動作変更**：なし（コメントとドキュメントのみ）。
+- **確認状況**：GitHubの実装ソースを確認して記録。ビルド・ゲーム内動作は未確認。今後、未調査カードの確認と一覧への追記が必要。
+
 ## 2026-11-20：カード一覧の実装状況表記を統一
 
 - **変更対象**：`docs/CardList.md`
