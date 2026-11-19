@@ -31,7 +31,7 @@ public abstract class HinamoriModCard(
         HinamoriCardTag.None;
 
     /// <summary>
-    /// ’Íæä’Ç‚É‚æ‚éˆê“I‚È‰r¥–³—¿‰»
+    /// æ´è¶¾è¿½é›€ã«ã‚ˆã‚‹ä¸€æ™‚çš„ãªè© å”±ç„¡æ–™åŒ–
     /// </summary>
     public bool FreeChantThisTurn { get; private set; }
 
@@ -77,11 +77,11 @@ public abstract class HinamoriModCard(
             if (ChantCost < 0)
                 return -1;
 
-            // ’Íæä’Ç‚É‚æ‚é–³—¿‰»
+            // æ´è¶¾è¿½é›€ã«ã‚ˆã‚‹ç„¡æ–™åŒ–
             if (FreeChantThisTurn)
                 return 0;
 
-            // ‰r¥”jŠü‚É‚æ‚é‹S“¹‚Ì‰r¥–³—¿‰»
+            // è© å”±ç ´æ£„ã«ã‚ˆã‚‹é¬¼é“ã®è© å”±ç„¡æ–™åŒ–
             if (HasHinamoriTag(HinamoriCardTag.Kido) &&
                 IsMutable &&
                 CombatState != null &&
@@ -90,7 +90,7 @@ public abstract class HinamoriModCard(
                 return 0;
             }
 
-            // •ö—Ö‚É‚æ‚éƒXƒLƒ‹–³—¿‰»
+            // å´©è¼ªã«ã‚ˆã‚‹ã‚¹ã‚­ãƒ«ç„¡æ–™åŒ–
             if (Type == CardType.Skill &&
                 IsMutable &&
                 CombatState != null &&
@@ -99,7 +99,7 @@ public abstract class HinamoriModCard(
                 return 0;
             }
 
-            // •S•à—“Š±‚É‚æ‚éƒAƒ^ƒbƒN–³—¿‰»
+            // ç™¾æ­©æ¬„å¹²ã«ã‚ˆã‚‹ã‚¢ã‚¿ãƒƒã‚¯ç„¡æ–™åŒ–
             if (Type == CardType.Attack &&
                 IsMutable &&
                 CombatState != null &&
@@ -108,7 +108,7 @@ public abstract class HinamoriModCard(
                 return 0;
             }
 
-            // ˜ZñŒõ˜S‚É‚æ‚éƒpƒ[ƒJ[ƒh‚Ì‰r¥–³—¿‰»
+            // å…­æ–å…‰ç‰¢ã«ã‚ˆã‚‹ãƒ‘ãƒ¯ãƒ¼ã‚«ãƒ¼ãƒ‰ã®è© å”±ç„¡æ–™åŒ–
             if (Type == CardType.Power &&
                 IsMutable &&
                 CombatState != null &&
@@ -129,6 +129,16 @@ public abstract class HinamoriModCard(
                         ?.Amount ?? 0;
             }
 
+            // é¬¼é“ã®é›éŒ¬ã¯ç ´é“ãƒ»ç¸›é“ã®ä¸¡æ–¹ã«é©ç”¨ã™ã‚‹ã€‚
+            // æ—¢å­˜ã®ç ´é“å°‚ç”¨è»½æ¸›ã¨ã¯åŠ ç®—ã—ã€è© å”±ã‚³ã‚¹ãƒˆã¯0æœªæº€ã«ã—ãªã„ã€‚
+            if (HasHinamoriTag(HinamoriCardTag.Kido) &&
+                IsMutable &&
+                CombatState != null)
+            {
+                discount += Owner.Creature
+                    .GetPower<KidoDisciplinePower>()?.Amount ?? 0;
+            }
+
             return Math.Max(0, ChantCost - discount);
         }
     }
@@ -142,8 +152,8 @@ public abstract class HinamoriModCard(
             >= EffectiveChantCost);
 
     /// <summary>
-    /// ‰r¥ƒRƒXƒg‚ğÁ”ï‚·‚éB
-    /// ƒŠƒvƒŒƒC‚ÍÄÁ”ï‚µ‚È‚¢B
+    /// è© å”±ã‚³ã‚¹ãƒˆã‚’æ¶ˆè²»ã™ã‚‹ã€‚
+    /// ãƒªãƒ—ãƒ¬ã‚¤æ™‚ã¯å†æ¶ˆè²»ã—ãªã„ã€‚
     /// </summary>
     protected async Task<bool> SpendChant(
         PlayerChoiceContext context,
@@ -152,15 +162,15 @@ public abstract class HinamoriModCard(
         if (ChantCost < 0)
             return true;
 
-        // ƒŠƒvƒŒƒC‚Å‚Í‰r¥‚ğÄÁ”ï‚µ‚È‚¢
+        // ãƒªãƒ—ãƒ¬ã‚¤ã§ã¯è© å”±ã‚’å†æ¶ˆè²»ã—ãªã„
         if (!cardPlay.IsFirstInSeries)
             return true;
 
-        // ’Íæä’Ç‚Å¶¬‚µ‚½ƒJ[ƒh
+        // æ´è¶¾è¿½é›€ã§ç”Ÿæˆã—ãŸã‚«ãƒ¼ãƒ‰
         if (FreeChantThisTurn)
             return true;
 
-        // ‰r¥”jŠü‚É‚æ‚é–³—¿‰»
+        // è© å”±ç ´æ£„ã«ã‚ˆã‚‹ç„¡æ–™åŒ–
         if (HasHinamoriTag(HinamoriCardTag.Kido) &&
             IsMutable &&
             CombatState != null &&
@@ -169,7 +179,7 @@ public abstract class HinamoriModCard(
             return true;
         }
 
-        // •ö—Ö‚É‚æ‚é–³—¿‰»
+        // å´©è¼ªã«ã‚ˆã‚‹ç„¡æ–™åŒ–
         if (Type == CardType.Skill &&
             IsMutable &&
             CombatState != null &&
@@ -178,7 +188,7 @@ public abstract class HinamoriModCard(
             return true;
         }
 
-        // •S•à—“Š±‚É‚æ‚éƒAƒ^ƒbƒN‰r¥–³—¿‰»
+        // ç™¾æ­©æ¬„å¹²ã«ã‚ˆã‚‹ã‚¢ã‚¿ãƒƒã‚¯è© å”±ç„¡æ–™åŒ–
         if (Type == CardType.Attack &&
             IsMutable &&
             CombatState != null &&
@@ -187,7 +197,7 @@ public abstract class HinamoriModCard(
             return true;
         }
 
-        // ˜ZñŒõ˜S‚É‚æ‚éƒpƒ[ƒJ[ƒh‚Ì‰r¥–³—¿‰»
+        // å…­æ–å…‰ç‰¢ã«ã‚ˆã‚‹ãƒ‘ãƒ¯ãƒ¼ã‚«ãƒ¼ãƒ‰ã®è© å”±ç„¡æ–™åŒ–
         if (Type == CardType.Power &&
             IsMutable &&
             CombatState != null &&
@@ -214,7 +224,7 @@ public abstract class HinamoriModCard(
                 this);
         }
 
-        // ”j“¹‚Ì‰r¥ŒyŒ¸‚ğÁ”ï
+        // ç ´é“ã®è© å”±è»½æ¸›ã‚’æ¶ˆè²»
         if (HasHinamoriTag(HinamoriCardTag.Hado))
         {
             var discount =
