@@ -1,5 +1,8 @@
 {
   "HINAMORIMOD-KIDO_FUNDAMENTALS.title": "Kido Fundamentals",
-  "HINAMORIMOD-KIDO_FUNDAMENTALS.description": "At the start of combat, gain {Chant} [gold]Chant[/gold].",
-  "HINAMORIMOD-KIDO_FUNDAMENTALS.flavor": "The first step toward mastering Kido. Daily practice builds lasting strength."
+  "HINAMORIMOD-KIDO_FUNDAMENTALS.description": "At the start of combat, gain {Chant} [gold]Chant[/gold].\\nGain 1 random relic.\\nBosses drop 1 additional relic.",
+  "HINAMORIMOD-KIDO_FUNDAMENTALS.flavor": "The first step toward mastering Kido. Daily practice builds lasting strength.",
+  "HINAMORIMOD-KIDO_ESSENCE.title": "Essence of Kido",
+  "HINAMORIMOD-KIDO_ESSENCE.description": "At the start of combat, gain {Chant} [gold]Chant[/gold].\\nAt the start of each turn after the first, gain 1 [gold]Chant[/gold].\\nGain 1 random relic.\\nBosses drop 1 additional relic.",
+  "HINAMORIMOD-KIDO_ESSENCE.flavor": "Years of training reveal the essence of Kido."
 }
