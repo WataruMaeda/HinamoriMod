@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3]
+[gd_scene load_steps=35 format=3]
 
 [ext_resource type="Texture2D" path="res://HinamoriMod/images/character/idle_00.png" id="1"]
 [ext_resource type="Texture2D" path="res://HinamoriMod/images/character/idle_01.png" id="2"]
@@ -17,10 +17,36 @@
 [ext_resource type="Texture2D" path="res://HinamoriMod/images/character/attack_05.png" id="a5"]
 [ext_resource type="Texture2D" path="res://HinamoriMod/images/character/attack_06.png" id="a6"]
 [ext_resource type="Texture2D" path="res://HinamoriMod/images/character/attack_07.png" id="a7"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/defense_00.png" id="d0"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/defense_01.png" id="d1"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/defense_02.png" id="d2"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/defense_03.png" id="d3"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/defense_04.png" id="d4"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/defense_05.png" id="d5"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/defense_06.png" id="d6"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/defense_07.png" id="d7"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/kido_00.png" id="k0"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/kido_01.png" id="k1"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/kido_02.png" id="k2"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/kido_03.png" id="k3"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/kido_04.png" id="k4"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/kido_05.png" id="k5"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/kido_06.png" id="k6"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/kido_07.png" id="k7"]
 [ext_resource type="Script" path="res://HinamoriMod/scenes/hinamori_combat_sprite.gd" id="combat_script"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_idle"]
 animations = [{
+"frames": [{ "duration": 1.0, "texture": ExtResource("d0") }, { "duration": 1.0, "texture": ExtResource("d1") }, { "duration": 1.0, "texture": ExtResource("d2") }, { "duration": 1.0, "texture": ExtResource("d3") }, { "duration": 1.0, "texture": ExtResource("d4") }, { "duration": 1.0, "texture": ExtResource("d5") }, { "duration": 1.0, "texture": ExtResource("d6") }, { "duration": 1.0, "texture": ExtResource("d7") }],
+"loop": false,
+"name": &"block",
+"speed": 8.0
+}, {
+"frames": [{ "duration": 1.0, "texture": ExtResource("k0") }, { "duration": 1.0, "texture": ExtResource("k1") }, { "duration": 1.0, "texture": ExtResource("k2") }, { "duration": 1.0, "texture": ExtResource("k3") }, { "duration": 1.0, "texture": ExtResource("k4") }, { "duration": 1.0, "texture": ExtResource("k5") }, { "duration": 1.0, "texture": ExtResource("k6") }, { "duration": 1.0, "texture": ExtResource("k7") }],
+"loop": false,
+"name": &"cast",
+"speed": 12.0
+}, {
 "frames": [{ "duration": 1.0, "texture": ExtResource("a0") }, { "duration": 1.0, "texture": ExtResource("a1") }, { "duration": 1.0, "texture": ExtResource("a2") }, { "duration": 1.0, "texture": ExtResource("a3") }, { "duration": 1.0, "texture": ExtResource("a4") }, { "duration": 1.0, "texture": ExtResource("a5") }, { "duration": 1.0, "texture": ExtResource("a6") }, { "duration": 1.0, "texture": ExtResource("a7") }],
 "loop": false,
 "name": &"attack",
