@@ -139,5 +139,7 @@
   "HINAMORIMOD-KIDO_STUDY_MOMO.title": "Kido Study",
   "HINAMORIMOD-KIDO_STUDY_MOMO.description": "At the start of each turn, create a random Hinamori card with Exhaust and Ethereal. Upgraded generation is not implemented yet.",
   "HINAMORIMOD-INHERITED_RESOLVE_MOMO.title": "Inherited Resolve",
-  "HINAMORIMOD-INHERITED_RESOLVE_MOMO.description": "At the start of each turn, create a random Power. Its Energy and Chant cost are free this turn. Upgraded: generated cards are upgraded. (All-character pool and Star cost not yet supported.)"
+  "HINAMORIMOD-INHERITED_RESOLVE_MOMO.description": "At the start of each turn, create a random Power. Its Energy and Chant cost are free this turn. Upgraded: generated cards are upgraded. (All-character pool and Star cost not yet supported.)",
+  "HINAMORIMOD-ITTO_KASO_MOMO.title": "Ittō Kasō",
+  "HINAMORIMOD-ITTO_KASO_MOMO.description": "Deal {Damage:diff()} damage to ALL enemies.\\nApply {Burn:diff()} [gold]Burn[/gold] to ALL enemies.\\nGain {Forge:diff()} [gold]Ember[/gold].\\nLose {SelfHpLoss} HP."
 }
