@@ -134,5 +134,9 @@
   "HINAMORIMOD-ITS_YOU_MOMO.title": "お前か！！",
   "HINAMORIMOD-ITS_YOU_MOMO.description": "[gold]筋力[/gold]を{StrengthPower}得る。\nカードを1枚引く。",
   "HINAMORIMOD-KIDO_RECITATION_MOMO.title": "鬼道の反復",
-  "HINAMORIMOD-KIDO_RECITATION_MOMO.description": "手札の鬼道1枚にリプレイ{Replay}を付与する。"
+  "HINAMORIMOD-KIDO_RECITATION_MOMO.description": "手札の鬼道1枚にリプレイ{Replay}を付与する。",
+  "HINAMORIMOD-KIDO_STUDY_MOMO.title": "鬼道の研鑽",
+  "HINAMORIMOD-KIDO_STUDY_MOMO.description": "毎ターン開始時、雛森のカードをランダムに1枚生成し、廃棄とエセリアルを付与する。強化時の生成カード強化は実装待ち。",
+  "HINAMORIMOD-INHERITED_RESOLVE_MOMO.title": "受け継ぐ想い",
+  "HINAMORIMOD-INHERITED_RESOLVE_MOMO.description": "毎ターン、全キャラクターのパワーカードを1枚生成し、コストを0にする（生成効果は実装待ち）。"
 }
