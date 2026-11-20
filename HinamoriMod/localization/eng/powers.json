@@ -40,5 +40,8 @@
   "HINAMORIMOD-SPIRITUAL_PRESSURE_CONTROL_POWER.smartDescription": "Whenever you play a Kido card, gain {Amount} Block.",
   "HINAMORIMOD-TOGETHER_WITH_TOBIUME_POWER.title": "Together with Tobiume",
   "HINAMORIMOD-TOGETHER_WITH_TOBIUME_POWER.description": "At the start of each turn, gain {Amount} Ember.",
-  "HINAMORIMOD-TOGETHER_WITH_TOBIUME_POWER.smartDescription": "At the start of each turn, gain {Amount} Ember."
+  "HINAMORIMOD-TOGETHER_WITH_TOBIUME_POWER.smartDescription": "At the start of each turn, gain {Amount} Ember.",
+  "HINAMORIMOD-BLAZING_TOBIUME_POWER.title": "Blazing Tobiume",
+  "HINAMORIMOD-BLAZING_TOBIUME_POWER.description": "At the start of each turn, apply {Amount} Burn to ALL enemies.",
+  "HINAMORIMOD-BLAZING_TOBIUME_POWER.smartDescription": "At the start of each turn, apply {Amount} Burn to ALL enemies."
 }
