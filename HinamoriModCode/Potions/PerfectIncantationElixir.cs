@@ -1,19 +1,30 @@
+using System.Linq;
+using System.Threading.Tasks;
+using BaseLib.Abstracts;
+using BaseLib.Utils;
+using HinamoriMod.HinamoriModCode.Character;
+using HinamoriMod.HinamoriModCode.Commands;
+using HinamoriMod.HinamoriModCode.Powers;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Potions;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+
 namespace HinamoriMod.HinamoriModCode.Potions;
 
-/// <summary>
-/// 完全詠唱の秘薬 (Perfect Incantation Elixir)
-/// 詠唱を10獲得する。次の破道・縛道のダメージ・ブロックを2倍にする。
-/// </summary>
-/// <remarks>
-/// PotionModel / CustomPotionModel への接続は未実装。
-/// ポーション使用時のフック、レアリティ登録、ターゲット選択、画像は要確認。
-/// </remarks>
-public static class PerfectIncantationElixir
+/// <summary>完全詠唱の秘薬。画像・ビルド・ゲーム内動作は要検証。</summary>
+[Pool(typeof(HinamoriModPotionPool))]
+public class PerfectIncantationElixir : CustomPotionModel
 {
-    public const string JapaneseName = "完全詠唱の秘薬";
-    public const string EnglishName = "Perfect Incantation Elixir";
-    public const string RarityName = "Rare";
-    public const string EffectKind = "ChantAndDouble";
     public const int PrimaryAmount = 10;
-    public const decimal DamageAndBlockMultiplier = 2m;
+    public override PotionRarity Rarity => PotionRarity.Rare;
+    public override PotionUsage Usage => PotionUsage.CombatOnly;
+    public override TargetType TargetType => TargetType.Self;
+
+    protected override async Task OnUse(PlayerChoiceContext choiceContext, Creature? target)
+    {
+        await PowerCmd.Apply<ChantPower>(choiceContext, Owner.Creature, PrimaryAmount, Owner.Creature, null);
+        await PowerCmd.Apply<FullIncantationPower>(choiceContext, Owner.Creature, 2m, Owner.Creature, null);
+    }
 }
