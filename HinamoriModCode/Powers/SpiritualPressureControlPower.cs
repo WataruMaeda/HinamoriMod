@@ -4,6 +4,8 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.ValueProps;
 
 namespace HinamoriMod.HinamoriModCode.Powers;
 
@@ -29,6 +31,6 @@ public class SpiritualPressureControlPower : HinamoriModPower
             return;
 
         // カード1回につき3ブロック。複数設置時はAmountが増える。
-        await CreatureCmd.GainBlock(Owner, Amount, cardPlay);
+        await CreatureCmd.GainBlock(Owner, new BlockVar(Amount, ValueProp.Unpowered), cardPlay);
     }
 }
