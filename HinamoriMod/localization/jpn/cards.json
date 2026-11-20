@@ -103,7 +103,7 @@
   "HINAMORIMOD-FLAME_BIND_MOMO.title": "炎の拘束",
   "HINAMORIMOD-FLAME_BIND_MOMO.description": "[gold]火傷[/gold]{Burn:diff()}を付与する。\n{Block:diff()}[gold]ブロック[/gold]を得る。",
   "HINAMORIMOD-ACCELERATED_COMBUSTION_MOMO.title": "燃焼促進",
-  "HINAMORIMOD-ACCELERATED_COMBUSTION_MOMO.description": "対象の[gold]火傷[/gold]を2倍にする。[gold]廃棄[/gold]。",
+  "HINAMORIMOD-ACCELERATED_COMBUSTION_MOMO.description": "対象の[gold]火傷[/gold]を2倍にする。",
   "HINAMORIMOD-TOBIUMES_FLAME_DANCE_MOMO.title": "飛梅の炎舞",
   "HINAMORIMOD-TOBIUMES_FLAME_DANCE_MOMO.description": "{Damage:diff()}ダメージを与える。\n対象の[gold]火傷[/gold]と同量の[gold]火種[/gold]を得る。",
   "HINAMORIMOD-TOBIUMES_SPARK_MOMO.title": "飛梅の火花",
