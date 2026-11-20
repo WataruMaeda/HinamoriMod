@@ -52,5 +52,8 @@
   "HINAMORIMOD-FLAME_CYCLE_ALL_POWER.smartDescription": "Whenever you gain Ember, apply {Amount} Burn to ALL enemies.",
   "HINAMORIMOD-KIDO_RESEARCH_POWER.title": "Kido Research",
   "HINAMORIMOD-KIDO_RESEARCH_POWER.description": "At the start of each turn, consume up to {Amount} Ember. Gain 1 Strength and 1 Dexterity per Ember consumed.",
-  "HINAMORIMOD-KIDO_RESEARCH_POWER.smartDescription": "At the start of each turn, consume up to {Amount} Ember. Gain 1 Strength and 1 Dexterity per Ember consumed."
+  "HINAMORIMOD-KIDO_RESEARCH_POWER.smartDescription": "At the start of each turn, consume up to {Amount} Ember. Gain 1 Strength and 1 Dexterity per Ember consumed.",
+  "HINAMORIMOD-SPIRITUAL_PRESSURE_UNLEASHED_POWER.title": "Spiritual Pressure Unleashed",
+  "HINAMORIMOD-SPIRITUAL_PRESSURE_UNLEASHED_POWER.description": "At the start of each turn, gain {Amount} Energy.",
+  "HINAMORIMOD-SPIRITUAL_PRESSURE_UNLEASHED_POWER.smartDescription": "At the start of each turn, gain {Amount} Energy."
 }
