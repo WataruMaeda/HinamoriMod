@@ -1,5 +1,8 @@
 {
   "HINAMORIMOD-KIDO_FUNDAMENTALS.title": "鬼道の心得",
   "HINAMORIMOD-KIDO_FUNDAMENTALS.description": "戦闘開始時、[gold]詠唱[/gold]を{Chant}獲得する。\nランダムなレリックを1個獲得する。\nボスを倒すと、追加でレリックを1個ドロップする。",
-  "HINAMORIMOD-KIDO_FUNDAMENTALS.flavor": "鬼道を極めるための第一歩。日々の鍛錬が、確かな力となる。"
+  "HINAMORIMOD-KIDO_FUNDAMENTALS.flavor": "鬼道を極めるための第一歩。日々の鍛錬が、確かな力となる。",
+  "HINAMORIMOD-KIDO_ESSENCE.title": "鬼道の真髄",
+  "HINAMORIMOD-KIDO_ESSENCE.description": "戦闘開始時、[gold]詠唱[/gold]を{Chant}獲得する。\\n2ターン目以降、毎ターン開始時に[gold]詠唱[/gold]を1獲得する。\\nランダムなレリックを1個獲得する。\\nボスを倒すと、追加でレリックを1個ドロップする。",
+  "HINAMORIMOD-KIDO_ESSENCE.flavor": "積み重ねた修練が、鬼道の真髄へと導く。"
 }
