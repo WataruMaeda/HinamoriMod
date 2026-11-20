@@ -138,5 +138,5 @@
   "HINAMORIMOD-KIDO_STUDY_MOMO.title": "鬼道の研鑽",
   "HINAMORIMOD-KIDO_STUDY_MOMO.description": "毎ターン開始時、雛森のカードをランダムに1枚生成し、廃棄とエセリアルを付与する。強化時の生成カード強化は実装待ち。",
   "HINAMORIMOD-INHERITED_RESOLVE_MOMO.title": "受け継ぐ想い",
-  "HINAMORIMOD-INHERITED_RESOLVE_MOMO.description": "毎ターン、全キャラクターのパワーカードを1枚生成し、コストを0にする（生成効果は実装待ち）。"
+  "HINAMORIMOD-INHERITED_RESOLVE_MOMO.description": "毎ターン開始時、ランダムなパワーカードを1枚生成する。生成したターンのみEN・詠唱コストが0。強化後は生成カードも強化される。（全キャラ抽選・スター無料化は未対応）"
 }
