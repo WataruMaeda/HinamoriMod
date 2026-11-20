@@ -7,5 +7,11 @@
   "HINAMORIMOD-KIDO_ESSENCE.flavor": "積み重ねた修練が、鬼道の真髄へと導く。",
   "HINAMORIMOD-TOBIUME_GUARD.title": "飛梅の鍔",
   "HINAMORIMOD-TOBIUME_GUARD.description": "戦闘開始時、[gold]火種[/gold]を10獲得する。",
-  "HINAMORIMOD-TOBIUME_GUARD.flavor": "飛梅とともに戦う決意を宿した鍔。"
+  "HINAMORIMOD-TOBIUME_GUARD.flavor": "飛梅とともに戦う決意を宿した鍔。",
+  "HINAMORIMOD-FLAME_TALISMAN.title": "炎の護符",
+  "HINAMORIMOD-FLAME_TALISMAN.description": "戦闘開始時、敵全体に[gold]火傷[/gold]を4付与する。",
+  "HINAMORIMOD-FLAME_TALISMAN.flavor": "鬼道の炎を封じた護符。",
+  "HINAMORIMOD-TOBIUME_EMBER.title": "飛梅の火種",
+  "HINAMORIMOD-TOBIUME_EMBER.description": "毎ターン終了時、[gold]火種[/gold]を1獲得する。",
+  "HINAMORIMOD-TOBIUME_EMBER.flavor": "小さな火は、静かに燃え続ける。"
 }
