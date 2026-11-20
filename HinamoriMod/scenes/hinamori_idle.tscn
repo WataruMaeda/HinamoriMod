@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3]
+[gd_scene load_steps=37 format=3]
 
 [ext_resource type="Texture2D" path="res://HinamoriMod/images/character/idle_00.png" id="1"]
 [ext_resource type="Texture2D" path="res://HinamoriMod/images/character/idle_01.png" id="2"]
@@ -33,6 +33,8 @@
 [ext_resource type="Texture2D" path="res://HinamoriMod/images/character/kido_05.png" id="k5"]
 [ext_resource type="Texture2D" path="res://HinamoriMod/images/character/kido_06.png" id="k6"]
 [ext_resource type="Texture2D" path="res://HinamoriMod/images/character/kido_07.png" id="k7"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/kido_08.png" id="k8"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/kido_09.png" id="k9"]
 [ext_resource type="Script" path="res://HinamoriMod/scenes/hinamori_combat_sprite.gd" id="combat_script"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_idle"]
@@ -42,7 +44,7 @@ animations = [{
 "name": &"block",
 "speed": 8.0
 }, {
-"frames": [{ "duration": 1.0, "texture": ExtResource("k0") }, { "duration": 1.0, "texture": ExtResource("k1") }, { "duration": 1.0, "texture": ExtResource("k2") }, { "duration": 1.0, "texture": ExtResource("k3") }, { "duration": 1.0, "texture": ExtResource("k4") }, { "duration": 1.0, "texture": ExtResource("k5") }, { "duration": 1.0, "texture": ExtResource("k6") }, { "duration": 1.0, "texture": ExtResource("k7") }],
+"frames": [{ "duration": 1.0, "texture": ExtResource("k0") }, { "duration": 1.0, "texture": ExtResource("k1") }, { "duration": 1.0, "texture": ExtResource("k2") }, { "duration": 1.0, "texture": ExtResource("k3") }, { "duration": 1.0, "texture": ExtResource("k4") }, { "duration": 1.0, "texture": ExtResource("k5") }, { "duration": 1.0, "texture": ExtResource("k6") }, { "duration": 1.0, "texture": ExtResource("k7") }, { "duration": 1.0, "texture": ExtResource("k8") }, { "duration": 1.0, "texture": ExtResource("k9") }],
 "loop": false,
 "name": &"cast",
 "speed": 12.0
