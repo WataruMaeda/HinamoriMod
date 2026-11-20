@@ -55,5 +55,8 @@
   "HINAMORIMOD-KIDO_RESEARCH_POWER.smartDescription": "At the start of each turn, consume up to {Amount} Ember. Gain 1 Strength and 1 Dexterity per Ember consumed.",
   "HINAMORIMOD-SPIRITUAL_PRESSURE_UNLEASHED_POWER.title": "Spiritual Pressure Unleashed",
   "HINAMORIMOD-SPIRITUAL_PRESSURE_UNLEASHED_POWER.description": "At the start of each turn, gain {Amount} Energy.",
-  "HINAMORIMOD-SPIRITUAL_PRESSURE_UNLEASHED_POWER.smartDescription": "At the start of each turn, gain {Amount} Energy."
+  "HINAMORIMOD-SPIRITUAL_PRESSURE_UNLEASHED_POWER.smartDescription": "At the start of each turn, gain {Amount} Energy.",
+  "HINAMORIMOD-PINNACLE_OF_HADO_POWER.title": "Pinnacle of Hado",
+  "HINAMORIMOD-PINNACLE_OF_HADO_POWER.description": "Automatically plays drawn Hado cards (effect pending implementation).",
+  "HINAMORIMOD-PINNACLE_OF_HADO_POWER.smartDescription": "Automatically plays drawn Hado cards (effect pending implementation)."
 }
