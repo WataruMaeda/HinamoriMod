@@ -43,5 +43,11 @@
   "HINAMORIMOD-TOGETHER_WITH_TOBIUME_POWER.smartDescription": "毎ターン開始時、火種を{Amount}獲得する。",
   "HINAMORIMOD-BLAZING_TOBIUME_POWER.title": "燃え盛る炎",
   "HINAMORIMOD-BLAZING_TOBIUME_POWER.description": "毎ターン開始時、敵全体に火傷{Amount}を付与する。",
-  "HINAMORIMOD-BLAZING_TOBIUME_POWER.smartDescription": "毎ターン開始時、敵全体に火傷{Amount}を付与する。"
+  "HINAMORIMOD-BLAZING_TOBIUME_POWER.smartDescription": "毎ターン開始時、敵全体に火傷{Amount}を付与する。",
+  "HINAMORIMOD-FLAME_CYCLE_POWER.title": "炎の循環",
+  "HINAMORIMOD-FLAME_CYCLE_POWER.description": "火種を獲得するたび、ランダムな敵1体に火傷{Amount}を付与する。",
+  "HINAMORIMOD-FLAME_CYCLE_POWER.smartDescription": "火種を獲得するたび、ランダムな敵1体に火傷{Amount}を付与する。",
+  "HINAMORIMOD-FLAME_CYCLE_ALL_POWER.title": "炎の循環＋",
+  "HINAMORIMOD-FLAME_CYCLE_ALL_POWER.description": "火種を獲得するたび、敵全体に火傷{Amount}を付与する。",
+  "HINAMORIMOD-FLAME_CYCLE_ALL_POWER.smartDescription": "火種を獲得するたび、敵全体に火傷{Amount}を付与する。"
 }
