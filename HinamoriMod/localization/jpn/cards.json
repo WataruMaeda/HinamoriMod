@@ -132,5 +132,7 @@
   "HINAMORIMOD-PINNACLE_OF_HADO_MOMO.title": "破道の極意",
   "HINAMORIMOD-PINNACLE_OF_HADO_MOMO.description": "[gold]詠唱[/gold]3を消費する。\n破道を引くたび、ランダムな敵にEN・詠唱消費なしで自動使用する。自動使用によるドローも連鎖する。黒棺は詠唱をすべて消費する。",
   "HINAMORIMOD-ITS_YOU_MOMO.title": "お前か！！",
-  "HINAMORIMOD-ITS_YOU_MOMO.description": "[gold]筋力[/gold]を{StrengthPower}得る。\nカードを1枚引く。"
+  "HINAMORIMOD-ITS_YOU_MOMO.description": "[gold]筋力[/gold]を{StrengthPower}得る。\nカードを1枚引く。",
+  "HINAMORIMOD-KIDO_RECITATION_MOMO.title": "鬼道の反復",
+  "HINAMORIMOD-KIDO_RECITATION_MOMO.description": "手札の鬼道1枚にリプレイ{Replay}を付与する。"
 }
