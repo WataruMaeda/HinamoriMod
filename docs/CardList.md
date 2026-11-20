@@ -116,7 +116,7 @@
 | 鬼道の真髄 | Common | EssenceOfKidoMomo | 1EN | 鬼道を3回使用するたび1ドロー（回数はターンを跨いで蓄積） | 0EN | 未設定 | 実装済・未確認 |
 | 霊圧制御 | Uncommon | SpiritualPressureControlMomo | 1EN | 鬼道を使うたび3ブロック | 天賦を付与、効果は同じ | 未設定 | 実装済・未確認 |
 | 飛梅と共に | Uncommon | TogetherWithTobiumeMomo | 1EN | 毎ターン開始時、火種＋5 | 火種＋8 | 未設定 | 実装済・未確認 |
-| 炎の循環 | Uncommon | FlameCycleMomo | 1EN | 火種を獲得するたびランダムな敵1体に火傷1（獲得処理1回につき1回発動） | 火種を獲得するたび敵全体に火傷1 | 未設定 | 未実装・要確認 |
+| 炎の循環 | Uncommon | FlameCycleMomo | 1EN | 火種を獲得するたびランダムな敵1体に火傷1（獲得処理1回につき1回発動） | 火種を獲得するたび敵全体に火傷1 | 未設定 | 実装済・未確認 |
 | 鬼道の探究 | Rare | KidoResearchMomo | 3EN | 毎ターン開始時、火種1を消費して筋力＋1・敏捷性＋1（火種がない場合不発） | 2EN | 未設定 | 未実装・要確認 |
 | 霊圧の解放 | Uncommon | SpiritualPressureUnleashedMomo | 2EN | エセリアル。毎ターン開始時、EN＋1 | 1EN、エセリアル維持 | 未設定 | 未実装・要確認 |
 | 受け継ぐ想い | Rare | InheritedResolveMomo | 3EN | 毎ターン開始時、全キャラクターのパワーカードからランダム1枚を手札に生成。生成カードのEN・詠唱・スターコストはすべて0 | 生成カードがアップグレード済み | 未設定 | 未実装・要確認 |
