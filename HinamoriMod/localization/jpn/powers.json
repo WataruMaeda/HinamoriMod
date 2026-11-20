@@ -40,5 +40,8 @@
   "HINAMORIMOD-SPIRITUAL_PRESSURE_CONTROL_POWER.smartDescription": "[gold]鬼道[/gold]を使用するたび、{Amount}[gold]ブロック[/gold]を得る。",
   "HINAMORIMOD-TOGETHER_WITH_TOBIUME_POWER.title": "飛梅と共に",
   "HINAMORIMOD-TOGETHER_WITH_TOBIUME_POWER.description": "毎ターン開始時、火種を{Amount}獲得する。",
-  "HINAMORIMOD-TOGETHER_WITH_TOBIUME_POWER.smartDescription": "毎ターン開始時、火種を{Amount}獲得する。"
+  "HINAMORIMOD-TOGETHER_WITH_TOBIUME_POWER.smartDescription": "毎ターン開始時、火種を{Amount}獲得する。",
+  "HINAMORIMOD-BLAZING_TOBIUME_POWER.title": "燃え盛る炎",
+  "HINAMORIMOD-BLAZING_TOBIUME_POWER.description": "毎ターン開始時、敵全体に火傷{Amount}を付与する。",
+  "HINAMORIMOD-BLAZING_TOBIUME_POWER.smartDescription": "毎ターン開始時、敵全体に火傷{Amount}を付与する。"
 }
