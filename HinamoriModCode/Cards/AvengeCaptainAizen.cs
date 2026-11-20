@@ -107,8 +107,7 @@ public class AvengeCaptainAizenMomo : HinamoriModCard
 
         await CreatureCmd.GainBlock(
             Owner.Creature,
-            DynamicVars.Block.BaseValue,
-            ValueProp.Move,
+            DynamicVars.Block,
             cardPlay,
             false);
 
