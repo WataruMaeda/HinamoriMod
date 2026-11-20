@@ -13,7 +13,7 @@ namespace HinamoriMod.HinamoriModCode.Cards;
 
 /// <summary>
 /// 逆境の炎
-/// 通常：1EN。手札の状態異常をすべて廃棄し、廃棄した1枚につき火種を2得る。
+/// 通常：1EN。手札・山札・捨て札の状態異常をすべて廃棄し、廃棄した1枚につき火種を2得る。
 /// 強化：1EN。状態異常に加えて呪いも廃棄対象にする。
 /// </summary>
 public class AdversityFlameMomo : HinamoriModCard
@@ -34,10 +34,11 @@ public class AdversityFlameMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
-        // 手札にあるカードを確認する。
-        // 廃棄中に手札の内容が変わるため、先に対象一覧を固定しておく。
+        // 手札・山札・捨て札のカードを対象とする。
+        // 移動中にコレクションが変わるため、先に対象一覧を固定する。
         // このカード自身は処理対象に含めない。
-        var targets = PileType.Hand.GetPile(Owner).Cards
+        var targets = new[] { PileType.Hand, PileType.Draw, PileType.Discard }
+            .SelectMany(pile => pile.GetPile(Owner).Cards)
             .Where(card =>
                 !ReferenceEquals(card, this) &&
                 (card.Type == CardType.Status ||
