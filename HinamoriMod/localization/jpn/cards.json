@@ -134,5 +134,5 @@
   "HINAMORIMOD-INHERITED_RESOLVE_MOMO.title": "受け継ぐ想い",
   "HINAMORIMOD-INHERITED_RESOLVE_MOMO.description": "毎ターン開始時、ランダムなパワーカードを1枚生成する。生成したターンのみEN・詠唱コストが0になる。{IfUpgraded:show:生成するカードはアップグレード済み。|}",
   "HINAMORIMOD-ITTO_KASO_MOMO.title": "一刀火葬",
-  "HINAMORIMOD-ITTO_KASO_MOMO.description": "敵全体に{Damage:diff()}ダメージを与える。\\n敵全体に[gold]火傷[/gold]{Burn:diff()}を付与する。\\n[gold]火種[/gold]{Forge:diff()}を得る。\\nHPを{SelfHpLoss}失う。"
+  "HINAMORIMOD-ITTO_KASO_MOMO.description": "敵全体に{Damage:diff()}ダメージを与える。\n敵全体に[gold]火傷[/gold]{Burn:diff()}を付与する。\n[gold]火種[/gold]{Forge:diff()}を得る。\nHPを{SelfHpLoss}失う。"
 }
