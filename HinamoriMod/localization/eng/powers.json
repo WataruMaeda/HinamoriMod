@@ -49,5 +49,8 @@
   "HINAMORIMOD-FLAME_CYCLE_POWER.smartDescription": "Whenever you gain Ember, apply {Amount} Burn to a random enemy.",
   "HINAMORIMOD-FLAME_CYCLE_ALL_POWER.title": "Flame Cycle+",
   "HINAMORIMOD-FLAME_CYCLE_ALL_POWER.description": "Whenever you gain Ember, apply {Amount} Burn to ALL enemies.",
-  "HINAMORIMOD-FLAME_CYCLE_ALL_POWER.smartDescription": "Whenever you gain Ember, apply {Amount} Burn to ALL enemies."
+  "HINAMORIMOD-FLAME_CYCLE_ALL_POWER.smartDescription": "Whenever you gain Ember, apply {Amount} Burn to ALL enemies.",
+  "HINAMORIMOD-KIDO_RESEARCH_POWER.title": "Kido Research",
+  "HINAMORIMOD-KIDO_RESEARCH_POWER.description": "At the start of each turn, consume up to {Amount} Ember. Gain 1 Strength and 1 Dexterity per Ember consumed.",
+  "HINAMORIMOD-KIDO_RESEARCH_POWER.smartDescription": "At the start of each turn, consume up to {Amount} Ember. Gain 1 Strength and 1 Dexterity per Ember consumed."
 }
