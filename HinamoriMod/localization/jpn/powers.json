@@ -55,5 +55,8 @@
   "HINAMORIMOD-KIDO_RESEARCH_POWER.smartDescription": "毎ターン開始時、火種を最大{Amount}消費し、消費した火種1につき筋力1と敏捷性1を得る。",
   "HINAMORIMOD-SPIRITUAL_PRESSURE_UNLEASHED_POWER.title": "霊圧の解放",
   "HINAMORIMOD-SPIRITUAL_PRESSURE_UNLEASHED_POWER.description": "毎ターン開始時、エナジーを{Amount}得る。",
-  "HINAMORIMOD-SPIRITUAL_PRESSURE_UNLEASHED_POWER.smartDescription": "毎ターン開始時、エナジーを{Amount}得る。"
+  "HINAMORIMOD-SPIRITUAL_PRESSURE_UNLEASHED_POWER.smartDescription": "毎ターン開始時、エナジーを{Amount}得る。",
+  "HINAMORIMOD-PINNACLE_OF_HADO_POWER.title": "破道の極意",
+  "HINAMORIMOD-PINNACLE_OF_HADO_POWER.description": "破道を引くと自動使用する（自動使用処理は実装待ち）。",
+  "HINAMORIMOD-PINNACLE_OF_HADO_POWER.smartDescription": "破道を引くと自動使用する（自動使用処理は実装待ち）。"
 }
