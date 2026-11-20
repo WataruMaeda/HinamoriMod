@@ -14,7 +14,9 @@ namespace HinamoriMod.HinamoriModCode.Debug;
 public partial class DebugCardMenu : Control
 {
     private readonly Player _player;
-    private readonly IReadOnlyList<Type> _cards = CardDebugHelper.GetCards();
+    private IReadOnlyList<Type> _cards = CardDebugHelper.GetCards();
+    private OptionButton _categorySelector = null!;
+    private OptionButton _destinationSelector = null!;
     private readonly Dictionary<int, CardModel> _handCards = new();
     private static readonly Dictionary<Type, string> NameCache = new();
 
@@ -163,6 +165,38 @@ public partial class DebugCardMenu : Control
         };
 
         tab.AddChild(_search);
+
+        var options = new HBoxContainer();
+        tab.AddChild(options);
+        options.AddChild(new Label { Text = "種類" });
+        _categorySelector = new OptionButton { SizeFlagsHorizontal = SizeFlags.ExpandFill };
+        _categorySelector.AddItem("雛森専用カード", (int)CardDebugHelper.DebugCardCategory.Hinamori);
+        _categorySelector.AddItem("状態異常カード", (int)CardDebugHelper.DebugCardCategory.Status);
+        _categorySelector.AddItem("呪いカード", (int)CardDebugHelper.DebugCardCategory.Curse);
+        _categorySelector.Select(0);
+        _categorySelector.ItemSelected += _ =>
+        {
+            var category = (CardDebugHelper.DebugCardCategory)_categorySelector.GetSelectedId();
+            try
+            {
+                _cards = CardDebugHelper.GetCards(category);
+                RefreshCards();
+            }
+            catch (Exception ex)
+            {
+                GD.PushError($"[Hinamori Debug] カード一覧取得失敗: {ex}");
+                _status.Text = $"カード一覧取得失敗: {ex.GetBaseException().Message}";
+            }
+        };
+        options.AddChild(_categorySelector);
+        options.AddChild(new Label { Text = "追加先" });
+        _destinationSelector = new OptionButton { SizeFlagsHorizontal = SizeFlags.ExpandFill };
+        _destinationSelector.AddItem("手札", (int)PileType.Hand);
+        _destinationSelector.AddItem("廃棄", (int)PileType.Exhaust);
+        _destinationSelector.AddItem("捨て札", (int)PileType.Discard);
+        _destinationSelector.AddItem("山札", (int)PileType.Draw);
+        _destinationSelector.Select(0);
+        options.AddChild(_destinationSelector);
 
         _upgraded = new CheckBox
         {
@@ -729,10 +763,11 @@ public partial class DebugCardMenu : Control
                     await CardDebugHelper.AddCard(
                         _player,
                         selectedType,
-                        _upgraded.ButtonPressed);
+                        _upgraded.ButtonPressed,
+                        (PileType)_destinationSelector.GetSelectedId());
 
                     _status.Text =
-                        $"追加しました: {DisplayName(selectedType)}";
+                        $"追加しました: {DisplayName(selectedType)} → {_destinationSelector.GetItemText(_destinationSelector.Selected)}";
 
                     RefreshHandCards();
                     UpdateResourceStatus();
