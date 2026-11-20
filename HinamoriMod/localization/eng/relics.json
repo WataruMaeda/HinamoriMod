@@ -7,5 +7,11 @@
   "HINAMORIMOD-KIDO_ESSENCE.flavor": "Years of training reveal the essence of Kido.",
   "HINAMORIMOD-TOBIUME_GUARD.title": "Tobiume's Guard",
   "HINAMORIMOD-TOBIUME_GUARD.description": "At the start of combat, gain 10 [gold]Ember[/gold].",
-  "HINAMORIMOD-TOBIUME_GUARD.flavor": "A sword guard carrying the resolve to fight alongside Tobiume."
+  "HINAMORIMOD-TOBIUME_GUARD.flavor": "A sword guard carrying the resolve to fight alongside Tobiume.",
+  "HINAMORIMOD-FLAME_TALISMAN.title": "Flame Talisman",
+  "HINAMORIMOD-FLAME_TALISMAN.description": "At the start of combat, apply 4 [gold]Burn[/gold] to ALL enemies.",
+  "HINAMORIMOD-FLAME_TALISMAN.flavor": "A talisman containing the flames of Kido.",
+  "HINAMORIMOD-TOBIUME_EMBER.title": "Tobiume's Ember",
+  "HINAMORIMOD-TOBIUME_EMBER.description": "At the end of each turn, gain 1 [gold]Ember[/gold].",
+  "HINAMORIMOD-TOBIUME_EMBER.flavor": "A small flame continues to burn."
 }
