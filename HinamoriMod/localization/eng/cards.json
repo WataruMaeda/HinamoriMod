@@ -134,5 +134,5 @@
   "HINAMORIMOD-INHERITED_RESOLVE_MOMO.title": "Inherited Resolve",
   "HINAMORIMOD-INHERITED_RESOLVE_MOMO.description": "At the start of each turn, create a random Power card. It costs 0 Energy and Chant this turn.{IfUpgraded:show: The generated card is upgraded.|}",
   "HINAMORIMOD-ITTO_KASO_MOMO.title": "Ittō Kasō",
-  "HINAMORIMOD-ITTO_KASO_MOMO.description": "Deal {Damage:diff()} damage to ALL enemies.\\nApply {Burn:diff()} [gold]Burn[/gold] to ALL enemies.\\nGain {Forge:diff()} [gold]Ember[/gold].\\nLose {SelfHpLoss} HP."
+  "HINAMORIMOD-ITTO_KASO_MOMO.description": "Deal {Damage:diff()} damage to ALL enemies.\nApply {Burn:diff()} [gold]Burn[/gold] to ALL enemies.\nGain {Forge:diff()} [gold]Ember[/gold].\nLose {SelfHpLoss} HP."
 }
