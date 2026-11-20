@@ -1,6 +1,7 @@
 ﻿
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using HinamoriMod.HinamoriModCode.Character;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -40,6 +41,8 @@ public class ShunpoMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        HinamoriCombatAnimation.Play("block");
+
         await CreatureCmd.GainBlock(
             Owner.Creature,
             DynamicVars.Block,
