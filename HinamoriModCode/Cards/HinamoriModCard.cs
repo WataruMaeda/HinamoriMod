@@ -81,6 +81,12 @@ public abstract class HinamoriModCard(
             if (FreeChantThisTurn)
                 return 0;
 
+            // 鬼道の結晶：このターン中、鬼道の詠唱コスト0
+            if (HasHinamoriTag(HinamoriCardTag.Kido) &&
+                IsMutable && CombatState != null &&
+                Owner.Creature.GetPower<PotionFreeKidoChantPower>() != null)
+                return 0;
+
             // 詠唱破棄による鬼道の詠唱無料化
             if (HasHinamoriTag(HinamoriCardTag.Kido) &&
                 IsMutable &&
@@ -168,6 +174,12 @@ public abstract class HinamoriModCard(
 
         // 掴趾追雀で生成したカード
         if (FreeChantThisTurn)
+            return true;
+
+        // 鬼道の結晶：このターン中、鬼道の詠唱コスト0
+        if (HasHinamoriTag(HinamoriCardTag.Kido) &&
+            IsMutable && CombatState != null &&
+            Owner.Creature.GetPower<PotionFreeKidoChantPower>() != null)
             return true;
 
         // 詠唱破棄による無料化
