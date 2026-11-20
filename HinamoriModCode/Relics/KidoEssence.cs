@@ -13,7 +13,8 @@ namespace HinamoriMod.HinamoriModCode.Relics;
 /// </summary>
 public class KidoEssence : KidoFundamentals
 {
-    public override RelicRarity Rarity => RelicRarity.Boss;
+    // 暫定：参照中のゲームAPIにBossがないためRareを使用。ボス報酬への登録は別途要確認。
+    public override RelicRarity Rarity => RelicRarity.Rare;
 
     protected override int StartingChant => 7;
 
