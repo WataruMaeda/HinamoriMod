@@ -1,0 +1,27 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/attack_00.png" id="1"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/attack_01.png" id="2"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/attack_02.png" id="3"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/attack_03.png" id="4"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/attack_04.png" id="5"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/attack_05.png" id="6"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/attack_06.png" id="7"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/attack_07.png" id="8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_attack"]
+animations = [{
+"frames": [{ "duration": 1.0, "texture": ExtResource("1") }, { "duration": 1.0, "texture": ExtResource("2") }, { "duration": 1.0, "texture": ExtResource("3") }, { "duration": 1.0, "texture": ExtResource("4") }, { "duration": 1.0, "texture": ExtResource("5") }, { "duration": 1.0, "texture": ExtResource("6") }, { "duration": 1.0, "texture": ExtResource("7") }, { "duration": 1.0, "texture": ExtResource("8") }],
+"loop": false,
+"name": &"attack",
+"speed": 12.0
+}]
+
+[node name="HinamoriAttack" type="Node2D"]
+
+[node name="Visuals" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="AttackSprite" type="AnimatedSprite2D" parent="Visuals"]
+position = Vector2(0, -181)
+sprite_frames = SubResource("SpriteFrames_attack")
