@@ -122,5 +122,8 @@
   "HINAMORIMOD-TOGETHER_WITH_TOBIUME_MOMO.title": "Together with Tobiume",
   "HINAMORIMOD-TOGETHER_WITH_TOBIUME_MOMO.description": "At the start of each turn, gain {TogetherWithTobiumePower:diff()} Ember.",
   "HINAMORIMOD-BLAZING_TOBIUME_MOMO.title": "Blazing Tobiume",
-  "HINAMORIMOD-BLAZING_TOBIUME_MOMO.description": "At the start of each turn, apply {BlazingTobiumePower:diff()} Burn to ALL enemies."
+  "HINAMORIMOD-BLAZING_TOBIUME_MOMO.description": "At the start of each turn, apply {BlazingTobiumePower:diff()} Burn to ALL enemies.",
+  "HINAMORIMOD-FLAME_CYCLE_MOMO.title": "Flame Cycle",
+  "HINAMORIMOD-FLAME_CYCLE_MOMO.description": "Whenever you gain Ember, apply 1 Burn to a random enemy.",
+  "HINAMORIMOD-FLAME_CYCLE_MOMO.upgradeDescription": "Whenever you gain Ember, apply 1 Burn to ALL enemies."
 }
