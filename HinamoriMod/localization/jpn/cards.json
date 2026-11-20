@@ -138,5 +138,7 @@
   "HINAMORIMOD-KIDO_STUDY_MOMO.title": "鬼道の研鑽",
   "HINAMORIMOD-KIDO_STUDY_MOMO.description": "毎ターン開始時、雛森のカードをランダムに1枚生成し、廃棄とエセリアルを付与する。強化時の生成カード強化は実装待ち。",
   "HINAMORIMOD-INHERITED_RESOLVE_MOMO.title": "受け継ぐ想い",
-  "HINAMORIMOD-INHERITED_RESOLVE_MOMO.description": "毎ターン開始時、ランダムなパワーカードを1枚生成する。生成したターンのみEN・詠唱コストが0。強化後は生成カードも強化される。（全キャラ抽選・スター無料化は未対応）"
+  "HINAMORIMOD-INHERITED_RESOLVE_MOMO.description": "毎ターン開始時、ランダムなパワーカードを1枚生成する。生成したターンのみEN・詠唱コストが0。強化後は生成カードも強化される。（全キャラ抽選・スター無料化は未対応）",
+  "HINAMORIMOD-ITTO_KASO_MOMO.title": "一刀火葬",
+  "HINAMORIMOD-ITTO_KASO_MOMO.description": "敵全体に{Damage:diff()}ダメージを与える。\\n敵全体に[gold]火傷[/gold]{Burn:diff()}を付与する。\\n[gold]火種[/gold]{Forge:diff()}を得る。\\nHPを{SelfHpLoss}失う。"
 }
