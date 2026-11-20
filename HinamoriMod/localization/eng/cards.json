@@ -133,5 +133,7 @@
   "HINAMORIMOD-PINNACLE_OF_HADO_MOMO.title": "Pinnacle of Hado",
   "HINAMORIMOD-PINNACLE_OF_HADO_MOMO.description": "Spend 3 Chant. Whenever you draw a Hado card, automatically play it against a random enemy for no Energy or Chant. Chain further draws. Black Coffin still spends all Chant.",
   "HINAMORIMOD-ITS_YOU_MOMO.title": "It Was You!!",
-  "HINAMORIMOD-ITS_YOU_MOMO.description": "Gain {StrengthPower} Strength.\nDraw 1 card."
+  "HINAMORIMOD-ITS_YOU_MOMO.description": "Gain {StrengthPower} Strength.\nDraw 1 card.",
+  "HINAMORIMOD-KIDO_RECITATION_MOMO.title": "Kido Recitation",
+  "HINAMORIMOD-KIDO_RECITATION_MOMO.description": "Give a Kido card in your hand {Replay} Replay."
 }
