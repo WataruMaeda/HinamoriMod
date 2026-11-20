@@ -118,7 +118,7 @@
 | 飛梅と共に | Uncommon | TogetherWithTobiumeMomo | 1EN | 毎ターン開始時、火種＋5 | 火種＋8 | 未設定 | 実装済・未確認 |
 | 炎の循環 | Uncommon | FlameCycleMomo | 1EN | 火種を獲得するたびランダムな敵1体に火傷1（獲得処理1回につき1回発動） | 火種を獲得するたび敵全体に火傷1 | 未設定 | 実装済・未確認 |
 | 鬼道の探究 | Rare | KidoResearchMomo | 3EN | 毎ターン開始時、火種1を消費して筋力＋1・敏捷性＋1（火種がない場合不発） | 2EN | 未設定 | 実装済・未確認 |
-| 霊圧の解放 | Uncommon | SpiritualPressureUnleashedMomo | 2EN | エセリアル。毎ターン開始時、EN＋1 | 1EN、エセリアル維持 | 未設定 | 未実装・要確認 |
+| 霊圧の解放 | Uncommon | SpiritualPressureUnleashedMomo | 2EN | エセリアル。毎ターン開始時、EN＋1 | 1EN、エセリアル維持 | 未設定 | 実装済・未確認 |
 | 受け継ぐ想い | Rare | InheritedResolveMomo | 3EN | 毎ターン開始時、全キャラクターのパワーカードからランダム1枚を手札に生成。生成カードのEN・詠唱・スターコストはすべて0 | 生成カードがアップグレード済み | 未設定 | 未実装・要確認 |
 | 鬼道の研鑽 | Rare | KidoStudyMomo | 1EN | 毎ターン開始時、雛森の全カードからランダム1枚を手札に生成し、廃棄・エセリアルを付与 | 生成カードがアップグレード済み | 未設定 | 未実装 |
 | 破道の極意 | Rare | PinnacleOfHadoMomo | 3EN＋詠3 | 破道を引くたび、ランダムな敵へEN・詠唱消費なしで自動使用。自動使用によるドローでも連鎖する。黒棺のみ全詠唱消費 | 2EN＋詠3、同じ効果 | 未設定 | 未実装 |
