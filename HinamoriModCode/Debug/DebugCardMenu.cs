@@ -40,6 +40,8 @@ public partial class DebugCardMenu : Control
     // ゲーム標準のカードUIを使用したホバープレビュー
     private NCard? _previewCard;
     private Type? _hoveredCardType;
+    private Type? _lastPreviewCardType;
+    private bool _previewPinned;
 
     private bool _busy;
     private bool _updatingEffects;
@@ -205,8 +207,14 @@ public partial class DebugCardMenu : Control
 
         _upgraded.Toggled += _ =>
         {
-            if (_hoveredCardType != null)
-                ShowCardPreview(_hoveredCardType);
+            // チェックボックスにカーソルを移動すると一覧ボタンのMouseExitedが発火する。
+            // 最後に表示したカードを再表示し、次のホバーまで維持する。
+            var previewType = _hoveredCardType ?? _lastPreviewCardType;
+            if (previewType != null)
+            {
+                ShowCardPreview(previewType);
+                _previewPinned = true;
+            }
         };
 
         tab.AddChild(_upgraded);
@@ -234,6 +242,7 @@ public partial class DebugCardMenu : Control
     private void ShowCardPreview(Type cardType)
     {
         HideCardPreview();
+        _lastPreviewCardType = cardType;
 
         try
         {
@@ -283,6 +292,7 @@ public partial class DebugCardMenu : Control
     private void HideCardPreview()
     {
         _hoveredCardType = null;
+        _previewPinned = false;
         if (_previewCard == null)
             return;
 
@@ -712,6 +722,7 @@ public partial class DebugCardMenu : Control
     private void RefreshCards()
     {
         HideCardPreview();
+        _lastPreviewCardType = null;
 
         foreach (var child in _results.GetChildren())
         {
@@ -740,13 +751,14 @@ public partial class DebugCardMenu : Control
             // カーソルを合わせるとプレビュー表示
             button.MouseEntered += () =>
             {
+                _previewPinned = false;
                 ShowCardPreview(selectedType);
             };
 
             // カーソルを外すとプレビュー非表示
             button.MouseExited += () =>
             {
-                if (_hoveredCardType == selectedType)
+                if (_hoveredCardType == selectedType && !_previewPinned)
                     HideCardPreview();
             };
 
