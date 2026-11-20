@@ -63,9 +63,12 @@
   "HINAMORIMOD-KIDO_STUDY_POWER.description": "毎ターン開始時、ランダムな雛森カードを{Amount}枚生成し、廃棄とエセリアルを付与する。",
   "HINAMORIMOD-KIDO_STUDY_POWER.smartDescription": "毎ターン開始時、ランダムな雛森カードを{Amount}枚生成し、廃棄とエセリアルを付与する。",
   "HINAMORIMOD-INHERITED_RESOLVE_POWER.title": "受け継ぐ想い",
-  "HINAMORIMOD-INHERITED_RESOLVE_POWER.description": "パワーカードの生成効果は実装待ち。",
-  "HINAMORIMOD-INHERITED_RESOLVE_POWER.smartDescription": "パワーカードの生成効果は実装待ち。",
+  "HINAMORIMOD-INHERITED_RESOLVE_POWER.description": "毎ターン開始時、パワーカードを{Amount}枚生成し、生成ターンのみEN・詠唱コストを0にする。",
+  "HINAMORIMOD-INHERITED_RESOLVE_POWER.smartDescription": "毎ターン開始時、パワーカードを{Amount}枚生成し、生成ターンのみEN・詠唱コストを0にする。",
   "HINAMORIMOD-UPGRADED_KIDO_STUDY_POWER.title": "鬼道の研鑽",
   "HINAMORIMOD-UPGRADED_KIDO_STUDY_POWER.description": "毎ターン開始時、アップグレード済みの雛森カードを{Amount}枚生成し、廃棄とエセリアルを付与する。",
-  "HINAMORIMOD-UPGRADED_KIDO_STUDY_POWER.smartDescription": "毎ターン開始時、アップグレード済みの雛森カードを{Amount}枚生成し、廃棄とエセリアルを付与する。"
+  "HINAMORIMOD-UPGRADED_KIDO_STUDY_POWER.smartDescription": "毎ターン開始時、アップグレード済みの雛森カードを{Amount}枚生成し、廃棄とエセリアルを付与する。",
+  "HINAMORIMOD-UPGRADED_INHERITED_RESOLVE_POWER.title": "受け継ぐ想い",
+  "HINAMORIMOD-UPGRADED_INHERITED_RESOLVE_POWER.description": "毎ターン開始時、強化済みパワーカードを{Amount}枚生成し、生成ターンのみEN・詠唱コストを0にする。",
+  "HINAMORIMOD-UPGRADED_INHERITED_RESOLVE_POWER.smartDescription": "毎ターン開始時、強化済みパワーカードを{Amount}枚生成し、生成ターンのみEN・詠唱コストを0にする。"
 }
