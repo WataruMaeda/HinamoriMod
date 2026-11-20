@@ -64,5 +64,8 @@
   "HINAMORIMOD-KIDO_STUDY_POWER.smartDescription": "At the start of each turn, create {Amount} random Hinamori cards with Exhaust and Ethereal.",
   "HINAMORIMOD-INHERITED_RESOLVE_POWER.title": "Inherited Resolve",
   "HINAMORIMOD-INHERITED_RESOLVE_POWER.description": "Power generation effect not yet implemented.",
-  "HINAMORIMOD-INHERITED_RESOLVE_POWER.smartDescription": "Power generation effect not yet implemented."
+  "HINAMORIMOD-INHERITED_RESOLVE_POWER.smartDescription": "Power generation effect not yet implemented.",
+  "HINAMORIMOD-UPGRADED_KIDO_STUDY_POWER.title": "Kido Study",
+  "HINAMORIMOD-UPGRADED_KIDO_STUDY_POWER.description": "At the start of each turn, create {Amount} upgraded Hinamori cards with Exhaust and Ethereal.",
+  "HINAMORIMOD-UPGRADED_KIDO_STUDY_POWER.smartDescription": "At the start of each turn, create {Amount} upgraded Hinamori cards with Exhaust and Ethereal."
 }
