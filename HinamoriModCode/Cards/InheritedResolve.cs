@@ -8,7 +8,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 
 namespace HinamoriMod.HinamoriModCode.Cards;
 
-/// <summary>受け継ぐ想い。カード付与部分のみ。生成効果は未実装。</summary>
+/// <summary>受け継ぐ想い。全キャラプールとスターコストは未対応。</summary>
 public class InheritedResolveMomo : HinamoriModCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
@@ -21,12 +21,16 @@ public class InheritedResolveMomo : HinamoriModCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<InheritedResolvePower>(
-            choiceContext, Owner.Creature, 1m, Owner.Creature, this);
+        if (IsUpgraded)
+            await PowerCmd.Apply<UpgradedInheritedResolvePower>(
+                choiceContext, Owner.Creature, 1m, Owner.Creature, this);
+        else
+            await PowerCmd.Apply<InheritedResolvePower>(
+                choiceContext, Owner.Creature, 1m, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()
     {
-        // TODO: 生成カードのアップグレード指定をパワーに渡す。
+        // IsUpgraded に応じて適用するパワーを切り替える。
     }
 }
