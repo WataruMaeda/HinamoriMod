@@ -125,5 +125,7 @@
   "HINAMORIMOD-BLAZING_TOBIUME_MOMO.description": "At the start of each turn, apply {BlazingTobiumePower:diff()} Burn to ALL enemies.",
   "HINAMORIMOD-FLAME_CYCLE_MOMO.title": "Flame Cycle",
   "HINAMORIMOD-FLAME_CYCLE_MOMO.description": "Whenever you gain Ember, apply 1 Burn to a random enemy.",
-  "HINAMORIMOD-FLAME_CYCLE_MOMO.upgradeDescription": "Whenever you gain Ember, apply 1 Burn to ALL enemies."
+  "HINAMORIMOD-FLAME_CYCLE_MOMO.upgradeDescription": "Whenever you gain Ember, apply 1 Burn to ALL enemies.",
+  "HINAMORIMOD-KIDO_RESEARCH_MOMO.title": "Kido Research",
+  "HINAMORIMOD-KIDO_RESEARCH_MOMO.description": "At the start of each turn, consume 1 Ember to gain 1 Strength and 1 Dexterity. Does not trigger without Ember."
 }
