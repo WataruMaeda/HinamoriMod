@@ -39,7 +39,8 @@ unique_name_in_owner = true
 
 [node name="IdleSprite" type="AnimatedSprite2D" parent="Visuals"]
 script = ExtResource("combat_script")
-position = Vector2(0, -181)
+position = Vector2(0, -135.75)
+scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_idle")
 autoplay = "idle"
 centered = true
