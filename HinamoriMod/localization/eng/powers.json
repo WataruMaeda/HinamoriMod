@@ -43,5 +43,11 @@
   "HINAMORIMOD-TOGETHER_WITH_TOBIUME_POWER.smartDescription": "At the start of each turn, gain {Amount} Ember.",
   "HINAMORIMOD-BLAZING_TOBIUME_POWER.title": "Blazing Tobiume",
   "HINAMORIMOD-BLAZING_TOBIUME_POWER.description": "At the start of each turn, apply {Amount} Burn to ALL enemies.",
-  "HINAMORIMOD-BLAZING_TOBIUME_POWER.smartDescription": "At the start of each turn, apply {Amount} Burn to ALL enemies."
+  "HINAMORIMOD-BLAZING_TOBIUME_POWER.smartDescription": "At the start of each turn, apply {Amount} Burn to ALL enemies.",
+  "HINAMORIMOD-FLAME_CYCLE_POWER.title": "Flame Cycle",
+  "HINAMORIMOD-FLAME_CYCLE_POWER.description": "Whenever you gain Ember, apply {Amount} Burn to a random enemy.",
+  "HINAMORIMOD-FLAME_CYCLE_POWER.smartDescription": "Whenever you gain Ember, apply {Amount} Burn to a random enemy.",
+  "HINAMORIMOD-FLAME_CYCLE_ALL_POWER.title": "Flame Cycle+",
+  "HINAMORIMOD-FLAME_CYCLE_ALL_POWER.description": "Whenever you gain Ember, apply {Amount} Burn to ALL enemies.",
+  "HINAMORIMOD-FLAME_CYCLE_ALL_POWER.smartDescription": "Whenever you gain Ember, apply {Amount} Burn to ALL enemies."
 }
