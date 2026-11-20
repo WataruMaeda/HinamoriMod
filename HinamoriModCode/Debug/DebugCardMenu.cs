@@ -23,6 +23,9 @@ public partial class DebugCardMenu : Control
     private VBoxContainer _results = null!;
     private LineEdit _search = null!;
     private CheckBox _upgraded = null!;
+    private CheckBox _showAttacks = null!;
+    private CheckBox _showSkills = null!;
+    private CheckBox _showPowers = null!;
     private Label _status = null!;
     private Label _resourceStatus = null!;
     private OptionButton _cardSelector = null!;
@@ -218,6 +221,21 @@ public partial class DebugCardMenu : Control
         };
 
         tab.AddChild(_upgraded);
+
+        // カード種別による表示フィルター。初期状態ではすべて表示する。
+        var typeFilters = new HBoxContainer();
+        tab.AddChild(typeFilters);
+        typeFilters.AddChild(new Label { Text = "表示するカード" });
+
+        _showAttacks = new CheckBox { Text = "アタック", ButtonPressed = true };
+        _showSkills = new CheckBox { Text = "スキル", ButtonPressed = true };
+        _showPowers = new CheckBox { Text = "パワー", ButtonPressed = true };
+
+        foreach (var filter in new[] { _showAttacks, _showSkills, _showPowers })
+        {
+            filter.Toggled += _ => RefreshCards();
+            typeFilters.AddChild(filter);
+        }
 
         var scroll = new ScrollContainer
         {
@@ -733,12 +751,25 @@ public partial class DebugCardMenu : Control
         var keyword = _search.Text.Trim();
 
         foreach (var type in _cards.Where(t =>
-            t.Name.Contains(
-                keyword,
-                StringComparison.OrdinalIgnoreCase) ||
-            DisplayName(t).Contains(
-                keyword,
-                StringComparison.OrdinalIgnoreCase)))
+        {
+            // 状態異常・呪いなど、3種以外のカードはフィルターに関係なく表示する。
+            // 雛森専用カードではアタック・スキル・パワーを個別に絞り込める。
+            var card = CreatePreviewCard(t);
+            if (card == null)
+                return false;
+
+            bool matchesType = card.Type switch
+            {
+                CardType.Attack => _showAttacks.ButtonPressed,
+                CardType.Skill => _showSkills.ButtonPressed,
+                CardType.Power => _showPowers.ButtonPressed,
+                _ => true
+            };
+
+            return matchesType &&
+                (t.Name.Contains(keyword, StringComparison.OrdinalIgnoreCase) ||
+                 DisplayName(t).Contains(keyword, StringComparison.OrdinalIgnoreCase));
+        }))
         {
             var selectedType = type;
 
