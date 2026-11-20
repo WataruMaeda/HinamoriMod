@@ -22,6 +22,6 @@ public class SpiritualPressureUnleashedPower : HinamoriModPower
         if (player != Owner.Player || !Owner.IsAlive || Amount <= 0)
             return;
 
-        await EnergyCmd.Gain(player, (int)Amount);
+        await PlayerCmd.GainEnergy((int)Amount, player);
     }
 }
