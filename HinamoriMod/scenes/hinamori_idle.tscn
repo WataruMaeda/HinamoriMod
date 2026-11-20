@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=19 format=3]
 
 [ext_resource type="Texture2D" path="res://HinamoriMod/images/character/idle_00.png" id="1"]
 [ext_resource type="Texture2D" path="res://HinamoriMod/images/character/idle_01.png" id="2"]
@@ -9,8 +9,23 @@
 [ext_resource type="Texture2D" path="res://HinamoriMod/images/character/idle_06.png" id="7"]
 [ext_resource type="Texture2D" path="res://HinamoriMod/images/character/idle_07.png" id="8"]
 
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/attack_00.png" id="a0"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/attack_01.png" id="a1"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/attack_02.png" id="a2"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/attack_03.png" id="a3"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/attack_04.png" id="a4"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/attack_05.png" id="a5"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/attack_06.png" id="a6"]
+[ext_resource type="Texture2D" path="res://HinamoriMod/images/character/attack_07.png" id="a7"]
+[ext_resource type="Script" path="res://HinamoriModCode/Character/HinamoriCombatSprite.cs" id="combat_script"]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_idle"]
 animations = [{
+"frames": [{ "duration": 1.0, "texture": ExtResource("a0") }, { "duration": 1.0, "texture": ExtResource("a1") }, { "duration": 1.0, "texture": ExtResource("a2") }, { "duration": 1.0, "texture": ExtResource("a3") }, { "duration": 1.0, "texture": ExtResource("a4") }, { "duration": 1.0, "texture": ExtResource("a5") }, { "duration": 1.0, "texture": ExtResource("a6") }, { "duration": 1.0, "texture": ExtResource("a7") }],
+"loop": false,
+"name": &"attack",
+"speed": 12.0
+}, {
 "frames": [{ "duration": 1.0, "texture": ExtResource("1") }, { "duration": 1.0, "texture": ExtResource("2") }, { "duration": 1.0, "texture": ExtResource("3") }, { "duration": 1.0, "texture": ExtResource("4") }, { "duration": 1.0, "texture": ExtResource("5") }, { "duration": 1.0, "texture": ExtResource("6") }, { "duration": 1.0, "texture": ExtResource("7") }, { "duration": 1.0, "texture": ExtResource("8") }],
 "loop": true,
 "name": &"idle",
@@ -23,6 +38,7 @@ animations = [{
 unique_name_in_owner = true
 
 [node name="IdleSprite" type="AnimatedSprite2D" parent="Visuals"]
+script = ExtResource("combat_script")
 position = Vector2(0, -181)
 sprite_frames = SubResource("SpriteFrames_idle")
 autoplay = "idle"
