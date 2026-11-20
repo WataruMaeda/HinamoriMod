@@ -8,7 +8,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 
 namespace HinamoriMod.HinamoriModCode.Cards;
 
-/// <summary>鬼道の研鑽。生成カードのアップグレードは追加実装待ち。</summary>
+/// <summary>鬼道の研鑽。強化後は生成カードをアップグレードする。</summary>
 public class KidoStudyMomo : HinamoriModCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
@@ -21,12 +21,16 @@ public class KidoStudyMomo : HinamoriModCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<KidoStudyPower>(
-            choiceContext, Owner.Creature, 1m, Owner.Creature, this);
+        if (IsUpgraded)
+            await PowerCmd.Apply<UpgradedKidoStudyPower>(
+                choiceContext, Owner.Creature, 1m, Owner.Creature, this);
+        else
+            await PowerCmd.Apply<KidoStudyPower>(
+                choiceContext, Owner.Creature, 1m, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()
     {
-        // TODO: 生成カードのアップグレードをパワーに伝える実装が必要。
+        // IsUpgraded に応じて使用時に付与するパワーを切り替える。
     }
 }
