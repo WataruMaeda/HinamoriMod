@@ -13,6 +13,8 @@ namespace HinamoriMod.HinamoriModCode.Powers;
 /// <summary>鬼道の研鑽。掴趾追雀のカードプール・生成処理を再利用する。</summary>
 public class KidoStudyPower : HinamoriModPower
 {
+    protected virtual bool UpgradeGeneratedCards => false;
+
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
     protected override bool IsVisibleInternal => true;
@@ -47,7 +49,8 @@ public class KidoStudyPower : HinamoriModPower
             generated.AddKeyword(CardKeyword.Exhaust);
             generated.AddKeyword(CardKeyword.Ethereal);
 
-            // TODO: 強化済みの鬼道の研鑽が生成した場合、カードを強化する。
+            if (UpgradeGeneratedCards && generated.IsUpgradable)
+                CardCmd.Upgrade(generated);
             await CardPileCmd.AddGeneratedCardToCombat(
                 generated, PileType.Hand, player);
         }
