@@ -13,8 +13,8 @@ namespace HinamoriMod.HinamoriModCode.Relics;
 /// </summary>
 public class KidoEssence : KidoFundamentals
 {
-    // 暫定：参照中のゲームAPIにBossがないためRareを使用。ボス報酬への登録は別途要確認。
-    public override RelicRarity Rarity => RelicRarity.Rare;
+    // 鬼道の心得から置き換える上位初期レリック。通常のレア枠には出さない。
+    public override RelicRarity Rarity => RelicRarity.Starter;
 
     protected override int StartingChant => 7;
 
