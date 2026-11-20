@@ -49,5 +49,8 @@
   "HINAMORIMOD-FLAME_CYCLE_POWER.smartDescription": "火種を獲得するたび、ランダムな敵1体に火傷{Amount}を付与する。",
   "HINAMORIMOD-FLAME_CYCLE_ALL_POWER.title": "炎の循環＋",
   "HINAMORIMOD-FLAME_CYCLE_ALL_POWER.description": "火種を獲得するたび、敵全体に火傷{Amount}を付与する。",
-  "HINAMORIMOD-FLAME_CYCLE_ALL_POWER.smartDescription": "火種を獲得するたび、敵全体に火傷{Amount}を付与する。"
+  "HINAMORIMOD-FLAME_CYCLE_ALL_POWER.smartDescription": "火種を獲得するたび、敵全体に火傷{Amount}を付与する。",
+  "HINAMORIMOD-KIDO_RESEARCH_POWER.title": "鬼道の探究",
+  "HINAMORIMOD-KIDO_RESEARCH_POWER.description": "毎ターン開始時、火種を最大{Amount}消費し、消費した火種1につき筋力1と敏捷性1を得る。",
+  "HINAMORIMOD-KIDO_RESEARCH_POWER.smartDescription": "毎ターン開始時、火種を最大{Amount}消費し、消費した火種1につき筋力1と敏捷性1を得る。"
 }
