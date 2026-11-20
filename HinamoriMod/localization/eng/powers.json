@@ -70,5 +70,8 @@
   "HINAMORIMOD-UPGRADED_KIDO_STUDY_POWER.smartDescription": "At the start of each turn, create {Amount} upgraded Hinamori cards with Exhaust and Ethereal.",
   "HINAMORIMOD-UPGRADED_INHERITED_RESOLVE_POWER.title": "Inherited Resolve",
   "HINAMORIMOD-UPGRADED_INHERITED_RESOLVE_POWER.description": "At the start of each turn, create {Amount} upgraded Power cards with zero Energy and Chant costs this turn.",
-  "HINAMORIMOD-UPGRADED_INHERITED_RESOLVE_POWER.smartDescription": "At the start of each turn, create {Amount} upgraded Power cards with zero Energy and Chant costs this turn."
+  "HINAMORIMOD-UPGRADED_INHERITED_RESOLVE_POWER.smartDescription": "At the start of each turn, create {Amount} upgraded Power cards with zero Energy and Chant costs this turn.",
+  "HINAMORIMOD-POTION_FREE_KIDO_CHANT_POWER.title": "Kido Crystal",
+  "HINAMORIMOD-POTION_FREE_KIDO_CHANT_POWER.description": "Hado and Bakudo cost 0 Chant this turn.",
+  "HINAMORIMOD-POTION_FREE_KIDO_CHANT_POWER.smartDescription": "Hado and Bakudo cost 0 Chant this turn."
 }
