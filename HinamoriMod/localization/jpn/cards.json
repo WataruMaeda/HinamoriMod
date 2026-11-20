@@ -124,5 +124,7 @@
   "HINAMORIMOD-BLAZING_TOBIUME_MOMO.description": "毎ターン開始時、敵全体に[gold]火傷[/gold]{BlazingTobiumePower:diff()}を与える。",
   "HINAMORIMOD-FLAME_CYCLE_MOMO.title": "炎の循環",
   "HINAMORIMOD-FLAME_CYCLE_MOMO.description": "[gold]火種[/gold]を獲得するたび、ランダムな敵1体に[gold]火傷[/gold]1を付与する。",
-  "HINAMORIMOD-FLAME_CYCLE_MOMO.upgradeDescription": "[gold]火種[/gold]を獲得するたび、敵全体に[gold]火傷[/gold]1を付与する。"
+  "HINAMORIMOD-FLAME_CYCLE_MOMO.upgradeDescription": "[gold]火種[/gold]を獲得するたび、敵全体に[gold]火傷[/gold]1を付与する。",
+  "HINAMORIMOD-KIDO_RESEARCH_MOMO.title": "鬼道の探究",
+  "HINAMORIMOD-KIDO_RESEARCH_MOMO.description": "毎ターン開始時、[gold]火種[/gold]1を消費して[gold]筋力[/gold]1と[gold]敏捷性[/gold]1を得る。火種がない場合は発動しない。"
 }
