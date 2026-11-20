@@ -131,5 +131,7 @@
   "HINAMORIMOD-SPIRITUAL_PRESSURE_UNLEASHED_MOMO.title": "Spiritual Pressure Unleashed",
   "HINAMORIMOD-SPIRITUAL_PRESSURE_UNLEASHED_MOMO.description": "Ethereal.\nAt the start of each turn, gain 1 Energy.",
   "HINAMORIMOD-PINNACLE_OF_HADO_MOMO.title": "Pinnacle of Hado",
-  "HINAMORIMOD-PINNACLE_OF_HADO_MOMO.description": "Spend 3 Chant. Whenever you draw a Hado card, automatically play it against a random enemy for no Energy or Chant. Chain further draws. Black Coffin still spends all Chant."
+  "HINAMORIMOD-PINNACLE_OF_HADO_MOMO.description": "Spend 3 Chant. Whenever you draw a Hado card, automatically play it against a random enemy for no Energy or Chant. Chain further draws. Black Coffin still spends all Chant.",
+  "HINAMORIMOD-ITS_YOU_MOMO.title": "It Was You!!",
+  "HINAMORIMOD-ITS_YOU_MOMO.description": "Gain {StrengthPower} Strength.\nDraw 1 card."
 }
