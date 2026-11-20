@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" path="res://HinamoriMod/images/character/attack_05.png" id="a5"]
 [ext_resource type="Texture2D" path="res://HinamoriMod/images/character/attack_06.png" id="a6"]
 [ext_resource type="Texture2D" path="res://HinamoriMod/images/character/attack_07.png" id="a7"]
-[ext_resource type="Script" path="res://HinamoriModCode/Character/HinamoriCombatSprite.cs" id="combat_script"]
+[ext_resource type="Script" path="res://HinamoriMod/scenes/hinamori_combat_sprite.gd" id="combat_script"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_idle"]
 animations = [{
