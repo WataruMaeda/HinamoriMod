@@ -4,5 +4,8 @@
   "HINAMORIMOD-KIDO_FUNDAMENTALS.flavor": "The first step toward mastering Kido. Daily practice builds lasting strength.",
   "HINAMORIMOD-KIDO_ESSENCE.title": "Essence of Kido",
   "HINAMORIMOD-KIDO_ESSENCE.description": "At the start of combat, gain {Chant} [gold]Chant[/gold].\\nAt the start of each turn after the first, gain 1 [gold]Chant[/gold].\\nGain 1 random relic.\\nBosses drop 1 additional relic.",
-  "HINAMORIMOD-KIDO_ESSENCE.flavor": "Years of training reveal the essence of Kido."
+  "HINAMORIMOD-KIDO_ESSENCE.flavor": "Years of training reveal the essence of Kido.",
+  "HINAMORIMOD-TOBIUME_GUARD.title": "Tobiume's Guard",
+  "HINAMORIMOD-TOBIUME_GUARD.description": "At the start of combat, gain 10 [gold]Ember[/gold].",
+  "HINAMORIMOD-TOBIUME_GUARD.flavor": "A sword guard carrying the resolve to fight alongside Tobiume."
 }
