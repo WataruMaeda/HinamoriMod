@@ -41,11 +41,15 @@ public class ShunpoMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
-        HinamoriCombatAnimation.Play("block");
+        await CreatureCmd.TriggerAnim(
+            Owner.Creature,
+            "Block",
+            0.5f);
 
         await CreatureCmd.GainBlock(
             Owner.Creature,
             DynamicVars.Block,
+
             cardPlay);
     }
 
