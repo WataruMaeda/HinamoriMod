@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using HinamoriMod.HinamoriModCode.Character;
 using HinamoriMod.HinamoriModCode.Commands;
 using HinamoriMod.HinamoriModCode.Powers;
 using MegaCrit.Sts2.Core.Commands;
@@ -49,6 +50,9 @@ public class RedFrameCannonMomo : HinamoriModCard
             .Targeting(cardPlay.Target)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
+
+        // DamageCmd may trigger the default attack animation; switch to the kido cast afterward.
+        HinamoriCombatAnimation.Play("cast");
 
         // 火傷2を付与
         if (cardPlay.Target.IsAlive)
