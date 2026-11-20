@@ -1,18 +1,30 @@
+using System.Linq;
+using System.Threading.Tasks;
+using BaseLib.Abstracts;
+using BaseLib.Utils;
+using HinamoriMod.HinamoriModCode.Character;
+using HinamoriMod.HinamoriModCode.Commands;
+using HinamoriMod.HinamoriModCode.Powers;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Potions;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+
 namespace HinamoriMod.HinamoriModCode.Potions;
 
-/// <summary>
-/// 灼熱の霊薬 (Scorching Elixir)
-/// 敵1体に火傷10を付与する。
-/// </summary>
-/// <remarks>
-/// PotionModel / CustomPotionModel への接続は未実装。
-/// ポーション使用時のフック、レアリティ登録、ターゲット選択、画像は要確認。
-/// </remarks>
-public static class ScorchingElixir
+/// <summary>灼熱の霊薬。画像・ビルド・ゲーム内動作は要検証。</summary>
+[Pool(typeof(HinamoriModPotionPool))]
+public class ScorchingElixir : CustomPotionModel
 {
-    public const string JapaneseName = "灼熱の霊薬";
-    public const string EnglishName = "Scorching Elixir";
-    public const string RarityName = "Uncommon";
-    public const string EffectKind = "Burn";
     public const int PrimaryAmount = 10;
+    public override PotionRarity Rarity => PotionRarity.Uncommon;
+    public override PotionUsage Usage => PotionUsage.CombatOnly;
+    public override TargetType TargetType => TargetType.AnyEnemy;
+
+    protected override async Task OnUse(PlayerChoiceContext choiceContext, Creature? target)
+    {
+        if (target == null) return;
+        await PowerCmd.Apply<BurnPower>(choiceContext, target, PrimaryAmount, Owner.Creature, null);
+    }
 }
