@@ -21,7 +21,7 @@ public class ChainBindingMomo : HinamoriModCard
     public override int ChantCost => 3;
 
     public override HinamoriCardTag HinamoriTags =>
-        HinamoriCardTag.Kido;
+        HinamoriCardTag.Bakudo | HinamoriCardTag.Kido;
 
     public ChainBindingMomo()
         : base(
