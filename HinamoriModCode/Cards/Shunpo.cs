@@ -40,6 +40,11 @@ public class ShunpoMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        await CreatureCmd.TriggerAnim(
+            Owner.Creature,
+            "Block",
+            0.5f);
+
         // Owner.Creature（雛森本人）にBlockVarのブロックを付与する。
         // cardPlayを渡してカード使用によるブロック獲得として扱う。
         await CreatureCmd.GainBlock(
