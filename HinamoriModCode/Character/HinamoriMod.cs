@@ -68,4 +68,6 @@ public class HinamoriMod : PlaceholderCharacterModel
     public override string CustomMapMarkerPath => "map_marker_char_name.png".CharacterUiPath();
     /// <summary>キャラクター選択画面の画像</summary>
     public override string CustomCharacterSelectBg => "res://HinamoriMod/scenes/hinamori_select_bg.tscn";
+
+    public override string CustomVisualPath => "res://HinamoriMod/scenes/hinamori_idle.tscn";
 }
