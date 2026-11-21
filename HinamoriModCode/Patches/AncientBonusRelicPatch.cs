@@ -26,6 +26,7 @@ public static class AncientBonusRelicPatch
         if (__result == null)
             return;
 
+        Godot.GD.Print("[HinamoriMod] Ancient bonus hook registered for " + __instance.GetType().Name);
         var displayedOptions = __result;
         foreach (EventOption option in displayedOptions)
         {
@@ -38,17 +39,24 @@ public static class AncientBonusRelicPatch
 
     private static async Task GiveBonus(AncientEventModel ancient, EventOption selectedOption, IReadOnlyList<EventOption> displayedOptions)
     {
+        Godot.GD.Print("[HinamoriMod] Ancient bonus callback invoked for " + ancient.GetType().Name);
         var player = ancient.Owner;
         if (player == null)
             return;
 
         var starter = player.Relics.OfType<KidoFundamentals>().FirstOrDefault();
         if (starter == null)
+        {
+            Godot.GD.Print("[HinamoriMod] Ancient bonus skipped: starter relic missing");
             return;
+        }
 
         int currentAct = player.RunState.CurrentActIndex;
         if (starter.AncientBonusCount > currentAct)
+        {
+            Godot.GD.Print("[HinamoriMod] Ancient bonus skipped: already granted for act " + currentAct);
             return;
+        }
 
         var ownedIds = player.Relics.Select(r => r.Id).ToHashSet();
         if (selectedOption.Relic != null)
@@ -82,7 +90,8 @@ public static class AncientBonusRelicPatch
             return;
         }
 
-        RelicModel bonus = candidates[Random.Shared.Next(candidates.Count)].ToMutable();
+        RelicModel bonus = candidates[Random.Shared.Next(candidates.Count)];
+        Godot.GD.Print("[HinamoriMod] Ancient bonus selected: " + bonus.Id);
         await RelicCmd.Obtain(bonus, player);
         starter.AncientBonusCount = currentAct + 1;
         starter.Flash();
