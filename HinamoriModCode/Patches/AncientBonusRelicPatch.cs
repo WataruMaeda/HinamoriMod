@@ -26,12 +26,13 @@ public static class AncientBonusRelicPatch
         if (__result == null)
             return;
 
-        foreach (EventOption option in __result)
+        var displayedOptions = __result;
+        foreach (EventOption option in displayedOptions)
         {
             if (option.IsLocked || option.IsProceed)
                 continue;
 
-            option.BeforeChosen += _ => GiveBonus(__instance, option, __result);
+            option.BeforeChosen += _ => GiveBonus(__instance, option, displayedOptions);
         }
     }
 
