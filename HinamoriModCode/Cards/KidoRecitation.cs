@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 
@@ -31,7 +32,7 @@ public class KidoRecitationMomo : HinamoriModCard
     {
         var selected = (await CardSelectCmd.FromHand(
             prefs: new CardSelectorPrefs(
-                CardSelectorPrefs.ExhaustSelectionPrompt, 1),
+                new LocString("card_selection", "HINAMORIMOD_TO_REPLAY"), 1),
             context: choiceContext,
             player: Owner,
             filter: card => card is HinamoriModCard momo
