@@ -21,7 +21,7 @@ public class BendingLightMomo : HinamoriModCard
 
     // 鬼道タグ
     public override HinamoriCardTag HinamoriTags =>
-        HinamoriCardTag.Kido;
+        HinamoriCardTag.Bakudo | HinamoriCardTag.Kido;
 
     // ブロック獲得カード
     public override bool GainsBlock => true;

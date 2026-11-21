@@ -31,7 +31,7 @@ public abstract class HinamoriModCard(
         HinamoriCardTag.None;
 
     /// <summary>
-    /// ����ǐ��ɂ��ꎞ�I�ȉr��������
+    /// 掴趾追雀による一時的な詠唱無料化
     /// </summary>
     public bool FreeChantThisTurn { get; private set; }
 
@@ -70,6 +70,28 @@ public abstract class HinamoriModCard(
     public bool HasHinamoriTag(HinamoriCardTag tag) =>
         (HinamoriTags & tag) == tag;
 
+    /// <summary>
+    /// 破道の極意による自動使用中だけ、通常の破道の詠唱を免除する。
+    /// 黒棺は独自の全詠唱消費処理を維持する。
+    /// </summary>
+    private bool IsPinnacleAutoPlay =>
+        IsMutable &&
+        CombatState != null &&
+        HasHinamoriTag(HinamoriCardTag.Hado) &&
+        this is not BlackCoffinMomo &&
+        Owner.Creature.GetPower<PinnacleOfHadoPower>()?.IsAutoPlaying(this) == true;
+
+    /// <summary>
+    /// パワーポーション等の SetToFreeThisTurn による一時的な無料化。
+    /// 通常の0ENパワーとは区別するため、一時スターコスト0も確認する。
+    /// </summary>
+    private bool IsTemporarilyFreePowerCard =>
+        Type == CardType.Power &&
+        IsMutable &&
+        CombatState != null &&
+        TemporaryStarCost?.Cost == 0 &&
+        EnergyCost.GetWithModifiers(CostModifiers.Local) == 0;
+
     public int EffectiveChantCost
     {
         get
@@ -77,11 +99,25 @@ public abstract class HinamoriModCard(
             if (ChantCost < 0)
                 return -1;
 
-            // ����ǐ��ɂ�閳����
+            // パワーポーション等による一時的な無料化
+            if (IsTemporarilyFreePowerCard)
+                return 0;
+
+            // 破道の極意による自動使用
+            if (IsPinnacleAutoPlay)
+                return 0;
+
+            // 掴趾追雀による無料化
             if (FreeChantThisTurn)
                 return 0;
 
-            // �r���j���ɂ��S���̉r��������
+            // 鬼道の結晶：このターン中、鬼道の詠唱コスト0
+            if (HasHinamoriTag(HinamoriCardTag.Kido) &&
+                IsMutable && CombatState != null &&
+                Owner.Creature.GetPower<PotionFreeKidoChantPower>() != null)
+                return 0;
+
+            // 詠唱破棄による鬼道の詠唱無料化
             if (HasHinamoriTag(HinamoriCardTag.Kido) &&
                 IsMutable &&
                 CombatState != null &&
@@ -90,7 +126,7 @@ public abstract class HinamoriModCard(
                 return 0;
             }
 
-            // ���ւɂ��X�L��������
+            // 崩輪によるスキル無料化
             if (Type == CardType.Skill &&
                 IsMutable &&
                 CombatState != null &&
@@ -99,7 +135,7 @@ public abstract class HinamoriModCard(
                 return 0;
             }
 
-            // �S�������ɂ��A�^�b�N������
+            // 百歩欄干によるアタック無料化
             if (Type == CardType.Attack &&
                 IsMutable &&
                 CombatState != null &&
@@ -108,7 +144,7 @@ public abstract class HinamoriModCard(
                 return 0;
             }
 
-            // �Z����S�ɂ��p���[�J�[�h�̉r��������
+            // 六杖光牢によるパワーカードの詠唱無料化
             if (Type == CardType.Power &&
                 IsMutable &&
                 CombatState != null &&
@@ -129,6 +165,16 @@ public abstract class HinamoriModCard(
                         ?.Amount ?? 0;
             }
 
+            // 鬼道の鍛錬は破道・縛道の両方に適用する。
+            // 既存の破道専用軽減とは加算し、詠唱コストは0未満にしない。
+            if (HasHinamoriTag(HinamoriCardTag.Kido) &&
+                IsMutable &&
+                CombatState != null)
+            {
+                discount += Owner.Creature
+                    .GetPower<KidoDisciplinePower>()?.Amount ?? 0;
+            }
+
             return Math.Max(0, ChantCost - discount);
         }
     }
@@ -142,8 +188,8 @@ public abstract class HinamoriModCard(
             >= EffectiveChantCost);
 
     /// <summary>
-    /// �r���R�X�g�������B
-    /// ���v���C���͍ď���Ȃ��B
+    /// 詠唱コストを消費する。
+    /// リプレイ時は再消費しない。
     /// </summary>
     protected async Task<bool> SpendChant(
         PlayerChoiceContext context,
@@ -152,15 +198,29 @@ public abstract class HinamoriModCard(
         if (ChantCost < 0)
             return true;
 
-        // ���v���C�ł͉r�����ď���Ȃ�
+        // リプレイでは詠唱を再消費しない
         if (!cardPlay.IsFirstInSeries)
             return true;
 
-        // ����ǐ��Ő��������J�[�h
+        // パワーポーション等による一時的な無料化
+        if (IsTemporarilyFreePowerCard)
+            return true;
+
+        // 破道の極意で自動使用された破道は詠唱を消費しない
+        if (IsPinnacleAutoPlay)
+            return true;
+
+        // 掴趾追雀で生成したカード
         if (FreeChantThisTurn)
             return true;
 
-        // �r���j���ɂ�閳����
+        // 鬼道の結晶：このターン中、鬼道の詠唱コスト0
+        if (HasHinamoriTag(HinamoriCardTag.Kido) &&
+            IsMutable && CombatState != null &&
+            Owner.Creature.GetPower<PotionFreeKidoChantPower>() != null)
+            return true;
+
+        // 詠唱破棄による無料化
         if (HasHinamoriTag(HinamoriCardTag.Kido) &&
             IsMutable &&
             CombatState != null &&
@@ -169,7 +229,7 @@ public abstract class HinamoriModCard(
             return true;
         }
 
-        // ���ւɂ�閳����
+        // 崩輪による無料化
         if (Type == CardType.Skill &&
             IsMutable &&
             CombatState != null &&
@@ -178,7 +238,7 @@ public abstract class HinamoriModCard(
             return true;
         }
 
-        // �S�������ɂ��A�^�b�N�r��������
+        // 百歩欄干によるアタック詠唱無料化
         if (Type == CardType.Attack &&
             IsMutable &&
             CombatState != null &&
@@ -187,7 +247,7 @@ public abstract class HinamoriModCard(
             return true;
         }
 
-        // �Z����S�ɂ��p���[�J�[�h�̉r��������
+        // 六杖光牢によるパワーカードの詠唱無料化
         if (Type == CardType.Power &&
             IsMutable &&
             CombatState != null &&
@@ -214,7 +274,7 @@ public abstract class HinamoriModCard(
                 this);
         }
 
-        // �j���̉r���y��������
+        // 破道の詠唱軽減を消費
         if (HasHinamoriTag(HinamoriCardTag.Hado))
         {
             var discount =

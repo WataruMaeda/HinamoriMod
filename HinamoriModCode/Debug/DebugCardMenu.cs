@@ -14,13 +14,18 @@ namespace HinamoriMod.HinamoriModCode.Debug;
 public partial class DebugCardMenu : Control
 {
     private readonly Player _player;
-    private readonly IReadOnlyList<Type> _cards = CardDebugHelper.GetCards();
+    private IReadOnlyList<Type> _cards = CardDebugHelper.GetCards();
+    private OptionButton _categorySelector = null!;
+    private OptionButton _destinationSelector = null!;
     private readonly Dictionary<int, CardModel> _handCards = new();
     private static readonly Dictionary<Type, string> NameCache = new();
 
     private VBoxContainer _results = null!;
     private LineEdit _search = null!;
     private CheckBox _upgraded = null!;
+    private CheckBox _showAttacks = null!;
+    private CheckBox _showSkills = null!;
+    private CheckBox _showPowers = null!;
     private Label _status = null!;
     private Label _resourceStatus = null!;
     private OptionButton _cardSelector = null!;
@@ -38,6 +43,8 @@ public partial class DebugCardMenu : Control
     // ゲーム標準のカードUIを使用したホバープレビュー
     private NCard? _previewCard;
     private Type? _hoveredCardType;
+    private Type? _lastPreviewCardType;
+    private bool _previewPinned;
 
     private bool _busy;
     private bool _updatingEffects;
@@ -164,6 +171,38 @@ public partial class DebugCardMenu : Control
 
         tab.AddChild(_search);
 
+        var options = new HBoxContainer();
+        tab.AddChild(options);
+        options.AddChild(new Label { Text = "種類" });
+        _categorySelector = new OptionButton { SizeFlagsHorizontal = SizeFlags.ExpandFill };
+        _categorySelector.AddItem("雛森専用カード", (int)CardDebugHelper.DebugCardCategory.Hinamori);
+        _categorySelector.AddItem("状態異常カード", (int)CardDebugHelper.DebugCardCategory.Status);
+        _categorySelector.AddItem("呪いカード", (int)CardDebugHelper.DebugCardCategory.Curse);
+        _categorySelector.Select(0);
+        _categorySelector.ItemSelected += _ =>
+        {
+            var category = (CardDebugHelper.DebugCardCategory)_categorySelector.GetSelectedId();
+            try
+            {
+                _cards = CardDebugHelper.GetCards(category);
+                RefreshCards();
+            }
+            catch (Exception ex)
+            {
+                GD.PushError($"[Hinamori Debug] カード一覧取得失敗: {ex}");
+                _status.Text = $"カード一覧取得失敗: {ex.GetBaseException().Message}";
+            }
+        };
+        options.AddChild(_categorySelector);
+        options.AddChild(new Label { Text = "追加先" });
+        _destinationSelector = new OptionButton { SizeFlagsHorizontal = SizeFlags.ExpandFill };
+        _destinationSelector.AddItem("手札", (int)PileType.Hand);
+        _destinationSelector.AddItem("廃棄", (int)PileType.Exhaust);
+        _destinationSelector.AddItem("捨て札", (int)PileType.Discard);
+        _destinationSelector.AddItem("山札", (int)PileType.Draw);
+        _destinationSelector.Select(0);
+        options.AddChild(_destinationSelector);
+
         _upgraded = new CheckBox
         {
             Text = "強化版を生成"
@@ -171,11 +210,32 @@ public partial class DebugCardMenu : Control
 
         _upgraded.Toggled += _ =>
         {
-            if (_hoveredCardType != null)
-                ShowCardPreview(_hoveredCardType);
+            // チェックボックスにカーソルを移動すると一覧ボタンのMouseExitedが発火する。
+            // 最後に表示したカードを再表示し、次のホバーまで維持する。
+            var previewType = _hoveredCardType ?? _lastPreviewCardType;
+            if (previewType != null)
+            {
+                ShowCardPreview(previewType);
+                _previewPinned = true;
+            }
         };
 
         tab.AddChild(_upgraded);
+
+        // カード種別による表示フィルター。初期状態ではすべて表示する。
+        var typeFilters = new HBoxContainer();
+        tab.AddChild(typeFilters);
+        typeFilters.AddChild(new Label { Text = "表示するカード" });
+
+        _showAttacks = new CheckBox { Text = "アタック", ButtonPressed = true };
+        _showSkills = new CheckBox { Text = "スキル", ButtonPressed = true };
+        _showPowers = new CheckBox { Text = "パワー", ButtonPressed = true };
+
+        foreach (var filter in new[] { _showAttacks, _showSkills, _showPowers })
+        {
+            filter.Toggled += _ => RefreshCards();
+            typeFilters.AddChild(filter);
+        }
 
         var scroll = new ScrollContainer
         {
@@ -200,6 +260,7 @@ public partial class DebugCardMenu : Control
     private void ShowCardPreview(Type cardType)
     {
         HideCardPreview();
+        _lastPreviewCardType = cardType;
 
         try
         {
@@ -249,6 +310,7 @@ public partial class DebugCardMenu : Control
     private void HideCardPreview()
     {
         _hoveredCardType = null;
+        _previewPinned = false;
         if (_previewCard == null)
             return;
 
@@ -678,6 +740,7 @@ public partial class DebugCardMenu : Control
     private void RefreshCards()
     {
         HideCardPreview();
+        _lastPreviewCardType = null;
 
         foreach (var child in _results.GetChildren())
         {
@@ -688,12 +751,25 @@ public partial class DebugCardMenu : Control
         var keyword = _search.Text.Trim();
 
         foreach (var type in _cards.Where(t =>
-            t.Name.Contains(
-                keyword,
-                StringComparison.OrdinalIgnoreCase) ||
-            DisplayName(t).Contains(
-                keyword,
-                StringComparison.OrdinalIgnoreCase)))
+        {
+            // 状態異常・呪いなど、3種以外のカードはフィルターに関係なく表示する。
+            // 雛森専用カードではアタック・スキル・パワーを個別に絞り込める。
+            var card = CreatePreviewCard(t);
+            if (card == null)
+                return false;
+
+            bool matchesType = card.Type switch
+            {
+                CardType.Attack => _showAttacks.ButtonPressed,
+                CardType.Skill => _showSkills.ButtonPressed,
+                CardType.Power => _showPowers.ButtonPressed,
+                _ => true
+            };
+
+            return matchesType &&
+                (t.Name.Contains(keyword, StringComparison.OrdinalIgnoreCase) ||
+                 DisplayName(t).Contains(keyword, StringComparison.OrdinalIgnoreCase));
+        }))
         {
             var selectedType = type;
 
@@ -706,13 +782,14 @@ public partial class DebugCardMenu : Control
             // カーソルを合わせるとプレビュー表示
             button.MouseEntered += () =>
             {
+                _previewPinned = false;
                 ShowCardPreview(selectedType);
             };
 
             // カーソルを外すとプレビュー非表示
             button.MouseExited += () =>
             {
-                if (_hoveredCardType == selectedType)
+                if (_hoveredCardType == selectedType && !_previewPinned)
                     HideCardPreview();
             };
 
@@ -729,10 +806,11 @@ public partial class DebugCardMenu : Control
                     await CardDebugHelper.AddCard(
                         _player,
                         selectedType,
-                        _upgraded.ButtonPressed);
+                        _upgraded.ButtonPressed,
+                        (PileType)_destinationSelector.GetSelectedId());
 
                     _status.Text =
-                        $"追加しました: {DisplayName(selectedType)}";
+                        $"追加しました: {DisplayName(selectedType)} → {_destinationSelector.GetItemText(_destinationSelector.Selected)}";
 
                     RefreshHandCards();
                     UpdateResourceStatus();

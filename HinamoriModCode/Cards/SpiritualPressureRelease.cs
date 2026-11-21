@@ -21,6 +21,7 @@ namespace HinamoriMod.HinamoriModCode.Cards;
 /// </summary>
 public class SpiritualPressureReleaseMomo : HinamoriModCard
 {
+    // 詠唱の獲得量は通常・強化とも5で固定する。
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DynamicVar("Chant", 5m)
@@ -49,6 +50,7 @@ public class SpiritualPressureReleaseMomo : HinamoriModCard
         {
             CardModel? selectedCard;
 
+            // 強化後は手札からプレイヤー自身が廃棄対象を選ぶ。
             if (IsUpgraded)
             {
                 // 標準の「不屈」と同じ手札選択処理。
@@ -63,17 +65,19 @@ public class SpiritualPressureReleaseMomo : HinamoriModCard
             }
             else
             {
+                // 通常版は手札の候補から戦闘用乱数でランダムに1枚選ぶ。
                 selectedCard = Owner.RunState.Rng.CombatCardSelection
                     .NextItem(candidates);
             }
 
             if (selectedCard != null)
             {
+                // 選んだカードを廃棄札へ送る。逆境の炎でも同じコマンドを再利用している。
                 await CardCmd.Exhaust(choiceContext, selectedCard);
             }
         }
 
-        // 詠唱+5
+        // 手札に廃棄対象がなくても、詠唱+5は発動する。
         await PowerCmd.Apply<ChantPower>(
             choiceContext,
             Owner.Creature,

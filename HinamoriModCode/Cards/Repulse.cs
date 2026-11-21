@@ -19,7 +19,7 @@ namespace HinamoriMod.HinamoriModCode.Cards;
 public class RepulseMomo : HinamoriModCard
 {
     public override HinamoriCardTag HinamoriTags =>
-        HinamoriCardTag.Kido;
+        HinamoriCardTag.Bakudo | HinamoriCardTag.Kido;
 
     public override bool GainsBlock => true;
 

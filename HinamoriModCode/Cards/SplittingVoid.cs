@@ -17,7 +17,7 @@ public class SplittingVoidMomo : HinamoriModCard
     public override int ChantCost => IsUpgraded ? 2 : 3;
 
     public override HinamoriCardTag HinamoriTags =>
-        HinamoriCardTag.Kido;
+        HinamoriCardTag.Bakudo | HinamoriCardTag.Kido;
 
     public SplittingVoidMomo()
         : base(

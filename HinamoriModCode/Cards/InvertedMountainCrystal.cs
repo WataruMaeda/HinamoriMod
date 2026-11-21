@@ -21,7 +21,7 @@ public class InvertedMountainCrystalMomo : HinamoriModCard
     public override int ChantCost => 4;
 
     public override HinamoriCardTag HinamoriTags =>
-        HinamoriCardTag.Kido;
+        HinamoriCardTag.Bakudo | HinamoriCardTag.Kido;
 
     public override bool GainsBlock => true;
 

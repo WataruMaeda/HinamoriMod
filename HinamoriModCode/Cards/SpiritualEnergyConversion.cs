@@ -15,8 +15,10 @@ namespace HinamoriMod.HinamoriModCode.Cards;
 /// </summary>
 public class SpiritualEnergyConversionMomo : HinamoriModCard
 {
+    // エナジーは不要だが、詠唱を3消費する（詠唱無料化・軽減は共通処理に従う）。
     public override int ChantCost => 3;
 
+    // 獲得するエナジー量。カード説明文の Energy 表示にも使用する。
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new EnergyVar(2)
@@ -31,14 +33,17 @@ public class SpiritualEnergyConversionMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        // 詠唱が不足する場合は効果を発動しない。リプレイでは二重消費しない。
         if (!await SpendChant(choiceContext, cardPlay))
             return;
 
+        // 詠唱を消費できたときだけエナジーを増やす。
         await PlayerCmd.GainEnergy(DynamicVars.Energy.IntValue, Owner);
     }
 
     protected override void OnUpgrade()
     {
+        // 強化で獲得エナジーを2→3に変更する。
         DynamicVars.Energy.UpgradeValueBy(1m);
     }
 }

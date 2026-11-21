@@ -18,6 +18,9 @@ namespace HinamoriMod.HinamoriModCode.Cards;
 /// </summary>
 public class DisintegratingCircleMomo : HinamoriModCard
 {
+    public override HinamoriCardTag HinamoriTags =>
+        HinamoriCardTag.Bakudo | HinamoriCardTag.Kido;
+
     public override int ChantCost => 1;
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>

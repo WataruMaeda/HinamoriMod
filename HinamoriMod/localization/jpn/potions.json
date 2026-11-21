@@ -1,0 +1,14 @@
+{
+  "HINAMORIMOD-SPIRITUAL_ELIXIR.title": "霊圧の霊薬",
+  "HINAMORIMOD-SPIRITUAL_ELIXIR.description": "詠唱を5獲得する。",
+  "HINAMORIMOD-TOBIUME_SPARKS.title": "飛梅の火粉",
+  "HINAMORIMOD-TOBIUME_SPARKS.description": "火種を15獲得する。",
+  "HINAMORIMOD-SCORCHING_ELIXIR.title": "灼熱の霊薬",
+  "HINAMORIMOD-SCORCHING_ELIXIR.description": "敵1体に火傷10を付与する。",
+  "HINAMORIMOD-KIDO_CRYSTAL.title": "鬼道の結晶",
+  "HINAMORIMOD-KIDO_CRYSTAL.description": "このターン、破道・縛道の詠唱コストを0にする。",
+  "HINAMORIMOD-TOBIUME_ESSENCE.title": "飛梅の霊髄",
+  "HINAMORIMOD-TOBIUME_ESSENCE.description": "火種を30獲得し、敵全体に火傷5を付与する。",
+  "HINAMORIMOD-PERFECT_INCANTATION_ELIXIR.title": "完全詠唱の秘薬",
+  "HINAMORIMOD-PERFECT_INCANTATION_ELIXIR.description": "詠唱を10獲得する。次に使用する破道・縛道のダメージ・ブロックを2倍にする。"
+}

@@ -16,6 +16,7 @@ namespace HinamoriMod.HinamoriModCode.Cards;
 /// </summary>
 public class ChantPreparationMomo : HinamoriModCard
 {
+    // 通常版は使用後に廃棄する。強化時にはこのキーワードを取り除く。
     // 通常版は廃棄
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
         [CardKeyword.Exhaust];
@@ -37,7 +38,7 @@ public class ChantPreparationMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
-        // 詠唱を2獲得
+        // 対象と発生源はどちらも使用者自身。詠唱量はカードの動的変数に従う。
         await PowerCmd.Apply<ChantPower>(
             choiceContext,
             Owner.Creature,
@@ -48,7 +49,7 @@ public class ChantPreparationMomo : HinamoriModCard
 
     protected override void OnUpgrade()
     {
-        // 強化後は廃棄しない
+        // 強化では詠唱量を増やさず、廃棄キーワードだけを取り除く。
         RemoveKeyword(CardKeyword.Exhaust);
     }
 }

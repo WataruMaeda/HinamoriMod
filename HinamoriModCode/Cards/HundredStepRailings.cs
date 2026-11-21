@@ -23,7 +23,7 @@ public class HundredStepRailingsMomo : HinamoriModCard
     public override int ChantCost => 2;
 
     public override HinamoriCardTag HinamoriTags =>
-        HinamoriCardTag.Kido;
+        HinamoriCardTag.Bakudo | HinamoriCardTag.Kido;
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

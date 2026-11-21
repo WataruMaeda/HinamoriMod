@@ -16,10 +16,12 @@ namespace HinamoriMod.HinamoriModCode.Cards;
 /// </summary>
 public class ThrustMomo : HinamoriModCard
 {
+    // 破道かつ鬼道として扱い、鬼道系のコスト軽減や使用回数判定に利用する。
     // カードのタグ
     public override HinamoriCardTag HinamoriTags =>
         HinamoriCardTag.Hado | HinamoriCardTag.Kido;
 
+    // 基礎ダメージ6。表示と実際の攻撃処理で同じ変数を使用する。
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(6m, ValueProp.Move)
@@ -38,8 +40,10 @@ public class ThrustMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        // 単体攻撃なので対象未指定の場合は処理を中断する。
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
 
+        // カード由来の攻撃として指定した敵にダメージを与える。
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this, cardPlay)
             .Targeting(cardPlay.Target)
@@ -49,6 +53,7 @@ public class ThrustMomo : HinamoriModCard
 
     protected override void OnUpgrade()
     {
+        // 強化後のダメージは6→9。
         DynamicVars.Damage.UpgradeValueBy(3m);
     }
 }

@@ -17,10 +17,11 @@ namespace HinamoriMod.HinamoriModCode.Cards;
 /// </summary>
 public class ChainBindingMomo : HinamoriModCard
 {
+    // 追加で詠唱3を消費する。強化しても詠唱コストは変わらない。
     public override int ChantCost => 3;
 
     public override HinamoriCardTag HinamoriTags =>
-        HinamoriCardTag.Kido;
+        HinamoriCardTag.Bakudo | HinamoriCardTag.Kido;
 
     public ChainBindingMomo()
         : base(
@@ -36,10 +37,11 @@ public class ChainBindingMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        // 詠唱不足なら、廃棄札の選択やカード回収は行わない。
         if (!await SpendChant(choiceContext, cardPlay))
             return;
 
-        // 廃棄札のカードを取得
+        // 廃棄札をスナップショット化し、選択画面に渡す候補を固定する。
         List<CardModel> cards =
             PileType.Exhaust.GetPile(Owner)
                 .Cards
@@ -48,7 +50,7 @@ public class ChainBindingMomo : HinamoriModCard
         if (cards.Count == 0)
             return;
 
-        // 廃棄札から1枚選択
+        // 選択をスキップさせず、回収するカードを1枚決める。
         CardModel selected =
             await CardSelectCmd.FromChooseACardScreen(
                 choiceContext,
@@ -59,19 +61,20 @@ public class ChainBindingMomo : HinamoriModCard
         if (selected == null)
             return;
 
-        // 廃棄キーワードを除去
+        // 回収後に再び自動廃棄されないよう、廃棄キーワードを取り除く。
         selected.RemoveKeyword(CardKeyword.Exhaust);
 
-        // 保留キーワードを付与
+        // 手札に戻した後、ターン終了時に捨てられないよう保留を付ける。
         selected.AddKeyword(CardKeyword.Retain);
 
-        // 廃棄札から手札に戻す
+        // キーワードを変更してから、廃棄札のカードを手札へ移動する。
         await CardPileCmd.Add(selected, PileType.Hand);
     }
 
 
     protected override void OnUpgrade()
     {
+        // 強化でエナジーコストを1→0に下げる。
         EnergyCost.UpgradeBy(-1);
     }
 }

@@ -18,8 +18,9 @@ namespace HinamoriMod.HinamoriModCode.Cards;
 public class CrawlingRopeMomo : HinamoriModCard
 {
     public override HinamoriCardTag HinamoriTags =>
-        HinamoriCardTag.Kido;
+        HinamoriCardTag.Bakudo | HinamoriCardTag.Kido;
 
+    // ブロックを獲得するスキルであることをゲーム本体に通知する。
     public override bool GainsBlock => true;
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
@@ -41,13 +42,13 @@ public class CrawlingRopeMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
-        // ブロック獲得
+        // 先にブロックを付与する。BlockVarに各種ブロック補正を反映する。
         await CreatureCmd.GainBlock(
             Owner.Creature,
             DynamicVars.Block,
             cardPlay);
 
-        // 詠唱獲得
+        // 続いて自分に詠唱パワーを付与する。強化後は獲得量が1→2。
         await PowerCmd.Apply<ChantPower>(
             choiceContext,
             Owner.Creature,

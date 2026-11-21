@@ -17,10 +17,12 @@ namespace HinamoriMod.HinamoriModCode.Cards;
 public class RedSmokeEscapeMomo : HinamoriModCard
 {
     public override HinamoriCardTag HinamoriTags =>
-        HinamoriCardTag.Kido;
+        HinamoriCardTag.Bakudo | HinamoriCardTag.Kido;
 
+    // ブロックを得るカードとしてゲーム本体へ通知する。
     public override bool GainsBlock => true;
 
+    // BlockVar はブロック値、CardsVar はドロー枚数。強化でブロックのみ増える。
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new BlockVar(8m, ValueProp.Move),
@@ -40,13 +42,13 @@ public class RedSmokeEscapeMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
-        // ブロックを獲得
+        // まず使用者にブロックを付与する。BlockVar から各種補正を反映する。
         await CreatureCmd.GainBlock(
             Owner.Creature,
             DynamicVars.Block,
             cardPlay);
 
-        // カードを1枚引く
+        // ブロック獲得後にカードを1枚引く。強化後もドロー枚数は同じ。
         await CardPileCmd.Draw(
             choiceContext,
             DynamicVars.Cards.BaseValue,

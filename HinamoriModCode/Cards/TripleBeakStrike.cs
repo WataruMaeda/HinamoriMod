@@ -18,7 +18,7 @@ namespace HinamoriMod.HinamoriModCode.Cards;
 public class TripleBeakStrikeMomo : HinamoriModCard
 {
     public override HinamoriCardTag HinamoriTags =>
-        HinamoriCardTag.Kido;
+        HinamoriCardTag.Bakudo | HinamoriCardTag.Kido;
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

@@ -16,9 +16,12 @@ namespace HinamoriMod.HinamoriModCode.Cards;
 /// </summary>
 public class BoundLightningMomo : HinamoriModCard
 {
+    // 破道・鬼道の両方の独自タグを持つ。
     public override HinamoriCardTag HinamoriTags =>
     HinamoriCardTag.Hado | HinamoriCardTag.Kido;
 
+    // 1ヒットのダメージとヒット回数を別々に管理する。
+    // 強化後も2ヒットのままで、1ヒットあたりのダメージのみ増える。
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(5m, ValueProp.Move),
@@ -34,8 +37,10 @@ public class BoundLightningMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        // 単体攻撃のため対象が必須。
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
 
+        // WithHitCountで2回攻撃にする。各ヒットの基礎値はDamageVarを使う。
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .WithHitCount(DynamicVars.HitCount.IntValue)
             .FromCard(this, cardPlay)
@@ -46,6 +51,7 @@ public class BoundLightningMomo : HinamoriModCard
 
     protected override void OnUpgrade()
     {
+        // 強化後は5×2→7×2ダメージ。
         DynamicVars.Damage.UpgradeValueBy(2m);
     }
 }

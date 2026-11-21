@@ -38,7 +38,8 @@ public class FlamesPresenceMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
-        // 火種+5
+        // 火種の更新と飛梅カードの生成判定を共通コマンドへ委譲する。
+        // 火種の獲得量はDynamicVarsから取得する。
         await EmberCmd.GainEmber(
             DynamicVars["Ember"].BaseValue,
             Owner);
@@ -46,7 +47,7 @@ public class FlamesPresenceMomo : HinamoriModCard
 
     protected override void OnUpgrade()
     {
-        // 強化後は廃棄しない
+        // 強化時は獲得量を変えず、廃棄キーワードを除去する。
         RemoveKeyword(CardKeyword.Exhaust);
     }
 }

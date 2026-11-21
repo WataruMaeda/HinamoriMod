@@ -14,7 +14,7 @@ namespace HinamoriMod.HinamoriModCode.Cards;
 /// <summary>
 /// 藍染隊長の仇
 /// 3EN：敵1体にダメージ、自分にブロック、対象に火傷を与える。
-/// 使用するたびに、ダメージとブロックは (1 + 強化回数)、火傷は1ずつ成長する。
+/// 使用するたびに、ダメージ・ブロック・火傷がそれぞれ (1 + 強化回数) 成長する。
 /// 成長値はデッキ側にも反映し、戦闘・階層をまたいで保持する。
 /// </summary>
 public class AvengeCaptainAizenMomo : HinamoriModCard
@@ -107,8 +107,7 @@ public class AvengeCaptainAizenMomo : HinamoriModCard
 
         await CreatureCmd.GainBlock(
             Owner.Creature,
-            DynamicVars.Block.BaseValue,
-            ValueProp.Move,
+            DynamicVars.Block,
             cardPlay,
             false);
 
@@ -143,12 +142,11 @@ public class AvengeCaptainAizenMomo : HinamoriModCard
     {
         int growth = DynamicVars["Growth"].IntValue;
 
-        // ダメージ・ブロックの成長量
-        // 火傷の成長量は常に1
+        // ダメージ・ブロック・火傷の成長量は共通。
         IncreasedAmount += growth;
         CurrentAmount += growth;
         CurrentBlockAmount += growth;
-        CurrentBurnAmount += 1;
+        CurrentBurnAmount += growth;
     }
 
     private void UpdateVars()
