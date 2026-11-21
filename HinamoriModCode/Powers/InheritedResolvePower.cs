@@ -6,12 +6,13 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.Factories;
+using MegaCrit.Sts2.Core.Models;
 
 namespace HinamoriMod.HinamoriModCode.Powers;
 
 /// <summary>
-/// 受け継ぐ想い。既存のカード生成・無料化処理を流用した暫定版。
-/// TODO: 全キャラクターのカードプール取得（現在は使用者のプールのみ）。
+/// 受け継ぐ想い。全キャラクターのパワーカードから毎ターン生成する。
+/// キャラクター専用プールに雛森MODのプールを加えて抽選する。
 /// TODO: スターコストの一時無料化。
 /// </summary>
 public class InheritedResolvePower : HinamoriModPower
@@ -27,10 +28,16 @@ public class InheritedResolvePower : HinamoriModPower
         if (player != Owner.Player || !Owner.IsAlive || Amount <= 0)
             return;
 
-        // 暫定：現在のキャラクターのパワーカードのみ。全キャラ取得は別途対応。
-        var candidates = player.Character.CardPool
-            .GetUnlockedCards(player.UnlockState, player.RunState.CardMultiplayerConstraint)
+        // 本体の全キャラクターと、現在のMODキャラクターのプールを対象にする。
+        // 同一プール・同一カードは重複抽選しない。
+        var candidates = ModelDb.AllCharacterCardPools
+            .Append(player.Character.CardPool)
+            .Distinct()
+            .SelectMany(pool => pool.GetUnlockedCards(
+                player.UnlockState,
+                player.RunState.CardMultiplayerConstraint))
             .Where(card => card.Type == CardType.Power)
+            .DistinctBy(card => card.Id)
             .ToList();
 
         if (candidates.Count == 0)
