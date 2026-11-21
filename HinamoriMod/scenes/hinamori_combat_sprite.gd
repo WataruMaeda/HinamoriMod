@@ -1,7 +1,7 @@
 extends AnimatedSprite2D
 
 # Combat animations return to idle after their one-shot playback.
-const ONE_SHOT_ANIMATIONS := [&"attack", &"block", &"cast"]
+const ONE_SHOT_ANIMATIONS := [&"attack", &"block", &"cast", &"prayer"]
 
 func _ready() -> void:
     animation_finished.connect(_on_animation_finished)
