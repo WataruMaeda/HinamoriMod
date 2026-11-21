@@ -70,12 +70,27 @@ public abstract class HinamoriModCard(
     public bool HasHinamoriTag(HinamoriCardTag tag) =>
         (HinamoriTags & tag) == tag;
 
+    /// <summary>
+    /// 破道の極意による自動使用中だけ、通常の破道の詠唱を免除する。
+    /// 黒棺は独自の全詠唱消費処理を維持する。
+    /// </summary>
+    private bool IsPinnacleAutoPlay =>
+        IsMutable &&
+        CombatState != null &&
+        HasHinamoriTag(HinamoriCardTag.Hado) &&
+        this is not BlackCoffinMomo &&
+        Owner.Creature.GetPower<PinnacleOfHadoPower>()?.IsAutoPlaying(this) == true;
+
     public int EffectiveChantCost
     {
         get
         {
             if (ChantCost < 0)
                 return -1;
+
+            // 破道の極意による自動使用
+            if (IsPinnacleAutoPlay)
+                return 0;
 
             // 掴趾追雀による無料化
             if (FreeChantThisTurn)
@@ -170,6 +185,10 @@ public abstract class HinamoriModCard(
 
         // リプレイでは詠唱を再消費しない
         if (!cardPlay.IsFirstInSeries)
+            return true;
+
+        // 破道の極意で自動使用された破道は詠唱を消費しない
+        if (IsPinnacleAutoPlay)
             return true;
 
         // 掴趾追雀で生成したカード
