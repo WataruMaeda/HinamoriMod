@@ -81,12 +81,27 @@ public abstract class HinamoriModCard(
         this is not BlackCoffinMomo &&
         Owner.Creature.GetPower<PinnacleOfHadoPower>()?.IsAutoPlaying(this) == true;
 
+    /// <summary>
+    /// パワーポーション等の SetToFreeThisTurn による一時的な無料化。
+    /// 通常の0ENパワーとは区別するため、一時スターコスト0も確認する。
+    /// </summary>
+    private bool IsTemporarilyFreePowerCard =>
+        Type == CardType.Power &&
+        IsMutable &&
+        CombatState != null &&
+        TemporaryStarCost?.Cost == 0 &&
+        EnergyCost.GetWithModifiers(CostModifiers.Local) == 0;
+
     public int EffectiveChantCost
     {
         get
         {
             if (ChantCost < 0)
                 return -1;
+
+            // パワーポーション等による一時的な無料化
+            if (IsTemporarilyFreePowerCard)
+                return 0;
 
             // 破道の極意による自動使用
             if (IsPinnacleAutoPlay)
@@ -185,6 +200,10 @@ public abstract class HinamoriModCard(
 
         // リプレイでは詠唱を再消費しない
         if (!cardPlay.IsFirstInSeries)
+            return true;
+
+        // パワーポーション等による一時的な無料化
+        if (IsTemporarilyFreePowerCard)
             return true;
 
         // 破道の極意で自動使用された破道は詠唱を消費しない
