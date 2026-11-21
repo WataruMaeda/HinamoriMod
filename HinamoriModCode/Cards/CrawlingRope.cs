@@ -18,7 +18,7 @@ namespace HinamoriMod.HinamoriModCode.Cards;
 public class CrawlingRopeMomo : HinamoriModCard
 {
     public override HinamoriCardTag HinamoriTags =>
-        HinamoriCardTag.Kido;
+        HinamoriCardTag.Bakudo | HinamoriCardTag.Kido;
 
     // ブロックを獲得するスキルであることをゲーム本体に通知する。
     public override bool GainsBlock => true;
