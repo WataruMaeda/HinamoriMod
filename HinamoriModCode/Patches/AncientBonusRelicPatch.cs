@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using HarmonyLib;
 using HinamoriMod.HinamoriModCode.Relics;
@@ -18,6 +19,20 @@ namespace HinamoriMod.HinamoriModCode.Patches;
 [HarmonyPatch]
 public static class AncientBonusRelicPatch
 {
+    private sealed class ChoiceContext
+    {
+        public AncientEventModel Ancient { get; }
+        public IReadOnlyList<EventOption> DisplayedOptions { get; }
+
+        public ChoiceContext(AncientEventModel ancient, IReadOnlyList<EventOption> displayedOptions)
+        {
+            Ancient = ancient;
+            DisplayedOptions = displayedOptions;
+        }
+    }
+
+    private static readonly ConditionalWeakTable<EventOption, ChoiceContext> ChoiceContexts = new();
+
     private static MethodBase TargetMethod() =>
         AccessTools.DeclaredMethod(typeof(AncientEventModel), "GenerateInitialOptionsWrapper");
 
@@ -26,29 +41,64 @@ public static class AncientBonusRelicPatch
         if (__result == null)
             return;
 
+        Godot.GD.Print("[HinamoriMod] Ancient bonus hook registered for " + __instance.GetType().Name);
         var displayedOptions = __result;
         foreach (EventOption option in displayedOptions)
         {
             if (option.IsLocked || option.IsProceed)
                 continue;
 
-            option.BeforeChosen += _ => GiveBonus(__instance, option, displayedOptions);
+            ChoiceContexts.Remove(option);
+            ChoiceContexts.Add(option, new ChoiceContext(__instance, displayedOptions));
         }
+    }
+
+    // EventOption.Chosen awaits BeforeChosen first, then OnChosen.
+    // Wrapping its returned Task lets the selected relic be obtained before the bonus.
+    [HarmonyPatch(typeof(EventOption), nameof(EventOption.Chosen))]
+    private static class ChoiceCompletedPatch
+    {
+        [HarmonyPostfix]
+        private static void Postfix(EventOption __instance, ref Task __result)
+        {
+            if (!ChoiceContexts.TryGetValue(__instance, out ChoiceContext context))
+                return;
+
+            __result = GiveBonusAfterChoice(__result, context.Ancient, __instance, context.DisplayedOptions);
+        }
+    }
+
+    private static async Task GiveBonusAfterChoice(
+        Task originalChoice, AncientEventModel ancient, EventOption selectedOption,
+        IReadOnlyList<EventOption> displayedOptions)
+    {
+        await originalChoice;
+        if (!selectedOption.WasChosen)
+            return;
+
+        await GiveBonus(ancient, selectedOption, displayedOptions);
     }
 
     private static async Task GiveBonus(AncientEventModel ancient, EventOption selectedOption, IReadOnlyList<EventOption> displayedOptions)
     {
+        Godot.GD.Print("[HinamoriMod] Ancient bonus callback invoked for " + ancient.GetType().Name);
         var player = ancient.Owner;
         if (player == null)
             return;
 
         var starter = player.Relics.OfType<KidoFundamentals>().FirstOrDefault();
         if (starter == null)
+        {
+            Godot.GD.Print("[HinamoriMod] Ancient bonus skipped: starter relic missing");
             return;
+        }
 
         int currentAct = player.RunState.CurrentActIndex;
         if (starter.AncientBonusCount > currentAct)
+        {
+            Godot.GD.Print("[HinamoriMod] Ancient bonus skipped: already granted for act " + currentAct);
             return;
+        }
 
         var ownedIds = player.Relics.Select(r => r.Id).ToHashSet();
         if (selectedOption.Relic != null)
@@ -82,7 +132,8 @@ public static class AncientBonusRelicPatch
             return;
         }
 
-        RelicModel bonus = candidates[Random.Shared.Next(candidates.Count)].ToMutable();
+        RelicModel bonus = candidates[Random.Shared.Next(candidates.Count)];
+        Godot.GD.Print("[HinamoriMod] Ancient bonus selected: " + bonus.Id);
         await RelicCmd.Obtain(bonus, player);
         starter.AncientBonusCount = currentAct + 1;
         starter.Flash();
