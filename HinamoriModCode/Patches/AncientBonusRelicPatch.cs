@@ -31,11 +31,11 @@ public static class AncientBonusRelicPatch
             if (option.IsLocked || option.IsProceed)
                 continue;
 
-            option.BeforeChosen += _ => GiveBonus(__instance, option);
+            option.BeforeChosen += _ => GiveBonus(__instance, option, __result);
         }
     }
 
-    private static async Task GiveBonus(AncientEventModel ancient, EventOption selectedOption)
+    private static async Task GiveBonus(AncientEventModel ancient, EventOption selectedOption, IReadOnlyList<EventOption> displayedOptions)
     {
         var player = ancient.Owner;
         if (player == null)
@@ -63,13 +63,28 @@ public static class AncientBonusRelicPatch
             .DistinctBy(r => r.Id)
             .ToList();
 
-        // Mark this act as processed even when there are no eligible relics.
-        starter.AncientBonusCount = currentAct + 1;
+        // Some Ancients expose relics only in their generated visible options.
         if (candidates.Count == 0)
+        {
+            candidates = displayedOptions
+                .Where(o => o.Relic != null)
+                .Select(o => o.Relic!)
+                .Where(r => r.Rarity == MegaCrit.Sts2.Core.Entities.Relics.RelicRarity.Ancient)
+                .Where(r => !ownedIds.Contains(r.Id) && r.IsAllowed(player.RunState))
+                .DistinctBy(r => r.Id)
+                .ToList();
+        }
+
+        if (candidates.Count == 0)
+        {
+            Godot.GD.Print("[HinamoriMod] Ancient bonus skipped: no eligible Ancient relics for " + ancient.GetType().Name);
             return;
+        }
 
         RelicModel bonus = candidates[Random.Shared.Next(candidates.Count)].ToMutable();
         await RelicCmd.Obtain(bonus, player);
+        starter.AncientBonusCount = currentAct + 1;
         starter.Flash();
+        Godot.GD.Print("[HinamoriMod] Ancient bonus granted: " + bonus.Id);
     }
 }
