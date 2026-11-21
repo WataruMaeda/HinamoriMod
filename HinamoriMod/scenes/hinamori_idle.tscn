@@ -42,7 +42,7 @@ animations = [{
 "frames": [{ "duration": 1.0, "texture": ExtResource("d0") }, { "duration": 1.0, "texture": ExtResource("d1") }, { "duration": 1.0, "texture": ExtResource("d2") }, { "duration": 1.0, "texture": ExtResource("d3") }, { "duration": 1.0, "texture": ExtResource("d4") }, { "duration": 1.0, "texture": ExtResource("d5") }, { "duration": 1.0, "texture": ExtResource("d6") }, { "duration": 1.0, "texture": ExtResource("d7") }],
 "loop": false,
 "name": &"block",
-"speed": 8.0
+"speed": 12.0
 }, {
 "frames": [{ "duration": 1.0, "texture": ExtResource("k0") }, { "duration": 1.0, "texture": ExtResource("k1") }, { "duration": 1.0, "texture": ExtResource("k2") }, { "duration": 1.0, "texture": ExtResource("k3") }, { "duration": 1.0, "texture": ExtResource("k4") }, { "duration": 1.0, "texture": ExtResource("k5") }, { "duration": 1.0, "texture": ExtResource("k6") }, { "duration": 1.0, "texture": ExtResource("k7") }, { "duration": 1.0, "texture": ExtResource("k8") }, { "duration": 1.0, "texture": ExtResource("k9") }],
 "loop": false,
