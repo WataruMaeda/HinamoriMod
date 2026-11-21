@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using HinamoriMod.HinamoriModCode.Character;
 using HinamoriMod.HinamoriModCode.Commands;
 using HinamoriMod.HinamoriModCode.Powers;
 using MegaCrit.Sts2.Core.Commands;
@@ -47,8 +48,11 @@ public class RedFrameCannonMomo : HinamoriModCard
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this, cardPlay)
             .Targeting(cardPlay.Target)
+            .WithAttackerAnim("Cast", 0.5f)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
+
+        HinamoriCombatAnimation.Play("cast");
 
         // 火傷2を付与
         if (cardPlay.Target.IsAlive)
