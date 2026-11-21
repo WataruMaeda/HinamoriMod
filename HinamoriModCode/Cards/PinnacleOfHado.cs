@@ -7,8 +7,8 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 namespace HinamoriMod.HinamoriModCode.Cards;
 
 /// <summary>
-/// 破道の極意。カード使用とパワー付与までは実装済み。
-/// ドロー時の自動使用は本体API確認後に実装する。
+/// 破道の極意。使用時に破道自動使用パワーを付与する。
+/// ドロー時の自動使用処理はPinnacleOfHadoPowerで行う。
 /// </summary>
 public class PinnacleOfHadoMomo : HinamoriModCard
 {
