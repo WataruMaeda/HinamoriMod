@@ -23,7 +23,7 @@ public class SixRodLightPrisonMomo : HinamoriModCard
     public override int ChantCost => 1;
 
     public override HinamoriCardTag HinamoriTags =>
-        HinamoriCardTag.Kido;
+        HinamoriCardTag.Bakudo | HinamoriCardTag.Kido;
 
     public override bool GainsBlock => true;
 
