@@ -17,7 +17,7 @@ namespace HinamoriMod.HinamoriModCode.Cards;
 public class RedSmokeEscapeMomo : HinamoriModCard
 {
     public override HinamoriCardTag HinamoriTags =>
-        HinamoriCardTag.Kido;
+        HinamoriCardTag.Bakudo | HinamoriCardTag.Kido;
 
     // ブロックを得るカードとしてゲーム本体へ通知する。
     public override bool GainsBlock => true;
