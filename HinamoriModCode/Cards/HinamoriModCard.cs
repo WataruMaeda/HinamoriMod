@@ -119,15 +119,6 @@ public abstract class HinamoriModCard(
                 Owner.Relics.OfType<KidoSecretManual>().Any(r => r.IsDiscountAvailable))
                 return 0;
 
-            // 鬼道の秘伝書の無料化は、初回の実使用時だけ消費する。
-        if (HasHinamoriTag(HinamoriCardTag.Kido) &&
-            Owner.Relics.OfType<KidoSecretManual>().FirstOrDefault(r => r.IsDiscountAvailable)
-                is { } secretManual)
-        {
-            secretManual.MarkKidoPlayed();
-            return true;
-        }
-
         // 鬼道の結晶：このターン中、鬼道の詠唱コスト0
             if (HasHinamoriTag(HinamoriCardTag.Kido) &&
                 IsMutable && CombatState != null &&
