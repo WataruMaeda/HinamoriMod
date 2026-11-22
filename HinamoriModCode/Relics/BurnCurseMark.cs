@@ -1,12 +1,22 @@
+using HinamoriMod.HinamoriModCode.Powers;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Relics;
+using MegaCrit.Sts2.Core.ValueProps;
 
 namespace HinamoriMod.HinamoriModCode.Relics;
 
-/// <summary>火傷の呪印：火傷状態の敵から受ける攻撃ダメージを軽減。</summary>
+/// <summary>火傷の呪印：火傷中の敵から受ける攻撃ダメージを追加で20%軽減。</summary>
 public class BurnCurseMark : HinamoriModRelic
 {
     public override RelicRarity Rarity => RelicRarity.Rare;
-    // TODO: 被ダメージの乗算補正フックに接続し、攻撃者のBurnPowerを確認する。
-    // TODO: 追加20%軽減は暫定値。最終数値を確認する。
-    public static decimal DamageMultiplierWhenBurned => 0.8m;
+
+    public override decimal ModifyDamageMultiplicative(
+        Creature? target, decimal amount, ValueProp props,
+        Creature? dealer, CardModel? cardSource, CardPlay? cardPlay)
+    {
+        return target == Owner.Creature && props.IsPoweredAttack() &&
+               dealer?.GetPower<BurnPower>() is not null
+            ? 0.8m : 1m;
+    }
 }
