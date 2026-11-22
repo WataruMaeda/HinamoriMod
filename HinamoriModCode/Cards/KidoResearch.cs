@@ -17,7 +17,7 @@ public class KidoResearchMomo : HinamoriModCard
     ];
 
     public KidoResearchMomo()
-        : base(3, CardType.Power, CardRarity.Rare, TargetType.Self)
+        : base(1, CardType.Power, CardRarity.Rare, TargetType.Self)
     {
     }
 
@@ -25,10 +25,13 @@ public class KidoResearchMomo : HinamoriModCard
     {
         await PowerCmd.Apply<KidoResearchPower>(
             choiceContext, Owner.Creature, 1m, Owner.Creature, this);
+
+        if (IsUpgraded)
+            Owner.Creature.GetPower<KidoResearchPower>()?.AddUpgradedStack();
     }
 
     protected override void OnUpgrade()
     {
-        EnergyCost.UpgradeBy(-1);
+        // 強化時は毎ターン火種2消費、筋力・敏捷性+2に変更する。
     }
 }

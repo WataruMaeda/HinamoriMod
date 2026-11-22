@@ -202,6 +202,10 @@ public abstract class HinamoriModCard(
         if (!cardPlay.IsFirstInSeries)
             return true;
 
+        // 騒乱など、効果による自動プレイでは詠唱を消費しない
+        if (cardPlay.IsAutoPlay)
+            return true;
+
         // パワーポーション等による一時的な無料化
         if (IsTemporarilyFreePowerCard)
             return true;
