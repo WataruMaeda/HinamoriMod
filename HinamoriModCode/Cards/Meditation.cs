@@ -26,6 +26,9 @@ public class MeditationMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        // 精神統一では祈りモーションを一度再生する。
+        await CreatureCmd.TriggerAnim(Owner.Creature, "Prayer", 0f);
+
         // 自分自身に詠唱パワーを付与する。現在の獲得量はDynamicVarsから取得する。
         await PowerCmd.Apply<ChantPower>(
             choiceContext,
