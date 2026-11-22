@@ -5,6 +5,8 @@ using BaseLib.Utils;
 using HinamoriMod.HinamoriModCode.Character;
 using HinamoriMod.HinamoriModCode.Extensions;
 using HinamoriMod.HinamoriModCode.Powers;
+using HinamoriMod.HinamoriModCode.Relics;
+using System.Linq;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -111,7 +113,22 @@ public abstract class HinamoriModCard(
             if (FreeChantThisTurn)
                 return 0;
 
-            // 鬼道の結晶：このターン中、鬼道の詠唱コスト0
+            // 鬼道の秘伝書：そのターン最初の破道・縛道は詠唱0。
+            if (HasHinamoriTag(HinamoriCardTag.Kido) &&
+                IsMutable && CombatState != null &&
+                Owner.Relics.OfType<KidoSecretManual>().Any(r => r.IsDiscountAvailable))
+                return 0;
+
+            // 鬼道の秘伝書の無料化は、初回の実使用時だけ消費する。
+        if (HasHinamoriTag(HinamoriCardTag.Kido) &&
+            Owner.Relics.OfType<KidoSecretManual>().FirstOrDefault(r => r.IsDiscountAvailable)
+                is { } secretManual)
+        {
+            secretManual.MarkKidoPlayed();
+            return true;
+        }
+
+        // 鬼道の結晶：このターン中、鬼道の詠唱コスト0
             if (HasHinamoriTag(HinamoriCardTag.Kido) &&
                 IsMutable && CombatState != null &&
                 Owner.Creature.GetPower<PotionFreeKidoChantPower>() != null)
@@ -276,6 +293,19 @@ public abstract class HinamoriModCard(
                 -cost,
                 Owner.Creature,
                 this);
+        }
+
+        // 鬼道の護符：実際に消費した詠唱だけを累積する。
+        if (cost > 0)
+        {
+            foreach (var talisman in Owner.Relics.OfType<KidoTalisman>())
+            {
+                int triggers = talisman.CountBlockTriggers(cost);
+                for (int i = 0; i < triggers; i++)
+                    await CreatureCmd.GainBlock(Owner.Creature,
+                        new MegaCrit.Sts2.Core.Localization.DynamicVars.BlockVar(10m, MegaCrit.Sts2.Core.ValueProps.ValueProp.Unpowered),
+                        cardPlay);
+            }
         }
 
         // 破道の詠唱軽減を消費
