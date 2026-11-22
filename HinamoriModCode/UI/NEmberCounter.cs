@@ -46,6 +46,17 @@ public partial class NEmberCounter : Control
         _label.AddThemeConstantOverride("outline_size", 5);
 
         AddChild(_label);
+
+        // Transparent hit area for Godot's built-in hover tooltip.
+        // Keep the icon and count visible without changing their layout.
+        var tooltipArea = new Control
+        {
+            Position = new Vector2(-32, -37),
+            Size = new Vector2(64, 64),
+            MouseFilter = MouseFilterEnum.Stop,
+            TooltipText = "火種：戦闘中に蓄積されます。飛梅の攻撃ダメージが火種1につき1増加します。"
+        };
+        AddChild(tooltipArea);
         RefreshAmount();
     }
 
