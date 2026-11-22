@@ -12,6 +12,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Models.Powers;
 using System;
 using System.Threading.Tasks;
 
@@ -94,7 +95,26 @@ public abstract class HinamoriModCard(
         TemporaryStarCost?.Cost == 0 &&
         EnergyCost.GetWithModifiers(CostModifiers.Local) == 0;
 
-    public int EffectiveChantCost
+    // SpendResourcesの直前に、その手動プレイへの虚無化適用を記録する。
+    private bool _voidFormAppliesToPaidPlay;
+
+    private bool IsVoidFormFreeNow =>
+        ChantCost >= 0 &&
+        IsMutable &&
+        CombatState != null &&
+        !HasEnergyCostX &&
+        Owner.Creature.GetPower<VoidFormPower>()
+            ?.TryModifyEnergyCostInCombatLate(this, 0m, out _) == true;
+
+    internal void CaptureVoidFormBeforeResourcePayment()
+    {
+        _voidFormAppliesToPaidPlay = IsVoidFormFreeNow;
+    }
+
+    public int EffectiveChantCost =>
+        IsVoidFormFreeNow ? 0 : ChantCostWithoutVoidForm;
+
+    private int ChantCostWithoutVoidForm
     {
         get
         {
@@ -212,7 +232,17 @@ public abstract class HinamoriModCard(
 
         // 騒乱など、効果による自動プレイでは詠唱を消費しない
         if (cardPlay.IsAutoPlay)
+        {
+            _voidFormAppliesToPaidPlay = false;
             return true;
+        }
+
+        // EN支払い直前の判定を使用し、途中のパワー状態変化に影響されない。
+        if (_voidFormAppliesToPaidPlay)
+        {
+            _voidFormAppliesToPaidPlay = false;
+            return true;
+        }
 
         // アタックポーション・パワーポーション等による一時的な無料化
         if (IsTemporarilyFreePotionCard)
@@ -279,7 +309,7 @@ public abstract class HinamoriModCard(
             return true;
         }
 
-        int cost = EffectiveChantCost;
+        int cost = ChantCostWithoutVoidForm;
 
         var chant =
             Owner.Creature.GetPower<ChantPower>();
