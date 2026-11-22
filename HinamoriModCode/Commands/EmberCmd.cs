@@ -44,6 +44,10 @@ public static class EmberCmd
             var enemies = player.Creature.CombatState
                 .GetOpponentsOf(player.Creature)
                 .Where(enemy => enemy.IsAlive)
+                // Keep random target candidates in a deterministic order on every peer.
+                // Max HP and current HP distinguish the two enemy types in the reported desync.
+                .OrderBy(enemy => enemy.MaxHp)
+                .ThenBy(enemy => enemy.CurrentHp)
                 .ToList();
 
             if (enemies.Count > 0)
