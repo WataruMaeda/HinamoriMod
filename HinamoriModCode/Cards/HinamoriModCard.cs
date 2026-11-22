@@ -268,6 +268,17 @@ public abstract class HinamoriModCard(
             return true;
         }
 
+        // 鬼道の秘伝書：最初に実際に使用した鬼道の詠唱を無料化する。
+        // コスト表示時には状態を変更せず、使用確定時のみ消費する。
+        if ((HasHinamoriTag(HinamoriCardTag.Hado) ||
+             HasHinamoriTag(HinamoriCardTag.Bakudo)) &&
+            Owner.Relics.OfType<KidoSecretManual>()
+                .FirstOrDefault(r => r.IsDiscountAvailable) is { } secretManual)
+        {
+            secretManual.MarkKidoPlayed();
+            return true;
+        }
+
         int cost = EffectiveChantCost;
 
         var chant =
