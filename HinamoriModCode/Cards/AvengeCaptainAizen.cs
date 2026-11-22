@@ -64,7 +64,9 @@ public class AvengeCaptainAizenMomo : HinamoriModCard
     }
 
     // 旧セーブ互換のためプロパティ名を維持。火傷は常に現在の基礎ダメージの半分。
-    // Derived value: never serialize independently of CurrentAmount.
+    // Keep the legacy saved-property/net ID so existing multiplayer saves can load.
+    // The getter remains derived from CurrentAmount; old saved burn values are ignored.
+    [SavedProperty]
     public int CurrentBurnAmount
     {
         get => CurrentAmount / 2;
