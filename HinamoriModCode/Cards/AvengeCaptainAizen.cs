@@ -14,17 +14,16 @@ namespace HinamoriMod.HinamoriModCode.Cards;
 /// <summary>
 /// 藍染隊長の仇
 /// 3EN：敵1体にダメージ、自分にブロック、対象に火傷を与える。
-/// 使用するたびに、ダメージ・ブロック・火傷がそれぞれ (1 + 強化回数) 成長する。
+/// 使用するたびに、ダメージ・ブロックがそれぞれ (1 + 強化回数) 成長する。火傷はダメージの半分（切り捨て）。
 /// 成長値はデッキ側にも反映し、戦闘・階層をまたいで保持する。
 /// </summary>
 public class AvengeCaptainAizenMomo : HinamoriModCard
 {
-    private const int BaseAmount = 1;
+    private const int BaseAmount = 10;
 
     private int _currentAmount = BaseAmount;
     private int _increasedAmount;
     private int _currentBlockAmount = BaseAmount;
-    private int _currentBurnAmount = BaseAmount;
 
     // ダメージの現在値（旧セーブとの互換性のため既存名を維持）
     [SavedProperty]
@@ -64,15 +63,15 @@ public class AvengeCaptainAizenMomo : HinamoriModCard
         }
     }
 
-    // 火傷の現在値
-    [SavedProperty]
+    // 旧セーブ互換のためプロパティ名を維持。火傷は常に現在の基礎ダメージの半分。
+    // Derived value: never serialize independently of CurrentAmount.
     public int CurrentBurnAmount
     {
-        get => _currentBurnAmount;
+        get => CurrentAmount / 2;
         set
         {
             AssertMutable();
-            _currentBurnAmount = value;
+            // 旧セーブの火傷値は使用せず、ダメージから再計算する。
             UpdateVars();
         }
     }
@@ -142,11 +141,10 @@ public class AvengeCaptainAizenMomo : HinamoriModCard
     {
         int growth = DynamicVars["Growth"].IntValue;
 
-        // ダメージ・ブロック・火傷の成長量は共通。
+        // 成長量は従来どおり。火傷はダメージから自動計算する。
         IncreasedAmount += growth;
         CurrentAmount += growth;
         CurrentBlockAmount += growth;
-        CurrentBurnAmount += growth;
     }
 
     private void UpdateVars()

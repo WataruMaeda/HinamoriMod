@@ -82,11 +82,11 @@ public abstract class HinamoriModCard(
         Owner.Creature.GetPower<PinnacleOfHadoPower>()?.IsAutoPlaying(this) == true;
 
     /// <summary>
-    /// パワーポーション等の SetToFreeThisTurn による一時的な無料化。
+    /// アタックポーション・パワーポーション等の SetToFreeThisTurn による一時的な無料化。
     /// 通常の0ENパワーとは区別するため、一時スターコスト0も確認する。
     /// </summary>
-    private bool IsTemporarilyFreePowerCard =>
-        Type == CardType.Power &&
+    private bool IsTemporarilyFreePotionCard =>
+        (Type == CardType.Power || Type == CardType.Attack) &&
         IsMutable &&
         CombatState != null &&
         TemporaryStarCost?.Cost == 0 &&
@@ -99,8 +99,8 @@ public abstract class HinamoriModCard(
             if (ChantCost < 0)
                 return -1;
 
-            // パワーポーション等による一時的な無料化
-            if (IsTemporarilyFreePowerCard)
+            // アタックポーション・パワーポーション等による一時的な無料化
+            if (IsTemporarilyFreePotionCard)
                 return 0;
 
             // 破道の極意による自動使用
@@ -206,8 +206,8 @@ public abstract class HinamoriModCard(
         if (cardPlay.IsAutoPlay)
             return true;
 
-        // パワーポーション等による一時的な無料化
-        if (IsTemporarilyFreePowerCard)
+        // アタックポーション・パワーポーション等による一時的な無料化
+        if (IsTemporarilyFreePotionCard)
             return true;
 
         // 破道の極意で自動使用された破道は詠唱を消費しない
