@@ -48,11 +48,8 @@ public class BlackCoffinMomo : HinamoriModCard
     {
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
 
-        // 手動の初回使用時のみ詠唱を取得・消費する。
-        // 騒乱などの自動プレイでは詠唱を消費せず、ダメージも0とする。
-        if (cardPlay.IsFirstInSeries && cardPlay.IsAutoPlay)
-            _lastChantSpent = 0;
-        if (cardPlay.IsFirstInSeries && !cardPlay.IsAutoPlay)
+        // 初回使用時のみ現在の詠唱を取得・消費する
+        if (cardPlay.IsFirstInSeries)
         {
             var chant =
                 Owner.Creature.GetPower<ChantPower>();
