@@ -132,7 +132,10 @@ public static class AncientBonusRelicPatch
             return;
         }
 
-        RelicModel bonus = candidates[Random.Shared.Next(candidates.Count)];
+        // Use the game's per-player seeded reward RNG, not process-local randomness.
+        // Stable ordering ensures the same RNG result selects the same relic on each peer.
+        candidates = candidates.OrderBy(r => r.Id.Entry, StringComparer.Ordinal).ToList();
+        RelicModel bonus = player.PlayerRng.Rewards.NextItem(candidates);
         Godot.GD.Print("[HinamoriMod] Ancient bonus selected: " + bonus.Id);
         await RelicCmd.Obtain(bonus, player);
         starter.AncientBonusCount = currentAct + 1;
