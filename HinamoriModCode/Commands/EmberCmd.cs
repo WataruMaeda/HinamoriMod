@@ -1,5 +1,4 @@
 ﻿
-using System;
 using System.Linq;
 using HinamoriMod.HinamoriModCode.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -51,7 +50,9 @@ public static class EmberCmd
             {
                 if (normalCycle != null && normalCycle.Amount > 0)
                 {
-                    var target = enemies[Random.Shared.Next(enemies.Count)];
+                    // Use the game's synchronized combat targeting RNG.
+                    var target = player.RunState.Rng.CombatTargets
+                        .NextItem(enemies)!;
                     await PowerCmd.Apply<BurnPower>(
                         new ThrowingPlayerChoiceContext(),
                         target,
