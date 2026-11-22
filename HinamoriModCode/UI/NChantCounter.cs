@@ -47,6 +47,17 @@ public partial class NChantCounter : Control
 
         AddChild(_label);
 
+        // Transparent hit area for Godot's built-in hover tooltip.
+        // Keep the icon and count visible without changing their layout.
+        var tooltipArea = new Control
+        {
+            Position = new Vector2(-32, -32),
+            Size = new Vector2(64, 64),
+            MouseFilter = MouseFilterEnum.Stop,
+            TooltipText = "詠唱：鬼道カードを使用する際に消費します。カードごとに必要な詠唱数が異なります。"
+        };
+        AddChild(tooltipArea);
+
         RefreshAmount();
     }
 

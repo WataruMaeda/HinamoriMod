@@ -5,11 +5,14 @@ using BaseLib.Utils;
 using HinamoriMod.HinamoriModCode.Character;
 using HinamoriMod.HinamoriModCode.Extensions;
 using HinamoriMod.HinamoriModCode.Powers;
+using HinamoriMod.HinamoriModCode.Relics;
+using System.Linq;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Models.Powers;
 using System;
 using System.Threading.Tasks;
 
@@ -92,7 +95,26 @@ public abstract class HinamoriModCard(
         TemporaryStarCost?.Cost == 0 &&
         EnergyCost.GetWithModifiers(CostModifiers.Local) == 0;
 
-    public int EffectiveChantCost
+    // SpendResourcesの直前に、その手動プレイへの虚無化適用を記録する。
+    private bool _voidFormAppliesToPaidPlay;
+
+    private bool IsVoidFormFreeNow =>
+        ChantCost >= 0 &&
+        IsMutable &&
+        CombatState != null &&
+        !HasEnergyCostX &&
+        Owner.Creature.GetPower<VoidFormPower>()
+            ?.TryModifyEnergyCostInCombatLate(this, 0m, out _) == true;
+
+    internal void CaptureVoidFormBeforeResourcePayment()
+    {
+        _voidFormAppliesToPaidPlay = IsVoidFormFreeNow;
+    }
+
+    public int EffectiveChantCost =>
+        IsVoidFormFreeNow ? 0 : ChantCostWithoutVoidForm;
+
+    private int ChantCostWithoutVoidForm
     {
         get
         {
@@ -111,7 +133,13 @@ public abstract class HinamoriModCard(
             if (FreeChantThisTurn)
                 return 0;
 
-            // 鬼道の結晶：このターン中、鬼道の詠唱コスト0
+            // 鬼道の秘伝書：そのターン最初の破道・縛道は詠唱0。
+            if (HasHinamoriTag(HinamoriCardTag.Kido) &&
+                IsMutable && CombatState != null &&
+                Owner.Relics.OfType<KidoSecretManual>().Any(r => r.IsDiscountAvailable))
+                return 0;
+
+        // 鬼道の結晶：このターン中、鬼道の詠唱コスト0
             if (HasHinamoriTag(HinamoriCardTag.Kido) &&
                 IsMutable && CombatState != null &&
                 Owner.Creature.GetPower<PotionFreeKidoChantPower>() != null)
@@ -204,7 +232,17 @@ public abstract class HinamoriModCard(
 
         // 騒乱など、効果による自動プレイでは詠唱を消費しない
         if (cardPlay.IsAutoPlay)
+        {
+            _voidFormAppliesToPaidPlay = false;
             return true;
+        }
+
+        // EN支払い直前の判定を使用し、途中のパワー状態変化に影響されない。
+        if (_voidFormAppliesToPaidPlay)
+        {
+            _voidFormAppliesToPaidPlay = false;
+            return true;
+        }
 
         // アタックポーション・パワーポーション等による一時的な無料化
         if (IsTemporarilyFreePotionCard)
@@ -260,7 +298,18 @@ public abstract class HinamoriModCard(
             return true;
         }
 
-        int cost = EffectiveChantCost;
+        // 鬼道の秘伝書：最初に実際に使用した鬼道の詠唱を無料化する。
+        // コスト表示時には状態を変更せず、使用確定時のみ消費する。
+        if ((HasHinamoriTag(HinamoriCardTag.Hado) ||
+             HasHinamoriTag(HinamoriCardTag.Bakudo)) &&
+            Owner.Relics.OfType<KidoSecretManual>()
+                .FirstOrDefault(r => r.IsDiscountAvailable) is { } secretManual)
+        {
+            secretManual.MarkKidoPlayed();
+            return true;
+        }
+
+        int cost = ChantCostWithoutVoidForm;
 
         var chant =
             Owner.Creature.GetPower<ChantPower>();
@@ -276,6 +325,19 @@ public abstract class HinamoriModCard(
                 -cost,
                 Owner.Creature,
                 this);
+        }
+
+        // 鬼道の護符：実際に消費した詠唱だけを累積する。
+        if (cost > 0)
+        {
+            foreach (var talisman in Owner.Relics.OfType<KidoTalisman>())
+            {
+                int triggers = talisman.CountBlockTriggers(cost);
+                for (int i = 0; i < triggers; i++)
+                    await CreatureCmd.GainBlock(Owner.Creature,
+                        new MegaCrit.Sts2.Core.Localization.DynamicVars.BlockVar(10m, MegaCrit.Sts2.Core.ValueProps.ValueProp.Unpowered),
+                        cardPlay);
+            }
         }
 
         // 破道の詠唱軽減を消費

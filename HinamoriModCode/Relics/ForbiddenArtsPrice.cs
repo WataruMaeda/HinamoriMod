@@ -1,14 +1,42 @@
+using System.Linq;
+using System.Threading.Tasks;
+using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.CardPools;
 
 namespace HinamoriMod.HinamoriModCode.Relics;
 
-/// <summary>禁術の代償：毎ターンEN+1、ランダムな状態異常カード1枚を手札に加える。</summary>
+/// <summary>禁術の代償：毎ターン1ENを得て、本体のランダムな状態異常を手札に加える。</summary>
 public class ForbiddenArtsPrice : HinamoriModRelic
 {
     public override RelicRarity Rarity => RelicRarity.Shop;
     public const int ExtraEnergyPerTurn = 1;
     public const int StatusCardsPerTurn = 1;
-    // TODO: エナジーリセット後の追加EN付与を接続する。
-    // TODO: 状態異常カードのプールからランダムに1枚を選び手札に生成する。
-    // TODO: 状態異常の種類・虚無などの即時効果・手札上限・マルチプレイ同期を検証する。
+
+    public override async Task AfterEnergyReset(Player player)
+    {
+        if (player != Owner || !Owner.Creature.IsAlive)
+            return;
+
+        await PlayerCmd.GainEnergy(ExtraEnergyPerTurn, player);
+        var combat = player.Creature.CombatState;
+        if (combat is null)
+            return;
+
+        var statuses = ModelDb.CardPool<StatusCardPool>().AllCards
+            .Where(card => card.GetType().Assembly == typeof(StatusCardPool).Assembly)
+            .OrderBy(card => card.Id.Entry, System.StringComparer.Ordinal)
+            .ToList();
+
+        var canonical = player.RunState.Rng.CombatCardGeneration.NextItem(statuses);
+        if (canonical is null)
+            return;
+
+        var generated = combat.CreateCard(canonical, player);
+        await CardPileCmd.AddGeneratedCardToCombat(generated, PileType.Hand, player);
+    }
 }
