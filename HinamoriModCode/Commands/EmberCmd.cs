@@ -43,11 +43,10 @@ public static class EmberCmd
         {
             var enemies = player.Creature.CombatState
                 .GetOpponentsOf(player.Creature)
-                .Where(enemy => enemy.IsAlive)
-                // Keep random target candidates in a deterministic order on every peer.
-                // Max HP and current HP distinguish the two enemy types in the reported desync.
-                .OrderBy(enemy => enemy.MaxHp)
-                .ThenBy(enemy => enemy.CurrentHp)
+                // Match the game's LightningOrb target list and preserve combat order.
+                // HP sorting cannot uniquely order identical enemies and can diverge
+                // between peers as damage is applied.
+                .Where(enemy => enemy.IsHittable)
                 .ToList();
 
             if (enemies.Count > 0)
