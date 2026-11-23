@@ -15,13 +15,6 @@ namespace HinamoriMod.HinamoriModCode.Powers;
 /// </summary>
 public class FreeChantSkillPower : HinamoriModPower
 {
-    // 本編の「急襲」が付与する FreeSkillPower と同じアイコンを使用する。
-    // 効果（EN・詠唱コストの両方を0にする）はMOD独自のまま維持。
-    public override string CustomPackedIconPath =>
-        "res://images/atlases/power_atlas.sprites/freeskillpower.tres";
-
-    public override string CustomBigIconPath =>
-        "res://images/powers/freeskillpower.png";
 
     // パワーが存在する状態で使用開始したカードを記録
     private readonly HashSet<CardPlay> _eligiblePlays = new();
