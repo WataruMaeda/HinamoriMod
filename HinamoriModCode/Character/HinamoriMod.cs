@@ -56,7 +56,14 @@ public class HinamoriMod : PlaceholderCharacterModel
     {
         get
         {
-            var icon = NodeFactory<Control>.CreateFromResource(CustomIconTexturePath);
+            // Preserve the portrait's aspect ratio instead of stretching it to the HUD slot.
+            var icon = new TextureRect
+            {
+                Texture = GD.Load<Texture2D>(CustomIconTexturePath),
+                ExpandMode = TextureRect.ExpandModeEnum.IgnoreSize,
+                StretchMode = TextureRect.StretchModeEnum.KeepAspectCentered,
+                MouseFilter = Control.MouseFilterEnum.Ignore
+            };
             icon.SetAnchorsAndOffsetsPreset(Control.LayoutPreset.FullRect);
             return icon;
         }
