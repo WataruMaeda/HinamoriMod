@@ -15,6 +15,13 @@ namespace HinamoriMod.HinamoriModCode.Powers;
 /// </summary>
 public class FreeChantAttackPower : HinamoriModPower
 {
+    // 本編の無料化パワーと同じアイコンを使用する（EN・詠唱コストの処理は変更しない）。
+    public override string CustomPackedIconPath =>
+        "res://images/atlases/power_atlas.sprites/freeattackpower.tres";
+
+    public override string CustomBigIconPath =>
+        "res://images/powers/freeattackpower.png";
+
     private readonly HashSet<CardPlay> _eligiblePlays = new();
 
     public override PowerType Type => PowerType.Buff;
