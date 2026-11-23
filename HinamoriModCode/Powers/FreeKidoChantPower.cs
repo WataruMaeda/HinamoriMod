@@ -15,6 +15,10 @@ namespace HinamoriMod.HinamoriModCode.Powers;
 /// </summary>
 public class FreeKidoChantPower : HinamoriModPower
 {
+    // 雛森専用のパワーアイコン。
+    public override string CustomPackedIconPath => "res://HinamoriMod/images/icons/IncantationAbandonment_icon.png";
+    public override string CustomBigIconPath => "res://HinamoriMod/images/icons/IncantationAbandonment_icon.png";
+
     private readonly HashSet<CardPlay> _eligiblePlays = new();
 
     public override PowerType Type => PowerType.Buff;
