@@ -18,6 +18,10 @@ namespace HinamoriMod.HinamoriModCode.Powers;
 /// </summary>
 public class PinnacleOfHadoPower : HinamoriModPower
 {
+    // 雛森専用のパワーアイコン。
+    public override string CustomPackedIconPath => "res://HinamoriMod/images/powers/PinnacleOfHadoPower.png";
+    public override string CustomBigIconPath => "res://HinamoriMod/images/powers/big/PinnacleOfHadoPower.png";
+
     private sealed class Data
     {
         public readonly HashSet<CardModel> AutoPlayingCards = new();

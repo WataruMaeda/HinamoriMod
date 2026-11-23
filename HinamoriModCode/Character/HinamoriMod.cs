@@ -56,16 +56,24 @@ public class HinamoriMod : PlaceholderCharacterModel
     {
         get
         {
-            var icon = NodeFactory<Control>.CreateFromResource(CustomIconTexturePath);
+            // Preserve the portrait's aspect ratio instead of stretching it to the HUD slot.
+            var icon = new TextureRect
+            {
+                Texture = GD.Load<Texture2D>(CustomIconTexturePath),
+                ExpandMode = TextureRect.ExpandModeEnum.IgnoreSize,
+                StretchMode = TextureRect.StretchModeEnum.KeepAspectCentered,
+                MouseFilter = Control.MouseFilterEnum.Ignore
+            };
             icon.SetAnchorsAndOffsetsPreset(Control.LayoutPreset.FullRect);
             return icon;
         }
     }
-    public override string CustomIconTexturePath => "character_icon_char_name.png".CharacterUiPath();
+    /// <summary>戦闘画面左上のキャラクターアイコン</summary>
+    public override string CustomIconTexturePath => "res://HinamoriMod/images/icons/hinamori_icon.png";
     /// <summary>キャラクター選択画面のキャラクターアイコン</summary>
     public override string CustomCharacterSelectIconPath => "res://HinamoriMod/images/character/hinamori_icon.png";
     public override string CustomCharacterSelectLockedIconPath => "char_select_char_name_locked.png".CharacterUiPath();
-    public override string CustomMapMarkerPath => "map_marker_char_name.png".CharacterUiPath();
+    public override string CustomMapMarkerPath => "res://HinamoriMod/images/icons/hinamori_icon.png";
     /// <summary>キャラクター選択画面の画像</summary>
     public override string CustomCharacterSelectBg => "res://HinamoriMod/scenes/hinamori_select_bg.tscn";
 

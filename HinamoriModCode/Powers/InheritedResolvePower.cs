@@ -17,6 +17,10 @@ namespace HinamoriMod.HinamoriModCode.Powers;
 /// </summary>
 public class InheritedResolvePower : HinamoriModPower
 {
+    // 雛森専用のパワーアイコン。
+    public override string CustomPackedIconPath => "res://HinamoriMod/images/powers/InheritedResolvePower.png";
+    public override string CustomBigIconPath => "res://HinamoriMod/images/powers/big/InheritedResolvePower.png";
+
     protected virtual bool UpgradeGeneratedCards => false;
 
     public override PowerType Type => PowerType.Buff;

@@ -13,6 +13,10 @@ namespace HinamoriMod.HinamoriModCode.Powers;
 /// </summary>
 public class EssenceOfKidoPower : HinamoriModPower
 {
+    // 雛森専用のパワーアイコン。
+    public override string CustomPackedIconPath => "res://HinamoriMod/images/powers/EssenceOfKidoPower.png";
+    public override string CustomBigIconPath => "res://HinamoriMod/images/powers/big/EssenceOfKidoPower.png";
+
     private int _kidoUseCount;
 
     public override PowerType Type => PowerType.Buff;

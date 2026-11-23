@@ -13,6 +13,10 @@ namespace HinamoriMod.HinamoriModCode.Powers;
 /// <summary>鬼道の研鑽。掴趾追雀のカードプール・生成処理を再利用する。</summary>
 public class KidoStudyPower : HinamoriModPower
 {
+    // 雛森専用のパワーアイコン。
+    public override string CustomPackedIconPath => "res://HinamoriMod/images/powers/KidoStudyPower.png";
+    public override string CustomBigIconPath => "res://HinamoriMod/images/powers/big/KidoStudyPower.png";
+
     protected virtual bool UpgradeGeneratedCards => false;
 
     public override PowerType Type => PowerType.Buff;
