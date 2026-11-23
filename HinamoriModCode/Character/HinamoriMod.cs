@@ -62,7 +62,7 @@ public class HinamoriMod : PlaceholderCharacterModel
         }
     }
     /// <summary>戦闘画面左上のキャラクターアイコン</summary>
-    public override string CustomIconTexturePath => "res://HinamoriMod/images/character/hinamori_icon.png";
+    public override string CustomIconTexturePath => "res://HinamoriMod/images/icons/hinamori_icon.png";
     /// <summary>キャラクター選択画面のキャラクターアイコン</summary>
     public override string CustomCharacterSelectIconPath => "res://HinamoriMod/images/character/hinamori_icon.png";
     public override string CustomCharacterSelectLockedIconPath => "char_select_char_name_locked.png".CharacterUiPath();
