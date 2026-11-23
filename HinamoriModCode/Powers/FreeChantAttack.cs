@@ -17,7 +17,7 @@ public class FreeChantAttackPower : HinamoriModPower
 {
     // ゲーム本体の無料化パワー画像を参照する。
     public override string CustomPackedIconPath => "res://images/powers/free_attack_power.png";
-    public override string CustomBigIconPath => "res://images/powers/free_attack_power.png";
+    public override string CustomBigIconPath => "res://images/powers/big/free_attack_power.png";
 
 
     private readonly HashSet<CardPlay> _eligiblePlays = new();

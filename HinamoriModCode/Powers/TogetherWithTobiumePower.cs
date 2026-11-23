@@ -10,6 +10,10 @@ namespace HinamoriMod.HinamoriModCode.Powers;
 /// </summary>
 public class TogetherWithTobiumePower : HinamoriModPower
 {
+    // 雛森専用のパワーアイコン。
+    public override string CustomPackedIconPath => "res://HinamoriMod/images/powers/TogetherWithTobiumePower.png";
+    public override string CustomBigIconPath => "res://HinamoriMod/images/powers/big/TogetherWithTobiumePower.png";
+
     public override PowerType Type => PowerType.Buff;
 
     public override PowerStackType StackType => PowerStackType.Counter;

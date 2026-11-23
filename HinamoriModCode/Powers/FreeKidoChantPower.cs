@@ -17,7 +17,7 @@ public class FreeKidoChantPower : HinamoriModPower
 {
     // 雛森専用のパワーアイコン。
     public override string CustomPackedIconPath => "res://HinamoriMod/images/powers/FreeKidoChantPower.png";
-    public override string CustomBigIconPath => "res://HinamoriMod/images/powers/FreeKidoChantPower.png";
+    public override string CustomBigIconPath => "res://HinamoriMod/images/powers/big/FreeKidoChantPower.png";
 
     private readonly HashSet<CardPlay> _eligiblePlays = new();
 

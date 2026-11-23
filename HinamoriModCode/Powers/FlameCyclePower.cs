@@ -7,7 +7,7 @@ public class FlameCyclePower : HinamoriModPower
 {
     // 雛森専用のパワーアイコン。
     public override string CustomPackedIconPath => "res://HinamoriMod/images/powers/FlameCyclePower.png";
-    public override string CustomBigIconPath => "res://HinamoriMod/images/powers/FlameCyclePower.png";
+    public override string CustomBigIconPath => "res://HinamoriMod/images/powers/big/FlameCyclePower.png";
 
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;

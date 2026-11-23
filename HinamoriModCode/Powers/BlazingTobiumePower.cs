@@ -13,6 +13,10 @@ namespace HinamoriMod.HinamoriModCode.Powers;
 /// </summary>
 public class BlazingTobiumePower : HinamoriModPower
 {
+    // 雛森専用のパワーアイコン。
+    public override string CustomPackedIconPath => "res://HinamoriMod/images/powers/BlazingTobiumePower.png";
+    public override string CustomBigIconPath => "res://HinamoriMod/images/powers/big/BlazingTobiumePower.png";
+
     public override PowerType Type => PowerType.Buff;
 
     public override PowerStackType StackType => PowerStackType.Counter;

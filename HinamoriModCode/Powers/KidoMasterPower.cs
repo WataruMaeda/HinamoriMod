@@ -13,6 +13,10 @@ namespace HinamoriMod.HinamoriModCode.Powers;
 /// </summary>
 public class KidoMasterPower : HinamoriModPower
 {
+    // 雛森専用のパワーアイコン。
+    public override string CustomPackedIconPath => "res://HinamoriMod/images/powers/KidoMasterPower.png";
+    public override string CustomBigIconPath => "res://HinamoriMod/images/powers/big/KidoMasterPower.png";
+
     public override PowerType Type => PowerType.Buff;
 
     public override PowerStackType StackType =>

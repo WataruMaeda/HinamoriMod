@@ -16,7 +16,7 @@ public class FullIncantationPower : HinamoriModPower
 {
     // 雛森専用のパワーアイコン。
     public override string CustomPackedIconPath => "res://HinamoriMod/images/powers/FullIncantationPower.png";
-    public override string CustomBigIconPath => "res://HinamoriMod/images/powers/FullIncantationPower.png";
+    public override string CustomBigIconPath => "res://HinamoriMod/images/powers/big/FullIncantationPower.png";
 
     private readonly HashSet<CardPlay> _eligiblePlays = new();
 
