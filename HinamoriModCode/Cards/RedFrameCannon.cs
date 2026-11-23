@@ -28,7 +28,7 @@ public class RedFrameCannonMomo : HinamoriModCard
     [
         new DamageVar(8m, ValueProp.Move),
         new DynamicVar("Burn", 2m),
-        new ForgeVar(5)
+        new DynamicVar("Ember", 5m)
     ];
 
     public RedFrameCannonMomo()
@@ -69,9 +69,8 @@ public class RedFrameCannonMomo : HinamoriModCard
 
         // 火種5を獲得
         await EmberCmd.GainEmber(
-            DynamicVars.Forge.IntValue,
-            Owner
-        );
+            DynamicVars["Ember"].BaseValue,
+            Owner);
     }
 
     protected override void OnUpgrade()
