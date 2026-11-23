@@ -21,6 +21,10 @@ namespace HinamoriMod.HinamoriModCode.Powers;
 /// </summary>
 public class BurnPower : HinamoriModPower
 {
+    // 火傷専用の状態異常アイコン。共通のpower.pngへのフォールバックを使わない。
+    public override string CustomPackedIconPath => "res://HinamoriMod/images/icons/burn_icon.png";
+    public override string CustomBigIconPath => "res://HinamoriMod/images/icons/burn_icon.png";
+
     public override PowerType Type => PowerType.Debuff;
 
     public override PowerStackType StackType => PowerStackType.Counter;
