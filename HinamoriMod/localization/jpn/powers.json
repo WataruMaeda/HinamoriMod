@@ -21,7 +21,7 @@
   "HINAMORIMOD-FREE_CHANT_ATTACK_POWER.description": "次にプレイする[blue]{Amount}[/blue]枚のアタックのコストは[blue]0[/blue]{energyPrefix:energyIcons(1)}。",
   "HINAMORIMOD-FREE_CHANT_ATTACK_POWER.smartDescription": "次にプレイする[blue]{Amount}[/blue]枚のアタックのコストは[blue]0[/blue]{energyPrefix:energyIcons(1)}。",
   "HINAMORIMOD-FREE_KIDO_CHANT_POWER.title": "詠唱破棄",
-  "HINAMORIMOD-FREE_KIDO_CHANT_POWER.description": "次に使用する[gold]破道[/gold]・[gold]縛道[/gold]の詠唱コストが0になる。",
+  "HINAMORIMOD-FREE_KIDO_CHANT_POWER.description": "次にプレイする[blue]{Amount}[/blue]枚の[gold]破道[/gold]・[gold]縛道[/gold]の詠唱コストは[blue]0[/blue]。",
   "HINAMORIMOD-FREE_KIDO_CHANT_POWER.smartDescription": "次に使用する[gold]破道[/gold]・[gold]縛道[/gold]の詠唱コストが0になる。",
   "HINAMORIMOD-FREE_CHANT_POWER_CARD_POWER.title": "六杖光牢",
   "HINAMORIMOD-FREE_CHANT_POWER_CARD_POWER.description": "次にプレイする[blue]{Amount}[/blue]枚のパワーのコストは[blue]0[/blue]{energyPrefix:energyIcons(1)}。",
