@@ -14,6 +14,10 @@ namespace HinamoriMod.HinamoriModCode.Powers;
 
 public class FullIncantationPower : HinamoriModPower
 {
+    // 雛森専用のパワーアイコン。
+    public override string CustomPackedIconPath => "res://HinamoriMod/images/icons/FullIncantation_icon.png";
+    public override string CustomBigIconPath => "res://HinamoriMod/images/icons/FullIncantation_icon.png";
+
     private readonly HashSet<CardPlay> _eligiblePlays = new();
 
     public override PowerType Type => PowerType.Buff;
