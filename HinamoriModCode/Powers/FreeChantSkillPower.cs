@@ -15,6 +15,10 @@ namespace HinamoriMod.HinamoriModCode.Powers;
 /// </summary>
 public class FreeChantSkillPower : HinamoriModPower
 {
+    // ゲーム本体の無料化パワー画像を参照する。
+    public override string CustomPackedIconPath => "res://images/powers/free_skill_power.png";
+    public override string CustomBigIconPath => "res://images/powers/free_skill_power.png";
+
 
     // パワーが存在する状態で使用開始したカードを記録
     private readonly HashSet<CardPlay> _eligiblePlays = new();
