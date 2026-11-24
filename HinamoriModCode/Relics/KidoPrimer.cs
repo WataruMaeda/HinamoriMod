@@ -13,12 +13,12 @@ using MegaCrit.Sts2.Core.CardSelection;
 
 namespace HinamoriMod.HinamoriModCode.Relics;
 
-/// <summary>鬼道の手引き：初期ドロー後、雛森専用カード3択から1枚を手札に加えて1枚捨てる。</summary>
+/// <summary>鬼道の手引き：初期ドロー後、雛森専用カード3択から1枚を手札に加えて1枚廃棄する。生成カードはこのターン無料。</summary>
 public class KidoPrimer : HinamoriModRelic
 {
     public override RelicRarity Rarity => RelicRarity.Uncommon;
     public const int CandidateCount = 3;
-    public const int DiscardCount = 1;
+    public const int ExhaustCount = 1;
 
     public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
@@ -43,13 +43,19 @@ public class KidoPrimer : HinamoriModRelic
         if (selected is null)
             return;
 
+        selected.SetToFreeThisTurn();
+        if (selected is HinamoriModCard hinamoriCard)
+            hinamoriCard.SetChantFreeThisTurn();
+
         await CardPileCmd.AddGeneratedCardToCombat(selected, PileType.Hand, player);
+        if (!PileType.Hand.GetPile(player).Cards.Any())
+            return;
 
         var prefs = new CardSelectorPrefs(
-            CardSelectorPrefs.DiscardSelectionPrompt, selectCount: DiscardCount);
-        var toDiscard = (await CardSelectCmd.FromHandForDiscard(
+            CardSelectorPrefs.ExhaustSelectionPrompt, selectCount: DiscardCount);
+        var toExhaust = (await CardSelectCmd.FromHand(
             choiceContext, player, prefs, filter: null, source: this)).ToList();
-        if (toDiscard.Count > 0)
-            await CardCmd.Discard(choiceContext, toDiscard);
+        foreach (var card in toExhaust)
+            await CardCmd.Exhaust(choiceContext, card);
     }
 }
