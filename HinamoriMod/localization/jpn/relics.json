@@ -21,7 +21,7 @@
   "HINAMORIMOD-KIDO_TALISMAN.description": "詠唱を累計10消費するたび、ブロック10を獲得する。",
   "HINAMORIMOD-KIDO_TALISMAN.flavor": "雛森桃の戦いを支える品。",
   "HINAMORIMOD-KIDO_PRIMER.title": "鬼道の手引き",
-  "HINAMORIMOD-KIDO_PRIMER.description": "戦闘開始時、ランダムな雛森専用カード3枚から1枚選んで手札に加え、その後手札1枚を選んで捨てる。",
+  "HINAMORIMOD-KIDO_PRIMER.description": "戦闘開始時、ランダムなカード3枚から1枚を選んで手札に加える。そのカードはこのターン、コストなしで使用できる。その後、手札1枚を選んで廃棄する。",
   "HINAMORIMOD-KIDO_PRIMER.flavor": "雛森桃の戦いを支える品。",
   "HINAMORIMOD-BURN_CURSE_MARK.title": "火傷の呪印",
   "HINAMORIMOD-BURN_CURSE_MARK.description": "火傷状態の敵から受ける攻撃ダメージをさらに20%軽減する。",
