@@ -38,6 +38,8 @@ public class FlamesPresenceMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        await MegaCrit.Sts2.Core.Commands.CreatureCmd.TriggerAnim(Owner.Creature, "Prayer", 0f);
+
         // 火種の更新と飛梅カードの生成判定を共通コマンドへ委譲する。
         // 火種の獲得量はDynamicVarsから取得する。
         await EmberCmd.GainEmber(

@@ -35,6 +35,8 @@ public class FlameBindMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        await MegaCrit.Sts2.Core.Commands.CreatureCmd.TriggerAnim(Owner.Creature, "Attack", 0f);
+
         // 火傷を付与する敵1体を必須とする。
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
 

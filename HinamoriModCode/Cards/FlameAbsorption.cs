@@ -22,6 +22,8 @@ public class FlameAbsorptionMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        await MegaCrit.Sts2.Core.Commands.CreatureCmd.TriggerAnim(Owner.Creature, "Prayer", 0f);
+
         // 敵1体の火傷を消費するカードのため、対象が必要。
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
 

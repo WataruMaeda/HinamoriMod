@@ -23,6 +23,8 @@ public class KidoDisciplineMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        await MegaCrit.Sts2.Core.Commands.CreatureCmd.TriggerAnim(Owner.Creature, "Prayer", 0f);
+
         // 継続的な軽減量はパワーとして保持する。
         await PowerCmd.Apply<KidoDisciplinePower>(
             choiceContext,

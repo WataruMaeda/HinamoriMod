@@ -34,6 +34,8 @@ public class KidoMasterMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        await MegaCrit.Sts2.Core.Commands.CreatureCmd.TriggerAnim(Owner.Creature, "Prayer", 0f);
+
         await PowerCmd.Apply<KidoMasterPower>(
             choiceContext,
             Owner.Creature,

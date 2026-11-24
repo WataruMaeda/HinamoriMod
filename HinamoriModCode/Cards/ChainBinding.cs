@@ -50,6 +50,8 @@ public class ChainBindingMomo : HinamoriModCard
         if (cards.Count == 0)
             return;
 
+        await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", 0f);
+
         // 選択をスキップさせず、回収するカードを1枚決める。
         CardModel selected =
             await CardSelectCmd.FromChooseACardScreen(

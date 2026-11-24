@@ -49,6 +49,8 @@ public class InvertedMountainCrystalMomo : HinamoriModCard
             return;
 
         // ブロック25獲得（強化後30）
+        await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", 0f);
+
         await CreatureCmd.GainBlock(
             Owner.Creature,
             DynamicVars.Block,

@@ -76,6 +76,7 @@ public class BlackCoffinMomo : HinamoriModCard
         await DamageCmd.Attack(damage)
             .FromCard(this, cardPlay)
             .Targeting(cardPlay.Target)
+            .WithAttackerAnim("Cast", 0.5f)
             .WithHitFx("vfx/vfx_giant_horizontal_slash")
             .Execute(choiceContext);
     }

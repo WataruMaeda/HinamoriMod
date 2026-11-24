@@ -35,6 +35,8 @@ public class FlameGuardMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        await MegaCrit.Sts2.Core.Commands.CreatureCmd.TriggerAnim(Owner.Creature, "Prayer", 0f);
+
         // 先に使用者へブロックを付与する。BlockVarを使ってブロック補正を反映する。
         await CreatureCmd.GainBlock(
             Owner.Creature,

@@ -47,6 +47,8 @@ public class DisintegratingCircleMomo : HinamoriModCard
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
 
         // 敵に脱力を付与
+        await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", 0f);
+
         await PowerCmd.Apply<WeakPower>(
             choiceContext,
             cardPlay.Target,

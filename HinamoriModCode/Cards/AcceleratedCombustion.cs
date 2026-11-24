@@ -27,6 +27,8 @@ public class AcceleratedCombustionMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        await MegaCrit.Sts2.Core.Commands.CreatureCmd.TriggerAnim(Owner.Creature, "Attack", 0f);
+
         // 対象の敵を必須とする。火傷のない敵に対しては追加処理をしない。
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
 

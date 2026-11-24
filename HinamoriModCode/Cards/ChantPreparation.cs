@@ -38,6 +38,8 @@ public class ChantPreparationMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        await CreatureCmd.TriggerAnim(Owner.Creature, "Prayer", 0f);
+
         // 対象と発生源はどちらも使用者自身。詠唱量はカードの動的変数に従う。
         await PowerCmd.Apply<ChantPower>(
             choiceContext,

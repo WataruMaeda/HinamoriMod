@@ -21,6 +21,8 @@ public class SpiritualPressureControlMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        await MegaCrit.Sts2.Core.Commands.CreatureCmd.TriggerAnim(Owner.Creature, "Prayer", 0f);
+
         // スタック量をブロック値として保持する。
         await PowerCmd.Apply<SpiritualPressureControlPower>(
             choiceContext, Owner.Creature, 3, Owner.Creature, this);

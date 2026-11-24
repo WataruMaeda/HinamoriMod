@@ -50,6 +50,8 @@ public class SixRodLightPrisonMomo : HinamoriModCard
             return;
 
         // 敵に脱力2
+        await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", 0f);
+
         await PowerCmd.Apply<WeakPower>(
             choiceContext,
             cardPlay.Target,

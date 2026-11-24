@@ -37,6 +37,8 @@ public class SpiritualPressureFocusMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        await CreatureCmd.TriggerAnim(Owner.Creature, "Prayer", 0f);
+
         // 先に詠唱パワーを付与する。Owner.Creature は効果を受ける雛森本人。
         // DynamicVars を使うことでカード表示の値と実際の獲得量を一致させる。
         await PowerCmd.Apply<ChantPower>(

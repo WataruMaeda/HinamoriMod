@@ -30,6 +30,8 @@ public class TobiumesSparkMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        await MegaCrit.Sts2.Core.Commands.CreatureCmd.TriggerAnim(Owner.Creature, "Attack", 0f);
+
         // 既存の双蓮蒼火墜と同じ方法で、生存している敵全体を取得する。
         // 付与中に敵の状態が変化しても列挙が崩れないようリストを固定する。
         var enemies = CombatState

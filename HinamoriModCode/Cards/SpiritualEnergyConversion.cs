@@ -36,6 +36,8 @@ public class SpiritualEnergyConversionMomo : HinamoriModCard
         // 詠唱が不足する場合は効果を発動しない。リプレイでは二重消費しない。
         if (!await SpendChant(choiceContext, cardPlay))
             return;
+        await CreatureCmd.TriggerAnim(Owner.Creature, "Prayer", 0f);
+
 
         // 詠唱を消費できたときだけエナジーを増やす。
         await PlayerCmd.GainEnergy(DynamicVars.Energy.IntValue, Owner);

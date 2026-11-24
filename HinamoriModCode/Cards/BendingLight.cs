@@ -50,6 +50,8 @@ public class BendingLightMomo : HinamoriModCard
             return;
 
         // ブロックを獲得
+        await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", 0f);
+
         await CreatureCmd.GainBlock(
             Owner.Creature,
             DynamicVars.Block,
