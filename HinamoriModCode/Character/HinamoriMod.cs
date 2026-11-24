@@ -21,8 +21,8 @@ public class HinamoriMod : PlaceholderCharacterModel
     public override Color NameColor => Color;
     public override CharacterGender Gender => CharacterGender.Feminine;
 
-    /// <summary>StartHP</summary>
-    public override int StartingHp => 70;
+    /// <summary>初期HP</summary>
+    public override int StartingHp => 75;
     
     /// <summary>初期カード</summary>
     public override IEnumerable<CardModel> StartingDeck => [
