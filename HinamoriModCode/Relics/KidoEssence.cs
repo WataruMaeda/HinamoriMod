@@ -9,7 +9,7 @@ namespace HinamoriMod.HinamoriModCode.Relics;
 
 /// <summary>
 /// 鬼道の真髄：戦闘開始時に詠唱7、2ターン目以降の開始時に詠唱1。
-/// 通常版のボス追加報酬は基底クラスから引き継ぐ。
+/// エンシェント追加報酬は五番隊副官章が管理する。
 /// </summary>
 public class KidoEssence : KidoFundamentals
 {
