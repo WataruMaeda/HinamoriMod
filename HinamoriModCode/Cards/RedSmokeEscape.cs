@@ -43,7 +43,7 @@ public class RedSmokeEscapeMomo : HinamoriModCard
         CardPlay cardPlay)
     {
         // まず使用者にブロックを付与する。BlockVar から各種補正を反映する。
-        HinamoriMod.HinamoriModCode.Character.HinamoriCombatAnimation.Play("cast");
+        global::HinamoriMod.HinamoriModCode.Character.HinamoriCombatAnimation.Play("cast");
 
         await CreatureCmd.GainBlock(
             Owner.Creature,

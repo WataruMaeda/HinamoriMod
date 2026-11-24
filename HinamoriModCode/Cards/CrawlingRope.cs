@@ -43,7 +43,7 @@ public class CrawlingRopeMomo : HinamoriModCard
         CardPlay cardPlay)
     {
         // 先にブロックを付与する。BlockVarに各種ブロック補正を反映する。
-        HinamoriMod.HinamoriModCode.Character.HinamoriCombatAnimation.Play("cast");
+        global::HinamoriMod.HinamoriModCode.Character.HinamoriCombatAnimation.Play("cast");
 
         await CreatureCmd.GainBlock(
             Owner.Creature,
