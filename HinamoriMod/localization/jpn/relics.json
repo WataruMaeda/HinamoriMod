@@ -18,7 +18,7 @@
   "HINAMORIMOD-LAST_EMBER_FRAGMENT.description": "火傷を付与するたび、その付与量を1増やす。",
   "HINAMORIMOD-LAST_EMBER_FRAGMENT.flavor": "雛森桃の戦いを支える品。",
   "HINAMORIMOD-KIDO_TALISMAN.title": "鬼道の護符",
-  "HINAMORIMOD-KIDO_TALISMAN.description": "詠唱を累計10消費するたび、ブロック10を獲得する。",
+  "HINAMORIMOD-KIDO_TALISMAN.description": "破道または縛道を5回使用するたび、ブロック10を獲得する。",
   "HINAMORIMOD-KIDO_TALISMAN.flavor": "雛森桃の戦いを支える品。",
   "HINAMORIMOD-KIDO_PRIMER.title": "鬼道の手引き",
   "HINAMORIMOD-KIDO_PRIMER.description": "戦闘開始時、ランダムなカード3枚から1枚を選んで手札に加える。そのカードはこのターン、コストなしで使用できる。その後、手札1枚を選んで廃棄する。",
