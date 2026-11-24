@@ -52,9 +52,6 @@ public class RedFrameCannonMomo : HinamoriModCard
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
 
-        // DamageCmd may trigger the default attack animation; switch to the kido cast afterward.
-        HinamoriCombatAnimation.Play("cast");
-
         // 火傷2を付与
         if (cardPlay.Target.IsAlive)
         {
