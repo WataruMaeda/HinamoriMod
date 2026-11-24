@@ -11,7 +11,7 @@ namespace HinamoriMod.HinamoriModCode.Relics;
 /// <summary>火傷の呪印：火傷中の敵から受ける攻撃ダメージを追加で20%軽減。</summary>
 public class BurnCurseMark : HinamoriModRelic
 {
-    public override RelicRarity Rarity => RelicRarity.Rare;
+    public override RelicRarity Rarity => RelicRarity.Shop;
 
     public override decimal ModifyDamageMultiplicative(
         Creature? target, decimal amount, ValueProp props,
