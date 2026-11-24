@@ -326,19 +326,6 @@ public abstract class HinamoriModCard(
                 this);
         }
 
-        // 鬼道の護符：実際に消費した詠唱だけを累積する。
-        if (cost > 0)
-        {
-            foreach (var talisman in Owner.Relics.OfType<KidoTalisman>())
-            {
-                int triggers = talisman.CountBlockTriggers(cost);
-                for (int i = 0; i < triggers; i++)
-                    await CreatureCmd.GainBlock(Owner.Creature,
-                        new MegaCrit.Sts2.Core.Localization.DynamicVars.BlockVar(10m, MegaCrit.Sts2.Core.ValueProps.ValueProp.Unpowered),
-                        cardPlay);
-            }
-        }
-
         // 破道の詠唱軽減を消費
         if (HasHinamoriTag(HinamoriCardTag.Hado))
         {
