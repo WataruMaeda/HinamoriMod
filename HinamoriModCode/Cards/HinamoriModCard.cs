@@ -74,13 +74,12 @@ public abstract class HinamoriModCard(
         (HinamoriTags & tag) == tag;
 
     /// <summary>
-    /// 破道の極意による自動使用中だけ、通常の破道の詠唱を免除する。
+    /// 鬼道の極意による自動使用中だけ、詠唱を免除する。
     /// 黒棺は独自の全詠唱消費処理を維持する。
     /// </summary>
     private bool IsPinnacleAutoPlay =>
         IsMutable &&
         CombatState != null &&
-        HasHinamoriTag(HinamoriCardTag.Hado) &&
         this is not BlackCoffinMomo &&
         Owner.Creature.GetPower<PinnacleOfHadoPower>()?.IsAutoPlaying(this) == true;
 
@@ -125,7 +124,7 @@ public abstract class HinamoriModCard(
             if (IsTemporarilyFreePotionCard)
                 return 0;
 
-            // 破道の極意による自動使用
+            // 鬼道の極意による自動使用
             if (IsPinnacleAutoPlay)
                 return 0;
 
@@ -248,7 +247,7 @@ public abstract class HinamoriModCard(
         if (IsTemporarilyFreePotionCard)
             return true;
 
-        // 破道の極意で自動使用された破道は詠唱を消費しない
+        // 鬼道の極意で自動使用された鬼道は詠唱を消費しない
         if (IsPinnacleAutoPlay)
             return true;
 
