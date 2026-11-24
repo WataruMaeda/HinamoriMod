@@ -137,5 +137,6 @@
   "HINAMORIMOD-ITTO_KASO_MOMO.description": "Deal {Damage:diff()} damage to ALL enemies.\nApply {Burn:diff()} [gold]Burn[/gold] to ALL enemies.\nGain {Forge:diff()} [gold]Ember[/gold].\nLose {SelfHpLoss} HP."
 ,
   "HINAMORIMOD-LIEUTENANTS_INGENUITY_MOMO.title": "Lieutenant's Ingenuity",
+  "HINAMORIMOD-LIEUTENANTS_INGENUITY_MOMO.selectionScreenPrompt": "Choose a card to add to your hand.",
   "HINAMORIMOD-LIEUTENANTS_INGENUITY_MOMO.description": "Choose 1 card from your Draw Pile{IfUpgraded:show: and 1 from your Discard Pile|} and add them to your hand.\nChoose 1 card in your hand to [gold]Exhaust[/gold]."
 }
