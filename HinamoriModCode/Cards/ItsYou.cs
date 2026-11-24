@@ -27,6 +27,8 @@ public class ItsYouMomo : HinamoriModCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        await MegaCrit.Sts2.Core.Commands.CreatureCmd.TriggerAnim(Owner.Creature, "Attack", 0f);
+
         await PowerCmd.Apply<StrengthPower>(
             choiceContext,
             Owner.Creature,

@@ -30,6 +30,8 @@ public class KidoRecitationMomo : HinamoriModCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        await MegaCrit.Sts2.Core.Commands.CreatureCmd.TriggerAnim(Owner.Creature, "Prayer", 0f);
+
         var selected = (await CardSelectCmd.FromHand(
             prefs: new CardSelectorPrefs(
                 new LocString("card_selection", "HINAMORIMOD_TO_REPLAY"), 1),

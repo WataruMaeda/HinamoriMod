@@ -26,6 +26,8 @@ public class SpiritualPressureUnleashedMomo : HinamoriModCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        await MegaCrit.Sts2.Core.Commands.CreatureCmd.TriggerAnim(Owner.Creature, "Prayer", 0f);
+
         await PowerCmd.Apply<SpiritualPressureUnleashedPower>(
             choiceContext, Owner.Creature, 1m, Owner.Creature, this);
     }

@@ -21,6 +21,8 @@ public class KidoStudyMomo : HinamoriModCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        await MegaCrit.Sts2.Core.Commands.CreatureCmd.TriggerAnim(Owner.Creature, "Prayer", 0f);
+
         if (IsUpgraded)
             await PowerCmd.Apply<UpgradedKidoStudyPower>(
                 choiceContext, Owner.Creature, 1m, Owner.Creature, this);

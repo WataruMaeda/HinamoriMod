@@ -23,6 +23,8 @@ public class PinnacleOfHadoMomo : HinamoriModCard
     {
         if (!await SpendChant(choiceContext, cardPlay))
             return;
+        await MegaCrit.Sts2.Core.Commands.CreatureCmd.TriggerAnim(Owner.Creature, "Prayer", 0f);
+
 
         await PowerCmd.Apply<PinnacleOfHadoPower>(
             choiceContext, Owner.Creature, 1m, Owner.Creature, this);
