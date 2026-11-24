@@ -7,10 +7,10 @@ using MegaCrit.Sts2.Core.Rooms;
 
 namespace HinamoriMod.HinamoriModCode.Relics;
 
-/// <summary>炎の護符：戦闘開始時、敵全体に火傷4。</summary>
+/// <summary>炎の護符：戦闘開始時、敵全体に火傷3。</summary>
 public class FlameTalisman : HinamoriModRelic
 {
-    public override RelicRarity Rarity => RelicRarity.Uncommon;
+    public override RelicRarity Rarity => RelicRarity.Common;
 
     public override async Task AfterRoomEntered(AbstractRoom room)
     {
@@ -23,7 +23,7 @@ public class FlameTalisman : HinamoriModRelic
 
         foreach (var enemy in combat.GetOpponentsOf(Owner.Creature).Where(x => x.IsAlive).ToList())
         {
-            await PowerCmd.Apply<BurnPower>(null, enemy, 4, Owner.Creature, null);
+            await PowerCmd.Apply<BurnPower>(null, enemy, 3, Owner.Creature, null);
         }
     }
 }
