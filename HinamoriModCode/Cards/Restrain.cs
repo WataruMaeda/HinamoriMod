@@ -45,6 +45,8 @@ public class RestrainMomo : HinamoriModCard
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
 
         // ブロックを獲得
+        HinamoriMod.HinamoriModCode.Character.HinamoriCombatAnimation.Play("cast");
+
         await CreatureCmd.GainBlock(
             Owner.Creature,
             DynamicVars.Block,

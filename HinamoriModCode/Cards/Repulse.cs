@@ -42,6 +42,8 @@ public class RepulseMomo : HinamoriModCard
         CardPlay cardPlay)
     {
         // ブロックを獲得
+        HinamoriMod.HinamoriModCode.Character.HinamoriCombatAnimation.Play("cast");
+
         await CreatureCmd.GainBlock(
             Owner.Creature,
             DynamicVars.Block,
