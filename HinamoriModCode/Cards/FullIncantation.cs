@@ -26,6 +26,8 @@ public class FullIncantationMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        await CreatureCmd.TriggerAnim(Owner.Creature, "Prayer", 0f);
+
         await PowerCmd.Apply<ChantPower>(
             choiceContext,
             Owner.Creature,

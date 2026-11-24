@@ -27,6 +27,8 @@ public class IncantationAbandonmentMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        await CreatureCmd.TriggerAnim(Owner.Creature, "Prayer", 0f);
+
         await PowerCmd.Apply<FreeKidoChantPower>(
             choiceContext,
             Owner.Creature,

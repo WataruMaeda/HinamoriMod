@@ -35,6 +35,8 @@ public class KidoTrainingMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        await CreatureCmd.TriggerAnim(Owner.Creature, "Prayer", 0f);
+
         // 使用時に詠唱＋1
         await PowerCmd.Apply<ChantPower>(
             choiceContext,

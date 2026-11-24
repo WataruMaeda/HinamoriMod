@@ -40,6 +40,8 @@ public class SpiritualPressureReleaseMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        await CreatureCmd.TriggerAnim(Owner.Creature, "Prayer", 0f);
+
         // カード使用中の自身は通常手札から取り除かれている。
         // 念のため自身を候補から除外する。
         var candidates = PileType.Hand.GetPile(Owner).Cards
