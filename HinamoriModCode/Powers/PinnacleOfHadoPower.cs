@@ -13,7 +13,7 @@ using MegaCrit.Sts2.Core.Models;
 namespace HinamoriMod.HinamoriModCode.Powers;
 
 /// <summary>
-/// 破道を引くとEN・詠唱消費なしで自動使用する。
+/// 破道を引くとEN・詠唱消費なしで自動使用する。Amountが2以上なら縛道も対象。
 /// 黒棺は例外として全詠唱を消費する。
 /// </summary>
 public class PinnacleOfHadoPower : HinamoriModPower
@@ -46,7 +46,8 @@ public class PinnacleOfHadoPower : HinamoriModPower
     {
         if (card.Owner.Creature != Owner ||
             card is not HinamoriModCard hinamoriCard ||
-            !hinamoriCard.HasHinamoriTag(HinamoriCardTag.Hado))
+            (!hinamoriCard.HasHinamoriTag(HinamoriCardTag.Hado) &&
+             !(Amount >= 2 && hinamoriCard.HasHinamoriTag(HinamoriCardTag.Bakudo))))
             return;
 
         var data = GetInternalData<Data>();
