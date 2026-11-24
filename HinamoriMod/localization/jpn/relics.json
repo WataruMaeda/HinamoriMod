@@ -9,10 +9,10 @@
   "HINAMORIMOD-TOBIUME_GUARD.description": "戦闘開始時、[gold]火種[/gold]を10獲得する。",
   "HINAMORIMOD-TOBIUME_GUARD.flavor": "飛梅とともに戦う決意を宿した鍔。",
   "HINAMORIMOD-FLAME_TALISMAN.title": "炎の護符",
-  "HINAMORIMOD-FLAME_TALISMAN.description": "戦闘開始時、敵全体に[gold]火傷[/gold]を4付与する。",
+  "HINAMORIMOD-FLAME_TALISMAN.description": "戦闘開始時、敵全体に[gold]火傷[/gold]を3付与する。",
   "HINAMORIMOD-FLAME_TALISMAN.flavor": "鬼道の炎を封じた護符。",
   "HINAMORIMOD-TOBIUME_EMBER.title": "飛梅の火種",
-  "HINAMORIMOD-TOBIUME_EMBER.description": "毎ターン終了時、[gold]火種[/gold]を1獲得する。",
+  "HINAMORIMOD-TOBIUME_EMBER.description": "毎ターン開始時、[gold]火種[/gold]を3獲得する。",
   "HINAMORIMOD-TOBIUME_EMBER.flavor": "小さな火は、静かに燃え続ける。",
   "HINAMORIMOD-LAST_EMBER_FRAGMENT.title": "残火の欠片",
   "HINAMORIMOD-LAST_EMBER_FRAGMENT.description": "火傷を付与するたび、その付与量を1増やす。",
@@ -34,5 +34,11 @@
   "HINAMORIMOD-FORBIDDEN_ARTS_PRICE.flavor": "雛森桃の戦いを支える品。",
   "HINAMORIMOD-SQUAD_FIVE_LIEUTENANT_BADGE.description": "各Act開始時、選択したエンシェントと同じエンシェントのレリックを、所持済みを除いてランダムに1個追加獲得する。",
   "HINAMORIMOD-SQUAD_FIVE_LIEUTENANT_BADGE.title": "五番隊副官章",
-  "HINAMORIMOD-SQUAD_FIVE_LIEUTENANT_BADGE.flavor": "五番隊副官の証。"
+  "HINAMORIMOD-SQUAD_FIVE_LIEUTENANT_BADGE.flavor": "五番隊副官の証。",
+  "HINAMORIMOD-TOBIUME_LINGERING_FLAME.title": "飛梅の残り火",
+  "HINAMORIMOD-TOBIUME_LINGERING_FLAME.description": "毎ターン開始時、ランダムな敵1体に[gold]火傷[/gold]を1付与する。",
+  "HINAMORIMOD-TOBIUME_LINGERING_FLAME.flavor": "消えない炎。",
+  "HINAMORIMOD-KIDO_PRAYER_BEADS.title": "鬼道の数珠",
+  "HINAMORIMOD-KIDO_PRAYER_BEADS.description": "毎ターン開始時、[gold]詠唱[/gold]を1獲得する。",
+  "HINAMORIMOD-KIDO_PRAYER_BEADS.flavor": "霊力を集中させる数珠。"
 }
