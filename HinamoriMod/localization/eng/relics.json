@@ -18,7 +18,7 @@
   "HINAMORIMOD-LAST_EMBER_FRAGMENT.description": "Whenever you apply Burn, increase the amount by 1.",
   "HINAMORIMOD-LAST_EMBER_FRAGMENT.flavor": "An item supporting Hinamori's fighting style.",
   "HINAMORIMOD-KIDO_TALISMAN.title": "Kido Talisman",
-  "HINAMORIMOD-KIDO_TALISMAN.description": "Whenever you spend a total of 10 Chant, gain 10 Block.",
+  "HINAMORIMOD-KIDO_TALISMAN.description": "Every 5 times you play a Hado or Bakudo card, gain 10 Block.",
   "HINAMORIMOD-KIDO_TALISMAN.flavor": "An item supporting Hinamori's fighting style.",
   "HINAMORIMOD-KIDO_PRIMER.title": "Kido Primer",
   "HINAMORIMOD-KIDO_PRIMER.description": "At the start of combat, choose 1 of 3 random cards to add to your hand. It costs 0 this turn. Then Exhaust a card in your hand.",
