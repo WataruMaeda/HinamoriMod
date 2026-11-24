@@ -120,7 +120,7 @@
   "HINAMORIMOD-FLAME_CYCLE_MOMO.title": "Flame Cycle",
   "HINAMORIMOD-FLAME_CYCLE_MOMO.description": "Whenever you gain Ember, apply 1 Burn to {IfUpgraded:show:ALL enemies|a random enemy}.",
   "HINAMORIMOD-KIDO_RESEARCH_MOMO.title": "Kido Research",
-  "HINAMORIMOD-KIDO_RESEARCH_MOMO.description": "At the start of each turn, consume 1 Ember to gain 1 Strength and 1 Dexterity. Does not trigger without Ember.",
+  "HINAMORIMOD-KIDO_RESEARCH_MOMO.description": "At the start of each turn, consume {IfUpgraded:show:2|1} Ember to gain {IfUpgraded:show:2|1} Strength and {IfUpgraded:show:2|1} Dexterity. Does not trigger if you have insufficient Ember.",
   "HINAMORIMOD-SPIRITUAL_PRESSURE_UNLEASHED_MOMO.title": "Spiritual Pressure Unleashed",
   "HINAMORIMOD-SPIRITUAL_PRESSURE_UNLEASHED_MOMO.description": "At the start of each turn, gain 1 Energy.",
   "HINAMORIMOD-PINNACLE_OF_HADO_MOMO.title": "Pinnacle of Kido",
