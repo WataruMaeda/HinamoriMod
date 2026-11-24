@@ -45,6 +45,7 @@ public class IttoKasoMomo : HinamoriModCard
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this, cardPlay)
             .TargetingAllOpponents(CombatState)
+            .WithAttackerAnim("Cast", 0.5f)
             .WithHitFx("vfx/vfx_giant_horizontal_slash")
             .Execute(choiceContext);
 
