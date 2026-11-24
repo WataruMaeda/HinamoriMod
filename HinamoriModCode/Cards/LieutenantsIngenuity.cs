@@ -53,11 +53,8 @@ public class LieutenantsIngenuityMomo : HinamoriModCard
             return;
 
         var prefs = new CardSelectorPrefs(SelectionScreenPrompt, 1);
-        var selected = pileType == PileType.Draw
-            ? (await CardSelectCmd.FromSimpleGrid(
-                choiceContext, candidates, Owner, prefs)).FirstOrDefault()
-            : (await CardSelectCmd.FromCombatPile(
-                choiceContext, pile, Owner, prefs)).FirstOrDefault();
+        var selected = (await CardSelectCmd.FromCombatPile(
+            choiceContext, pile, Owner, prefs)).FirstOrDefault();
 
         MegaCrit.Sts2.Core.Logging.Log.Info($"[LieutenantsIngenuity] {pileType}: selected={selected?.Id.Entry ?? "none"}");
 
