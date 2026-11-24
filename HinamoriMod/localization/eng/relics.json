@@ -21,7 +21,7 @@
   "HINAMORIMOD-KIDO_TALISMAN.description": "Whenever you spend a total of 10 Chant, gain 10 Block.",
   "HINAMORIMOD-KIDO_TALISMAN.flavor": "An item supporting Hinamori's fighting style.",
   "HINAMORIMOD-KIDO_PRIMER.title": "Kido Primer",
-  "HINAMORIMOD-KIDO_PRIMER.description": "At the start of combat, choose 1 of 3 random Hinamori cards to add to your hand, then choose a card to discard.",
+  "HINAMORIMOD-KIDO_PRIMER.description": "At the start of combat, choose 1 of 3 random cards to add to your hand. It costs 0 this turn. Then Exhaust a card in your hand.",
   "HINAMORIMOD-KIDO_PRIMER.flavor": "An item supporting Hinamori's fighting style.",
   "HINAMORIMOD-BURN_CURSE_MARK.title": "Burn Curse Mark",
   "HINAMORIMOD-BURN_CURSE_MARK.description": "Take 20% less attack damage from enemies with Burn.",
