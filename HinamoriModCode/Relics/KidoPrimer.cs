@@ -16,7 +16,7 @@ namespace HinamoriMod.HinamoriModCode.Relics;
 /// <summary>鬼道の手引き：初期ドロー後、雛森専用カード3択から1枚を手札に加えて1枚廃棄する。生成カードはこのターン無料。</summary>
 public class KidoPrimer : HinamoriModRelic
 {
-    public override RelicRarity Rarity => RelicRarity.Uncommon;
+    public override RelicRarity Rarity => RelicRarity.Rare;
     public const int CandidateCount = 3;
     public const int ExhaustCount = 1;
 
