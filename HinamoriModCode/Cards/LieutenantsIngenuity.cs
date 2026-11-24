@@ -46,24 +46,26 @@ public class LieutenantsIngenuityMomo : HinamoriModCard
     private async Task RetrieveCard(PlayerChoiceContext choiceContext, PileType pileType)
     {
         var pile = pileType.GetPile(Owner);
-        if (!pile.Cards.Any())
+        var candidates = pile.Cards.ToList();
+        MegaCrit.Sts2.Core.Logging.Log.Info($"[LieutenantsIngenuity] {pileType}: candidates={candidates.Count}");
+
+        if (candidates.Count == 0)
             return;
 
-        // 既存の戦闘パイルから同期された選択を行う。
-        var candidates = pile.Cards.ToList();
+        var prefs = new CardSelectorPrefs(SelectionScreenPrompt, 1);
         var selected = pileType == PileType.Draw
-            ? (await CardSelectCmd.FromCombatPile(
-                choiceContext, pile, Owner,
-                new CardSelectorPrefs(SelectionScreenPrompt, 1),
-                candidates.Contains)).FirstOrDefault()
+            ? (await CardSelectCmd.FromSimpleGrid(
+                choiceContext, candidates, Owner, prefs)).FirstOrDefault()
             : (await CardSelectCmd.FromCombatPile(
-                prefs: new CardSelectorPrefs(SelectionScreenPrompt, 1),
-                context: choiceContext,
-                pile: pile,
-                player: Owner)).FirstOrDefault();
+                choiceContext, pile, Owner, prefs)).FirstOrDefault();
+
+        MegaCrit.Sts2.Core.Logging.Log.Info($"[LieutenantsIngenuity] {pileType}: selected={selected?.Id.Entry ?? "none"}");
 
         if (selected != null)
+        {
             await CardPileCmd.Add(selected, PileType.Hand);
+            MegaCrit.Sts2.Core.Logging.Log.Info($"[LieutenantsIngenuity] {pileType}: remaining={pile.Cards.Count}, hand={PileType.Hand.GetPile(Owner).Cards.Count}");
+        }
     }
 
     protected override void OnUpgrade()
