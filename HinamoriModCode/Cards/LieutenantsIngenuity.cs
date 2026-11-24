@@ -50,12 +50,17 @@ public class LieutenantsIngenuityMomo : HinamoriModCard
             return;
 
         // 既存の戦闘パイルから同期された選択を行う。
-        var selected = (await CardSelectCmd.FromCombatPile(
-            prefs: new CardSelectorPrefs(SelectionScreenPrompt, 1),
-            context: choiceContext,
-            pile: pile,
-            player: Owner))
-            .FirstOrDefault();
+        var candidates = pile.Cards.ToList();
+        var selected = pileType == PileType.Draw
+            ? (await CardSelectCmd.FromCombatPile(
+                choiceContext, pile, Owner,
+                new CardSelectorPrefs(SelectionScreenPrompt, 1),
+                candidates.Contains)).FirstOrDefault()
+            : (await CardSelectCmd.FromCombatPile(
+                prefs: new CardSelectorPrefs(SelectionScreenPrompt, 1),
+                context: choiceContext,
+                pile: pile,
+                player: Owner)).FirstOrDefault();
 
         if (selected != null)
             await CardPileCmd.Add(selected, PileType.Hand);
