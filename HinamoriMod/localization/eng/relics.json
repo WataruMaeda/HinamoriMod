@@ -1,9 +1,9 @@
 {
   "HINAMORIMOD-KIDO_FUNDAMENTALS.title": "Kido Fundamentals",
-  "HINAMORIMOD-KIDO_FUNDAMENTALS.description": "At the start of combat, gain {Chant} [gold]Chant[/gold].\nAt the start of each Act, after choosing an Ancient relic, gain 1 additional random relic from the same Ancient, excluding relics you already own.",
+  "HINAMORIMOD-KIDO_FUNDAMENTALS.description": "At the start of combat, gain {Chant} [gold]Chant[/gold].",
   "HINAMORIMOD-KIDO_FUNDAMENTALS.flavor": "The first step toward mastering Kido. Daily practice builds lasting strength.",
   "HINAMORIMOD-KIDO_ESSENCE.title": "Essence of Kido",
-  "HINAMORIMOD-KIDO_ESSENCE.description": "At the start of combat, gain {Chant} [gold]Chant[/gold].\nAt the start of each turn after the first, gain 1 [gold]Chant[/gold].\nAt the start of each Act, after choosing an Ancient relic, gain 1 additional random relic from the same Ancient, excluding relics you already own.",
+  "HINAMORIMOD-KIDO_ESSENCE.description": "At the start of combat, gain {Chant} [gold]Chant[/gold].\nAt the start of each turn after the first, gain 1 [gold]Chant[/gold].",
   "HINAMORIMOD-KIDO_ESSENCE.flavor": "Years of training reveal the essence of Kido.",
   "HINAMORIMOD-TOBIUME_GUARD.title": "Tobiume's Guard",
   "HINAMORIMOD-TOBIUME_GUARD.description": "At the start of combat, gain 10 [gold]Ember[/gold].",
@@ -31,5 +31,8 @@
   "HINAMORIMOD-KIDO_SECRET_MANUAL.flavor": "An item supporting Hinamori's fighting style.",
   "HINAMORIMOD-FORBIDDEN_ARTS_PRICE.title": "Price of Forbidden Arts",
   "HINAMORIMOD-FORBIDDEN_ARTS_PRICE.description": "At the start of each turn, gain 1 Energy and add a random Status card to your hand.",
-  "HINAMORIMOD-FORBIDDEN_ARTS_PRICE.flavor": "An item supporting Hinamori's fighting style."
+  "HINAMORIMOD-FORBIDDEN_ARTS_PRICE.flavor": "An item supporting Hinamori's fighting style.",
+  "HINAMORIMOD-SQUAD_FIVE_LIEUTENANT_BADGE.description": "At the start of each Act, after choosing an Ancient relic, gain 1 additional random relic from the same Ancient, excluding relics you already own.",
+  "HINAMORIMOD-SQUAD_FIVE_LIEUTENANT_BADGE.title": "Squad 5 Lieutenant Badge",
+  "HINAMORIMOD-SQUAD_FIVE_LIEUTENANT_BADGE.flavor": "The insignia of the Squad 5 lieutenant."
 }
