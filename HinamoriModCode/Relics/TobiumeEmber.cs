@@ -1,29 +1,20 @@
 using System.Threading.Tasks;
 using HinamoriMod.HinamoriModCode.Commands;
-using MegaCrit.Sts2.Core.Combat;
-using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
-using System.Collections.Generic;
 
 namespace HinamoriMod.HinamoriModCode.Relics;
 
-/// <summary>飛梅の火種：自分のターン終了時に火種1。</summary>
+/// <summary>飛梅の火種：毎ターン開始時に火種3。</summary>
 public class TobiumeEmber : HinamoriModRelic
 {
-    public override RelicRarity Rarity => RelicRarity.Common;
+    public override RelicRarity Rarity => RelicRarity.Uncommon;
 
-    public override async Task AfterSideTurnEnd(
-        MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext,
-        CombatSide side,
-        IEnumerable<Creature> participants)
+    public override async Task AfterEnergyReset(Player player)
     {
-        foreach (var participant in participants)
-        {
-            if (participant != Owner.Creature || !Owner.Creature.IsAlive)
-                continue;
+        if (player != Owner || !Owner.Creature.IsAlive)
+            return;
 
-            await EmberCmd.GainEmber(1m, Owner);
-            break;
-        }
+        await EmberCmd.GainEmber(3m, Owner);
     }
 }
