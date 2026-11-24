@@ -35,7 +35,7 @@ public class InvertedMountainCrystalMomo : HinamoriModCard
         : base(
             0,
             CardType.Skill,
-            CardRarity.Common,
+            CardRarity.Uncommon,
             TargetType.Self)
     {
     }
