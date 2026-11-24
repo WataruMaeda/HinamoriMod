@@ -35,7 +35,7 @@ public class SplittingVoidMomo : HinamoriModCard
         if (!await SpendChant(choiceContext, cardPlay))
             return;
 
-        global::HinamoriMod.HinamoriModCode.Character.HinamoriCombatAnimation.Play("cast");
+        await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", 0f);
 
         await PowerCmd.Apply<BufferPower>(
             choiceContext,

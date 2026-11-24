@@ -50,7 +50,7 @@ public class HundredStepRailingsMomo : HinamoriModCard
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
 
         // 敵に弱体を付与
-        global::HinamoriMod.HinamoriModCode.Character.HinamoriCombatAnimation.Play("cast");
+        await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", 0f);
 
         await PowerCmd.Apply<VulnerablePower>(
             choiceContext,

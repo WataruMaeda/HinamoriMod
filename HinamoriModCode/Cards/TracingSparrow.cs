@@ -72,7 +72,7 @@ public class TracingSparrowMomo : HinamoriModCard
         if (cards.Count == 0)
             return;
 
-        global::HinamoriMod.HinamoriModCode.Character.HinamoriCombatAnimation.Play("cast");
+        await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", 0f);
 
         // 3枚から必ず1枚を選択（選択のスキップは不可）
         CardModel selected =
