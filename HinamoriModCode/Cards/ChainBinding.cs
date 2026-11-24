@@ -50,6 +50,8 @@ public class ChainBindingMomo : HinamoriModCard
         if (cards.Count == 0)
             return;
 
+        global::HinamoriMod.HinamoriModCode.Character.HinamoriCombatAnimation.Play("cast");
+
         // 選択をスキップさせず、回収するカードを1枚決める。
         CardModel selected =
             await CardSelectCmd.FromChooseACardScreen(

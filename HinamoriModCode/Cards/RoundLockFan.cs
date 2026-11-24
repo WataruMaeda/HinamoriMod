@@ -50,6 +50,8 @@ public class RoundLockFanMomo : HinamoriModCard
             return;
 
         // ブロックを獲得
+        global::HinamoriMod.HinamoriModCode.Character.HinamoriCombatAnimation.Play("cast");
+
         await CreatureCmd.GainBlock(
             Owner.Creature,
             DynamicVars.Block,
