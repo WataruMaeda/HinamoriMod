@@ -7,7 +7,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 namespace HinamoriMod.HinamoriModCode.Cards;
 
 /// <summary>
-/// 破道の極意。使用時に破道自動使用パワーを付与する。
+/// 鬼道の極意。強化後は縛道も自動使用する。
 /// ドロー時の自動使用処理はPinnacleOfHadoPowerで行う。
 /// </summary>
 public class PinnacleOfHadoMomo : HinamoriModCard
@@ -26,12 +26,21 @@ public class PinnacleOfHadoMomo : HinamoriModCard
         await MegaCrit.Sts2.Core.Commands.CreatureCmd.TriggerAnim(Owner.Creature, "Prayer", 0f);
 
 
-        await PowerCmd.Apply<PinnacleOfHadoPower>(
-            choiceContext, Owner.Creature, 1m, Owner.Creature, this);
+        var existing = Owner.Creature.GetPower<PinnacleOfHadoPower>();
+        if (existing == null)
+        {
+            await PowerCmd.Apply<PinnacleOfHadoPower>(
+                choiceContext, Owner.Creature, IsUpgraded ? 2m : 1m, Owner.Creature, this);
+        }
+        else if (IsUpgraded && existing.Amount < 2)
+        {
+            await PowerCmd.ModifyAmount(
+                choiceContext, existing, 2 - existing.Amount, Owner.Creature, this);
+        }
     }
 
     protected override void OnUpgrade()
     {
-        EnergyCost.UpgradeBy(-1);
+        // 強化後は縛道も自動使用する。
     }
 }
