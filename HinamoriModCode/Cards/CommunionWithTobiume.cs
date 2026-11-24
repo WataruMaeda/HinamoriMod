@@ -38,6 +38,8 @@ public class CommunionWithTobiumeMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        await MegaCrit.Sts2.Core.Commands.CreatureCmd.TriggerAnim(Owner.Creature, "Prayer", 0f);
+
         // 詠唱+2
         await PowerCmd.Apply<ChantPower>(
             choiceContext,

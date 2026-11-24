@@ -34,6 +34,8 @@ public class AdversityFlameMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        await MegaCrit.Sts2.Core.Commands.CreatureCmd.TriggerAnim(Owner.Creature, "Prayer", 0f);
+
         // 手札・山札・捨て札のカードを対象とする。
         // 移動中にコレクションが変わるため、先に対象一覧を固定する。
         // このカード自身は処理対象に含めない。
