@@ -13,7 +13,7 @@ namespace HinamoriMod.HinamoriModCode.Patches;
 
 /// <summary>
 /// Grants one additional relic from the current Ancient's own relic options
-/// when an Ancient choice is made. The counter is saved on the starter relic.
+/// when an Ancient choice is made. The counter is saved on the lieutenant badge.
 /// </summary>
 [HarmonyPatch]
 public static class AncientBonusRelicPatch
@@ -45,10 +45,10 @@ public static class AncientBonusRelicPatch
         if (player == null)
             return;
 
-        var starter = player.Relics.OfType<KidoFundamentals>().FirstOrDefault();
+        var starter = player.Relics.OfType<SquadFiveLieutenantBadge>().FirstOrDefault();
         if (starter == null)
         {
-            Godot.GD.Print("[HinamoriMod] Ancient bonus skipped: starter relic missing");
+            Godot.GD.Print("[HinamoriMod] Ancient bonus skipped: lieutenant badge missing");
             return;
         }
 
