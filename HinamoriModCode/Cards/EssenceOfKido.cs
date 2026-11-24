@@ -21,6 +21,8 @@ public class EssenceOfKidoMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        await MegaCrit.Sts2.Core.Commands.CreatureCmd.TriggerAnim(Owner.Creature, "Prayer", 0f);
+
         // 複数枚設置した場合、パワーのAmountを重ねてドロー量を増やす。
         await PowerCmd.Apply<EssenceOfKidoPower>(
             choiceContext, Owner.Creature, 1, Owner.Creature, this);
