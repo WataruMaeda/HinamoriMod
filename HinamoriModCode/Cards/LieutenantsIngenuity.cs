@@ -22,6 +22,8 @@ public class LieutenantsIngenuityMomo : HinamoriModCard
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        await CreatureCmd.TriggerAnim(Owner.Creature, "Prayer", 0f);
+
         await RetrieveCard(choiceContext, PileType.Draw);
 
         if (IsUpgraded)
@@ -49,8 +51,10 @@ public class LieutenantsIngenuityMomo : HinamoriModCard
 
         // 既存の戦闘パイルから同期された選択を行う。
         var selected = (await CardSelectCmd.FromCombatPile(
-            choiceContext, pile,
-            new CardSelectorPrefs(CardSelectorPrefs.DiscardSelectionPrompt, 1)))
+            prefs: new CardSelectorPrefs(SelectionScreenPrompt, 1),
+            context: choiceContext,
+            pile: pile,
+            player: Owner))
             .FirstOrDefault();
 
         if (selected != null)
