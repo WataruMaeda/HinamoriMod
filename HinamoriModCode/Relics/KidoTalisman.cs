@@ -5,7 +5,7 @@ namespace HinamoriMod.HinamoriModCode.Relics;
 /// <summary>鬼道の護符：詠唱10消費ごとにブロック10。</summary>
 public class KidoTalisman : HinamoriModRelic
 {
-    public override RelicRarity Rarity => RelicRarity.Uncommon;
+    public override RelicRarity Rarity => RelicRarity.Common;
     private int _spentChantThisCombat;
 
     // TODO: HinamoriModCard.SpendChantで実際に支払った詠唱を通知する。
