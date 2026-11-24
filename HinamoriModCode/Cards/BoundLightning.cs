@@ -45,6 +45,7 @@ public class BoundLightningMomo : HinamoriModCard
             .WithHitCount(DynamicVars.HitCount.IntValue)
             .FromCard(this, cardPlay)
             .Targeting(cardPlay.Target)
+            .WithAttackerAnim("Cast", 0.5f)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
     }
