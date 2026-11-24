@@ -55,7 +55,7 @@ public class HangingStarMomo : HinamoriModCard
             return;
 
         // ブロック獲得
-        global::HinamoriMod.HinamoriModCode.Character.HinamoriCombatAnimation.Play("cast");
+        await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", 0f);
 
         await CreatureCmd.GainBlock(
             Owner.Creature,

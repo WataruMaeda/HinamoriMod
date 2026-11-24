@@ -42,7 +42,7 @@ public class TripleBeakStrikeMomo : HinamoriModCard
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
 
         // 敵1体に脱力を付与
-        global::HinamoriMod.HinamoriModCode.Character.HinamoriCombatAnimation.Play("cast");
+        await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", 0f);
 
         await PowerCmd.Apply<WeakPower>(
             choiceContext,
