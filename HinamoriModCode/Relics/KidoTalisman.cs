@@ -1,27 +1,42 @@
+using System.Threading.Tasks;
+using HinamoriMod.HinamoriModCode.Cards;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Relics;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Rooms;
+using MegaCrit.Sts2.Core.ValueProps;
 
 namespace HinamoriMod.HinamoriModCode.Relics;
 
-/// <summary>鬼道の護符：詠唱10消費ごとにブロック10。</summary>
+/// <summary>鬼道の護符：破道・縛道を5回使用するたびブロック10。</summary>
 public class KidoTalisman : HinamoriModRelic
 {
     public override RelicRarity Rarity => RelicRarity.Common;
-    private int _spentChantThisCombat;
+    private int _kidoPlaysThisCombat;
 
-    // TODO: HinamoriModCard.SpendChantで実際に支払った詠唱を通知する。
-    // TODO: 閾値到達時にBlockCmdを実行する。リプレイ時の二重計上を防ぐ。
-    public int CountBlockTriggers(int chantSpent)
+    public override Task AfterRoomEntered(AbstractRoom room)
     {
-        if (chantSpent <= 0) return 0;
-        _spentChantThisCombat += chantSpent;
-        int triggers = _spentChantThisCombat / 10;
-        _spentChantThisCombat %= 10;
-        return triggers;
+        if (room is CombatRoom)
+            _kidoPlaysThisCombat = 0;
+        return Task.CompletedTask;
     }
 
-    public override System.Threading.Tasks.Task AfterRoomEntered(MegaCrit.Sts2.Core.Rooms.AbstractRoom room)
+    public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        if (room is MegaCrit.Sts2.Core.Rooms.CombatRoom) _spentChantThisCombat = 0;
-        return System.Threading.Tasks.Task.CompletedTask;
+        if (cardPlay.Card is not HinamoriModCard card ||
+            card.Owner != Owner || !Owner.Creature.IsAlive ||
+            !(card.HasHinamoriTag(HinamoriCardTag.Hado) ||
+              card.HasHinamoriTag(HinamoriCardTag.Bakudo)))
+            return;
+
+        if (++_kidoPlaysThisCombat < 5)
+            return;
+
+        _kidoPlaysThisCombat -= 5;
+        Flash();
+        await CreatureCmd.GainBlock(Owner.Creature,
+            new BlockVar(10m, ValueProp.Unpowered), cardPlay);
     }
 }
