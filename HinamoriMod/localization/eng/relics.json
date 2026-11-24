@@ -9,10 +9,10 @@
   "HINAMORIMOD-TOBIUME_GUARD.description": "At the start of combat, gain 10 [gold]Ember[/gold].",
   "HINAMORIMOD-TOBIUME_GUARD.flavor": "A sword guard carrying the resolve to fight alongside Tobiume.",
   "HINAMORIMOD-FLAME_TALISMAN.title": "Flame Talisman",
-  "HINAMORIMOD-FLAME_TALISMAN.description": "At the start of combat, apply 4 [gold]Burn[/gold] to ALL enemies.",
+  "HINAMORIMOD-FLAME_TALISMAN.description": "At the start of combat, apply 3 [gold]Burn[/gold] to ALL enemies.",
   "HINAMORIMOD-FLAME_TALISMAN.flavor": "A talisman containing the flames of Kido.",
   "HINAMORIMOD-TOBIUME_EMBER.title": "Tobiume's Ember",
-  "HINAMORIMOD-TOBIUME_EMBER.description": "At the end of each turn, gain 1 [gold]Ember[/gold].",
+  "HINAMORIMOD-TOBIUME_EMBER.description": "At the start of each turn, gain 3 [gold]Ember[/gold].",
   "HINAMORIMOD-TOBIUME_EMBER.flavor": "A small flame continues to burn.",
   "HINAMORIMOD-LAST_EMBER_FRAGMENT.title": "Last Ember Fragment",
   "HINAMORIMOD-LAST_EMBER_FRAGMENT.description": "Whenever you apply Burn, increase the amount by 1.",
@@ -34,5 +34,11 @@
   "HINAMORIMOD-FORBIDDEN_ARTS_PRICE.flavor": "An item supporting Hinamori's fighting style.",
   "HINAMORIMOD-SQUAD_FIVE_LIEUTENANT_BADGE.description": "At the start of each Act, after choosing an Ancient relic, gain 1 additional random relic from the same Ancient, excluding relics you already own.",
   "HINAMORIMOD-SQUAD_FIVE_LIEUTENANT_BADGE.title": "Squad 5 Lieutenant Badge",
-  "HINAMORIMOD-SQUAD_FIVE_LIEUTENANT_BADGE.flavor": "The insignia of the Squad 5 lieutenant."
+  "HINAMORIMOD-SQUAD_FIVE_LIEUTENANT_BADGE.flavor": "The insignia of the Squad 5 lieutenant.",
+  "HINAMORIMOD-TOBIUME_LINGERING_FLAME.title": "Tobiume's Lingering Flame",
+  "HINAMORIMOD-TOBIUME_LINGERING_FLAME.description": "At the start of each turn, apply 1 [gold]Burn[/gold] to a random enemy.",
+  "HINAMORIMOD-TOBIUME_LINGERING_FLAME.flavor": "A flame that never fades.",
+  "HINAMORIMOD-KIDO_PRAYER_BEADS.title": "Kido Prayer Beads",
+  "HINAMORIMOD-KIDO_PRAYER_BEADS.description": "At the start of each turn, gain 1 [gold]Chant[/gold].",
+  "HINAMORIMOD-KIDO_PRAYER_BEADS.flavor": "Beads that help focus spiritual power."
 }
