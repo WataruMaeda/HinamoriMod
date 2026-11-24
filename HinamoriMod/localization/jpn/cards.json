@@ -138,5 +138,6 @@
   "HINAMORIMOD-INHERITED_RESOLVE_MOMO.description": "毎ターン開始時、ランダムなパワーカードを1枚生成する。このターン、それはコストを支払わずにプレイできる。{IfUpgraded:show:\n生成するカードはアップグレード済み。|}"
 ,
   "HINAMORIMOD-LIEUTENANTS_INGENUITY_MOMO.title": "副隊長の機転",
+  "HINAMORIMOD-LIEUTENANTS_INGENUITY_MOMO.selectionScreenPrompt": "手札に加えるカードを1枚選択してください。",
   "HINAMORIMOD-LIEUTENANTS_INGENUITY_MOMO.description": "山札{IfUpgraded:show:と捨て札|}からカードを1枚{IfUpgraded:show:ずつ|}選び、手札に加える。\n手札のカードを1枚選び、[gold]廃棄[/gold]する。"
 }
