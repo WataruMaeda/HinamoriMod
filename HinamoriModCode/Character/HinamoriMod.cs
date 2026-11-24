@@ -41,7 +41,8 @@ public class HinamoriMod : PlaceholderCharacterModel
     /// <summary>初期レリック</summary>
     public override IReadOnlyList<RelicModel> StartingRelics =>
     [
-        ModelDb.Relic<KidoFundamentals>()
+        ModelDb.Relic<KidoFundamentals>(),
+        ModelDb.Relic<SquadFiveLieutenantBadge>()
     ];
     
     public override CardPoolModel CardPool => ModelDb.CardPool<HinamoriModCardPool>();
