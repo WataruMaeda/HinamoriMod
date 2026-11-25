@@ -206,6 +206,37 @@ public abstract class HinamoriModCard(
         }
     }
 
+    // 無料化パワーを除いた詠唱コスト。通常の詠唱軽減は適用する。
+    internal int ChantCostBeforeSingleUseFree
+    {
+        get
+        {
+            if (ChantCost <= 0 || IsVoidFormFreeNow || IsTemporarilyFreePotionCard ||
+                IsPinnacleAutoPlay || FreeChantThisTurn)
+                return 0;
+            if (!IsMutable || CombatState == null)
+                return ChantCost;
+            if (HasHinamoriTag(HinamoriCardTag.Kido) &&
+                Owner.Creature.GetPower<PotionFreeKidoChantPower>() != null)
+                return 0;
+            int discount = 0;
+            if (HasHinamoriTag(HinamoriCardTag.Hado))
+                discount += Owner.Creature.GetPower<HadoChantDiscountPower>()?.Amount ?? 0;
+            if (HasHinamoriTag(HinamoriCardTag.Kido))
+                discount += Owner.Creature.GetPower<KidoDisciplinePower>()?.Amount ?? 0;
+            return Math.Max(0, ChantCost - discount);
+        }
+    }
+
+    internal bool HasTypeFreePower =>
+        (Type == CardType.Skill && Owner.Creature.GetPower<FreeChantSkillPower>() != null) ||
+        (Type == CardType.Attack && Owner.Creature.GetPower<FreeChantAttackPower>() != null) ||
+        (Type == CardType.Power && Owner.Creature.GetPower<FreeChantPowerCardPower>() != null);
+
+    internal bool HasSecretManualDiscount =>
+        HasHinamoriTag(HinamoriCardTag.Kido) &&
+        Owner.Relics.OfType<KidoSecretManual>().Any(r => r.IsDiscountAvailable);
+
     protected override bool IsPlayable =>
         base.IsPlayable &&
         (!IsMutable ||
@@ -299,7 +330,8 @@ public abstract class HinamoriModCard(
 
         // 鬼道の秘伝書：最初に実際に使用した鬼道の詠唱を無料化する。
         // コスト表示時には状態を変更せず、使用確定時のみ消費する。
-        if ((HasHinamoriTag(HinamoriCardTag.Hado) ||
+        if (ChantCostBeforeSingleUseFree > 0 &&
+            (HasHinamoriTag(HinamoriCardTag.Hado) ||
              HasHinamoriTag(HinamoriCardTag.Bakudo)) &&
             Owner.Relics.OfType<KidoSecretManual>()
                 .FirstOrDefault(r => r.IsDiscountAvailable) is { } secretManual)
