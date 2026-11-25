@@ -66,6 +66,7 @@
   "HINAMORIMOD-HUNDRED_STEP_RAILINGS_MOMO.title": "Hyapporankan",
   "HINAMORIMOD-HUNDRED_STEP_RAILINGS_MOMO.description": "Apply {VulnerablePower:diff()} Vulnerable to an enemy.\nGain {VigorPower:diff()} Vigor.\nThe next Attack card you play costs 0 Energy and 0 Chant.",
   "HINAMORIMOD-CHAIN_BINDING_MOMO.title": "Sajo Sabaku",
+  "HINAMORIMOD-CHAIN_BINDING_MOMO.selectionScreenPrompt": "Choose a card to return to your hand.",
   "HINAMORIMOD-CHAIN_BINDING_MOMO.description": "Choose a card from your Exhaust Pile and return it to your hand.\nRemove Exhaust from it for the rest of combat and give it Retain.",
   "HINAMORIMOD-INVERTED_MOUNTAIN_CRYSTAL_MOMO.title": "Tozansho",
   "HINAMORIMOD-INVERTED_MOUNTAIN_CRYSTAL_MOMO.description": "Gain {Block:diff()} Block.\nRetain your current Block until the next turn.",
