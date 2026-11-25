@@ -61,6 +61,7 @@
   "HINAMORIMOD-HUNDRED_STEP_RAILINGS_MOMO.title": "縛道の六十二・百歩欄干",
   "HINAMORIMOD-HUNDRED_STEP_RAILINGS_MOMO.description": "[gold]弱体[/gold]{VulnerablePower:diff()}を付与する。\n自分に[gold]活力[/gold]{VigorPower:diff()}を付与する。\n次に使用する[gold]アタック[/gold]はコストを支払わずにプレイできる。",
   "HINAMORIMOD-CHAIN_BINDING_MOMO.title": "縛道の六十三・鎖条鎖縛",
+  "HINAMORIMOD-CHAIN_BINDING_MOMO.selectionScreenPrompt": "手札に戻すカードを1枚選択してください。",
   "HINAMORIMOD-CHAIN_BINDING_MOMO.description": "廃棄札からカードを1枚選び、手札に戻す。カードの\n[gold]廃棄[/gold]削除、[gold]保留[/gold]付与。",
   "HINAMORIMOD-INVERTED_MOUNTAIN_CRYSTAL_MOMO.title": "縛道の七十三・倒山晶",
   "HINAMORIMOD-INVERTED_MOUNTAIN_CRYSTAL_MOMO.description": "{Block:diff()}[gold]ブロック[/gold]を得る。\n現在のブロックを次のターンまで維持する。",
