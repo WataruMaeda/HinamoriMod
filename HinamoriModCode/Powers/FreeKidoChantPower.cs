@@ -35,7 +35,9 @@ public class FreeKidoChantPower : HinamoriModPower
 
         if (cardPlay.Card is not HinamoriModCard momoCard ||
             !momoCard.HasHinamoriTag(HinamoriCardTag.Kido) ||
-            momoCard.ChantCost < 0)
+            momoCard.ChantCostBeforeSingleUseFree <= 0 ||
+            momoCard.HasTypeFreePower ||
+            !cardPlay.IsFirstInSeries || cardPlay.IsAutoPlay)
         {
             return Task.CompletedTask;
         }
