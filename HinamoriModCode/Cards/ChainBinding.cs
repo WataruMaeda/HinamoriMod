@@ -1,9 +1,10 @@
 ﻿
+using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
-using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace HinamoriMod.HinamoriModCode.Cards;
@@ -41,24 +42,19 @@ public class ChainBindingMomo : HinamoriModCard
         if (!await SpendChant(choiceContext, cardPlay))
             return;
 
-        // 廃棄札をスナップショット化し、選択画面に渡す候補を固定する。
-        List<CardModel> cards =
-            PileType.Exhaust.GetPile(Owner)
-                .Cards
-                .ToList();
+        var pile = PileType.Exhaust.GetPile(Owner);
+        MegaCrit.Sts2.Core.Logging.Log.Info($"[ChainBinding] Exhaust: candidates={pile.Cards.Count}");
 
-        if (cards.Count == 0)
+        if (pile.Cards.Count == 0)
             return;
 
         await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", 0f);
 
-        // 選択をスキップさせず、回収するカードを1枚決める。
-        CardModel selected =
-            await CardSelectCmd.FromChooseACardScreen(
-                choiceContext,
-                cards,
-                Owner,
-                canSkip: false);
+        var prefs = new CardSelectorPrefs(SelectionScreenPrompt, 1);
+        var selected = (await CardSelectCmd.FromCombatPile(
+            choiceContext, pile, Owner, prefs)).FirstOrDefault();
+
+        MegaCrit.Sts2.Core.Logging.Log.Info($"[ChainBinding] selected={selected?.Id.Entry ?? "none"}");
 
         if (selected == null)
             return;
@@ -71,6 +67,7 @@ public class ChainBindingMomo : HinamoriModCard
 
         // キーワードを変更してから、廃棄札のカードを手札へ移動する。
         await CardPileCmd.Add(selected, PileType.Hand);
+        MegaCrit.Sts2.Core.Logging.Log.Info($"[ChainBinding] Exhaust: remaining={pile.Cards.Count}, hand={PileType.Hand.GetPile(Owner).Cards.Count}");
     }
 
 
