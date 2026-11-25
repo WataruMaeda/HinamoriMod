@@ -1,5 +1,6 @@
 ﻿
 using System.Collections.Generic;
+using HinamoriMod.HinamoriModCode.Cards;
 using System.Threading.Tasks;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -56,6 +57,17 @@ public class FreeChantSkillPower : HinamoriModPower
             return Task.CompletedTask;
 
         // 無料化の対象だったカードだけ記録する
+        if (!cardPlay.IsFirstInSeries || cardPlay.IsAutoPlay)
+            return Task.CompletedTask;
+
+        var card = cardPlay.Card;
+        bool savesEnergy = card.HasEnergyCostX ||
+            card.EnergyCost.GetWithModifiers(CostModifiers.Local) > 0;
+        bool savesChant = card is HinamoriModCard momo &&
+            momo.ChantCostBeforeSingleUseFree > 0;
+        if (!savesEnergy && !savesChant)
+            return Task.CompletedTask;
+
         _eligiblePlays.Add(cardPlay);
 
         return Task.CompletedTask;
