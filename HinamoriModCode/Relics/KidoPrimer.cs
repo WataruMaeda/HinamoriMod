@@ -52,7 +52,7 @@ public class KidoPrimer : HinamoriModRelic
             return;
 
         var prefs = new CardSelectorPrefs(
-            CardSelectorPrefs.ExhaustSelectionPrompt, selectCount: DiscardCount);
+            CardSelectorPrefs.ExhaustSelectionPrompt, selectCount: ExhaustCount);
         var toExhaust = (await CardSelectCmd.FromHand(
             choiceContext, player, prefs, filter: null, source: this)).ToList();
         foreach (var card in toExhaust)
