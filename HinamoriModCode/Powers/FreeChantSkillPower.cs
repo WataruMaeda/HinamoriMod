@@ -61,7 +61,7 @@ public class FreeChantSkillPower : HinamoriModPower
             return Task.CompletedTask;
 
         var card = cardPlay.Card;
-        bool savesEnergy = card.HasEnergyCostX ||
+        bool savesEnergy = card.EnergyCost.CostsX ||
             card.EnergyCost.GetWithModifiers(CostModifiers.Local) > 0;
         bool savesChant = card is HinamoriModCard momo &&
             momo.ChantCostBeforeSingleUseFree > 0;
