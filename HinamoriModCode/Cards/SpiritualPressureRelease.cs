@@ -15,9 +15,9 @@ namespace HinamoriMod.HinamoriModCode.Cards;
 
 /// <summary>
 /// 霊圧解放
-/// 通常：2EN、手札の他のカード1枚をランダム廃棄、
+/// 通常：1EN、手札の他のカード1枚をランダム廃棄、
 ///       詠唱+5
-/// 強化：2EN、廃棄カードを選択可能、詠唱+5
+/// 強化：1EN、廃棄カードを選択可能、詠唱+5
 /// </summary>
 public class SpiritualPressureReleaseMomo : HinamoriModCard
 {
@@ -29,7 +29,7 @@ public class SpiritualPressureReleaseMomo : HinamoriModCard
 
     public SpiritualPressureReleaseMomo()
         : base(
-            2,
+            1,
             CardType.Skill,
             CardRarity.Uncommon,
             TargetType.Self)
