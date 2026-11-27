@@ -26,6 +26,7 @@ public class PinnacleOfHadoPower : HinamoriModPower
     {
         public readonly HashSet<CardModel> AutoPlayingCards = new();
         public int InfiniteAutoPlaysThisTurn;
+        public readonly HashSet<CardModel> HangingStarsPlayedThisTurn = new(System.Collections.Generic.ReferenceEqualityComparer.Instance);
     }
 
     private const int InfiniteAutoPlayCap = 9;
@@ -52,6 +53,9 @@ public class PinnacleOfHadoPower : HinamoriModPower
 
         var data = GetInternalData<Data>();
 
+        if (card is HangingStarMomo && data.HangingStarsPlayedThisTurn.Contains(card))
+            return;
+
         // 本体ヘルレイザーと同様、無限HPの敵だけがいる場合の連鎖を制限。
         if (Owner.CombatState.HittableEnemies.All(enemy => enemy.HpDisplay.IsInfinite()))
         {
@@ -64,6 +68,10 @@ public class PinnacleOfHadoPower : HinamoriModPower
         {
             data.InfiniteAutoPlaysThisTurn = 0;
         }
+
+        // 連鎖が再入する前に記録する。
+        if (card is HangingStarMomo)
+            data.HangingStarsPlayedThisTurn.Add(card);
 
         data.AutoPlayingCards.Add(card);
         try
@@ -83,7 +91,11 @@ public class PinnacleOfHadoPower : HinamoriModPower
         IEnumerable<Creature> participants)
     {
         if (participants.Contains(Owner))
-            GetInternalData<Data>().InfiniteAutoPlaysThisTurn = 0;
+        {
+            var data = GetInternalData<Data>();
+            data.InfiniteAutoPlaysThisTurn = 0;
+            data.HangingStarsPlayedThisTurn.Clear();
+        }
 
         return Task.CompletedTask;
     }
