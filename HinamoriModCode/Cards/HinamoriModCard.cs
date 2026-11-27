@@ -144,7 +144,7 @@ public abstract class HinamoriModCard(
                 Owner.Creature.GetPower<PotionFreeKidoChantPower>() != null)
                 return 0;
 
-            // 詠唱破棄による鬼道の詠唱無料化
+            // 旧詠唱破棄による鬼道の詠唱無料化
             if (HasHinamoriTag(HinamoriCardTag.Kido) &&
                 IsMutable &&
                 CombatState != null &&
@@ -192,7 +192,7 @@ public abstract class HinamoriModCard(
                         ?.Amount ?? 0;
             }
 
-            // 鬼道の鍛錬は破道・縛道の両方に適用する。
+            // 詠唱破棄は破道・縛道の両方に適用する。
             // 既存の破道専用軽減とは加算し、詠唱コストは0未満にしない。
             if (HasHinamoriTag(HinamoriCardTag.Kido) &&
                 IsMutable &&
@@ -292,7 +292,7 @@ public abstract class HinamoriModCard(
             Owner.Creature.GetPower<PotionFreeKidoChantPower>() != null)
             return true;
 
-        // 詠唱破棄による無料化
+        // 旧詠唱破棄による無料化
         if (HasHinamoriTag(HinamoriCardTag.Kido) &&
             IsMutable &&
             CombatState != null &&
