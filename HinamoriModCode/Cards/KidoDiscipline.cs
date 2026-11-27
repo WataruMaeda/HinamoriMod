@@ -8,7 +8,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 namespace HinamoriMod.HinamoriModCode.Cards;
 
 /// <summary>
-/// 鬼道の鍛錬：2ENのアンコモンパワー。
+/// 詠唱破棄：2ENのアンコモンパワー。
 /// 戦闘中、鬼道の詠唱コストを1減らす（最低0）。
 /// 強化すると天賦を得る。複数枚使用した場合は軽減量を加算する。
 /// </summary>
