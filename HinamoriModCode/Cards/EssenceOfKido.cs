@@ -7,7 +7,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 namespace HinamoriMod.HinamoriModCode.Cards;
 
 /// <summary>
-/// 鬼道の真髄：コモンのパワー。通常1EN、強化後0EN。
+/// 鬼道の鍛錬：コモンのパワー。通常1EN、強化後0EN。
 /// 鬼道を戦闘中に3回使うたびに1枚引く。カウントはターンを跨ぐ。
 /// </summary>
 public class EssenceOfKidoMomo : HinamoriModCard
