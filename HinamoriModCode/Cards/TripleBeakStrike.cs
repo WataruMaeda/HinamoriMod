@@ -12,11 +12,13 @@ namespace HinamoriMod.HinamoriModCode.Cards;
 
 /// <summary>
 /// 縛道「嘴突三閃」
-/// 2EN、敵1体に脱力2、2ドロー
+/// 1EN＋詠唱1、敵1体に脱力2、2ドロー
 /// 強化後：脱力3、2ドロー
 /// </summary>
 public class TripleBeakStrikeMomo : HinamoriModCard
 {
+    public override int ChantCost => 1;
+
     public override HinamoriCardTag HinamoriTags =>
         HinamoriCardTag.Bakudo | HinamoriCardTag.Kido;
 
@@ -28,7 +30,7 @@ public class TripleBeakStrikeMomo : HinamoriModCard
 
     public TripleBeakStrikeMomo()
         : base(
-            2,
+            1,
             CardType.Skill,
             CardRarity.Common,
             TargetType.AnyEnemy)
@@ -40,6 +42,9 @@ public class TripleBeakStrikeMomo : HinamoriModCard
         CardPlay cardPlay)
     {
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
+
+        if (!await SpendChant(choiceContext, cardPlay))
+            return;
 
         // 敵1体に脱力を付与
         await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", 0f);
