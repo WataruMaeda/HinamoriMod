@@ -84,11 +84,10 @@ public abstract class HinamoriModCard(
         Owner.Creature.GetPower<PinnacleOfHadoPower>()?.IsAutoPlaying(this) == true;
 
     /// <summary>
-    /// アタックポーション・パワーポーション等の SetToFreeThisTurn による一時的な無料化。
-    /// 通常の0ENパワーとは区別するため、一時スターコスト0も確認する。
+    /// 記憶リキッド・各種ポーション等の SetToFreeThisTurn による一時的な無料化。
+    /// 通常の0ENカードとは区別するため、一時スターコスト0も確認する。
     /// </summary>
-    private bool IsTemporarilyFreePotionCard =>
-        (Type == CardType.Power || Type == CardType.Attack) &&
+    private bool IsTemporarilyFreeCard =>
         IsMutable &&
         CombatState != null &&
         TemporaryStarCost?.Cost == 0 &&
@@ -120,8 +119,8 @@ public abstract class HinamoriModCard(
             if (ChantCost < 0)
                 return -1;
 
-            // アタックポーション・パワーポーション等による一時的な無料化
-            if (IsTemporarilyFreePotionCard)
+            // 記憶リキッド・各種ポーション等による一時的な無料化
+            if (IsTemporarilyFreeCard)
                 return 0;
 
             // 鬼道の極意による自動使用
@@ -211,7 +210,7 @@ public abstract class HinamoriModCard(
     {
         get
         {
-            if (ChantCost <= 0 || IsVoidFormFreeNow || IsTemporarilyFreePotionCard ||
+            if (ChantCost <= 0 || IsVoidFormFreeNow || IsTemporarilyFreeCard ||
                 IsPinnacleAutoPlay || FreeChantThisTurn)
                 return 0;
             if (!IsMutable || CombatState == null)
@@ -274,8 +273,8 @@ public abstract class HinamoriModCard(
             return true;
         }
 
-        // アタックポーション・パワーポーション等による一時的な無料化
-        if (IsTemporarilyFreePotionCard)
+        // 記憶リキッド・各種ポーション等による一時的な無料化
+        if (IsTemporarilyFreeCard)
             return true;
 
         // 鬼道の極意で自動使用された鬼道は詠唱を消費しない
