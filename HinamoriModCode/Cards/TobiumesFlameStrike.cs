@@ -11,8 +11,8 @@ using MegaCrit.Sts2.Core.ValueProps;
 namespace HinamoriMod.HinamoriModCode.Cards;
 
 /// <summary>
-/// 飛梅の炎撃：2ENで敵1体に12ダメージを与え、火傷3を付与するコモンアタック。
-/// 強化後はダメージ12を維持し、付与する火傷を3から5に増やす。
+/// 飛梅の炎撃：2ENで敵1体に12ダメージを与え、火傷5を付与するコモンアタック。
+/// 強化後はダメージ12を維持し、付与する火傷を5から7に増やす。
 /// </summary>
 public class TobiumesFlameStrikeMomo : HinamoriModCard
 {
@@ -20,7 +20,7 @@ public class TobiumesFlameStrikeMomo : HinamoriModCard
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(12m, ValueProp.Move),
-        new IntVar("Burn", 3)
+        new IntVar("Burn", 5)
     ];
 
     public TobiumesFlameStrikeMomo()
@@ -56,7 +56,7 @@ public class TobiumesFlameStrikeMomo : HinamoriModCard
 
     protected override void OnUpgrade()
     {
-        // 強化後は火傷3→5。ダメージは12のまま。
+        // 強化後は火傷5→7。ダメージは12のまま。
         DynamicVars["Burn"].UpgradeValueBy(2m);
     }
 }
