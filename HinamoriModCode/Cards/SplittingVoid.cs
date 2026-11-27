@@ -9,12 +9,12 @@ namespace HinamoriMod.HinamoriModCode.Cards;
 
 /// <summary>
 /// 縛道「断空」
-/// 通常：1EN＋詠唱3、バッファ1
-/// 強化：1EN＋詠唱2、バッファ1
+/// 通常：1EN＋詠唱2、バッファ1
+/// 強化：1EN＋詠唱1、バッファ1
 /// </summary>
 public class SplittingVoidMomo : HinamoriModCard
 {
-    public override int ChantCost => IsUpgraded ? 2 : 3;
+    public override int ChantCost => IsUpgraded ? 1 : 2;
 
     public override HinamoriCardTag HinamoriTags =>
         HinamoriCardTag.Bakudo | HinamoriCardTag.Kido;
