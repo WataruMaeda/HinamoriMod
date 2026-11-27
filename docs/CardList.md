@@ -71,7 +71,7 @@
 | 崩輪 | Uncommon | DisintegratingCircleMomo | 1EN＋詠1 | 敵1体に脱力1、次のスキルのEN・詠唱コストを0（使用までターンをまたいで持続） | 脱力2、同じコスト軽減効果 | パウンス | 実装済・未確認 |
 | 赤煙遁 | Common | RedSmokeEscapeMomo | 1EN | 8ブロック、1ドロー | 11ブロック、1ドロー | 受け流し | 実装済・未確認 |
 | 曲光 | Common | BendingLightMomo | 0EN＋詠1 | 8ブロック | 11ブロック | ディフレクト | 実装済・未確認 |
-| 嘴突三閃 | Common | TripleBeakStrikeMomo | 2EN | 敵1体に脱力2、2ドロー | 脱力3、2ドロー | 足払い、アクロバット | 実装済・未確認 |
+| 嘴突三閃 | Common | TripleBeakStrikeMomo | 1EN＋詠1 | 敵1体に脱力2、2ドロー | 脱力3、2ドロー | 足払い、アクロバット | 実装済・未確認 |
 | 吊星 | Uncommon | HangingStarMomo | 0EN＋詠2 | 10ブロック、保留、使うと手札に戻る。鬼道の極意による自動使用は1枚につき毎ターン1回まで | 13ブロック | 未設定 | 実装済・未確認 |
 | 円閘扇 | Common | RoundLockFanMomo | 2EN＋詠1 | 18ブロック | 24ブロック | 未設定 | 実装済・未確認 |
 | 掴趾追雀 | Rare | TracingSparrowMomo | 2EN＋詠2 | 雛森専用カードからランダム3枚を提示し、1枚を手札に加える。生成カードはこのターンEN・詠唱コスト0になり、リプレイ2を永続付与（戦闘中） | リプレイ3を永続付与（戦闘中） | 発見、クエーサー、隠された宝石 | 実装済・未確認 |
@@ -90,7 +90,7 @@
 | 霊圧集中 | Common | SpiritualPressureFocusMomo | 1EN | 詠唱＋1、1ドロー | 詠唱＋1、2ドロー | 未設定 | 実装済・未確認 |
 | 鬼道の修練 | Common | KidoTrainingMomo | 1EN | 詠唱＋1、次ターン詠唱＋3 | 次ターン詠唱＋4 | 隠し財産 | 実装済・未確認 |
 | 完全詠唱 | Rare | FullIncantationMomo | 2EN | 詠唱＋2、次の破道・縛道のダメージ／ブロック×1.5 | 倍率×2 | 未設定 | 実装済・未確認 |
-| 霊圧解放 | Uncommon | SpiritualPressureReleaseMomo | 2EN | 手札のほかのカード1枚をランダム廃棄、詠唱＋5 | 廃棄カードを選択可能 | 未設定 | 実装済・未確認 |
+| 霊圧解放 | Uncommon | SpiritualPressureReleaseMomo | 1EN | 手札のほかのカード1枚をランダム廃棄、詠唱＋5 | 廃棄カードを選択可能 | 未設定 | 実装済・未確認 |
 | 鬼道の才 | Common | KidoProdigyMomo | 1EN | 詠唱＋1、手札1枚を戦闘中アップグレード | 手札すべてをアップグレード | 武装 | 実装済・未確認 |
 | 霊力変換 | Uncommon | SpiritualEnergyConversionMomo | 0EN＋詠3 | 2EN獲得。詠唱コスト軽減可能 | 3EN獲得 | アラインメント（参考案） | 実装済・未確認 |
 | 副隊長の機転 | Uncommon | LieutenantsIngenuityMomo | 1EN | 山札から1枚選んで手札に加え、手札1枚を選んで廃棄 | 山札と捨て札から1枚ずつ選んで手札に加え、手札1枚を選んで廃棄 | 未設定 | 実装済・ゲーム内動作確認済 |
@@ -111,7 +111,7 @@
 | カード名 | レアリティ | クラス名 | コスト | 通常効果 | 強化後 | 参考カード | 実装状況 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 藍染隊長の仇 | Uncommon | AvengeCaptainAizenMomo | 3EN | 初期10ダメージ、10ブロック、火傷5。使用するたびダメージ・ブロックが成長し、火傷は基礎ダメージの半分（切り捨て）。成長は階層をまたいで引き継ぐ。何度でも強化可能 | ENは3のまま。強化1回につき以後の使用時のダメージ・ブロック成長量が＋1。強化時に現在値は増えない | 大鎌 | 実装済・未確認 |
-| 飛梅の炎撃 | Common | TobiumesFlameStrikeMomo | 2EN | 12ダメージ、火傷3 | 火傷5（ダメージ12のまま） | 未設定 | 実装済・未確認 |
+| 飛梅の炎撃 | Common | TobiumesFlameStrikeMomo | 2EN | 12ダメージ、火傷5 | 火傷7（ダメージ12のまま） | 未設定 | 実装済・未確認 |
 | 炎の拘束 | Common | FlameBindMomo | 1EN | 火傷2、5ブロック | 火傷3、5ブロック | 未設定 | 実装済・未確認 |
 | 燃焼促進 | Uncommon | AcceleratedCombustionMomo | 2EN | 対象の火傷スタックを2倍、廃棄 | 1EN、火傷2倍・廃棄は維持 | 未設定 | 実装済・未確認 |
 | 飛梅の炎舞 | Uncommon | TobiumesFlameDanceMomo | 1EN | 6ダメージ、対象の火傷数と同量の火種を獲得 | 9ダメージ、火種獲得量は同じ | 未設定 | 実装済・未確認 |
