@@ -25,7 +25,7 @@ public class KidoMasterMomo : HinamoriModCard
         : base(
             2,
             CardType.Power,
-            CardRarity.Uncommon,
+            CardRarity.Common,
             TargetType.Self)
     {
     }
