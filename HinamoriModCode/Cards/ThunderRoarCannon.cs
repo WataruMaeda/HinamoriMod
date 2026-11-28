@@ -12,7 +12,7 @@ namespace HinamoriMod.HinamoriModCode.Cards;
 
 /// <summary>
 /// 破道「雷吼炮」
-/// 敵1体に40ダメージ（強化後45ダメージ）
+/// 敵1体に50ダメージ（強化後65ダメージ）
 /// </summary>
 public class ThunderRoarCannonMomo : HinamoriModCard
 {
@@ -25,14 +25,14 @@ public class ThunderRoarCannonMomo : HinamoriModCard
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(40m, ValueProp.Move)
+        new DamageVar(50m, ValueProp.Move)
     ];
 
     public ThunderRoarCannonMomo()
         : base(
             2,
             CardType.Attack,
-            CardRarity.Uncommon,
+            CardRarity.Rare,
             TargetType.AnyEnemy)
     {
     }
@@ -47,7 +47,7 @@ public class ThunderRoarCannonMomo : HinamoriModCard
 
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
 
-        // 敵1体に40ダメージ（強化後45）
+        // 敵1体に50ダメージ（強化後65）
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this, cardPlay)
             .Targeting(cardPlay.Target)
@@ -58,7 +58,7 @@ public class ThunderRoarCannonMomo : HinamoriModCard
 
     protected override void OnUpgrade()
     {
-        // ダメージ40 → 45
-        DynamicVars.Damage.UpgradeValueBy(5m);
+        // ダメージ50 → 65
+        DynamicVars.Damage.UpgradeValueBy(15m);
     }
 }
