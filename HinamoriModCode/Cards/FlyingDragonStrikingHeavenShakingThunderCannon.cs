@@ -17,8 +17,8 @@ namespace HinamoriMod.HinamoriModCode.Cards;
 /// <summary>
 /// 破道の六十三「飛竜撃賊震天雷炮」
 ///
-/// 通常：5 + この戦闘でプレイした破道の回数 × 2
-/// 強化：5 + この戦闘でプレイした破道の回数 × 3
+/// 通常：10 + この戦闘でプレイした破道の回数 × 3
+/// 強化：10 + この戦闘でプレイした破道の回数 × 4
 ///
 /// 自身の今回の使用はダメージ計算に含めない。
 /// 使用完了後は次回以降の破道使用回数に含まれる。
@@ -51,10 +51,10 @@ public class FlyingDragonStrikingHeavenShakingThunderCannonMomo
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         // 破道1回あたりの追加ダメージ
-        new DamageVar(2m, ValueProp.Move),
+        new DamageVar(3m, ValueProp.Move),
 
         // 基本ダメージ
-        new IntVar("NormalDamage", 5m),
+        new IntVar("NormalDamage", 10m),
 
         // フィニッシャーと同じ計算用変数
         new CalculationBaseVar(0m),
@@ -75,7 +75,7 @@ public class FlyingDragonStrikingHeavenShakingThunderCannonMomo
         : base(
             1,
             CardType.Attack,
-            CardRarity.Uncommon,
+            CardRarity.Rare,
             TargetType.AnyEnemy)
     {
     }
@@ -107,7 +107,7 @@ public class FlyingDragonStrikingHeavenShakingThunderCannonMomo
 
     protected override void OnUpgrade()
     {
-        // 破道1回あたりの追加ダメージを2→3に変更
+        // 破道1回あたりの追加ダメージを3→4に変更
         DynamicVars.Damage.UpgradeValueBy(1m);
     }
 }
