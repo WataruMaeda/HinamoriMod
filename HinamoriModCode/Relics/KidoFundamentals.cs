@@ -1,4 +1,5 @@
 ﻿
+using Godot;
 using HinamoriMod.HinamoriModCode.Powers;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -21,9 +22,14 @@ public class KidoFundamentals : HinamoriModRelic
     [SavedProperty(SerializationCondition.SaveIfNotTypeDefault)]
     public bool HasReceivedNeowRelic { get; set; }
 
+    [SavedProperty(SerializationCondition.SaveIfNotTypeDefault)]
+    public int AncientBonusCount { get; set; }
+
+    protected virtual int StartingChant => 3;
+
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DynamicVar("Chant", 3m)
+        new DynamicVar("Chant", StartingChant)
     ];
 
     /// <summary>
@@ -45,27 +51,4 @@ public class KidoFundamentals : HinamoriModRelic
         }
     }
 
-    /// <summary>
-    /// ボス戦の報酬にランダムレリックを1個追加する
-    /// </summary>
-    public override bool TryModifyRewards(
-        Player player,
-        List<Reward> rewards,
-        AbstractRoom? room)
-    {
-        if (player != Owner)
-        {
-            return false;
-        }
-
-        if (room == null || room.RoomType != RoomType.Boss)
-        {
-            return false;
-        }
-
-        // 通常の報酬にランダムレリックを1個追加
-        rewards.Add(new RelicReward(player));
-
-        return true;
-    }
 }

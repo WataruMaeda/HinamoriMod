@@ -10,11 +10,14 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace HinamoriMod.HinamoriModCode.Cards;
 
+/// <summary>
+/// ‰©‰Î‘M
+/// </summary>
 public class YellowFireFlashMomo : HinamoriModCard
 {
     public override int ChantCost => 1;
 
-    // �J�[�h�̃^�O
+    // ƒJ[ƒh‚Ìƒ^ƒO
     public override HinamoriCardTag HinamoriTags =>
         HinamoriCardTag.Hado | HinamoriCardTag.Kido;
 
@@ -32,6 +35,7 @@ public class YellowFireFlashMomo : HinamoriModCard
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this, cardPlay)
             .Targeting(cardPlay.Target)
+            .WithAttackerAnim("Cast", 0.5f)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
 

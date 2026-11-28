@@ -1,7 +1,6 @@
 ﻿
-using System.Linq;
 using Godot;
-using HinamoriMod.HinamoriModCode.Cards;
+using HinamoriMod.HinamoriModCode.Commands;
 using MegaCrit.Sts2.Core.Entities.Players;
 
 namespace HinamoriMod.HinamoriModCode.UI;
@@ -47,6 +46,17 @@ public partial class NEmberCounter : Control
         _label.AddThemeConstantOverride("outline_size", 5);
 
         AddChild(_label);
+
+        // Transparent hit area for Godot's built-in hover tooltip.
+        // Keep the icon and count visible without changing their layout.
+        var tooltipArea = new Control
+        {
+            Position = new Vector2(-32, -37),
+            Size = new Vector2(64, 64),
+            MouseFilter = MouseFilterEnum.Stop,
+            TooltipText = "火種：戦闘中に蓄積されます。飛梅の攻撃ダメージが火種1につき1増加します。"
+        };
+        AddChild(tooltipArea);
         RefreshAmount();
     }
 
@@ -60,14 +70,8 @@ public partial class NEmberCounter : Control
         if (_player == null || _label == null)
             return;
 
-        // 現在の飛梅から火種を取得
-        decimal amount = _player.PlayerCombatState
-            .AllCards
-            .OfType<TobiumeMomo>()
-            .Where(card => !card.IsDupe)
-            .Select(card => card.CurrentEmber)
-            .DefaultIfEmpty(0m)
-            .Max();
+        // プレイヤーの火種を直接取得
+        decimal amount = EmberState.GetAmount(_player);
 
         if (amount == _lastAmount)
             return;

@@ -16,11 +16,15 @@ namespace HinamoriMod.HinamoriModCode.Powers;
 /// <summary>
 /// 火傷
 /// ・攻撃ダメージを25%減少
-/// ・ターン終了時に火傷の数値と同じダメージ
-/// ・ダメージ後に火傷を1減少
+/// ・ターン開始時に火傷の数値と同じダメージ
+/// ・火傷の所有者のターン終了時に火傷を1減少
 /// </summary>
 public class BurnPower : HinamoriModPower
 {
+    // 火傷専用の状態異常アイコン。共通のpower.pngへのフォールバックを使わない。
+    public override string CustomPackedIconPath => "res://HinamoriMod/images/icons/burn_icon.png";
+    public override string CustomBigIconPath => "res://HinamoriMod/images/icons/burn_icon.png";
+
     public override PowerType Type => PowerType.Debuff;
 
     public override PowerStackType StackType => PowerStackType.Counter;
@@ -40,7 +44,8 @@ public class BurnPower : HinamoriModPower
         if (dealer != Owner)
             return 1m;
 
-        // 通常の攻撃ダメージのみ対象
+        // ValuePropに攻撃属性がある場合のみ倍率を適用する。
+        // 脱力などの他の乗算補正とは独立して0.75倍を返す。
         if (!props.IsPoweredAttack())
             return 1m;
 
@@ -60,10 +65,12 @@ public class BurnPower : HinamoriModPower
         if (!participants.Contains(Owner))
             return;
 
+        // 死亡済み、または火傷スタックが0以下ならダメージを与えない。
         if (!Owner.IsAlive || Amount <= 0)
             return;
 
-        // 現在の火傷数と同じダメージ
+        // 火傷スタックと同量の防御不能・非攻撃ダメージを与える。
+        // ここではスタックを減らさず、減少処理はターン終了時に行う。
         await CreatureCmd.Damage(
             new ThrowingPlayerChoiceContext(),
             Owner,
@@ -86,7 +93,7 @@ public class BurnPower : HinamoriModPower
         if (!participants.Contains(Owner))
             return;
 
-        // 生存している場合は火傷を1減少
+        // ターン終了時に1スタックだけ減らす。開始時のダメージとは別の処理。
         if (Owner.IsAlive)
         {
             await PowerCmd.Decrement(this);

@@ -21,8 +21,8 @@ public class HinamoriMod : PlaceholderCharacterModel
     public override Color NameColor => Color;
     public override CharacterGender Gender => CharacterGender.Feminine;
 
-    /// <summary>StartHP</summary>
-    public override int StartingHp => 70;
+    /// <summary>初期HP</summary>
+    public override int StartingHp => 75;
     
     /// <summary>初期カード</summary>
     public override IEnumerable<CardModel> StartingDeck => [
@@ -41,7 +41,8 @@ public class HinamoriMod : PlaceholderCharacterModel
     /// <summary>初期レリック</summary>
     public override IReadOnlyList<RelicModel> StartingRelics =>
     [
-        ModelDb.Relic<KidoFundamentals>()
+        ModelDb.Relic<KidoFundamentals>(),
+        ModelDb.Relic<SquadFiveLieutenantBadge>()
     ];
     
     public override CardPoolModel CardPool => ModelDb.CardPool<HinamoriModCardPool>();
@@ -56,16 +57,27 @@ public class HinamoriMod : PlaceholderCharacterModel
     {
         get
         {
-            var icon = NodeFactory<Control>.CreateFromResource(CustomIconTexturePath);
+            // Preserve the portrait's aspect ratio instead of stretching it to the HUD slot.
+            var icon = new TextureRect
+            {
+                Texture = GD.Load<Texture2D>(CustomIconTexturePath),
+                ExpandMode = TextureRect.ExpandModeEnum.IgnoreSize,
+                StretchMode = TextureRect.StretchModeEnum.KeepAspectCentered,
+                MouseFilter = Control.MouseFilterEnum.Ignore
+            };
             icon.SetAnchorsAndOffsetsPreset(Control.LayoutPreset.FullRect);
             return icon;
         }
     }
-    public override string CustomIconTexturePath => "character_icon_char_name.png".CharacterUiPath();
+    /// <summary>戦闘画面左上のキャラクターアイコン</summary>
+    public override string CustomIconTexturePath => "res://HinamoriMod/images/icons/hinamori_icon.png";
     /// <summary>キャラクター選択画面のキャラクターアイコン</summary>
     public override string CustomCharacterSelectIconPath => "res://HinamoriMod/images/character/hinamori_icon.png";
     public override string CustomCharacterSelectLockedIconPath => "char_select_char_name_locked.png".CharacterUiPath();
-    public override string CustomMapMarkerPath => "map_marker_char_name.png".CharacterUiPath();
+    public override string CustomMapMarkerPath => "res://HinamoriMod/images/icons/hinamori_icon.png";
     /// <summary>キャラクター選択画面の画像</summary>
     public override string CustomCharacterSelectBg => "res://HinamoriMod/scenes/hinamori_select_bg.tscn";
+
+    /// <summary>戦闘画面の雛森桃：8フレームの待機アニメーションを表示</summary>
+    public override string CustomVisualPath => "res://HinamoriMod/scenes/hinamori_idle.tscn";
 }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using HinamoriMod.HinamoriModCode.Character;
 using HinamoriMod.HinamoriModCode.Commands;
 using HinamoriMod.HinamoriModCode.Powers;
 using MegaCrit.Sts2.Core.Commands;
@@ -27,7 +28,7 @@ public class RedFrameCannonMomo : HinamoriModCard
     [
         new DamageVar(8m, ValueProp.Move),
         new DynamicVar("Burn", 2m),
-        new ForgeVar(5)
+        new DynamicVar("Ember", 5m)
     ];
 
     public RedFrameCannonMomo()
@@ -47,6 +48,7 @@ public class RedFrameCannonMomo : HinamoriModCard
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this, cardPlay)
             .Targeting(cardPlay.Target)
+            .WithAttackerAnim("Cast", 0.5f)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
 
@@ -64,9 +66,8 @@ public class RedFrameCannonMomo : HinamoriModCard
 
         // 火種5を獲得
         await EmberCmd.GainEmber(
-            DynamicVars.Forge.IntValue,
-            Owner
-        );
+            DynamicVars["Ember"].BaseValue,
+            Owner);
     }
 
     protected override void OnUpgrade()

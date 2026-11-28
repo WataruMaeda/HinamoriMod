@@ -70,6 +70,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="docs\参考_Base\" />
       <Folder Include="HinamoriModCode\DynamicVars\" />
       <Folder Include="HinamoriMod\images\card_portraits\big\" />
       <Folder Include="HinamoriMod\images\powers\big\" />

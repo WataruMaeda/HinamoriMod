@@ -14,6 +14,39 @@ namespace HinamoriMod.HinamoriModCode.Debug;
 
 internal static class CardDebugHelper
 {
+    public enum DebugCardCategory { Hinamori, Status, Curse }
+
+    public static IReadOnlyList<Type> GetCards(DebugCardCategory category)
+    {
+        if (category == DebugCardCategory.Hinamori)
+            return GetCards();
+
+        // 本体カードの型を列挙。デバッグ用途なのでゲームが認識する
+        // CardModelの派生クラスから生成可能なものを選別する。
+        var wanted = category == DebugCardCategory.Status ? CardType.Status : CardType.Curse;
+        return typeof(CardModel).Assembly.GetTypes()
+            .Where(t => t.IsClass && !t.IsAbstract && typeof(CardModel).IsAssignableFrom(t))
+            .Where(t => t.GetConstructor(Type.EmptyTypes) != null)
+            .Where(t =>
+            {
+                try
+                {
+                    var model = CreateModel(t);
+                    return model != null && model.Type == wanted;
+                }
+                catch { return false; }
+            })
+            .OrderBy(t => t.Name).ToArray();
+    }
+
+    private static CardModel? CreateModel(Type type)
+    {
+        var method = typeof(ModelDb).GetMethods(BindingFlags.Public | BindingFlags.Static)
+            .FirstOrDefault(m => m.Name == "Card" && m.IsGenericMethodDefinition &&
+                m.GetGenericArguments().Length == 1 && m.GetParameters().Length == 0);
+        return method?.MakeGenericMethod(type).Invoke(null, null) as CardModel;
+    }
+
     public static IReadOnlyList<Type> GetCards() =>
         typeof(HinamoriModCard).Assembly.GetTypes()
             .Where(t => t.IsClass && !t.IsAbstract && typeof(HinamoriModCard).IsAssignableFrom(t))
@@ -21,10 +54,14 @@ internal static class CardDebugHelper
             .OrderBy(t => t.Name)
             .ToArray();
 
-    public static async Task AddCard(Player player, Type cardType, bool upgraded)
+    public static async Task AddCard(Player player, Type cardType, bool upgraded, PileType destination = PileType.Hand)
     {
-        if (!typeof(HinamoriModCard).IsAssignableFrom(cardType))
-            throw new ArgumentException("Not a Hinamori card", nameof(cardType));
+        if (!typeof(CardModel).IsAssignableFrom(cardType) || cardType.IsAbstract)
+            throw new ArgumentException("Not a card model", nameof(cardType));
+
+        if (destination != PileType.Hand && destination != PileType.Draw &&
+            destination != PileType.Discard && destination != PileType.Exhaust)
+            throw new ArgumentOutOfRangeException(nameof(destination));
 
         var state = player.Creature.CombatState;
         if (state == null || !CombatManager.Instance.IsInProgress)
@@ -49,6 +86,12 @@ internal static class CardDebugHelper
             card.FinalizeUpgradeInternal();
         }
 
-        await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, player);
+        // 飛梅の場合、手札に追加する前に現在の火種を反映
+        if (card is TobiumeMomo tobiume)
+        {
+            tobiume.SyncEmber();
+        }
+
+        await CardPileCmd.AddGeneratedCardToCombat(card, destination, player);
     }
 }
