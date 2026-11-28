@@ -31,7 +31,7 @@ public class IttoKasoMomo : HinamoriModCard
     ];
 
     public IttoKasoMomo()
-        : base(0, CardType.Attack, CardRarity.Basic, TargetType.AllEnemies)
+        : base(0, CardType.Attack, CardRarity.Ancient, TargetType.AllEnemies)
     {
     }
 
