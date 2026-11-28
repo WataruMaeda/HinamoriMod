@@ -20,7 +20,7 @@ public class BlazingTobiumeMomo : HinamoriModCard
     ];
 
     public BlazingTobiumeMomo()
-        : base(2, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+        : base(2, CardType.Power, CardRarity.Common, TargetType.Self)
     {
     }
 
